@@ -1,0 +1,63 @@
+{
+  "frozenAt": "2026-09-18T15:23:55.812471+00:00",
+  "host": "KSYBOB",
+  "wsl": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "engine": "gatekeeper",
+  "cluster": "paper-consistency-20260918t152255z-gatekeeper",
+  "nodeImage": "kindest/node:v1.35.8@sha256:07b2536e30b803ed61d1677a79df6115f798ce64c80f9e22f6ed45afd09323c0",
+  "runnerSha256": "5af701df88a8e6082870377bd316b2a5b38832952ffac1700a93d94f58883b1f",
+  "prepareSha256": "02639ae8c35e4782b1f55d0387ab4788984e33501d186c835779cd2aee1bbaec",
+  "expectationsSha256": "33cfd90c21c3528320a3b5443bf459141e0ab27d6aaddb79986d5749d69b8a94",
+  "policies": [
+    {
+      "file": "policy-0-registration.json",
+      "sha256": "3524504f2daf45e6454f1c19958e580da6cec8275a50315b3f913844b839d49e"
+    },
+    {
+      "file": "policy-0.json",
+      "sha256": "a298bf0a96f7c8d16ea7278a3cd895c2516dce11eecebb611464b293e7010cf9"
+    },
+    {
+      "file": "policy-1-registration.json",
+      "sha256": "a2d46929688b8128ef5fba9b159627d9959bc693714119c0758a13f40771a43b"
+    },
+    {
+      "file": "policy-1.json",
+      "sha256": "b0e697ea88860c868b514aaa352c9a538554d233b72b4589dcd828a38de3c41c"
+    }
+  ],
+  "vendor": [
+    {
+      "file": "gatekeeper-v3.23.1.yaml",
+      "sha256": "3c178abe6de4dcdcd2810c2945468a0d7a15ccf0036e324b73308643e94d6f72"
+    },
+    {
+      "file": "kyverno-v1.19.1.yaml",
+      "sha256": "d3322cb346d3d42dd0f41e230b0d1d7bc5619960e1c36fdac4d9151d724b88e6"
+    }
+  ],
+  "images": [
+    {
+      "alias": "study.local/approved/pause:3.10",
+      "imageId": "sha256:ee6521f290b2168b6e0935a181d4cff9be1ac3f505666ef0e3c98fae8199917a",
+      "repoDigests": [
+        "registry.k8s.io/pause@sha256:ee6521f290b2168b6e0935a181d4cff9be1ac3f505666ef0e3c98fae8199917a",
+        "study.local/alternate/pause@sha256:ee6521f290b2168b6e0935a181d4cff9be1ac3f505666ef0e3c98fae8199917a",
+        "study.local/approved/pause@sha256:ee6521f290b2168b6e0935a181d4cff9be1ac3f505666ef0e3c98fae8199917a"
+      ]
+    },
+    {
+      "alias": "study.local/alternate/pause:3.10",
+      "imageId": "sha256:ee6521f290b2168b6e0935a181d4cff9be1ac3f505666ef0e3c98fae8199917a",
+      "repoDigests": [
+        "registry.k8s.io/pause@sha256:ee6521f290b2168b6e0935a181d4cff9be1ac3f505666ef0e3c98fae8199917a",
+        "study.local/alternate/pause@sha256:ee6521f290b2168b6e0935a181d4cff9be1ac3f505666ef0e3c98fae8199917a",
+        "study.local/approved/pause@sha256:ee6521f290b2168b6e0935a181d4cff9be1ac3f505666ef0e3c98fae8199917a"
+      ]
+    }
+  ],
+  "expected": "Compliant inputs allowed; noncompliant inputs rejected with the corresponding study rule message.",
+  "uniqueCases": 8,
+  "repeats": 3,
+  "readinessCanaryExcluded": true
+}

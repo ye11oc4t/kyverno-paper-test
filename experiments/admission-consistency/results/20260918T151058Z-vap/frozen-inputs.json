@@ -1,0 +1,55 @@
+{
+  "frozenAt": "2026-09-18T15:11:31.108527+00:00",
+  "host": "KSYBOB",
+  "wsl": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "engine": "vap",
+  "cluster": "paper-consistency-20260918t151058z-vap",
+  "nodeImage": "kindest/node:v1.35.8@sha256:07b2536e30b803ed61d1677a79df6115f798ce64c80f9e22f6ed45afd09323c0",
+  "runnerSha256": "95ac8bc53117d8b43e9783b0b6fbbc5fc9cefcbc6b72363bd6c86875b34ec79c",
+  "prepareSha256": "02639ae8c35e4782b1f55d0387ab4788984e33501d186c835779cd2aee1bbaec",
+  "expectationsSha256": "33cfd90c21c3528320a3b5443bf459141e0ab27d6aaddb79986d5749d69b8a94",
+  "policies": [
+    {
+      "file": "policy-0.json",
+      "sha256": "b98421bc5f5799e2733e3f53638b3ee251ff922909c03de189fb2b0dbe2f6f9e"
+    },
+    {
+      "file": "policy-1.json",
+      "sha256": "8ed3150e8f955311c905156457365ad1a50126368809bad51bf38a2743e04c30"
+    }
+  ],
+  "vendor": [
+    {
+      "file": "gatekeeper-v3.23.1.yaml",
+      "sha256": "3c178abe6de4dcdcd2810c2945468a0d7a15ccf0036e324b73308643e94d6f72"
+    },
+    {
+      "file": "kyverno-v1.19.1.yaml",
+      "sha256": "d3322cb346d3d42dd0f41e230b0d1d7bc5619960e1c36fdac4d9151d724b88e6"
+    }
+  ],
+  "images": [
+    {
+      "alias": "study.local/approved/pause:3.10",
+      "imageId": "sha256:ee6521f290b2168b6e0935a181d4cff9be1ac3f505666ef0e3c98fae8199917a",
+      "repoDigests": [
+        "registry.k8s.io/pause@sha256:ee6521f290b2168b6e0935a181d4cff9be1ac3f505666ef0e3c98fae8199917a",
+        "study.local/alternate/pause@sha256:ee6521f290b2168b6e0935a181d4cff9be1ac3f505666ef0e3c98fae8199917a",
+        "study.local/approved/pause@sha256:ee6521f290b2168b6e0935a181d4cff9be1ac3f505666ef0e3c98fae8199917a"
+      ]
+    },
+    {
+      "alias": "study.local/alternate/pause:3.10",
+      "imageId": "sha256:ee6521f290b2168b6e0935a181d4cff9be1ac3f505666ef0e3c98fae8199917a",
+      "repoDigests": [
+        "registry.k8s.io/pause@sha256:ee6521f290b2168b6e0935a181d4cff9be1ac3f505666ef0e3c98fae8199917a",
+        "study.local/alternate/pause@sha256:ee6521f290b2168b6e0935a181d4cff9be1ac3f505666ef0e3c98fae8199917a",
+        "study.local/approved/pause@sha256:ee6521f290b2168b6e0935a181d4cff9be1ac3f505666ef0e3c98fae8199917a"
+      ]
+    }
+  ],
+  "expected": "Compliant inputs allowed; noncompliant inputs rejected with the corresponding study rule message.",
+  "uniqueCases": 8,
+  "repeats": 3,
+  "readinessCanaryExcluded": true
+}

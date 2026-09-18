@@ -1,0 +1,172 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:21:02Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "study-audit-canary",
+        "namespace": "study-consistency",
+        "resourceVersion": "466",
+        "uid": "d77bf6d6-c014-448b-9d0f-1f71339e7b6c"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:21:02Z",
+      "message": "Successfully assigned study-consistency/study-audit-canary to paper-consistency-20260918t152031z-gatekeeper-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:21:02Z",
+        "name": "study-audit-canary.18d6737834843d9e",
+        "namespace": "study-consistency",
+        "resourceVersion": "468",
+        "uid": "4235c014-8f76-48d9-97fc-43d8e61f35ff"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:21:02Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "study-audit-canary",
+        "namespace": "study-consistency",
+        "resourceVersion": "467",
+        "uid": "d77bf6d6-c014-448b-9d0f-1f71339e7b6c"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:21:02Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:21:02Z",
+        "name": "study-audit-canary.18d673783c379815",
+        "namespace": "study-consistency",
+        "resourceVersion": "470",
+        "uid": "0de954ae-1fe3-4c35-9dac-3fbc7e1c0979"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t152031z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t152031z-gatekeeper-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:21:02Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "study-audit-canary",
+        "namespace": "study-consistency",
+        "resourceVersion": "467",
+        "uid": "d77bf6d6-c014-448b-9d0f-1f71339e7b6c"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:21:02Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:21:02Z",
+        "name": "study-audit-canary.18d673783df4ba32",
+        "namespace": "study-consistency",
+        "resourceVersion": "471",
+        "uid": "9abea7c4-06d9-4fe2-a58c-87723197130f"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t152031z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t152031z-gatekeeper-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:21:02Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "study-audit-canary",
+        "namespace": "study-consistency",
+        "resourceVersion": "467",
+        "uid": "d77bf6d6-c014-448b-9d0f-1f71339e7b6c"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:21:02Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:21:02Z",
+        "name": "study-audit-canary.18d6737841537efd",
+        "namespace": "study-consistency",
+        "resourceVersion": "472",
+        "uid": "a15ce230-0dbc-492f-8e0c-819464871948"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t152031z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t152031z-gatekeeper-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:21:02Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "study-audit-canary",
+        "namespace": "study-consistency",
+        "resourceVersion": "467",
+        "uid": "d77bf6d6-c014-448b-9d0f-1f71339e7b6c"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:21:02Z",
+      "message": "Stopping container study-probe",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:21:02Z",
+        "name": "study-audit-canary.18d67378510b02b2",
+        "namespace": "study-consistency",
+        "resourceVersion": "479",
+        "uid": "eab90799-ddfa-4e56-98d7-fc044eee0c9a"
+      },
+      "reason": "Killing",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t152031z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t152031z-gatekeeper-control-plane"
+      },
+      "type": "Normal"
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "apiVersion": "admissionregistration.k8s.io/v1",
+      "kind": "ValidatingWebhookConfiguration",
+      "metadata": {
+        "annotations": {
+          "admissions.enforcer/disabled": "true"
+        },
+        "creationTimestamp": "2026-09-18T15:13:25Z",
+        "generation": 1,
+        "labels": {
+          "webhook.kyverno.io/managed-by": "kyverno"
+        },
+        "name": "kyverno-cleanup-validating-webhook-cfg",
+        "resourceVersion": "756",
+        "uid": "85af11ff-b3b9-4375-8e1d-61f5a33fbb22"
+      },
+      "webhooks": [
+        {
+          "admissionReviewVersions": [
+            "v1"
+          ],
+          "clientConfig": {
+            "caBundle": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM3VENDQWRXZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFZTVJZd0ZBWURWUVFEREEwcUxtdDUKZG1WeWJtOHVjM1pqTUI0WERUSTJNRGt4T0RFME1UTXlOVm9YRFRJM01Ea3hPREUxTVRNeU5Wb3dHREVXTUJRRwpBMVVFQXd3TktpNXJlWFpsY201dkxuTjJZekNDQVNJd0RRWUpLb1pJaHZjTkFRRUJCUUFEZ2dFUEFEQ0NBUW9DCmdnRUJBTWV2aDY2eEdlYUR0aWpGMzNaeFgvV0drUzNEQlUvMnUyUlVVc1RNTVdpMDlEdFYvRXJuKzlzWFRsY2MKaXgvUlZndG9wdHBmUXY5c3BEVSs3cHNHZEtPT3NkZUpHUWVCZkhTSkVZVVIzT2d2MXVjRUJxUndvbS9oRUwyQwpPRllDSlltMlBFb082eHdpQlhmMFFadTZxYy9od0R6R2xmRDR3MHRTdjVtNGd5RTF0SndaZGJwWkx6ZlhYdWhGCm5IRXRNVzVidDNqb3ZwLy9mbHhSR2lxbDRydUE2L3U4Q3FiWlNoK2Fub1NzY0dGemt0bmkvbXZKeS80Um53M3IKQmxkYlRXUEFURE5HQlltditpSXZLcldtRFIwL1liQ04zWG0xQVo3V3kwTlhISzAzYjFEMHRDM3YxSTF3YVZySQpLVk93RDkrbFcydVdkRnpucy8xZ3FhV1BXSXNDQXdFQUFhTkNNRUF3RGdZRFZSMFBBUUgvQkFRREFnS2tNQThHCkExVWRFd0VCL3dRRk1BTUJBZjh3SFFZRFZSME9CQllFRkFnc2g0S0dURjF4Z0dCbDBFbHVhQXA1Q0NJTk1BMEcKQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUIwZG11UkNmREsxcWxUa0tGdGsxU1REY3BuTVJha1lZNWZaUWlsMTg4WAprQ3NlSTc1VTFiMkNZNnYxU2dUdU4yS3R3ZCthU1IyUENDMXk4KzBqMWZxejJGRVc3VDI5WkNDYmZOMllkd2diClJSRnRHRnpoVTBnajFtbm5LdS9hNWJEWFFZSThaWnlNK3pCSkVEWmsxUnA2MnY5TGp5NXJOT0hVU1Q5TllwU3QKNG52Unk4eXNVSDdFcXMyY2hjS0ZRd2pSRGl3eUdsL0dIZ2tDTUo2V05VN21wYXYwaVM1S1pYMEFnb3pOZEZHUwpzMWp5dzdaR01RMXVoZTcydDlMTW91U2h4S0lqUWFFeXhCN1M5L1VJb1NhaEQweFVDR21VTlZBTGRyT0NqSDQzCmpkWDV3cW10ek9xTHZoRWY3UFNsZlZ4VEE5TE13a09wVTJadHBHamRxUkJlCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+            "service": {
+              "name": "kyverno-cleanup-controller",
+              "namespace": "kyverno",
+              "path": "/validate",
+              "port": 443
+            }
+          },
+          "failurePolicy": "Fail",
+          "matchPolicy": "Equivalent",
+          "name": "kyverno-cleanup-controller.kyverno.svc",
+          "namespaceSelector": {},
+          "objectSelector": {},
+          "rules": [
+            {
+              "apiGroups": [
+                "kyverno.io"
+              ],
+              "apiVersions": [
+                "v2beta1"
+              ],
+              "operations": [
+                "CREATE",
+                "UPDATE"
+              ],
+              "resources": [
+                "cleanuppolicies/*",
+                "clustercleanuppolicies/*"
+              ],
+              "scope": "*"
+            }
+          ],
+          "sideEffects": "None",
+          "timeoutSeconds": 10
+        }
+      ]
+    },
+    {
+      "apiVersion": "admissionregistration.k8s.io/v1",
+      "kind": "ValidatingWebhookConfiguration",
+      "metadata": {
+        "annotations": {
+          "admissions.enforcer/disabled": "true"
+        },
+        "creationTimestamp": "2026-09-18T15:13:25Z",
+        "generation": 1,
+        "labels": {
+          "webhook.kyverno.io/managed-by": "kyverno"
+        },
+        "name": "kyverno-ttl-validating-webhook-cfg",
+        "resourceVersion": "755",
+        "uid": "ad84aa32-e98f-4b2d-a635-5afae7c43f84"
+      },
+      "webhooks": [
+        {
+          "admissionReviewVersions": [
+            "v1"
+          ],
+          "clientConfig": {
+            "caBundle": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM3VENDQWRXZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFZTVJZd0ZBWURWUVFEREEwcUxtdDUKZG1WeWJtOHVjM1pqTUI0WERUSTJNRGt4T0RFME1UTXlOVm9YRFRJM01Ea3hPREUxTVRNeU5Wb3dHREVXTUJRRwpBMVVFQXd3TktpNXJlWFpsY201dkxuTjJZekNDQVNJd0RRWUpLb1pJaHZjTkFRRUJCUUFEZ2dFUEFEQ0NBUW9DCmdnRUJBTWV2aDY2eEdlYUR0aWpGMzNaeFgvV0drUzNEQlUvMnUyUlVVc1RNTVdpMDlEdFYvRXJuKzlzWFRsY2MKaXgvUlZndG9wdHBmUXY5c3BEVSs3cHNHZEtPT3NkZUpHUWVCZkhTSkVZVVIzT2d2MXVjRUJxUndvbS9oRUwyQwpPRllDSlltMlBFb082eHdpQlhmMFFadTZxYy9od0R6R2xmRDR3MHRTdjVtNGd5RTF0SndaZGJwWkx6ZlhYdWhGCm5IRXRNVzVidDNqb3ZwLy9mbHhSR2lxbDRydUE2L3U4Q3FiWlNoK2Fub1NzY0dGemt0bmkvbXZKeS80Um53M3IKQmxkYlRXUEFURE5HQlltditpSXZLcldtRFIwL1liQ04zWG0xQVo3V3kwTlhISzAzYjFEMHRDM3YxSTF3YVZySQpLVk93RDkrbFcydVdkRnpucy8xZ3FhV1BXSXNDQXdFQUFhTkNNRUF3RGdZRFZSMFBBUUgvQkFRREFnS2tNQThHCkExVWRFd0VCL3dRRk1BTUJBZjh3SFFZRFZSME9CQllFRkFnc2g0S0dURjF4Z0dCbDBFbHVhQXA1Q0NJTk1BMEcKQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUIwZG11UkNmREsxcWxUa0tGdGsxU1REY3BuTVJha1lZNWZaUWlsMTg4WAprQ3NlSTc1VTFiMkNZNnYxU2dUdU4yS3R3ZCthU1IyUENDMXk4KzBqMWZxejJGRVc3VDI5WkNDYmZOMllkd2diClJSRnRHRnpoVTBnajFtbm5LdS9hNWJEWFFZSThaWnlNK3pCSkVEWmsxUnA2MnY5TGp5NXJOT0hVU1Q5TllwU3QKNG52Unk4eXNVSDdFcXMyY2hjS0ZRd2pSRGl3eUdsL0dIZ2tDTUo2V05VN21wYXYwaVM1S1pYMEFnb3pOZEZHUwpzMWp5dzdaR01RMXVoZTcydDlMTW91U2h4S0lqUWFFeXhCN1M5L1VJb1NhaEQweFVDR21VTlZBTGRyT0NqSDQzCmpkWDV3cW10ek9xTHZoRWY3UFNsZlZ4VEE5TE13a09wVTJadHBHamRxUkJlCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+            "service": {
+              "name": "kyverno-cleanup-controller",
+              "namespace": "kyverno",
+              "path": "/verifyttl",
+              "port": 443
+            }
+          },
+          "failurePolicy": "Ignore",
+          "matchPolicy": "Equivalent",
+          "name": "kyverno-cleanup-controller.kyverno.svc",
+          "namespaceSelector": {},
+          "objectSelector": {
+            "matchExpressions": [
+              {
+                "key": "cleanup.kyverno.io/ttl",
+                "operator": "Exists"
+              }
+            ]
+          },
+          "rules": [
+            {
+              "apiGroups": [
+                "*"
+              ],
+              "apiVersions": [
+                "*"
+              ],
+              "operations": [
+                "CREATE",
+                "UPDATE"
+              ],
+              "resources": [
+                "*"
+              ],
+              "scope": "*"
+            }
+          ],
+          "sideEffects": "None",
+          "timeoutSeconds": 10
+        }
+      ]
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  }
+}

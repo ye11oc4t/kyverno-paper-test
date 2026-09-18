@@ -1,0 +1,27 @@
+{
+  "apiVersion": "templates.gatekeeper.sh/v1",
+  "kind": "ConstraintTemplate",
+  "metadata": {
+    "name": "studyconformance"
+  },
+  "spec": {
+    "crd": {
+      "spec": {
+        "names": {
+          "kind": "StudyConformance"
+        },
+        "validation": {
+          "openAPIV3Schema": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "targets": [
+      {
+        "target": "admission.k8s.gatekeeper.sh",
+        "rego": "package studyconformance\ncontainers[c] { c := input.review.object.spec.containers[_] }\ncontainers[c] { c := input.review.object.spec.initContainers[_] }\ncontainers[c] { c := input.review.object.spec.ephemeralContainers[_] }\nviolation[{\"msg\": \"study-name: name must start with study-\"}] {\n  c := containers[_]\n  not startswith(c.name, \"study-\")\n}\nviolation[{\"msg\": \"study-image: image must be the approved study alias\"}] {\n  c := containers[_]\n  c.image != \"study.local/approved/pause:3.10\"\n}\n"
+      }
+    ]
+  }
+}

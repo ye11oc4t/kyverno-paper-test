@@ -1,0 +1,11 @@
+{
+  "engine": "vap",
+  "finishedUtc": "2026-09-18T15:10:36.384707+00:00",
+  "cluster": "paper-consistency-20260918t151000z-vap",
+  "status": "ERROR",
+  "error": "/root/.cache/kyverno-paper-study/bin/kind failed (1): Image: \"study.local/approved/pause:3.10\" with ID \"sha256:ee6521f290b2168b6e0935a181d4cff9be1ac3f505666ef0e3c98fae8199917a\" not yet present on node \"paper-consistency-20260918t151000z-vap-control-plane\", loading...\nImage: \"study.local/alternate/pause:3.10\" with ID \"sha256:ee6521f290b2168b6e0935a181d4cff9be1ac3f505666ef0e3c98fae8199917a\" not yet present on node \"paper-consistency-20260918t151000z-vap-control-plane\", loading...\nERROR: failed to load image: command \"docker exec --privileged -i paper-consistency-20260918t151000z-vap-control-plane ctr --namespace=k8s.io images import --all-platforms --digests --snapshotter=overlayfs -\" failed with error: exit status 1\n\nCommand Output: ctr: failed to extract layer (application/vnd.docker.image.rootfs.diff.tar.gzip sha256:76f284805ee87bcb4a15601efff3dc1577034453d48965c80b3c3a9e51675a2e) to overlayfs as \"extract-300202195-Tqwv sha256:ea3f39e72d462f94331e29b78672139f106fe4698907ac196b68d1ba0f67eea7\": failed to get reader from content store: content digest sha256:76f284805ee87bcb4a15601efff3dc1577034453d48965c80b3c3a9e51675a2e: not found\n",
+  "executions": 0,
+  "matched": 0,
+  "uniqueCases": 0,
+  "runtimeScope": "benign pause process startup only"
+}

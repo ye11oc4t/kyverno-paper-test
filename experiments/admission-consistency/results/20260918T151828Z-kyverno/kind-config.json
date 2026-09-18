@@ -1,0 +1,19 @@
+{
+  "kind": "Cluster",
+  "apiVersion": "kind.x-k8s.io/v1alpha4",
+  "nodes": [
+    {
+      "role": "control-plane",
+      "kubeadmConfigPatches": [
+        "{\"kind\": \"ClusterConfiguration\", \"apiServer\": {\"extraArgs\": {\"audit-log-path\": \"/var/log/kubernetes/study-audit.log\", \"audit-policy-file\": \"/etc/kubernetes/policies/study-audit.json\"}, \"extraVolumes\": [{\"name\": \"study-audit-policy\", \"hostPath\": \"/etc/kubernetes/policies\", \"mountPath\": \"/etc/kubernetes/policies\", \"readOnly\": true, \"pathType\": \"DirectoryOrCreate\"}, {\"name\": \"study-audit-log\", \"hostPath\": \"/var/log/kubernetes\", \"mountPath\": \"/var/log/kubernetes\", \"readOnly\": false, \"pathType\": \"DirectoryOrCreate\"}]}}"
+      ],
+      "extraMounts": [
+        {
+          "hostPath": "/root/.cache/kyverno-paper-study/20260918T151828Z-kyverno/audit-policy.json",
+          "containerPath": "/etc/kubernetes/policies/study-audit.json",
+          "readOnly": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,545 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "apiVersion": "admissionregistration.k8s.io/v1",
+      "kind": "ValidatingWebhookConfiguration",
+      "metadata": {
+        "annotations": {
+          "admissions.enforcer/disabled": "true"
+        },
+        "creationTimestamp": "2026-09-18T15:17:04Z",
+        "generation": 1,
+        "labels": {
+          "webhook.kyverno.io/managed-by": "kyverno"
+        },
+        "name": "kyverno-cel-exception-validating-webhook-cfg",
+        "resourceVersion": "877",
+        "uid": "9ec597b2-b377-4dd2-86b6-04954b31797a"
+      },
+      "webhooks": [
+        {
+          "admissionReviewVersions": [
+            "v1"
+          ],
+          "clientConfig": {
+            "caBundle": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM3VENDQWRXZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFZTVJZd0ZBWURWUVFEREEwcUxtdDUKZG1WeWJtOHVjM1pqTUI0WERUSTJNRGt4T0RFME1UY3dORm9YRFRJM01Ea3hPREUxTVRjd05Gb3dHREVXTUJRRwpBMVVFQXd3TktpNXJlWFpsY201dkxuTjJZekNDQVNJd0RRWUpLb1pJaHZjTkFRRUJCUUFEZ2dFUEFEQ0NBUW9DCmdnRUJBTWsrcE1VWG8yaGJta0NoeXE2Z0NEZEFjRE1qSWkwSW52Ynplc2VhMDlVc2pGTUhTNkM3dnRvZUZTTlUKSVk5TTZ2ZFptOFB0QlRhbTdqZ1FBRWl5dDg2NkwzaDYrOHJ1L1B4b3hIWEVTRXB3NVR2cUR0dzZucjdrSHpjeQorb25VTzkxRG5scC9lMFdXL0M4L3k0K25rLzFsckthcEpVMkkrMkMxSXp4OXNFY29SRUxFOTF6UituTXhhTWlZCnAwek5FTWxIbDVxNXM2OXoya2s3Y3FHMDZvM2IyQ291UGtKR3BqdU8zc1hnb3JFejZMN0RTOTlia3lIL1ZjSTMKcFY0QXBqbWc3TkJsTW8vOWpLWHByVVlDbUZqY0ZGQlNNSVViUk9CUWtrK0hyalN4cTJFV3NwY1ZhZWVxSVV2dwp6U3grMUJBQnBxa0s4RHFFc25aeUF6VEh3T1VDQXdFQUFhTkNNRUF3RGdZRFZSMFBBUUgvQkFRREFnS2tNQThHCkExVWRFd0VCL3dRRk1BTUJBZjh3SFFZRFZSME9CQllFRkNYQ1MwYmJkcmEzYTRGTXRIRktnMXQwQjdpUk1BMEcKQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUNSUTdvVk5mUjRuN0FXbUQxL0pxMUxveTRzc1hmN3gyMUI0MVM0dGxNTwpVeTk0VmRTTU1CK01JVXo4ZHUwUlVXOUU4b2ZFNW01YkJQa1NwR3BQNm45eE01TXZOa3hKVGRTMHhremRRRm13CmtCMVV1bjlYY05uaXc2ZktURTlkUXFkcmRickxvOWVSM1JNclRlSTdHNTdPY2UxK1dVOEpncFZkSzhtOE4rejQKamJIN0x4RzVpcUJjVjdVY2FhOFJ2bE1ZQ3RVaHVHcHIrOGtVUTAzc3JMSnZWUHBvSjRtWk5wUmNzNGlOR2l1ZgpaTTRWcTBrcllveEFheVZaaDBxV0lKWlRvOHQyei92YURhQTMrL0lCcWpoZG1ZUjMvK1JRQ2ZLMGtoTnVabmNGCjhNVzNKVmE1Vks4UkZ3blZ6SmJRc3Arb0RVUjB5cU5UbzhnS2VSTURQSXJFCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+            "service": {
+              "name": "kyverno-svc",
+              "namespace": "kyverno",
+              "path": "/celexception/validate",
+              "port": 443
+            }
+          },
+          "failurePolicy": "Fail",
+          "matchPolicy": "Equivalent",
+          "name": "kyverno-svc.kyverno.svc",
+          "namespaceSelector": {},
+          "objectSelector": {},
+          "rules": [
+            {
+              "apiGroups": [
+                "policies.kyverno.io"
+              ],
+              "apiVersions": [
+                "v1alpha1",
+                "v1beta1",
+                "v1"
+              ],
+              "operations": [
+                "CREATE",
+                "UPDATE"
+              ],
+              "resources": [
+                "policyexceptions"
+              ],
+              "scope": "*"
+            }
+          ],
+          "sideEffects": "None",
+          "timeoutSeconds": 10
+        }
+      ]
+    },
+    {
+      "apiVersion": "admissionregistration.k8s.io/v1",
+      "kind": "ValidatingWebhookConfiguration",
+      "metadata": {
+        "annotations": {
+          "admissions.enforcer/disabled": "true"
+        },
+        "creationTimestamp": "2026-09-18T15:16:46Z",
+        "generation": 1,
+        "labels": {
+          "webhook.kyverno.io/managed-by": "kyverno"
+        },
+        "name": "kyverno-cleanup-validating-webhook-cfg",
+        "resourceVersion": "801",
+        "uid": "04366bd5-6d12-4632-8877-1ab5e2633d4c"
+      },
+      "webhooks": [
+        {
+          "admissionReviewVersions": [
+            "v1"
+          ],
+          "clientConfig": {
+            "caBundle": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM3VENDQWRXZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFZTVJZd0ZBWURWUVFEREEwcUxtdDUKZG1WeWJtOHVjM1pqTUI0WERUSTJNRGt4T0RFME1UWTBObG9YRFRJM01Ea3hPREUxTVRZME5sb3dHREVXTUJRRwpBMVVFQXd3TktpNXJlWFpsY201dkxuTjJZekNDQVNJd0RRWUpLb1pJaHZjTkFRRUJCUUFEZ2dFUEFEQ0NBUW9DCmdnRUJBTnhXaFJaV2czb0lUU2FWQUY2a2Y2VjJvRjJ0UE9uTTVpaFVRUm1XazI5YlJOSFZPRFhEQU90Y3FTaW8KNGJFVytrdGRFTlpRU1JZV1B2eGJTWWF4YXNwY2YvTDZLOC94b1JIMXFFc0pkYytZYXVYUWdDRGlBdnhBTW5ibAowUUg4YjFtVEpIWFExdzFEZ2M4YmV2VDNzSDFQRGszMHZVZG1CYWZFTWpJSHoxZFk4c0hXdW90NTRLUlJqbjl6Ck5pZEhQdk53VFlLTGcyTXRleThpcWZXalkyV3NZYmZPUFhpWUNxbjRwb1VQWm9qejNrR2QrMUF5MHErOS9LR0EKeG5jM1MyZTZ6MFZCRU91SFpDYW9rWDQzcmZKQXA3L2xrMWxISHVjUitnMlB6ZzRCanZlN0UzS2RLSThSWjgzZwpaRUdSM3FSVG0rYnlUWHd2QzdvYXFuM2g5Z01DQXdFQUFhTkNNRUF3RGdZRFZSMFBBUUgvQkFRREFnS2tNQThHCkExVWRFd0VCL3dRRk1BTUJBZjh3SFFZRFZSME9CQllFRkFCcm9hS3grZW9oNWNSU0J0cXAxWStEN1VkR01BMEcKQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUNBRXlVdXVUVkpUbWZBZldlRjNLQjd3czdLN1hMaXRtMUgxaSs3SzROZQpuUGNZWEhWMUw5YUY3MkgyNkE2YStzLzZtZVhmMmQ4Vk1qemVhcWRRMS9lWEVkdFd2aHR2THAydWhmWXJlRnVRCjFBV0VoYTJZZzBDcW5jaFlHdkZmZTY2dlljdStpTGdQcWFaMWc5U2ZOdEtFL2FLSGtvRGxkT2VScWlEWlcvdHcKSFdGMTdYMTZ5cXVtOGFkSlpUeTAxUlFiSkZxNjNwdnhKUFVMTFlxK3dEU3RhMGlOaW9QKytCTjlUc3hIejgvRApBQ01hVG4wRkFVZTlVSkEyT0dnampSUWx3c0kwTkFxbDVBS3YxUTQ1MVN6U2RxaG5lT3VTMHBka0h2TGlENUJkClY5bWR4NXZnYUhpSjhpUTliRVM0Y1RYdTVSUG1ZRWI3SmNGYmt1MHZia2tKCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+            "service": {
+              "name": "kyverno-cleanup-controller",
+              "namespace": "kyverno",
+              "path": "/validate",
+              "port": 443
+            }
+          },
+          "failurePolicy": "Fail",
+          "matchPolicy": "Equivalent",
+          "name": "kyverno-cleanup-controller.kyverno.svc",
+          "namespaceSelector": {},
+          "objectSelector": {},
+          "rules": [
+            {
+              "apiGroups": [
+                "kyverno.io"
+              ],
+              "apiVersions": [
+                "v2beta1"
+              ],
+              "operations": [
+                "CREATE",
+                "UPDATE"
+              ],
+              "resources": [
+                "cleanuppolicies/*",
+                "clustercleanuppolicies/*"
+              ],
+              "scope": "*"
+            }
+          ],
+          "sideEffects": "None",
+          "timeoutSeconds": 10
+        }
+      ]
+    },
+    {
+      "apiVersion": "admissionregistration.k8s.io/v1",
+      "kind": "ValidatingWebhookConfiguration",
+      "metadata": {
+        "annotations": {
+          "admissions.enforcer/disabled": "true"
+        },
+        "creationTimestamp": "2026-09-18T15:17:04Z",
+        "generation": 1,
+        "labels": {
+          "webhook.kyverno.io/managed-by": "kyverno"
+        },
+        "name": "kyverno-exception-validating-webhook-cfg",
+        "resourceVersion": "876",
+        "uid": "a73d525b-a93d-4632-8999-f79192345f3c"
+      },
+      "webhooks": [
+        {
+          "admissionReviewVersions": [
+            "v1"
+          ],
+          "clientConfig": {
+            "caBundle": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM3VENDQWRXZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFZTVJZd0ZBWURWUVFEREEwcUxtdDUKZG1WeWJtOHVjM1pqTUI0WERUSTJNRGt4T0RFME1UY3dORm9YRFRJM01Ea3hPREUxTVRjd05Gb3dHREVXTUJRRwpBMVVFQXd3TktpNXJlWFpsY201dkxuTjJZekNDQVNJd0RRWUpLb1pJaHZjTkFRRUJCUUFEZ2dFUEFEQ0NBUW9DCmdnRUJBTWsrcE1VWG8yaGJta0NoeXE2Z0NEZEFjRE1qSWkwSW52Ynplc2VhMDlVc2pGTUhTNkM3dnRvZUZTTlUKSVk5TTZ2ZFptOFB0QlRhbTdqZ1FBRWl5dDg2NkwzaDYrOHJ1L1B4b3hIWEVTRXB3NVR2cUR0dzZucjdrSHpjeQorb25VTzkxRG5scC9lMFdXL0M4L3k0K25rLzFsckthcEpVMkkrMkMxSXp4OXNFY29SRUxFOTF6UituTXhhTWlZCnAwek5FTWxIbDVxNXM2OXoya2s3Y3FHMDZvM2IyQ291UGtKR3BqdU8zc1hnb3JFejZMN0RTOTlia3lIL1ZjSTMKcFY0QXBqbWc3TkJsTW8vOWpLWHByVVlDbUZqY0ZGQlNNSVViUk9CUWtrK0hyalN4cTJFV3NwY1ZhZWVxSVV2dwp6U3grMUJBQnBxa0s4RHFFc25aeUF6VEh3T1VDQXdFQUFhTkNNRUF3RGdZRFZSMFBBUUgvQkFRREFnS2tNQThHCkExVWRFd0VCL3dRRk1BTUJBZjh3SFFZRFZSME9CQllFRkNYQ1MwYmJkcmEzYTRGTXRIRktnMXQwQjdpUk1BMEcKQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUNSUTdvVk5mUjRuN0FXbUQxL0pxMUxveTRzc1hmN3gyMUI0MVM0dGxNTwpVeTk0VmRTTU1CK01JVXo4ZHUwUlVXOUU4b2ZFNW01YkJQa1NwR3BQNm45eE01TXZOa3hKVGRTMHhremRRRm13CmtCMVV1bjlYY05uaXc2ZktURTlkUXFkcmRickxvOWVSM1JNclRlSTdHNTdPY2UxK1dVOEpncFZkSzhtOE4rejQKamJIN0x4RzVpcUJjVjdVY2FhOFJ2bE1ZQ3RVaHVHcHIrOGtVUTAzc3JMSnZWUHBvSjRtWk5wUmNzNGlOR2l1ZgpaTTRWcTBrcllveEFheVZaaDBxV0lKWlRvOHQyei92YURhQTMrL0lCcWpoZG1ZUjMvK1JRQ2ZLMGtoTnVabmNGCjhNVzNKVmE1Vks4UkZ3blZ6SmJRc3Arb0RVUjB5cU5UbzhnS2VSTURQSXJFCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+            "service": {
+              "name": "kyverno-svc",
+              "namespace": "kyverno",
+              "path": "/exceptionvalidate",
+              "port": 443
+            }
+          },
+          "failurePolicy": "Fail",
+          "matchPolicy": "Equivalent",
+          "name": "kyverno-svc.kyverno.svc",
+          "namespaceSelector": {},
+          "objectSelector": {},
+          "rules": [
+            {
+              "apiGroups": [
+                "kyverno.io"
+              ],
+              "apiVersions": [
+                "v2alpha1",
+                "v2beta1"
+              ],
+              "operations": [
+                "CREATE",
+                "UPDATE"
+              ],
+              "resources": [
+                "policyexceptions"
+              ],
+              "scope": "*"
+            }
+          ],
+          "sideEffects": "None",
+          "timeoutSeconds": 10
+        }
+      ]
+    },
+    {
+      "apiVersion": "admissionregistration.k8s.io/v1",
+      "kind": "ValidatingWebhookConfiguration",
+      "metadata": {
+        "annotations": {
+          "admissions.enforcer/disabled": "true"
+        },
+        "creationTimestamp": "2026-09-18T15:17:04Z",
+        "generation": 1,
+        "labels": {
+          "webhook.kyverno.io/managed-by": "kyverno"
+        },
+        "name": "kyverno-global-context-validating-webhook-cfg",
+        "resourceVersion": "875",
+        "uid": "93a6aa32-0908-4158-966f-a1bd61d5f599"
+      },
+      "webhooks": [
+        {
+          "admissionReviewVersions": [
+            "v1"
+          ],
+          "clientConfig": {
+            "caBundle": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM3VENDQWRXZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFZTVJZd0ZBWURWUVFEREEwcUxtdDUKZG1WeWJtOHVjM1pqTUI0WERUSTJNRGt4T0RFME1UY3dORm9YRFRJM01Ea3hPREUxTVRjd05Gb3dHREVXTUJRRwpBMVVFQXd3TktpNXJlWFpsY201dkxuTjJZekNDQVNJd0RRWUpLb1pJaHZjTkFRRUJCUUFEZ2dFUEFEQ0NBUW9DCmdnRUJBTWsrcE1VWG8yaGJta0NoeXE2Z0NEZEFjRE1qSWkwSW52Ynplc2VhMDlVc2pGTUhTNkM3dnRvZUZTTlUKSVk5TTZ2ZFptOFB0QlRhbTdqZ1FBRWl5dDg2NkwzaDYrOHJ1L1B4b3hIWEVTRXB3NVR2cUR0dzZucjdrSHpjeQorb25VTzkxRG5scC9lMFdXL0M4L3k0K25rLzFsckthcEpVMkkrMkMxSXp4OXNFY29SRUxFOTF6UituTXhhTWlZCnAwek5FTWxIbDVxNXM2OXoya2s3Y3FHMDZvM2IyQ291UGtKR3BqdU8zc1hnb3JFejZMN0RTOTlia3lIL1ZjSTMKcFY0QXBqbWc3TkJsTW8vOWpLWHByVVlDbUZqY0ZGQlNNSVViUk9CUWtrK0hyalN4cTJFV3NwY1ZhZWVxSVV2dwp6U3grMUJBQnBxa0s4RHFFc25aeUF6VEh3T1VDQXdFQUFhTkNNRUF3RGdZRFZSMFBBUUgvQkFRREFnS2tNQThHCkExVWRFd0VCL3dRRk1BTUJBZjh3SFFZRFZSME9CQllFRkNYQ1MwYmJkcmEzYTRGTXRIRktnMXQwQjdpUk1BMEcKQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUNSUTdvVk5mUjRuN0FXbUQxL0pxMUxveTRzc1hmN3gyMUI0MVM0dGxNTwpVeTk0VmRTTU1CK01JVXo4ZHUwUlVXOUU4b2ZFNW01YkJQa1NwR3BQNm45eE01TXZOa3hKVGRTMHhremRRRm13CmtCMVV1bjlYY05uaXc2ZktURTlkUXFkcmRickxvOWVSM1JNclRlSTdHNTdPY2UxK1dVOEpncFZkSzhtOE4rejQKamJIN0x4RzVpcUJjVjdVY2FhOFJ2bE1ZQ3RVaHVHcHIrOGtVUTAzc3JMSnZWUHBvSjRtWk5wUmNzNGlOR2l1ZgpaTTRWcTBrcllveEFheVZaaDBxV0lKWlRvOHQyei92YURhQTMrL0lCcWpoZG1ZUjMvK1JRQ2ZLMGtoTnVabmNGCjhNVzNKVmE1Vks4UkZ3blZ6SmJRc3Arb0RVUjB5cU5UbzhnS2VSTURQSXJFCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+            "service": {
+              "name": "kyverno-svc",
+              "namespace": "kyverno",
+              "path": "/globalcontextvalidate",
+              "port": 443
+            }
+          },
+          "failurePolicy": "Fail",
+          "matchPolicy": "Equivalent",
+          "name": "kyverno-svc.kyverno.svc",
+          "namespaceSelector": {},
+          "objectSelector": {},
+          "rules": [
+            {
+              "apiGroups": [
+                "kyverno.io"
+              ],
+              "apiVersions": [
+                "v2alpha1"
+              ],
+              "operations": [
+                "CREATE",
+                "UPDATE"
+              ],
+              "resources": [
+                "globalcontextentries"
+              ],
+              "scope": "*"
+            }
+          ],
+          "sideEffects": "None",
+          "timeoutSeconds": 10
+        }
+      ]
+    },
+    {
+      "apiVersion": "admissionregistration.k8s.io/v1",
+      "kind": "ValidatingWebhookConfiguration",
+      "metadata": {
+        "annotations": {
+          "admissions.enforcer/disabled": "true"
+        },
+        "creationTimestamp": "2026-09-18T15:17:04Z",
+        "generation": 1,
+        "labels": {
+          "webhook.kyverno.io/managed-by": "kyverno"
+        },
+        "name": "kyverno-policy-validating-webhook-cfg",
+        "resourceVersion": "878",
+        "uid": "585a9d91-0d3f-4ca0-aa59-7dbaf33bfb6f"
+      },
+      "webhooks": [
+        {
+          "admissionReviewVersions": [
+            "v1"
+          ],
+          "clientConfig": {
+            "caBundle": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM3VENDQWRXZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFZTVJZd0ZBWURWUVFEREEwcUxtdDUKZG1WeWJtOHVjM1pqTUI0WERUSTJNRGt4T0RFME1UY3dORm9YRFRJM01Ea3hPREUxTVRjd05Gb3dHREVXTUJRRwpBMVVFQXd3TktpNXJlWFpsY201dkxuTjJZekNDQVNJd0RRWUpLb1pJaHZjTkFRRUJCUUFEZ2dFUEFEQ0NBUW9DCmdnRUJBTWsrcE1VWG8yaGJta0NoeXE2Z0NEZEFjRE1qSWkwSW52Ynplc2VhMDlVc2pGTUhTNkM3dnRvZUZTTlUKSVk5TTZ2ZFptOFB0QlRhbTdqZ1FBRWl5dDg2NkwzaDYrOHJ1L1B4b3hIWEVTRXB3NVR2cUR0dzZucjdrSHpjeQorb25VTzkxRG5scC9lMFdXL0M4L3k0K25rLzFsckthcEpVMkkrMkMxSXp4OXNFY29SRUxFOTF6UituTXhhTWlZCnAwek5FTWxIbDVxNXM2OXoya2s3Y3FHMDZvM2IyQ291UGtKR3BqdU8zc1hnb3JFejZMN0RTOTlia3lIL1ZjSTMKcFY0QXBqbWc3TkJsTW8vOWpLWHByVVlDbUZqY0ZGQlNNSVViUk9CUWtrK0hyalN4cTJFV3NwY1ZhZWVxSVV2dwp6U3grMUJBQnBxa0s4RHFFc25aeUF6VEh3T1VDQXdFQUFhTkNNRUF3RGdZRFZSMFBBUUgvQkFRREFnS2tNQThHCkExVWRFd0VCL3dRRk1BTUJBZjh3SFFZRFZSME9CQllFRkNYQ1MwYmJkcmEzYTRGTXRIRktnMXQwQjdpUk1BMEcKQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUNSUTdvVk5mUjRuN0FXbUQxL0pxMUxveTRzc1hmN3gyMUI0MVM0dGxNTwpVeTk0VmRTTU1CK01JVXo4ZHUwUlVXOUU4b2ZFNW01YkJQa1NwR3BQNm45eE01TXZOa3hKVGRTMHhremRRRm13CmtCMVV1bjlYY05uaXc2ZktURTlkUXFkcmRickxvOWVSM1JNclRlSTdHNTdPY2UxK1dVOEpncFZkSzhtOE4rejQKamJIN0x4RzVpcUJjVjdVY2FhOFJ2bE1ZQ3RVaHVHcHIrOGtVUTAzc3JMSnZWUHBvSjRtWk5wUmNzNGlOR2l1ZgpaTTRWcTBrcllveEFheVZaaDBxV0lKWlRvOHQyei92YURhQTMrL0lCcWpoZG1ZUjMvK1JRQ2ZLMGtoTnVabmNGCjhNVzNKVmE1Vks4UkZ3blZ6SmJRc3Arb0RVUjB5cU5UbzhnS2VSTURQSXJFCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+            "service": {
+              "name": "kyverno-svc",
+              "namespace": "kyverno",
+              "path": "/policyvalidate",
+              "port": 443
+            }
+          },
+          "failurePolicy": "Fail",
+          "matchPolicy": "Equivalent",
+          "name": "validate-policy.kyverno.svc",
+          "namespaceSelector": {},
+          "objectSelector": {},
+          "rules": [
+            {
+              "apiGroups": [
+                "kyverno.io"
+              ],
+              "apiVersions": [
+                "v1",
+                "v2beta1"
+              ],
+              "operations": [
+                "CREATE",
+                "UPDATE"
+              ],
+              "resources": [
+                "clusterpolicies",
+                "policies"
+              ],
+              "scope": "*"
+            },
+            {
+              "apiGroups": [
+                "policies.kyverno.io"
+              ],
+              "apiVersions": [
+                "v1alpha1",
+                "v1beta1",
+                "v1"
+              ],
+              "operations": [
+                "CREATE",
+                "UPDATE"
+              ],
+              "resources": [
+                "validatingpolicies"
+              ],
+              "scope": "*"
+            },
+            {
+              "apiGroups": [
+                "policies.kyverno.io"
+              ],
+              "apiVersions": [
+                "v1beta1",
+                "v1"
+              ],
+              "operations": [
+                "CREATE",
+                "UPDATE"
+              ],
+              "resources": [
+                "namespacedvalidatingpolicies"
+              ],
+              "scope": "*"
+            },
+            {
+              "apiGroups": [
+                "policies.kyverno.io"
+              ],
+              "apiVersions": [
+                "v1alpha1",
+                "v1beta1",
+                "v1"
+              ],
+              "operations": [
+                "CREATE",
+                "UPDATE"
+              ],
+              "resources": [
+                "imagevalidatingpolicies"
+              ],
+              "scope": "*"
+            },
+            {
+              "apiGroups": [
+                "policies.kyverno.io"
+              ],
+              "apiVersions": [
+                "v1beta1",
+                "v1"
+              ],
+              "operations": [
+                "CREATE",
+                "UPDATE"
+              ],
+              "resources": [
+                "namespacedimagevalidatingpolicies"
+              ],
+              "scope": "*"
+            },
+            {
+              "apiGroups": [
+                "policies.kyverno.io"
+              ],
+              "apiVersions": [
+                "v1alpha1",
+                "v1beta1",
+                "v1"
+              ],
+              "operations": [
+                "CREATE",
+                "UPDATE"
+              ],
+              "resources": [
+                "generatingpolicies"
+              ],
+              "scope": "*"
+            },
+            {
+              "apiGroups": [
+                "policies.kyverno.io"
+              ],
+              "apiVersions": [
+                "v1beta1",
+                "v1"
+              ],
+              "operations": [
+                "CREATE",
+                "UPDATE"
+              ],
+              "resources": [
+                "namespacedgeneratingpolicies"
+              ],
+              "scope": "*"
+            },
+            {
+              "apiGroups": [
+                "policies.kyverno.io"
+              ],
+              "apiVersions": [
+                "v1alpha1",
+                "v1beta1",
+                "v1"
+              ],
+              "operations": [
+                "CREATE",
+                "UPDATE"
+              ],
+              "resources": [
+                "mutatingpolicies"
+              ],
+              "scope": "*"
+            },
+            {
+              "apiGroups": [
+                "policies.kyverno.io"
+              ],
+              "apiVersions": [
+                "v1beta1",
+                "v1"
+              ],
+              "operations": [
+                "CREATE",
+                "UPDATE"
+              ],
+              "resources": [
+                "namespacedmutatingpolicies"
+              ],
+              "scope": "*"
+            },
+            {
+              "apiGroups": [
+                "policies.kyverno.io"
+              ],
+              "apiVersions": [
+                "v1alpha1",
+                "v1beta1",
+                "v1"
+              ],
+              "operations": [
+                "CREATE",
+                "UPDATE"
+              ],
+              "resources": [
+                "deletingpolicies"
+              ],
+              "scope": "*"
+            }
+          ],
+          "sideEffects": "None",
+          "timeoutSeconds": 10
+        }
+      ]
+    },
+    {
+      "apiVersion": "admissionregistration.k8s.io/v1",
+      "kind": "ValidatingWebhookConfiguration",
+      "metadata": {
+        "annotations": {
+          "admissions.enforcer/disabled": "true"
+        },
+        "creationTimestamp": "2026-09-18T15:17:04Z",
+        "generation": 1,
+        "labels": {
+          "webhook.kyverno.io/managed-by": "kyverno"
+        },
+        "name": "kyverno-resource-validating-webhook-cfg",
+        "resourceVersion": "880",
+        "uid": "e8f4a67a-e3b6-4773-87bf-e1ae456a76ff"
+      }
+    },
+    {
+      "apiVersion": "admissionregistration.k8s.io/v1",
+      "kind": "ValidatingWebhookConfiguration",
+      "metadata": {
+        "annotations": {
+          "admissions.enforcer/disabled": "true"
+        },
+        "creationTimestamp": "2026-09-18T15:16:46Z",
+        "generation": 1,
+        "labels": {
+          "webhook.kyverno.io/managed-by": "kyverno"
+        },
+        "name": "kyverno-ttl-validating-webhook-cfg",
+        "resourceVersion": "800",
+        "uid": "84dc01ef-f2d1-4fc3-8e2a-dea569c61b5f"
+      },
+      "webhooks": [
+        {
+          "admissionReviewVersions": [
+            "v1"
+          ],
+          "clientConfig": {
+            "caBundle": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM3VENDQWRXZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFZTVJZd0ZBWURWUVFEREEwcUxtdDUKZG1WeWJtOHVjM1pqTUI0WERUSTJNRGt4T0RFME1UWTBObG9YRFRJM01Ea3hPREUxTVRZME5sb3dHREVXTUJRRwpBMVVFQXd3TktpNXJlWFpsY201dkxuTjJZekNDQVNJd0RRWUpLb1pJaHZjTkFRRUJCUUFEZ2dFUEFEQ0NBUW9DCmdnRUJBTnhXaFJaV2czb0lUU2FWQUY2a2Y2VjJvRjJ0UE9uTTVpaFVRUm1XazI5YlJOSFZPRFhEQU90Y3FTaW8KNGJFVytrdGRFTlpRU1JZV1B2eGJTWWF4YXNwY2YvTDZLOC94b1JIMXFFc0pkYytZYXVYUWdDRGlBdnhBTW5ibAowUUg4YjFtVEpIWFExdzFEZ2M4YmV2VDNzSDFQRGszMHZVZG1CYWZFTWpJSHoxZFk4c0hXdW90NTRLUlJqbjl6Ck5pZEhQdk53VFlLTGcyTXRleThpcWZXalkyV3NZYmZPUFhpWUNxbjRwb1VQWm9qejNrR2QrMUF5MHErOS9LR0EKeG5jM1MyZTZ6MFZCRU91SFpDYW9rWDQzcmZKQXA3L2xrMWxISHVjUitnMlB6ZzRCanZlN0UzS2RLSThSWjgzZwpaRUdSM3FSVG0rYnlUWHd2QzdvYXFuM2g5Z01DQXdFQUFhTkNNRUF3RGdZRFZSMFBBUUgvQkFRREFnS2tNQThHCkExVWRFd0VCL3dRRk1BTUJBZjh3SFFZRFZSME9CQllFRkFCcm9hS3grZW9oNWNSU0J0cXAxWStEN1VkR01BMEcKQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUNBRXlVdXVUVkpUbWZBZldlRjNLQjd3czdLN1hMaXRtMUgxaSs3SzROZQpuUGNZWEhWMUw5YUY3MkgyNkE2YStzLzZtZVhmMmQ4Vk1qemVhcWRRMS9lWEVkdFd2aHR2THAydWhmWXJlRnVRCjFBV0VoYTJZZzBDcW5jaFlHdkZmZTY2dlljdStpTGdQcWFaMWc5U2ZOdEtFL2FLSGtvRGxkT2VScWlEWlcvdHcKSFdGMTdYMTZ5cXVtOGFkSlpUeTAxUlFiSkZxNjNwdnhKUFVMTFlxK3dEU3RhMGlOaW9QKytCTjlUc3hIejgvRApBQ01hVG4wRkFVZTlVSkEyT0dnampSUWx3c0kwTkFxbDVBS3YxUTQ1MVN6U2RxaG5lT3VTMHBka0h2TGlENUJkClY5bWR4NXZnYUhpSjhpUTliRVM0Y1RYdTVSUG1ZRWI3SmNGYmt1MHZia2tKCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+            "service": {
+              "name": "kyverno-cleanup-controller",
+              "namespace": "kyverno",
+              "path": "/verifyttl",
+              "port": 443
+            }
+          },
+          "failurePolicy": "Ignore",
+          "matchPolicy": "Equivalent",
+          "name": "kyverno-cleanup-controller.kyverno.svc",
+          "namespaceSelector": {},
+          "objectSelector": {
+            "matchExpressions": [
+              {
+                "key": "cleanup.kyverno.io/ttl",
+                "operator": "Exists"
+              }
+            ]
+          },
+          "rules": [
+            {
+              "apiGroups": [
+                "*"
+              ],
+              "apiVersions": [
+                "*"
+              ],
+              "operations": [
+                "CREATE",
+                "UPDATE"
+              ],
+              "resources": [
+                "*"
+              ],
+              "scope": "*"
+            }
+          ],
+          "sideEffects": "None",
+          "timeoutSeconds": 10
+        }
+      ]
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  }
+}

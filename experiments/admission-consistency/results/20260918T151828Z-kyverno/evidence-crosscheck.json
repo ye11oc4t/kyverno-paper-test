@@ -1,0 +1,429 @@
+{
+  "summary": {
+    "run": "20260918T151828Z-kyverno",
+    "engine": "kyverno",
+    "executions": 24,
+    "complete": true,
+    "uniqueCases": 8,
+    "matchedContract": 24,
+    "matchedAudit": 24,
+    "matchedRawEvidence": 24,
+    "frozenHashesAgree": true,
+    "expectationsUnchanged": true,
+    "consistentAcrossRepeats": true,
+    "allowed": 12,
+    "explicitStudyRuleDenials": 12,
+    "benignContainersStarted": 12,
+    "status": "PASS"
+  },
+  "cases": [
+    {
+      "iteration": 1,
+      "case": "name-regular-ok",
+      "contractMatches": true,
+      "apiAuditAgrees": true,
+      "fixtureAgrees": true,
+      "rawObservationAgrees": true,
+      "auditInputAgrees": true,
+      "auditDenialAgrees": true,
+      "auditIds": [
+        "60f8e378-7616-4968-86a3-ba97ec2d380c"
+      ],
+      "responseCodes": [
+        201
+      ],
+      "policyEvaluationEvidence": "UNKNOWN"
+    },
+    {
+      "iteration": 1,
+      "case": "name-regular-reject",
+      "contractMatches": true,
+      "apiAuditAgrees": true,
+      "fixtureAgrees": true,
+      "rawObservationAgrees": true,
+      "auditInputAgrees": true,
+      "auditDenialAgrees": true,
+      "auditIds": [
+        "88a4d367-9e63-4457-89d2-ece023638757"
+      ],
+      "responseCodes": [
+        400
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "iteration": 1,
+      "case": "name-ephemeral-ok",
+      "contractMatches": true,
+      "apiAuditAgrees": true,
+      "fixtureAgrees": true,
+      "rawObservationAgrees": true,
+      "auditInputAgrees": true,
+      "auditDenialAgrees": true,
+      "auditIds": [
+        "972b10ec-ba53-4d0d-9613-57aea43959a9"
+      ],
+      "responseCodes": [
+        200
+      ],
+      "policyEvaluationEvidence": "UNKNOWN"
+    },
+    {
+      "iteration": 1,
+      "case": "name-ephemeral-reject",
+      "contractMatches": true,
+      "apiAuditAgrees": true,
+      "fixtureAgrees": true,
+      "rawObservationAgrees": true,
+      "auditInputAgrees": true,
+      "auditDenialAgrees": true,
+      "auditIds": [
+        "40fb4bb2-0fc0-47af-827d-d385ede59c68"
+      ],
+      "responseCodes": [
+        400
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "iteration": 1,
+      "case": "image-regular-ok",
+      "contractMatches": true,
+      "apiAuditAgrees": true,
+      "fixtureAgrees": true,
+      "rawObservationAgrees": true,
+      "auditInputAgrees": true,
+      "auditDenialAgrees": true,
+      "auditIds": [
+        "cc44becd-536c-4b4b-bdc0-d88963588249"
+      ],
+      "responseCodes": [
+        201
+      ],
+      "policyEvaluationEvidence": "UNKNOWN"
+    },
+    {
+      "iteration": 1,
+      "case": "image-regular-reject",
+      "contractMatches": true,
+      "apiAuditAgrees": true,
+      "fixtureAgrees": true,
+      "rawObservationAgrees": true,
+      "auditInputAgrees": true,
+      "auditDenialAgrees": true,
+      "auditIds": [
+        "adcaf03d-7a77-45eb-9b68-14f110315457"
+      ],
+      "responseCodes": [
+        400
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "iteration": 1,
+      "case": "image-ephemeral-ok",
+      "contractMatches": true,
+      "apiAuditAgrees": true,
+      "fixtureAgrees": true,
+      "rawObservationAgrees": true,
+      "auditInputAgrees": true,
+      "auditDenialAgrees": true,
+      "auditIds": [
+        "5dbdd8ca-bf6c-4f38-93b5-9d67210512f8"
+      ],
+      "responseCodes": [
+        200
+      ],
+      "policyEvaluationEvidence": "UNKNOWN"
+    },
+    {
+      "iteration": 1,
+      "case": "image-ephemeral-reject",
+      "contractMatches": true,
+      "apiAuditAgrees": true,
+      "fixtureAgrees": true,
+      "rawObservationAgrees": true,
+      "auditInputAgrees": true,
+      "auditDenialAgrees": true,
+      "auditIds": [
+        "ef90967e-d4a7-4cb4-aef5-ead4f90d6163"
+      ],
+      "responseCodes": [
+        400
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "iteration": 2,
+      "case": "name-regular-ok",
+      "contractMatches": true,
+      "apiAuditAgrees": true,
+      "fixtureAgrees": true,
+      "rawObservationAgrees": true,
+      "auditInputAgrees": true,
+      "auditDenialAgrees": true,
+      "auditIds": [
+        "240cf976-9105-47cb-b964-12bb92a66be9"
+      ],
+      "responseCodes": [
+        201
+      ],
+      "policyEvaluationEvidence": "UNKNOWN"
+    },
+    {
+      "iteration": 2,
+      "case": "name-regular-reject",
+      "contractMatches": true,
+      "apiAuditAgrees": true,
+      "fixtureAgrees": true,
+      "rawObservationAgrees": true,
+      "auditInputAgrees": true,
+      "auditDenialAgrees": true,
+      "auditIds": [
+        "db2ef80c-f25d-4192-bc79-265453778252"
+      ],
+      "responseCodes": [
+        400
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "iteration": 2,
+      "case": "name-ephemeral-ok",
+      "contractMatches": true,
+      "apiAuditAgrees": true,
+      "fixtureAgrees": true,
+      "rawObservationAgrees": true,
+      "auditInputAgrees": true,
+      "auditDenialAgrees": true,
+      "auditIds": [
+        "3d3d39b9-bfa3-4298-a702-5d0e509a9cea"
+      ],
+      "responseCodes": [
+        200
+      ],
+      "policyEvaluationEvidence": "UNKNOWN"
+    },
+    {
+      "iteration": 2,
+      "case": "name-ephemeral-reject",
+      "contractMatches": true,
+      "apiAuditAgrees": true,
+      "fixtureAgrees": true,
+      "rawObservationAgrees": true,
+      "auditInputAgrees": true,
+      "auditDenialAgrees": true,
+      "auditIds": [
+        "8cb08db6-89d4-45f6-85d3-03e833b2a5c4"
+      ],
+      "responseCodes": [
+        400
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "iteration": 2,
+      "case": "image-regular-ok",
+      "contractMatches": true,
+      "apiAuditAgrees": true,
+      "fixtureAgrees": true,
+      "rawObservationAgrees": true,
+      "auditInputAgrees": true,
+      "auditDenialAgrees": true,
+      "auditIds": [
+        "76789bac-fceb-4527-8131-36eb56cf46fa"
+      ],
+      "responseCodes": [
+        201
+      ],
+      "policyEvaluationEvidence": "UNKNOWN"
+    },
+    {
+      "iteration": 2,
+      "case": "image-regular-reject",
+      "contractMatches": true,
+      "apiAuditAgrees": true,
+      "fixtureAgrees": true,
+      "rawObservationAgrees": true,
+      "auditInputAgrees": true,
+      "auditDenialAgrees": true,
+      "auditIds": [
+        "f0c284e0-aa01-4f8f-b68c-9db57248aea5"
+      ],
+      "responseCodes": [
+        400
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "iteration": 2,
+      "case": "image-ephemeral-ok",
+      "contractMatches": true,
+      "apiAuditAgrees": true,
+      "fixtureAgrees": true,
+      "rawObservationAgrees": true,
+      "auditInputAgrees": true,
+      "auditDenialAgrees": true,
+      "auditIds": [
+        "46468b85-938c-4d9c-a8b2-9c88ffffc2a5"
+      ],
+      "responseCodes": [
+        200
+      ],
+      "policyEvaluationEvidence": "UNKNOWN"
+    },
+    {
+      "iteration": 2,
+      "case": "image-ephemeral-reject",
+      "contractMatches": true,
+      "apiAuditAgrees": true,
+      "fixtureAgrees": true,
+      "rawObservationAgrees": true,
+      "auditInputAgrees": true,
+      "auditDenialAgrees": true,
+      "auditIds": [
+        "5efa5152-8355-437c-b428-3cf60adf264a"
+      ],
+      "responseCodes": [
+        400
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "iteration": 3,
+      "case": "name-regular-ok",
+      "contractMatches": true,
+      "apiAuditAgrees": true,
+      "fixtureAgrees": true,
+      "rawObservationAgrees": true,
+      "auditInputAgrees": true,
+      "auditDenialAgrees": true,
+      "auditIds": [
+        "3b754e37-e0dc-4d01-9df5-51272fc8c3e8"
+      ],
+      "responseCodes": [
+        201
+      ],
+      "policyEvaluationEvidence": "UNKNOWN"
+    },
+    {
+      "iteration": 3,
+      "case": "name-regular-reject",
+      "contractMatches": true,
+      "apiAuditAgrees": true,
+      "fixtureAgrees": true,
+      "rawObservationAgrees": true,
+      "auditInputAgrees": true,
+      "auditDenialAgrees": true,
+      "auditIds": [
+        "b446d1d9-0864-47ce-a072-2924240c2ec5"
+      ],
+      "responseCodes": [
+        400
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "iteration": 3,
+      "case": "name-ephemeral-ok",
+      "contractMatches": true,
+      "apiAuditAgrees": true,
+      "fixtureAgrees": true,
+      "rawObservationAgrees": true,
+      "auditInputAgrees": true,
+      "auditDenialAgrees": true,
+      "auditIds": [
+        "dfa5176b-d488-4fd4-8d61-74922e92f72a"
+      ],
+      "responseCodes": [
+        200
+      ],
+      "policyEvaluationEvidence": "UNKNOWN"
+    },
+    {
+      "iteration": 3,
+      "case": "name-ephemeral-reject",
+      "contractMatches": true,
+      "apiAuditAgrees": true,
+      "fixtureAgrees": true,
+      "rawObservationAgrees": true,
+      "auditInputAgrees": true,
+      "auditDenialAgrees": true,
+      "auditIds": [
+        "6e88ca62-8b1c-41bb-9691-4650ba53c6c3"
+      ],
+      "responseCodes": [
+        400
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "iteration": 3,
+      "case": "image-regular-ok",
+      "contractMatches": true,
+      "apiAuditAgrees": true,
+      "fixtureAgrees": true,
+      "rawObservationAgrees": true,
+      "auditInputAgrees": true,
+      "auditDenialAgrees": true,
+      "auditIds": [
+        "b6793b32-e0d2-4787-bb49-3d57588cf4ed"
+      ],
+      "responseCodes": [
+        201
+      ],
+      "policyEvaluationEvidence": "UNKNOWN"
+    },
+    {
+      "iteration": 3,
+      "case": "image-regular-reject",
+      "contractMatches": true,
+      "apiAuditAgrees": true,
+      "fixtureAgrees": true,
+      "rawObservationAgrees": true,
+      "auditInputAgrees": true,
+      "auditDenialAgrees": true,
+      "auditIds": [
+        "2936bd3d-c601-4629-954c-b05de536f1a0"
+      ],
+      "responseCodes": [
+        400
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "iteration": 3,
+      "case": "image-ephemeral-ok",
+      "contractMatches": true,
+      "apiAuditAgrees": true,
+      "fixtureAgrees": true,
+      "rawObservationAgrees": true,
+      "auditInputAgrees": true,
+      "auditDenialAgrees": true,
+      "auditIds": [
+        "b4b9dc52-08ef-415c-9ac2-fa172325747e"
+      ],
+      "responseCodes": [
+        200
+      ],
+      "policyEvaluationEvidence": "UNKNOWN"
+    },
+    {
+      "iteration": 3,
+      "case": "image-ephemeral-reject",
+      "contractMatches": true,
+      "apiAuditAgrees": true,
+      "fixtureAgrees": true,
+      "rawObservationAgrees": true,
+      "auditInputAgrees": true,
+      "auditDenialAgrees": true,
+      "auditIds": [
+        "f779b404-f371-4c10-9304-4c62f510df47"
+      ],
+      "responseCodes": [
+        400
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    }
+  ]
+}

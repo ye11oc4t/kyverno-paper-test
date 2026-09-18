@@ -1,0 +1,17 @@
+{
+  "engine": "kyverno",
+  "iteration": 1,
+  "case": "image-ephemeral-reject",
+  "pod": "r1-image-ephemeral-reject",
+  "startedUtc": "2026-09-18T15:19:51.707148+00:00",
+  "finishedUtc": "2026-09-18T15:19:53.363488+00:00",
+  "rule": "image",
+  "route": "ephemeral",
+  "expected": "DENY",
+  "accepted": false,
+  "rejectedByStudyRule": true,
+  "stored": false,
+  "running": false,
+  "matchedExpectation": true,
+  "exitCode": 1
+}

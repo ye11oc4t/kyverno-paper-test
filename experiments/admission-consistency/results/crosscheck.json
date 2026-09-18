@@ -1,0 +1,93 @@
+{
+  "scope": "Custom benign rules; not an assessment of all built-in security policies or exploitability.",
+  "runs": [
+    {
+      "run": "20260918T151000Z-vap",
+      "engine": "vap",
+      "status": "SETUP_OR_EXECUTION_ERROR",
+      "completedExecutions": 0,
+      "error": "/root/.cache/kyverno-paper-study/bin/kind failed (1): Image: \"study.local/approved/pause:3.10\" with ID \"sha256:ee6521f290b2168b6e0935a181d4cff9be1ac3f505666ef0e3c98fae8199917a\" not yet present on node \"paper-consistency-20260918t151000z-vap-control-plane\", loading...\nImage: \"study.local/alternate/pause:3.10\" with ID \"sha256:ee6521f290b2168b6e0935a181d4cff9be1ac3f505666ef0e3c98fae8199917a\" not yet present on node \"paper-consistency-20260918t151000z-vap-control-plane\", loading...\nERROR: failed to load image: command \"docker exec --privileged -i paper-consistency-20260918t151000z-vap-control-plane ctr --namespace=k8s.io images import --all-platforms --digests --snapshotter=overlayfs -\" failed with error: exit status 1\n\nCommand Output: ctr: failed to extract layer (application/vnd.docker.image.rootfs.diff.tar.gzip sha256:76f284805ee87bcb4a15601efff3dc1577034453d48965c80b3c3a9e51675a2e) to overlayfs as \"extract-300202195-Tqwv sha256:ea3f39e72d462f94331e29b78672139f106fe4698907ac196b68d1ba0f67eea7\": failed to get reader from content store: content digest sha256:76f284805ee87bcb4a15601efff3dc1577034453d48965c80b3c3a9e51675a2e: not found\n"
+    },
+    {
+      "run": "20260918T151058Z-vap",
+      "engine": "vap",
+      "status": "EXCLUDED_FROM_PRIMARY_ANALYSIS",
+      "completedExecutions": 24,
+      "validForPrimaryAnalysis": false,
+      "reason": "All 24 API/object/runtime checks matched, but audit capture was absent because the kubeadm patch version did not match kind's generated v1beta3 configuration. Preserve this run as a pilot; repeat with an audit readiness gate."
+    },
+    {
+      "run": "20260918T151227Z-kyverno",
+      "engine": "kyverno",
+      "status": "EXCLUDED_FROM_PRIMARY_ANALYSIS",
+      "completedExecutions": 0,
+      "validForPrimaryAnalysis": false,
+      "reason": "Interrupted during engine rollout, before policy installation and measured cases, after the missing audit configuration was identified. The original wrapper did not catch KeyboardInterrupt, so its MISMATCH summary is not a policy result. The isolated cluster was removed."
+    },
+    {
+      "run": "20260918T151413Z-vap",
+      "engine": "vap",
+      "executions": 24,
+      "complete": true,
+      "uniqueCases": 8,
+      "matchedContract": 24,
+      "matchedAudit": 24,
+      "matchedRawEvidence": 24,
+      "frozenHashesAgree": true,
+      "expectationsUnchanged": true,
+      "consistentAcrossRepeats": true,
+      "allowed": 12,
+      "explicitStudyRuleDenials": 12,
+      "benignContainersStarted": 12,
+      "status": "PASS"
+    },
+    {
+      "run": "20260918T151541Z-kyverno",
+      "engine": "kyverno",
+      "status": "SETUP_OR_EXECUTION_ERROR",
+      "completedExecutions": 0,
+      "error": "/root/.cache/kyverno-paper-study/bin/kubectl failed (1): Error from server (InternalError): error when creating \"STDIN\": Internal error occurred: failed calling webhook \"validate-policy.kyverno.svc\": failed to call webhook: Post \"https://kyverno-svc.kyverno.svc:443/policyvalidate?timeout=10s\": dial tcp 10.96.153.73:443: connect: connection refused\n"
+    },
+    {
+      "run": "20260918T151828Z-kyverno",
+      "engine": "kyverno",
+      "executions": 24,
+      "complete": true,
+      "uniqueCases": 8,
+      "matchedContract": 24,
+      "matchedAudit": 24,
+      "matchedRawEvidence": 24,
+      "frozenHashesAgree": true,
+      "expectationsUnchanged": true,
+      "consistentAcrossRepeats": true,
+      "allowed": 12,
+      "explicitStudyRuleDenials": 12,
+      "benignContainersStarted": 12,
+      "status": "PASS"
+    },
+    {
+      "run": "20260918T152031Z-gatekeeper",
+      "engine": "gatekeeper",
+      "status": "SETUP_OR_EXECUTION_ERROR",
+      "completedExecutions": 0,
+      "error": "/root/.cache/kyverno-paper-study/bin/kubectl failed (1): Error from server (NotFound): customresourcedefinitions.apiextensions.k8s.io \"studyconformances.constraints.gatekeeper.sh\" not found\n"
+    },
+    {
+      "run": "20260918T152255Z-gatekeeper",
+      "engine": "gatekeeper",
+      "executions": 24,
+      "complete": true,
+      "uniqueCases": 8,
+      "matchedContract": 24,
+      "matchedAudit": 24,
+      "matchedRawEvidence": 24,
+      "frozenHashesAgree": true,
+      "expectationsUnchanged": true,
+      "consistentAcrossRepeats": true,
+      "allowed": 12,
+      "explicitStudyRuleDenials": 12,
+      "benignContainersStarted": 12,
+      "status": "PASS"
+    }
+  ]
+}

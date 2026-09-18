@@ -1,0 +1,3106 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:48Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "r1-image-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "929",
+        "uid": "4be63773-272c-476d-a413-4e7fd82dddfa"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:48Z",
+      "message": "Successfully assigned study-consistency/r1-image-ephemeral-ok to paper-consistency-20260918t151828z-kyverno-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:48Z",
+        "name": "r1-image-ephemeral-ok.18d673672e43ca98",
+        "namespace": "study-consistency",
+        "resourceVersion": "931",
+        "uid": "ad16a3d1-b96c-4eb0-8ba6-9edec9fc8eca"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:49Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r1-image-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "930",
+        "uid": "4be63773-272c-476d-a413-4e7fd82dddfa"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:49Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:49Z",
+        "name": "r1-image-ephemeral-ok.18d67367378a9f97",
+        "namespace": "study-consistency",
+        "resourceVersion": "934",
+        "uid": "5067bb78-8638-41f0-af8c-13aac76f0eec"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:49Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r1-image-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "930",
+        "uid": "4be63773-272c-476d-a413-4e7fd82dddfa"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:49Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:49Z",
+        "name": "r1-image-ephemeral-ok.18d673673a79a641",
+        "namespace": "study-consistency",
+        "resourceVersion": "935",
+        "uid": "9e31069a-2d3e-45d4-a78f-3b30cda5905e"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:49Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r1-image-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "930",
+        "uid": "4be63773-272c-476d-a413-4e7fd82dddfa"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:49Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:49Z",
+        "name": "r1-image-ephemeral-ok.18d673673ebb5e61",
+        "namespace": "study-consistency",
+        "resourceVersion": "936",
+        "uid": "9c67a527-6712-4bce-8750-113dd46dca72"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:50Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.ephemeralContainers{study-probe}",
+        "kind": "Pod",
+        "name": "r1-image-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "930",
+        "uid": "4be63773-272c-476d-a413-4e7fd82dddfa"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:50Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:50Z",
+        "name": "r1-image-ephemeral-ok.18d673678b40c8ae",
+        "namespace": "study-consistency",
+        "resourceVersion": "944",
+        "uid": "360e2e17-6a6e-43e1-b0d6-55d57e2d682e"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:50Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.ephemeralContainers{study-probe}",
+        "kind": "Pod",
+        "name": "r1-image-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "930",
+        "uid": "4be63773-272c-476d-a413-4e7fd82dddfa"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:50Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:50Z",
+        "name": "r1-image-ephemeral-ok.18d673678da7d21f",
+        "namespace": "study-consistency",
+        "resourceVersion": "946",
+        "uid": "6552b351-3cea-4602-8a08-bc4845a8dfd5"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:50Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.ephemeralContainers{study-probe}",
+        "kind": "Pod",
+        "name": "r1-image-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "930",
+        "uid": "4be63773-272c-476d-a413-4e7fd82dddfa"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:50Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:50Z",
+        "name": "r1-image-ephemeral-ok.18d6736791174a3b",
+        "namespace": "study-consistency",
+        "resourceVersion": "947",
+        "uid": "efd7b265-91b7-40af-8563-a6fd20f80480"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:51Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "r1-image-ephemeral-reject",
+        "namespace": "study-consistency",
+        "resourceVersion": "954",
+        "uid": "110ed4ae-d665-4a90-80d1-2822920c08aa"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:51Z",
+      "message": "Successfully assigned study-consistency/r1-image-ephemeral-reject to paper-consistency-20260918t151828z-kyverno-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:51Z",
+        "name": "r1-image-ephemeral-reject.18d67367dd2620a9",
+        "namespace": "study-consistency",
+        "resourceVersion": "956",
+        "uid": "47f76ad2-4578-4b18-bed6-37fd4b94d326"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:52Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r1-image-ephemeral-reject",
+        "namespace": "study-consistency",
+        "resourceVersion": "955",
+        "uid": "110ed4ae-d665-4a90-80d1-2822920c08aa"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:52Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:52Z",
+        "name": "r1-image-ephemeral-reject.18d67367e607dd44",
+        "namespace": "study-consistency",
+        "resourceVersion": "959",
+        "uid": "989562ec-f412-4618-bb59-daa0e55f6573"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:52Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r1-image-ephemeral-reject",
+        "namespace": "study-consistency",
+        "resourceVersion": "955",
+        "uid": "110ed4ae-d665-4a90-80d1-2822920c08aa"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:52Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:52Z",
+        "name": "r1-image-ephemeral-reject.18d67367e919c07f",
+        "namespace": "study-consistency",
+        "resourceVersion": "960",
+        "uid": "3fcbf07a-2e02-4aa3-a19b-c9f74203eb00"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:52Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r1-image-ephemeral-reject",
+        "namespace": "study-consistency",
+        "resourceVersion": "955",
+        "uid": "110ed4ae-d665-4a90-80d1-2822920c08aa"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:52Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:52Z",
+        "name": "r1-image-ephemeral-reject.18d67367ed184300",
+        "namespace": "study-consistency",
+        "resourceVersion": "961",
+        "uid": "3abf221b-3bf4-49a7-9dbd-d1f6fe6e4344"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:47Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "r1-image-regular-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "913",
+        "uid": "4da9df38-b8d1-4322-a425-843c8ec37c9f"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:47Z",
+      "message": "Successfully assigned study-consistency/r1-image-regular-ok to paper-consistency-20260918t151828z-kyverno-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:47Z",
+        "name": "r1-image-regular-ok.18d67366c0e23fd6",
+        "namespace": "study-consistency",
+        "resourceVersion": "915",
+        "uid": "1aaaf35d-404f-4b22-b5f4-df4bf6f358a5"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:47Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "r1-image-regular-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "914",
+        "uid": "4da9df38-b8d1-4322-a425-843c8ec37c9f"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:47Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:47Z",
+        "name": "r1-image-regular-ok.18d67366c9acb9c3",
+        "namespace": "study-consistency",
+        "resourceVersion": "917",
+        "uid": "b7f7d5ab-17b9-42f8-b077-5c7257a0447a"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:47Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "r1-image-regular-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "914",
+        "uid": "4da9df38-b8d1-4322-a425-843c8ec37c9f"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:47Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:47Z",
+        "name": "r1-image-regular-ok.18d67366cc23735a",
+        "namespace": "study-consistency",
+        "resourceVersion": "918",
+        "uid": "2564a6b3-b57e-4250-aa38-1eacff0192d9"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:47Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "r1-image-regular-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "914",
+        "uid": "4da9df38-b8d1-4322-a425-843c8ec37c9f"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:47Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:47Z",
+        "name": "r1-image-regular-ok.18d67366cfdd7323",
+        "namespace": "study-consistency",
+        "resourceVersion": "920",
+        "uid": "ad091052-fbe0-47a5-a41a-3e5dd3a205e3"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:41Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "r1-name-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "873",
+        "uid": "1e1657a6-290e-45f1-aa16-2a5e7c885c43"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:41Z",
+      "message": "Successfully assigned study-consistency/r1-name-ephemeral-ok to paper-consistency-20260918t151828z-kyverno-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:41Z",
+        "name": "r1-name-ephemeral-ok.18d673656ef8b47d",
+        "namespace": "study-consistency",
+        "resourceVersion": "875",
+        "uid": "1db0c219-d0d6-4076-9653-926c509f9b53"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:41Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r1-name-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "874",
+        "uid": "1e1657a6-290e-45f1-aa16-2a5e7c885c43"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:41Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:41Z",
+        "name": "r1-name-ephemeral-ok.18d67365773c3f63",
+        "namespace": "study-consistency",
+        "resourceVersion": "877",
+        "uid": "dafd473d-6031-4abb-9da2-94b43895c8ed"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:41Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r1-name-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "874",
+        "uid": "1e1657a6-290e-45f1-aa16-2a5e7c885c43"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:41Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:41Z",
+        "name": "r1-name-ephemeral-ok.18d673657a9a5d6d",
+        "namespace": "study-consistency",
+        "resourceVersion": "878",
+        "uid": "be693406-4efd-4d85-ab40-dfd90b39ba11"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:41Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r1-name-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "874",
+        "uid": "1e1657a6-290e-45f1-aa16-2a5e7c885c43"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:41Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:41Z",
+        "name": "r1-name-ephemeral-ok.18d673657de4e21f",
+        "namespace": "study-consistency",
+        "resourceVersion": "879",
+        "uid": "865a08e2-ffb6-4384-94e3-d6e0cec9d43e"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:43Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.ephemeralContainers{study-probe}",
+        "kind": "Pod",
+        "name": "r1-name-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "874",
+        "uid": "1e1657a6-290e-45f1-aa16-2a5e7c885c43"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:43Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:43Z",
+        "name": "r1-name-ephemeral-ok.18d67365e8bca9ea",
+        "namespace": "study-consistency",
+        "resourceVersion": "888",
+        "uid": "83ad649d-22ea-4f0d-9573-8f142d07530c"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:43Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.ephemeralContainers{study-probe}",
+        "kind": "Pod",
+        "name": "r1-name-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "874",
+        "uid": "1e1657a6-290e-45f1-aa16-2a5e7c885c43"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:43Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:43Z",
+        "name": "r1-name-ephemeral-ok.18d67365eba222c3",
+        "namespace": "study-consistency",
+        "resourceVersion": "890",
+        "uid": "884cb3b0-72a0-4e02-82a1-82f11e0fa4b0"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:43Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.ephemeralContainers{study-probe}",
+        "kind": "Pod",
+        "name": "r1-name-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "874",
+        "uid": "1e1657a6-290e-45f1-aa16-2a5e7c885c43"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:43Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:43Z",
+        "name": "r1-name-ephemeral-ok.18d67365f047b1f5",
+        "namespace": "study-consistency",
+        "resourceVersion": "891",
+        "uid": "81c19dda-da17-40fd-aead-b6b1dcbc0099"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:45Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "r1-name-ephemeral-reject",
+        "namespace": "study-consistency",
+        "resourceVersion": "899",
+        "uid": "4b10f987-2ac3-491a-828a-887ea7bff65d"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:45Z",
+      "message": "Successfully assigned study-consistency/r1-name-ephemeral-reject to paper-consistency-20260918t151828z-kyverno-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:45Z",
+        "name": "r1-name-ephemeral-reject.18d673665c6b6dff",
+        "namespace": "study-consistency",
+        "resourceVersion": "901",
+        "uid": "d089e731-3f08-4454-b487-1fad2372bb1e"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:45Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r1-name-ephemeral-reject",
+        "namespace": "study-consistency",
+        "resourceVersion": "900",
+        "uid": "4b10f987-2ac3-491a-828a-887ea7bff65d"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:45Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:45Z",
+        "name": "r1-name-ephemeral-reject.18d67366648dfafb",
+        "namespace": "study-consistency",
+        "resourceVersion": "903",
+        "uid": "7d64e716-d7b1-418a-b6a6-c0aa7268cf11"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:45Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r1-name-ephemeral-reject",
+        "namespace": "study-consistency",
+        "resourceVersion": "900",
+        "uid": "4b10f987-2ac3-491a-828a-887ea7bff65d"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:45Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:45Z",
+        "name": "r1-name-ephemeral-reject.18d67366672e8ebe",
+        "namespace": "study-consistency",
+        "resourceVersion": "904",
+        "uid": "636f90dd-c568-4753-81f0-920917e95461"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:45Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r1-name-ephemeral-reject",
+        "namespace": "study-consistency",
+        "resourceVersion": "900",
+        "uid": "4b10f987-2ac3-491a-828a-887ea7bff65d"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:45Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:45Z",
+        "name": "r1-name-ephemeral-reject.18d673666a53689e",
+        "namespace": "study-consistency",
+        "resourceVersion": "905",
+        "uid": "99ea4d41-df8a-49d5-ae01-d8204083c3b0"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:39Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "r1-name-regular-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "855",
+        "uid": "878b05d6-9b68-4d81-a737-99d3166a94ca"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:39Z",
+      "message": "Successfully assigned study-consistency/r1-name-regular-ok to paper-consistency-20260918t151828z-kyverno-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:39Z",
+        "name": "r1-name-regular-ok.18d67364fcd70749",
+        "namespace": "study-consistency",
+        "resourceVersion": "857",
+        "uid": "4416e6b8-d52a-46c0-81cd-e442ee9a7157"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:39Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "r1-name-regular-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "856",
+        "uid": "878b05d6-9b68-4d81-a737-99d3166a94ca"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:39Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:39Z",
+        "name": "r1-name-regular-ok.18d6736506032328",
+        "namespace": "study-consistency",
+        "resourceVersion": "859",
+        "uid": "ab9c514e-9954-46e5-902e-fd60082089dd"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:39Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "r1-name-regular-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "856",
+        "uid": "878b05d6-9b68-4d81-a737-99d3166a94ca"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:39Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:39Z",
+        "name": "r1-name-regular-ok.18d6736508ecca83",
+        "namespace": "study-consistency",
+        "resourceVersion": "861",
+        "uid": "270d9afe-1efb-4d4b-8e2d-b6211077a7b1"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:39Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "r1-name-regular-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "856",
+        "uid": "878b05d6-9b68-4d81-a737-99d3166a94ca"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:39Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:39Z",
+        "name": "r1-name-regular-ok.18d673651094e535",
+        "namespace": "study-consistency",
+        "resourceVersion": "863",
+        "uid": "c61151fb-17bf-45c3-9266-922b25670b84"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:03Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "r2-image-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1042",
+        "uid": "2819c1c8-4cef-4c99-a1cc-37bae9d9e3ec"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:03Z",
+      "message": "Successfully assigned study-consistency/r2-image-ephemeral-ok to paper-consistency-20260918t151828z-kyverno-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:03Z",
+        "name": "r2-image-ephemeral-ok.18d6736a7f070236",
+        "namespace": "study-consistency",
+        "resourceVersion": "1044",
+        "uid": "0b1a141a-b17e-4a6e-bada-62d58a69f27d"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:03Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r2-image-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1043",
+        "uid": "2819c1c8-4cef-4c99-a1cc-37bae9d9e3ec"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:03Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:03Z",
+        "name": "r2-image-ephemeral-ok.18d6736a881c487c",
+        "namespace": "study-consistency",
+        "resourceVersion": "1046",
+        "uid": "9d50fb32-980c-44a7-985f-8404b7807269"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:03Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r2-image-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1043",
+        "uid": "2819c1c8-4cef-4c99-a1cc-37bae9d9e3ec"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:03Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:03Z",
+        "name": "r2-image-ephemeral-ok.18d6736a8a9378e9",
+        "namespace": "study-consistency",
+        "resourceVersion": "1047",
+        "uid": "48a5c864-d0a0-447f-9540-95b0da755198"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:03Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r2-image-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1043",
+        "uid": "2819c1c8-4cef-4c99-a1cc-37bae9d9e3ec"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:03Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:03Z",
+        "name": "r2-image-ephemeral-ok.18d6736a8dc1f872",
+        "namespace": "study-consistency",
+        "resourceVersion": "1049",
+        "uid": "53c85927-741c-4dff-85ad-0459ae73bf19"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:04Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.ephemeralContainers{study-probe}",
+        "kind": "Pod",
+        "name": "r2-image-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1043",
+        "uid": "2819c1c8-4cef-4c99-a1cc-37bae9d9e3ec"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:04Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:04Z",
+        "name": "r2-image-ephemeral-ok.18d6736ad26f798b",
+        "namespace": "study-consistency",
+        "resourceVersion": "1054",
+        "uid": "4bc14b68-02c6-44fc-a310-c2bd0f2d5673"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:04Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.ephemeralContainers{study-probe}",
+        "kind": "Pod",
+        "name": "r2-image-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1043",
+        "uid": "2819c1c8-4cef-4c99-a1cc-37bae9d9e3ec"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:04Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:04Z",
+        "name": "r2-image-ephemeral-ok.18d6736ad5d6efbd",
+        "namespace": "study-consistency",
+        "resourceVersion": "1056",
+        "uid": "39a8fb2a-3d00-4b07-8c74-fda3c40f1aed"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:04Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.ephemeralContainers{study-probe}",
+        "kind": "Pod",
+        "name": "r2-image-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1043",
+        "uid": "2819c1c8-4cef-4c99-a1cc-37bae9d9e3ec"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:04Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:04Z",
+        "name": "r2-image-ephemeral-ok.18d6736ad9bc5d7a",
+        "namespace": "study-consistency",
+        "resourceVersion": "1057",
+        "uid": "6275212e-322b-43c7-853f-966c053b39bd"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:06Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "r2-image-ephemeral-reject",
+        "namespace": "study-consistency",
+        "resourceVersion": "1065",
+        "uid": "7ef9c344-4d92-4b57-a8cd-58158085b6e0"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:06Z",
+      "message": "Successfully assigned study-consistency/r2-image-ephemeral-reject to paper-consistency-20260918t151828z-kyverno-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:06Z",
+        "name": "r2-image-ephemeral-reject.18d6736b32c08b49",
+        "namespace": "study-consistency",
+        "resourceVersion": "1067",
+        "uid": "c7224d34-9a4b-4a49-a05d-09ed4377affd"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:06Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r2-image-ephemeral-reject",
+        "namespace": "study-consistency",
+        "resourceVersion": "1066",
+        "uid": "7ef9c344-4d92-4b57-a8cd-58158085b6e0"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:06Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:06Z",
+        "name": "r2-image-ephemeral-reject.18d6736b3c0edd3b",
+        "namespace": "study-consistency",
+        "resourceVersion": "1069",
+        "uid": "577c2474-0b1b-402b-ba23-525ad859e6ff"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:06Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r2-image-ephemeral-reject",
+        "namespace": "study-consistency",
+        "resourceVersion": "1066",
+        "uid": "7ef9c344-4d92-4b57-a8cd-58158085b6e0"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:06Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:06Z",
+        "name": "r2-image-ephemeral-reject.18d6736b3eab55f3",
+        "namespace": "study-consistency",
+        "resourceVersion": "1070",
+        "uid": "05fb77c6-87a0-40fd-a276-3572d19a0091"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:06Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r2-image-ephemeral-reject",
+        "namespace": "study-consistency",
+        "resourceVersion": "1066",
+        "uid": "7ef9c344-4d92-4b57-a8cd-58158085b6e0"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:06Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:06Z",
+        "name": "r2-image-ephemeral-reject.18d6736b4294cec9",
+        "namespace": "study-consistency",
+        "resourceVersion": "1071",
+        "uid": "3e72a09b-509a-4a29-b732-d520eb025f51"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:01Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "r2-image-regular-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1027",
+        "uid": "968da260-03a5-49d3-aecc-ba084c28012d"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:01Z",
+      "message": "Successfully assigned study-consistency/r2-image-regular-ok to paper-consistency-20260918t151828z-kyverno-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:01Z",
+        "name": "r2-image-regular-ok.18d6736a105d94e5",
+        "namespace": "study-consistency",
+        "resourceVersion": "1029",
+        "uid": "432e624e-58a6-46c7-8ed9-c2ccf09dc661"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:01Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "r2-image-regular-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1028",
+        "uid": "968da260-03a5-49d3-aecc-ba084c28012d"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:01Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:01Z",
+        "name": "r2-image-regular-ok.18d6736a19883772",
+        "namespace": "study-consistency",
+        "resourceVersion": "1032",
+        "uid": "41711b33-c885-46b3-8162-f0f930be000f"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:01Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "r2-image-regular-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1028",
+        "uid": "968da260-03a5-49d3-aecc-ba084c28012d"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:01Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:01Z",
+        "name": "r2-image-regular-ok.18d6736a1bfd6745",
+        "namespace": "study-consistency",
+        "resourceVersion": "1033",
+        "uid": "bcbbf75d-c143-4ea9-85e2-1c427f08bb1a"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:01Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "r2-image-regular-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1028",
+        "uid": "968da260-03a5-49d3-aecc-ba084c28012d"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:01Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:01Z",
+        "name": "r2-image-regular-ok.18d6736a2057e694",
+        "namespace": "study-consistency",
+        "resourceVersion": "1034",
+        "uid": "d2497a42-2182-47cc-bd72-3fb92393865d"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:55Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "r2-name-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "983",
+        "uid": "6e6f8ea0-f660-48bd-949f-de0daf52e2a8"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:55Z",
+      "message": "Successfully assigned study-consistency/r2-name-ephemeral-ok to paper-consistency-20260918t151828z-kyverno-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:55Z",
+        "name": "r2-name-ephemeral-ok.18d67368b4eaebab",
+        "namespace": "study-consistency",
+        "resourceVersion": "985",
+        "uid": "5353cdb7-35e4-4351-88f1-9f34fa2786ff"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:55Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r2-name-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "984",
+        "uid": "6e6f8ea0-f660-48bd-949f-de0daf52e2a8"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:55Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:55Z",
+        "name": "r2-name-ephemeral-ok.18d67368be0ffaa7",
+        "namespace": "study-consistency",
+        "resourceVersion": "987",
+        "uid": "99ebe16e-725f-4c02-b7c7-770b9310c3e3"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:55Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r2-name-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "984",
+        "uid": "6e6f8ea0-f660-48bd-949f-de0daf52e2a8"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:55Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:55Z",
+        "name": "r2-name-ephemeral-ok.18d67368c0dc79cf",
+        "namespace": "study-consistency",
+        "resourceVersion": "988",
+        "uid": "0ab152a1-4168-40ac-a2c6-20a07bd74084"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:55Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r2-name-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "984",
+        "uid": "6e6f8ea0-f660-48bd-949f-de0daf52e2a8"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:55Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:55Z",
+        "name": "r2-name-ephemeral-ok.18d67368c5789477",
+        "namespace": "study-consistency",
+        "resourceVersion": "990",
+        "uid": "2d308c38-f985-4db0-ab6f-663681ae6776"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:57Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.ephemeralContainers{study-probe}",
+        "kind": "Pod",
+        "name": "r2-name-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "984",
+        "uid": "6e6f8ea0-f660-48bd-949f-de0daf52e2a8"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:57Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:57Z",
+        "name": "r2-name-ephemeral-ok.18d673692e3447da",
+        "namespace": "study-consistency",
+        "resourceVersion": "998",
+        "uid": "39429c81-c4c6-45b6-ab95-39af76184a5e"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:57Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.ephemeralContainers{study-probe}",
+        "kind": "Pod",
+        "name": "r2-name-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "984",
+        "uid": "6e6f8ea0-f660-48bd-949f-de0daf52e2a8"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:57Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:57Z",
+        "name": "r2-name-ephemeral-ok.18d6736931442430",
+        "namespace": "study-consistency",
+        "resourceVersion": "1000",
+        "uid": "bebb85b6-fe99-4885-988d-0a3b485df37b"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:57Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.ephemeralContainers{study-probe}",
+        "kind": "Pod",
+        "name": "r2-name-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "984",
+        "uid": "6e6f8ea0-f660-48bd-949f-de0daf52e2a8"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:57Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:57Z",
+        "name": "r2-name-ephemeral-ok.18d673693569ce81",
+        "namespace": "study-consistency",
+        "resourceVersion": "1001",
+        "uid": "e975d0a9-7bd6-4cd6-b54d-b63a58a540d9"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:59Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "r2-name-ephemeral-reject",
+        "namespace": "study-consistency",
+        "resourceVersion": "1011",
+        "uid": "5fb040cb-78f9-4df5-b46a-a5df3d4a7dbe"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:59Z",
+      "message": "Successfully assigned study-consistency/r2-name-ephemeral-reject to paper-consistency-20260918t151828z-kyverno-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:59Z",
+        "name": "r2-name-ephemeral-reject.18d67369ab356154",
+        "namespace": "study-consistency",
+        "resourceVersion": "1013",
+        "uid": "3c3f3924-d7b9-47f9-8c84-59fcae85fa07"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:59Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r2-name-ephemeral-reject",
+        "namespace": "study-consistency",
+        "resourceVersion": "1012",
+        "uid": "5fb040cb-78f9-4df5-b46a-a5df3d4a7dbe"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:59Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:59Z",
+        "name": "r2-name-ephemeral-reject.18d67369b4b7a71d",
+        "namespace": "study-consistency",
+        "resourceVersion": "1017",
+        "uid": "75cdafe1-40d1-4bb6-b94f-124c0b57bb1a"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:59Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r2-name-ephemeral-reject",
+        "namespace": "study-consistency",
+        "resourceVersion": "1012",
+        "uid": "5fb040cb-78f9-4df5-b46a-a5df3d4a7dbe"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:59Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:59Z",
+        "name": "r2-name-ephemeral-reject.18d67369b7d07ac9",
+        "namespace": "study-consistency",
+        "resourceVersion": "1018",
+        "uid": "a801b072-212a-473e-bb22-052519cf8330"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:59Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r2-name-ephemeral-reject",
+        "namespace": "study-consistency",
+        "resourceVersion": "1012",
+        "uid": "5fb040cb-78f9-4df5-b46a-a5df3d4a7dbe"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:59Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:59Z",
+        "name": "r2-name-ephemeral-reject.18d67369bba8c9a5",
+        "namespace": "study-consistency",
+        "resourceVersion": "1019",
+        "uid": "caba1a7a-f20a-4543-a3d9-19d447a371a5"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:53Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "r2-name-regular-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "968",
+        "uid": "6728f69a-5340-4e9b-ba2e-0a2f52b8072a"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:53Z",
+      "message": "Successfully assigned study-consistency/r2-name-regular-ok to paper-consistency-20260918t151828z-kyverno-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:53Z",
+        "name": "r2-name-regular-ok.18d673684102b9e1",
+        "namespace": "study-consistency",
+        "resourceVersion": "970",
+        "uid": "e91df147-241b-4e60-8aa1-126049692326"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:53Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "r2-name-regular-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "969",
+        "uid": "6728f69a-5340-4e9b-ba2e-0a2f52b8072a"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:53Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:53Z",
+        "name": "r2-name-regular-ok.18d673684a67646d",
+        "namespace": "study-consistency",
+        "resourceVersion": "972",
+        "uid": "886a66ed-c528-4d6c-8082-5f044c4a910a"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:53Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "r2-name-regular-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "969",
+        "uid": "6728f69a-5340-4e9b-ba2e-0a2f52b8072a"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:53Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:53Z",
+        "name": "r2-name-regular-ok.18d673684d9bcc0d",
+        "namespace": "study-consistency",
+        "resourceVersion": "974",
+        "uid": "ef9c48e5-c725-45d3-95a7-06999b7c0350"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:53Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "r2-name-regular-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "969",
+        "uid": "6728f69a-5340-4e9b-ba2e-0a2f52b8072a"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:53Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:53Z",
+        "name": "r2-name-regular-ok.18d6736850d14215",
+        "namespace": "study-consistency",
+        "resourceVersion": "975",
+        "uid": "71cd429e-7e4b-42a1-bb2d-aad79c0ba69d"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:16Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "r3-image-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1152",
+        "uid": "2362a83c-2884-486d-a9bd-78695bb27a65"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:16Z",
+      "message": "Successfully assigned study-consistency/r3-image-ephemeral-ok to paper-consistency-20260918t151828z-kyverno-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:16Z",
+        "name": "r3-image-ephemeral-ok.18d6736d8fc6c345",
+        "namespace": "study-consistency",
+        "resourceVersion": "1154",
+        "uid": "a5258366-2008-4658-b1f6-770bb150e2f7"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:16Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r3-image-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1153",
+        "uid": "2362a83c-2884-486d-a9bd-78695bb27a65"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:16Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:16Z",
+        "name": "r3-image-ephemeral-ok.18d6736d990b96a2",
+        "namespace": "study-consistency",
+        "resourceVersion": "1156",
+        "uid": "94e7a4c1-c3df-4ebd-b44b-038a18ef1cb8"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:16Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r3-image-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1153",
+        "uid": "2362a83c-2884-486d-a9bd-78695bb27a65"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:16Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:16Z",
+        "name": "r3-image-ephemeral-ok.18d6736d9bf5feb8",
+        "namespace": "study-consistency",
+        "resourceVersion": "1157",
+        "uid": "c676ac8f-7262-40aa-abb1-02ef8051db12"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:16Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r3-image-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1153",
+        "uid": "2362a83c-2884-486d-a9bd-78695bb27a65"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:16Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:16Z",
+        "name": "r3-image-ephemeral-ok.18d6736d9f9f3a8c",
+        "namespace": "study-consistency",
+        "resourceVersion": "1158",
+        "uid": "a14b321b-e031-44b4-80a4-1ea86e9b8681"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:19Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.ephemeralContainers{study-probe}",
+        "kind": "Pod",
+        "name": "r3-image-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1153",
+        "uid": "2362a83c-2884-486d-a9bd-78695bb27a65"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:19Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:19Z",
+        "name": "r3-image-ephemeral-ok.18d6736e52446761",
+        "namespace": "study-consistency",
+        "resourceVersion": "1177",
+        "uid": "e8e8eb85-b634-42bb-a594-a3ea44fc2fb2"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:19Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.ephemeralContainers{study-probe}",
+        "kind": "Pod",
+        "name": "r3-image-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1153",
+        "uid": "2362a83c-2884-486d-a9bd-78695bb27a65"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:19Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:19Z",
+        "name": "r3-image-ephemeral-ok.18d6736e579efcc3",
+        "namespace": "study-consistency",
+        "resourceVersion": "1179",
+        "uid": "56cc4650-d31c-43de-bbbc-c861ee746e33"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:19Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.ephemeralContainers{study-probe}",
+        "kind": "Pod",
+        "name": "r3-image-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1153",
+        "uid": "2362a83c-2884-486d-a9bd-78695bb27a65"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:19Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:19Z",
+        "name": "r3-image-ephemeral-ok.18d6736e5ced3837",
+        "namespace": "study-consistency",
+        "resourceVersion": "1181",
+        "uid": "1504c118-6686-4f9d-b984-eaf24580df92"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:21Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "r3-image-ephemeral-reject",
+        "namespace": "study-consistency",
+        "resourceVersion": "1190",
+        "uid": "557a63cf-6937-42f2-b6c4-b6e65d9ced63"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:21Z",
+      "message": "Successfully assigned study-consistency/r3-image-ephemeral-reject to paper-consistency-20260918t151828z-kyverno-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:21Z",
+        "name": "r3-image-ephemeral-reject.18d6736ec105a714",
+        "namespace": "study-consistency",
+        "resourceVersion": "1193",
+        "uid": "5c0dd349-1df8-46e8-9f3a-bfe8e0dceaeb"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:21Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r3-image-ephemeral-reject",
+        "namespace": "study-consistency",
+        "resourceVersion": "1192",
+        "uid": "557a63cf-6937-42f2-b6c4-b6e65d9ced63"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:21Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:21Z",
+        "name": "r3-image-ephemeral-reject.18d6736eca849b73",
+        "namespace": "study-consistency",
+        "resourceVersion": "1196",
+        "uid": "97ad370c-fcd8-4a94-a881-bfb334fb64fa"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:21Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r3-image-ephemeral-reject",
+        "namespace": "study-consistency",
+        "resourceVersion": "1192",
+        "uid": "557a63cf-6937-42f2-b6c4-b6e65d9ced63"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:21Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:21Z",
+        "name": "r3-image-ephemeral-reject.18d6736ecd31e0b9",
+        "namespace": "study-consistency",
+        "resourceVersion": "1197",
+        "uid": "84b7b705-d87a-44ee-962e-d307e4e21df4"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:21Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r3-image-ephemeral-reject",
+        "namespace": "study-consistency",
+        "resourceVersion": "1192",
+        "uid": "557a63cf-6937-42f2-b6c4-b6e65d9ced63"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:21Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:21Z",
+        "name": "r3-image-ephemeral-reject.18d6736ed0f267c4",
+        "namespace": "study-consistency",
+        "resourceVersion": "1198",
+        "uid": "b1372c5a-0405-4fcb-b824-0c7d5e33af96"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:14Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "r3-image-regular-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1136",
+        "uid": "c9263d20-dfde-43bb-99a2-bcb3f2d0d8c3"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:14Z",
+      "message": "Successfully assigned study-consistency/r3-image-regular-ok to paper-consistency-20260918t151828z-kyverno-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:14Z",
+        "name": "r3-image-regular-ok.18d6736d2190a279",
+        "namespace": "study-consistency",
+        "resourceVersion": "1138",
+        "uid": "66f0d913-8a50-41a1-907c-45ad1bf5959b"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:14Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "r3-image-regular-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1137",
+        "uid": "c9263d20-dfde-43bb-99a2-bcb3f2d0d8c3"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:14Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:14Z",
+        "name": "r3-image-regular-ok.18d6736d2b7740bb",
+        "namespace": "study-consistency",
+        "resourceVersion": "1140",
+        "uid": "9729b6fc-3098-4cf3-82c7-202558522429"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:14Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "r3-image-regular-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1137",
+        "uid": "c9263d20-dfde-43bb-99a2-bcb3f2d0d8c3"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:14Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:14Z",
+        "name": "r3-image-regular-ok.18d6736d2e2e4b82",
+        "namespace": "study-consistency",
+        "resourceVersion": "1141",
+        "uid": "5464b1e0-f0c7-4dfe-ba9d-aa2bbec5a3c1"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:14Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "r3-image-regular-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1137",
+        "uid": "c9263d20-dfde-43bb-99a2-bcb3f2d0d8c3"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:14Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:14Z",
+        "name": "r3-image-regular-ok.18d6736d322f8c48",
+        "namespace": "study-consistency",
+        "resourceVersion": "1142",
+        "uid": "eaf2062a-2a15-46af-8f9a-9005f44d32e3"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:09Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "r3-name-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1098",
+        "uid": "37adde6b-e8a0-4db6-9aac-f9c789d5ee62"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:09Z",
+      "message": "Successfully assigned study-consistency/r3-name-ephemeral-ok to paper-consistency-20260918t151828z-kyverno-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:09Z",
+        "name": "r3-name-ephemeral-ok.18d6736c1160fb14",
+        "namespace": "study-consistency",
+        "resourceVersion": "1100",
+        "uid": "45eb586f-e927-4024-a678-dc6c9b86d90a"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:10Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r3-name-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1099",
+        "uid": "37adde6b-e8a0-4db6-9aac-f9c789d5ee62"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:10Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:10Z",
+        "name": "r3-name-ephemeral-ok.18d6736c1a22eff9",
+        "namespace": "study-consistency",
+        "resourceVersion": "1103",
+        "uid": "4e71ff3d-6865-4061-8d11-e4c64bb474d6"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:10Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r3-name-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1099",
+        "uid": "37adde6b-e8a0-4db6-9aac-f9c789d5ee62"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:10Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:10Z",
+        "name": "r3-name-ephemeral-ok.18d6736c1cf200c8",
+        "namespace": "study-consistency",
+        "resourceVersion": "1104",
+        "uid": "1cbcc58d-2605-407e-b2d7-e6479081ea8a"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:10Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r3-name-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1099",
+        "uid": "37adde6b-e8a0-4db6-9aac-f9c789d5ee62"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:10Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:10Z",
+        "name": "r3-name-ephemeral-ok.18d6736c209e8b7d",
+        "namespace": "study-consistency",
+        "resourceVersion": "1105",
+        "uid": "7435c193-7fbb-43bd-a267-da0006b54c4a"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:11Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.ephemeralContainers{study-probe}",
+        "kind": "Pod",
+        "name": "r3-name-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1099",
+        "uid": "37adde6b-e8a0-4db6-9aac-f9c789d5ee62"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:11Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:11Z",
+        "name": "r3-name-ephemeral-ok.18d6736c7393e5b6",
+        "namespace": "study-consistency",
+        "resourceVersion": "1114",
+        "uid": "8c4c6d14-8a47-4b62-8269-fd9ccc40aa7e"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:11Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.ephemeralContainers{study-probe}",
+        "kind": "Pod",
+        "name": "r3-name-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1099",
+        "uid": "37adde6b-e8a0-4db6-9aac-f9c789d5ee62"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:11Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:11Z",
+        "name": "r3-name-ephemeral-ok.18d6736c76a8fe21",
+        "namespace": "study-consistency",
+        "resourceVersion": "1116",
+        "uid": "5fb20ef2-ebc4-4282-8083-9f84194b3b0d"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:11Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.ephemeralContainers{study-probe}",
+        "kind": "Pod",
+        "name": "r3-name-ephemeral-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1099",
+        "uid": "37adde6b-e8a0-4db6-9aac-f9c789d5ee62"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:11Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:11Z",
+        "name": "r3-name-ephemeral-ok.18d6736c7a119b20",
+        "namespace": "study-consistency",
+        "resourceVersion": "1117",
+        "uid": "87ff705d-ae57-4738-b12f-7875d3d7f884"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:12Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "r3-name-ephemeral-reject",
+        "namespace": "study-consistency",
+        "resourceVersion": "1121",
+        "uid": "e3190138-1bdb-4aef-99bd-b6c0129f52de"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:12Z",
+      "message": "Successfully assigned study-consistency/r3-name-ephemeral-reject to paper-consistency-20260918t151828z-kyverno-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:12Z",
+        "name": "r3-name-ephemeral-reject.18d6736cbe498f27",
+        "namespace": "study-consistency",
+        "resourceVersion": "1123",
+        "uid": "db07b3fc-c108-458d-a3a9-8e4c50bcea9a"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:12Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r3-name-ephemeral-reject",
+        "namespace": "study-consistency",
+        "resourceVersion": "1122",
+        "uid": "e3190138-1bdb-4aef-99bd-b6c0129f52de"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:12Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:12Z",
+        "name": "r3-name-ephemeral-reject.18d6736cc73df4af",
+        "namespace": "study-consistency",
+        "resourceVersion": "1127",
+        "uid": "c393cbe8-54f4-4670-96ea-5b6ff4a49d19"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:13Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r3-name-ephemeral-reject",
+        "namespace": "study-consistency",
+        "resourceVersion": "1122",
+        "uid": "e3190138-1bdb-4aef-99bd-b6c0129f52de"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:13Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:13Z",
+        "name": "r3-name-ephemeral-reject.18d6736cca15d6a9",
+        "namespace": "study-consistency",
+        "resourceVersion": "1128",
+        "uid": "d8d985e5-bf21-4836-af59-65d2c2b6a50d"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:13Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-base}",
+        "kind": "Pod",
+        "name": "r3-name-ephemeral-reject",
+        "namespace": "study-consistency",
+        "resourceVersion": "1122",
+        "uid": "e3190138-1bdb-4aef-99bd-b6c0129f52de"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:13Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:13Z",
+        "name": "r3-name-ephemeral-reject.18d6736ccdbfc436",
+        "namespace": "study-consistency",
+        "resourceVersion": "1129",
+        "uid": "3dffcacd-7c82-4d80-adbc-11e29940737b"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:08Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "r3-name-regular-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1079",
+        "uid": "95c3afa9-fbaf-4b6a-aa6d-d545ad2b79d5"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:08Z",
+      "message": "Successfully assigned study-consistency/r3-name-regular-ok to paper-consistency-20260918t151828z-kyverno-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:08Z",
+        "name": "r3-name-regular-ok.18d6736ba10710cf",
+        "namespace": "study-consistency",
+        "resourceVersion": "1081",
+        "uid": "b8b2e1fd-bc60-4096-868e-28a037f316d1"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:08Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "r3-name-regular-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1080",
+        "uid": "95c3afa9-fbaf-4b6a-aa6d-d545ad2b79d5"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:08Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:08Z",
+        "name": "r3-name-regular-ok.18d6736baaa1b0fa",
+        "namespace": "study-consistency",
+        "resourceVersion": "1084",
+        "uid": "f91f9213-b9fb-45ab-929c-afdb29671dc0"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:08Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "r3-name-regular-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1080",
+        "uid": "95c3afa9-fbaf-4b6a-aa6d-d545ad2b79d5"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:08Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:08Z",
+        "name": "r3-name-regular-ok.18d6736bad32e1c0",
+        "namespace": "study-consistency",
+        "resourceVersion": "1085",
+        "uid": "a07846ec-047a-4723-a61d-571b2c6dd9ce"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:20:08Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "r3-name-regular-ok",
+        "namespace": "study-consistency",
+        "resourceVersion": "1080",
+        "uid": "95c3afa9-fbaf-4b6a-aa6d-d545ad2b79d5"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:20:08Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:20:08Z",
+        "name": "r3-name-regular-ok.18d6736bb189d13b",
+        "namespace": "study-consistency",
+        "resourceVersion": "1086",
+        "uid": "e3457b02-ce0f-4bcf-b07b-575265178e9e"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:00Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "study-audit-canary",
+        "namespace": "study-consistency",
+        "resourceVersion": "461",
+        "uid": "e1712999-cea7-414c-8ce1-386b6b7efb9c"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:00Z",
+      "message": "Successfully assigned study-consistency/study-audit-canary to paper-consistency-20260918t151828z-kyverno-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:00Z",
+        "name": "study-audit-canary.18d6735be1060d0c",
+        "namespace": "study-consistency",
+        "resourceVersion": "463",
+        "uid": "f6854606-2bed-4c81-bd90-6310b5745c02"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:00Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "study-audit-canary",
+        "namespace": "study-consistency",
+        "resourceVersion": "462",
+        "uid": "e1712999-cea7-414c-8ce1-386b6b7efb9c"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:00Z",
+      "message": "Container image \"study.local/approved/pause:3.10\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:00Z",
+        "name": "study-audit-canary.18d6735be9e6d0a1",
+        "namespace": "study-consistency",
+        "resourceVersion": "465",
+        "uid": "0b03e03d-ef6f-4933-986f-4e93e37f0030"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:00Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "study-audit-canary",
+        "namespace": "study-consistency",
+        "resourceVersion": "462",
+        "uid": "e1712999-cea7-414c-8ce1-386b6b7efb9c"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:00Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:00Z",
+        "name": "study-audit-canary.18d6735beba32593",
+        "namespace": "study-consistency",
+        "resourceVersion": "466",
+        "uid": "65a019cb-23b4-4d00-99ee-1614b4450bac"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:00Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "study-audit-canary",
+        "namespace": "study-consistency",
+        "resourceVersion": "462",
+        "uid": "e1712999-cea7-414c-8ce1-386b6b7efb9c"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:00Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:00Z",
+        "name": "study-audit-canary.18d6735bef759226",
+        "namespace": "study-consistency",
+        "resourceVersion": "467",
+        "uid": "d0a24895-5dec-4616-9720-4ca104b8fa01"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:19:01Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{study-probe}",
+        "kind": "Pod",
+        "name": "study-audit-canary",
+        "namespace": "study-consistency",
+        "resourceVersion": "462",
+        "uid": "e1712999-cea7-414c-8ce1-386b6b7efb9c"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:19:01Z",
+      "message": "Stopping container study-probe",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:19:01Z",
+        "name": "study-audit-canary.18d6735c19a54e64",
+        "namespace": "study-consistency",
+        "resourceVersion": "505",
+        "uid": "b2094bbe-db88-440b-8f78-5e773b5570e0"
+      },
+      "reason": "Killing",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t151828z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t151828z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  }
+}

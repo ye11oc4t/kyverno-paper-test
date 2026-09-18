@@ -1,0 +1,11 @@
+{
+  "engine": "kyverno",
+  "finishedUtc": "2026-09-18T15:17:08.831525+00:00",
+  "cluster": "paper-consistency-20260918t151541z-kyverno",
+  "status": "ERROR",
+  "error": "/root/.cache/kyverno-paper-study/bin/kubectl failed (1): Error from server (InternalError): error when creating \"STDIN\": Internal error occurred: failed calling webhook \"validate-policy.kyverno.svc\": failed to call webhook: Post \"https://kyverno-svc.kyverno.svc:443/policyvalidate?timeout=10s\": dial tcp 10.96.153.73:443: connect: connection refused\n",
+  "executions": 0,
+  "matched": 0,
+  "uniqueCases": 0,
+  "runtimeScope": "benign pause process startup only"
+}
