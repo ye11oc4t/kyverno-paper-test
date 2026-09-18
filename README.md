@@ -8,6 +8,7 @@ Current research: admission-policy consistency between regular containers and Ep
 - [Admission consistency pilot: results and interpretation (Korean)](experiments/admission-consistency/REPORT.ko.md)
 - [Admission consistency pilot: reproduction and evidence](experiments/admission-consistency/README.md)
 - [Expanded study: design review, additional tools, and results (Korean)](experiments/admission-consistency-v2/REPORT.ko.md)
+- [Public policy coverage: 13 official policies/examples, source review (Korean)](research/public-policy-coverage/REPORT.ko.md)
 
 - [KSYBOB environment check](REMOTE_EXPERIMENT.md)
 - [Offline policy baseline: design and reproduction](experiments/policy-baseline/README.md)

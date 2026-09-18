@@ -1,0 +1,567 @@
+{
+  "collectedUtc": "2026-09-18T15:48:38.242893+00:00",
+  "mode": "read-only source review",
+  "sources": [
+    {
+      "project": "kyverno",
+      "repository": "kyverno/policies",
+      "commit": "2716f4a26a3c27590a1d6d960dee4ce043e4fa4a",
+      "path": "best-practices/restrict-image-registries/restrict-image-registries.yaml",
+      "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/best-practices/restrict-image-registries/restrict-image-registries.yaml",
+      "sha256": "09f0bae36973d59c6f234bdddd0e66bf4dc83ea2cf3c72a69f925dee7c20e036",
+      "bytes": 1371,
+      "lines": 37
+    },
+    {
+      "project": "kyverno",
+      "repository": "kyverno/policies",
+      "commit": "2716f4a26a3c27590a1d6d960dee4ce043e4fa4a",
+      "path": "best-practices/restrict-image-registries/.kyverno-test/kyverno-test.yaml",
+      "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/best-practices/restrict-image-registries/.kyverno-test/kyverno-test.yaml",
+      "sha256": "969ca32cf2605910da781321fd7ebdba309c6fa5ab1439a4d29831bc468b69b4",
+      "bytes": 475,
+      "lines": 26
+    },
+    {
+      "project": "kyverno",
+      "repository": "kyverno/policies",
+      "commit": "2716f4a26a3c27590a1d6d960dee4ce043e4fa4a",
+      "path": "best-practices/restrict-image-registries/.chainsaw-test/chainsaw-test.yaml",
+      "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/best-practices/restrict-image-registries/.chainsaw-test/chainsaw-test.yaml",
+      "sha256": "83e6591c06553902107abfe63f7133f1f9b7cb38cc0d5874b5606f960e55fbab",
+      "bytes": 1758,
+      "lines": 61
+    },
+    {
+      "project": "kyverno",
+      "repository": "kyverno/policies",
+      "commit": "2716f4a26a3c27590a1d6d960dee4ce043e4fa4a",
+      "path": "other-vpol/allowed-image-repos/allowed-image-repos.yaml",
+      "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/other-vpol/allowed-image-repos/allowed-image-repos.yaml",
+      "sha256": "b8ac9d48ead88ed285c1c6f6972fee5c68361ccb6eb888ccea9722aaaddbc5d9",
+      "bytes": 2099,
+      "lines": 39
+    },
+    {
+      "project": "kyverno",
+      "repository": "kyverno/policies",
+      "commit": "2716f4a26a3c27590a1d6d960dee4ce043e4fa4a",
+      "path": "other-vpol/allowed-image-repos/.kyverno-test/kyverno-test.yaml",
+      "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/other-vpol/allowed-image-repos/.kyverno-test/kyverno-test.yaml",
+      "sha256": "a66cfb9e65c3e5e0fed974e92904c9c3351783be9bef913099addf7a9a6433d0",
+      "bytes": 1011,
+      "lines": 54
+    },
+    {
+      "project": "kyverno",
+      "repository": "kyverno/policies",
+      "commit": "2716f4a26a3c27590a1d6d960dee4ce043e4fa4a",
+      "path": "other-vpol/allowed-image-repos/.chainsaw-test/chainsaw-test.yaml",
+      "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/other-vpol/allowed-image-repos/.chainsaw-test/chainsaw-test.yaml",
+      "sha256": "95808c6021d93709bd4aa41d31437e68dc1e84a439e00321355014045a291417",
+      "bytes": 1156,
+      "lines": 45
+    },
+    {
+      "project": "kyverno",
+      "repository": "kyverno/policies",
+      "commit": "2716f4a26a3c27590a1d6d960dee4ce043e4fa4a",
+      "path": "best-practices/require-ro-rootfs/require-ro-rootfs.yaml",
+      "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/best-practices/require-ro-rootfs/require-ro-rootfs.yaml",
+      "sha256": "a255760512816ecfdf5f50ef3381990dc9bd9b604bbf360ef8fcdb3c68f0d9df",
+      "bytes": 1170,
+      "lines": 33
+    },
+    {
+      "project": "kyverno",
+      "repository": "kyverno/policies",
+      "commit": "2716f4a26a3c27590a1d6d960dee4ce043e4fa4a",
+      "path": "best-practices/require-ro-rootfs/.kyverno-test/kyverno-test.yaml",
+      "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/best-practices/require-ro-rootfs/.kyverno-test/kyverno-test.yaml",
+      "sha256": "f76f9f1889552940348bef4d96f4fdbd63b3a15209c68cb2970fa266842a853b",
+      "bytes": 440,
+      "lines": 24
+    },
+    {
+      "project": "kyverno",
+      "repository": "kyverno/policies",
+      "commit": "2716f4a26a3c27590a1d6d960dee4ce043e4fa4a",
+      "path": "best-practices/require-ro-rootfs/.chainsaw-test/chainsaw-test.yaml",
+      "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/best-practices/require-ro-rootfs/.chainsaw-test/chainsaw-test.yaml",
+      "sha256": "726c198e906e40e1979ec417ffdcf113c8934e92c358a025c5e8b854f2b27805",
+      "bytes": 1184,
+      "lines": 48
+    },
+    {
+      "project": "kyverno",
+      "repository": "kyverno/policies",
+      "commit": "2716f4a26a3c27590a1d6d960dee4ce043e4fa4a",
+      "path": "best-practices/require-labels/require-labels.yaml",
+      "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/best-practices/require-labels/require-labels.yaml",
+      "sha256": "f5dde85236dc3b3361c5ca9ee753dfc02b07e67e3e224cebf42f4b0f7a0b81d4",
+      "bytes": 1106,
+      "lines": 31
+    },
+    {
+      "project": "kyverno",
+      "repository": "kyverno/policies",
+      "commit": "2716f4a26a3c27590a1d6d960dee4ce043e4fa4a",
+      "path": "best-practices/require-labels/.kyverno-test/kyverno-test.yaml",
+      "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/best-practices/require-labels/.kyverno-test/kyverno-test.yaml",
+      "sha256": "89b84a400f975e62e48dfad99aded3c74892d237c21d2501b0dc37edcb09f7a6",
+      "bytes": 385,
+      "lines": 23
+    },
+    {
+      "project": "kyverno",
+      "repository": "kyverno/policies",
+      "commit": "2716f4a26a3c27590a1d6d960dee4ce043e4fa4a",
+      "path": "best-practices/require-labels/.chainsaw-test/chainsaw-test.yaml",
+      "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/best-practices/require-labels/.chainsaw-test/chainsaw-test.yaml",
+      "sha256": "2fabba28543534c11e395526c7ba702f1987e96adf03535be85d25e39caad84b",
+      "bytes": 1064,
+      "lines": 43
+    },
+    {
+      "project": "gatekeeper",
+      "repository": "open-policy-agent/gatekeeper-library",
+      "commit": "22a40962f83268769bcec5dfe55e44b5a85c392a",
+      "path": "library/general/allowedreposv2/template.yaml",
+      "url": "https://github.com/open-policy-agent/gatekeeper-library/blob/22a40962f83268769bcec5dfe55e44b5a85c392a/library/general/allowedreposv2/template.yaml",
+      "sha256": "e545f8b8e8608030abaaa6e3069252f2fb709c77e456912f1022df5a0d0201eb",
+      "bytes": 3088,
+      "lines": 63
+    },
+    {
+      "project": "gatekeeper",
+      "repository": "open-policy-agent/gatekeeper-library",
+      "commit": "22a40962f83268769bcec5dfe55e44b5a85c392a",
+      "path": "library/general/allowedreposv2/suite.yaml",
+      "url": "https://github.com/open-policy-agent/gatekeeper-library/blob/22a40962f83268769bcec5dfe55e44b5a85c392a/library/general/allowedreposv2/suite.yaml",
+      "sha256": "fc3ec07ce6755d6494d332b747f10ef00e7563c9b376125dac2d7e056b2555b9",
+      "bytes": 2050,
+      "lines": 57
+    },
+    {
+      "project": "gatekeeper",
+      "repository": "open-policy-agent/gatekeeper-library",
+      "commit": "22a40962f83268769bcec5dfe55e44b5a85c392a",
+      "path": "library/general/allowedreposv2/samples/repo-must-be-openpolicyagent/constraint.yaml",
+      "url": "https://github.com/open-policy-agent/gatekeeper-library/blob/22a40962f83268769bcec5dfe55e44b5a85c392a/library/general/allowedreposv2/samples/repo-must-be-openpolicyagent/constraint.yaml",
+      "sha256": "56894134f15806396672fb43cf9170fdfb92c7ea695a23dfe34573bf5c0f4ae6",
+      "bytes": 425,
+      "lines": 18
+    },
+    {
+      "project": "gatekeeper",
+      "repository": "open-policy-agent/gatekeeper-library",
+      "commit": "22a40962f83268769bcec5dfe55e44b5a85c392a",
+      "path": "library/pod-security-policy/read-only-root-filesystem/template.yaml",
+      "url": "https://github.com/open-policy-agent/gatekeeper-library/blob/22a40962f83268769bcec5dfe55e44b5a85c392a/library/pod-security-policy/read-only-root-filesystem/template.yaml",
+      "sha256": "2c7a1bc067963635d34e73ccfb89aff6e3ae0c2fc633be6a0377dd216a2b7bfd",
+      "bytes": 6049,
+      "lines": 140
+    },
+    {
+      "project": "gatekeeper",
+      "repository": "open-policy-agent/gatekeeper-library",
+      "commit": "22a40962f83268769bcec5dfe55e44b5a85c392a",
+      "path": "library/pod-security-policy/read-only-root-filesystem/suite.yaml",
+      "url": "https://github.com/open-policy-agent/gatekeeper-library/blob/22a40962f83268769bcec5dfe55e44b5a85c392a/library/pod-security-policy/read-only-root-filesystem/suite.yaml",
+      "sha256": "b2855a1062f555b5ddfc13c4ba02d151bf219cc687558c6715d17f7ffb1aa44e",
+      "bytes": 1786,
+      "lines": 51
+    },
+    {
+      "project": "gatekeeper",
+      "repository": "open-policy-agent/gatekeeper-library",
+      "commit": "22a40962f83268769bcec5dfe55e44b5a85c392a",
+      "path": "library/pod-security-policy/read-only-root-filesystem/samples/psp-readonlyrootfilesystem/constraint.yaml",
+      "url": "https://github.com/open-policy-agent/gatekeeper-library/blob/22a40962f83268769bcec5dfe55e44b5a85c392a/library/pod-security-policy/read-only-root-filesystem/samples/psp-readonlyrootfilesystem/constraint.yaml",
+      "sha256": "dc845e93acae1df90ae8030e008dd924484a1f294e9123310040736a9e8445d1",
+      "bytes": 254,
+      "lines": 12
+    },
+    {
+      "project": "gatekeeper",
+      "repository": "open-policy-agent/gatekeeper-library",
+      "commit": "22a40962f83268769bcec5dfe55e44b5a85c392a",
+      "path": "library/general/requiredlabels/template.yaml",
+      "url": "https://github.com/open-policy-agent/gatekeeper-library/blob/22a40962f83268769bcec5dfe55e44b5a85c392a/library/general/requiredlabels/template.yaml",
+      "sha256": "d5a639b139269d1937c5ba9bc807e5aa906cd187007f095f52b69440a0edaa44",
+      "bytes": 3335,
+      "lines": 79
+    },
+    {
+      "project": "gatekeeper",
+      "repository": "open-policy-agent/gatekeeper-library",
+      "commit": "22a40962f83268769bcec5dfe55e44b5a85c392a",
+      "path": "library/general/requiredlabels/suite.yaml",
+      "url": "https://github.com/open-policy-agent/gatekeeper-library/blob/22a40962f83268769bcec5dfe55e44b5a85c392a/library/general/requiredlabels/suite.yaml",
+      "sha256": "b0de8567d094d84a1427a21a6b85228c9e7d5e9c2b1f16fc832ba564743d9fae",
+      "bytes": 988,
+      "lines": 33
+    },
+    {
+      "project": "gatekeeper",
+      "repository": "open-policy-agent/gatekeeper-library",
+      "commit": "22a40962f83268769bcec5dfe55e44b5a85c392a",
+      "path": "library/general/requiredlabels/samples/all-must-have-owner/constraint.yaml",
+      "url": "https://github.com/open-policy-agent/gatekeeper-library/blob/22a40962f83268769bcec5dfe55e44b5a85c392a/library/general/requiredlabels/samples/all-must-have-owner/constraint.yaml",
+      "sha256": "08d6c67042e4d78364d6d1f8eda2848dd8f22b0e1037fa4bea348421c044b94e",
+      "bytes": 377,
+      "lines": 14
+    },
+    {
+      "project": "kubewarden",
+      "repository": "kubewarden/policies",
+      "commit": "062ce69867746d012276e1120017f1c0c7694e22",
+      "path": "policies/trusted-repos-policy/README.md",
+      "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/trusted-repos-policy/README.md",
+      "sha256": "b003c2a12032fbbf7ee4151088d2cc554bb05dcdea6ac75d298c12b601954cd2",
+      "bytes": 3360,
+      "lines": 146
+    },
+    {
+      "project": "kubewarden",
+      "repository": "kubewarden/policies",
+      "commit": "062ce69867746d012276e1120017f1c0c7694e22",
+      "path": "policies/trusted-repos-policy/metadata.yml",
+      "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/trusted-repos-policy/metadata.yml",
+      "sha256": "621744a16b5fc3d2074e2c412d9e5c535fd1faa6546db5289c3213b375ee58e2",
+      "bytes": 1498,
+      "lines": 36
+    },
+    {
+      "project": "kubewarden",
+      "repository": "kubewarden/policies",
+      "commit": "062ce69867746d012276e1120017f1c0c7694e22",
+      "path": "policies/trusted-repos-policy/src/lib.rs",
+      "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/trusted-repos-policy/src/lib.rs",
+      "sha256": "b0f8cd0d9fb9bdd3f464bf169c6d904ac4a204d126fbb5174f162890be48af61",
+      "bytes": 12026,
+      "lines": 348
+    },
+    {
+      "project": "kubewarden",
+      "repository": "kubewarden/policies",
+      "commit": "062ce69867746d012276e1120017f1c0c7694e22",
+      "path": "policies/trusted-repos-policy/src/settings.rs",
+      "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/trusted-repos-policy/src/settings.rs",
+      "sha256": "0509dda305c475203cee67cfdb9eb02b9df3402de8ee3c61442ac8c4a22fa8df",
+      "bytes": 5286,
+      "lines": 177
+    },
+    {
+      "project": "kubewarden",
+      "repository": "kubewarden/policies",
+      "commit": "062ce69867746d012276e1120017f1c0c7694e22",
+      "path": "policies/trusted-repos-policy/e2e.bats",
+      "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/trusted-repos-policy/e2e.bats",
+      "sha256": "cf8fe69c6a66efc88d66a82d4063116c61becd5d33b59446de9ec82209e360ae",
+      "bytes": 3919,
+      "lines": 122
+    },
+    {
+      "project": "kubewarden",
+      "repository": "kubewarden/policies",
+      "commit": "062ce69867746d012276e1120017f1c0c7694e22",
+      "path": "policies/trusted-repos-policy/Cargo.toml",
+      "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/trusted-repos-policy/Cargo.toml",
+      "sha256": "61a0587c70bee2b50be63a621ee30cd1a89a9a6160d863753583aaf997bb87c8",
+      "bytes": 576,
+      "lines": 22
+    },
+    {
+      "project": "kubewarden",
+      "repository": "kubewarden/policies",
+      "commit": "062ce69867746d012276e1120017f1c0c7694e22",
+      "path": "policies/readonly-root-filesystem-psp-policy/README.md",
+      "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/readonly-root-filesystem-psp-policy/README.md",
+      "sha256": "35e7f19411617cdc4bc47aac43266a8d01d14f668d351aa3df5e7dcebbe4afcc",
+      "bytes": 1212,
+      "lines": 25
+    },
+    {
+      "project": "kubewarden",
+      "repository": "kubewarden/policies",
+      "commit": "062ce69867746d012276e1120017f1c0c7694e22",
+      "path": "policies/readonly-root-filesystem-psp-policy/metadata.yml",
+      "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/readonly-root-filesystem-psp-policy/metadata.yml",
+      "sha256": "c79fd681e6137f06b79f3b0f4ed4716cdd55753db2e9f9d69ec14f2af973d262",
+      "bytes": 1128,
+      "lines": 30
+    },
+    {
+      "project": "kubewarden",
+      "repository": "kubewarden/policies",
+      "commit": "062ce69867746d012276e1120017f1c0c7694e22",
+      "path": "policies/readonly-root-filesystem-psp-policy/src/lib.rs",
+      "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/readonly-root-filesystem-psp-policy/src/lib.rs",
+      "sha256": "49fa593668bd6b5453dc5ea9756afd376f62d3473099a0376104ce340baef987",
+      "bytes": 7225,
+      "lines": 206
+    },
+    {
+      "project": "kubewarden",
+      "repository": "kubewarden/policies",
+      "commit": "062ce69867746d012276e1120017f1c0c7694e22",
+      "path": "policies/readonly-root-filesystem-psp-policy/src/settings.rs",
+      "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/readonly-root-filesystem-psp-policy/src/settings.rs",
+      "sha256": "949b2b281fb9741290e67b8c64e25a42ca7e10f558d761c162a2bd4618495f32",
+      "bytes": 526,
+      "lines": 26
+    },
+    {
+      "project": "kubewarden",
+      "repository": "kubewarden/policies",
+      "commit": "062ce69867746d012276e1120017f1c0c7694e22",
+      "path": "policies/readonly-root-filesystem-psp-policy/e2e.bats",
+      "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/readonly-root-filesystem-psp-policy/e2e.bats",
+      "sha256": "e9af635e0c22439e5f1ae56eeef6add3e3602838670ff61d61134166762e0a05",
+      "bytes": 101,
+      "lines": 6
+    },
+    {
+      "project": "kubewarden",
+      "repository": "kubewarden/policies",
+      "commit": "062ce69867746d012276e1120017f1c0c7694e22",
+      "path": "policies/readonly-root-filesystem-psp-policy/Cargo.toml",
+      "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/readonly-root-filesystem-psp-policy/Cargo.toml",
+      "sha256": "db9100b7647468f0113f23e306a789d0a8be2e718b22da3676fd7ba15ec4d05d",
+      "bytes": 355,
+      "lines": 14
+    },
+    {
+      "project": "kubewarden",
+      "repository": "kubewarden/policies",
+      "commit": "062ce69867746d012276e1120017f1c0c7694e22",
+      "path": "policies/labels-policy/README.md",
+      "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/labels-policy/README.md",
+      "sha256": "ab889990acef3658ecb65f13481e8bd7864a2e09f411667ccb13664c39e8fab9",
+      "bytes": 5245,
+      "lines": 147
+    },
+    {
+      "project": "kubewarden",
+      "repository": "kubewarden/policies",
+      "commit": "062ce69867746d012276e1120017f1c0c7694e22",
+      "path": "policies/labels-policy/metadata.yml",
+      "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/labels-policy/metadata.yml",
+      "sha256": "99bcfca05032f38d92e96d9fcf6450a98b8ed06168fc1e676ce10f1fb65d7f32",
+      "bytes": 1498,
+      "lines": 61
+    },
+    {
+      "project": "kubewarden",
+      "repository": "kubewarden/policies",
+      "commit": "062ce69867746d012276e1120017f1c0c7694e22",
+      "path": "policies/labels-policy/src/lib.rs",
+      "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/labels-policy/src/lib.rs",
+      "sha256": "f24df4a179eede79a02f49130a9ca1b05da631c3678289c05249cc2956f2d740",
+      "bytes": 5339,
+      "lines": 176
+    },
+    {
+      "project": "kubewarden",
+      "repository": "kubewarden/policies",
+      "commit": "062ce69867746d012276e1120017f1c0c7694e22",
+      "path": "policies/labels-policy/src/settings.rs",
+      "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/labels-policy/src/settings.rs",
+      "sha256": "aeca061d61a566dcc781f660553783146996bd19f926efc2060ffcb5181785e0",
+      "bytes": 5205,
+      "lines": 121
+    },
+    {
+      "project": "kubewarden",
+      "repository": "kubewarden/policies",
+      "commit": "062ce69867746d012276e1120017f1c0c7694e22",
+      "path": "policies/labels-policy/e2e.bats",
+      "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/labels-policy/e2e.bats",
+      "sha256": "61393033bd917f45ffd528699d1bc5e4530577eae4dd59bff784dcc83fe60e86",
+      "bytes": 2299,
+      "lines": 68
+    },
+    {
+      "project": "kubewarden",
+      "repository": "kubewarden/policies",
+      "commit": "062ce69867746d012276e1120017f1c0c7694e22",
+      "path": "policies/labels-policy/Cargo.toml",
+      "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/labels-policy/Cargo.toml",
+      "sha256": "3b765bf0f4971b8a99cc827dba26ee07c26a400c464741836b2d73dfc5ccd9b2",
+      "bytes": 527,
+      "lines": 20
+    },
+    {
+      "project": "kubewarden",
+      "repository": "kubewarden/policies",
+      "commit": "062ce69867746d012276e1120017f1c0c7694e22",
+      "path": "policies/trusted-repos-policy/src/validating_resource.rs",
+      "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/trusted-repos-policy/src/validating_resource.rs",
+      "sha256": "3c76a860e30b613ac255c973f5a659752b83512dd1a678e2ef74f91143cedc83",
+      "bytes": 1444,
+      "lines": 58
+    },
+    {
+      "project": "kubewarden",
+      "repository": "kubewarden/policies",
+      "commit": "062ce69867746d012276e1120017f1c0c7694e22",
+      "path": "policies/trusted-repos-policy/src/validation.rs",
+      "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/trusted-repos-policy/src/validation.rs",
+      "sha256": "07ec43d32d439a487c858751377d0a1fe0044401596226047d61c72fc4d6b873",
+      "bytes": 37135,
+      "lines": 1053
+    },
+    {
+      "project": "polaris",
+      "repository": "FairwindsOps/polaris",
+      "commit": "c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0",
+      "path": "docs/customization/custom-checks.md",
+      "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/docs/customization/custom-checks.md",
+      "sha256": "d8223df385ffe413c194b135fa0d82a1887324ab52d3ac6665ce2e3244a085c3",
+      "bytes": 8951,
+      "lines": 240
+    },
+    {
+      "project": "polaris",
+      "repository": "FairwindsOps/polaris",
+      "commit": "c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0",
+      "path": "docs/admission-controller.md",
+      "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/docs/admission-controller.md",
+      "sha256": "e610f55f587e6359aeae57f41af9ae73fb681f387af55cacd1a424b25687d29e",
+      "bytes": 3191,
+      "lines": 82
+    },
+    {
+      "project": "polaris",
+      "repository": "FairwindsOps/polaris",
+      "commit": "c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0",
+      "path": "docs/customization/exemptions.md",
+      "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/docs/customization/exemptions.md",
+      "sha256": "900f12aad703e5f3db578c5a80f3b13d681de443470f141e0bec424d6f4c499f",
+      "bytes": 2245,
+      "lines": 61
+    },
+    {
+      "project": "polaris",
+      "repository": "FairwindsOps/polaris",
+      "commit": "c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0",
+      "path": "docs/customization/configuration.md",
+      "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/docs/customization/configuration.md",
+      "sha256": "e7dd4eeda2d1320f42fd80dad0cd581f297be1b804ba31c31ae1c0881dad5d79",
+      "bytes": 886,
+      "lines": 21
+    },
+    {
+      "project": "polaris",
+      "repository": "FairwindsOps/polaris",
+      "commit": "c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0",
+      "path": "pkg/config/checks/notReadOnlyRootFilesystem.yaml",
+      "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/pkg/config/checks/notReadOnlyRootFilesystem.yaml",
+      "sha256": "ec90afb1f61dbabe0773af240101e1480233a0993bd858a97befb862fd6614a0",
+      "bytes": 1132,
+      "lines": 48
+    },
+    {
+      "project": "polaris",
+      "repository": "FairwindsOps/polaris",
+      "commit": "c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0",
+      "path": "pkg/config/default.yaml",
+      "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/pkg/config/default.yaml",
+      "sha256": "388748b75d142b8508a87c6404d7b6f29bddb02dbc4324860b17777475b4f468",
+      "bytes": 7466,
+      "lines": 318
+    },
+    {
+      "project": "polaris",
+      "repository": "FairwindsOps/polaris",
+      "commit": "c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0",
+      "path": "pkg/kube/resource.go",
+      "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/pkg/kube/resource.go",
+      "sha256": "bf94787e7317a423da009b325190a0c02ff680dabaab0feed7eb18b70e5de554",
+      "bytes": 10462,
+      "lines": 307
+    },
+    {
+      "project": "polaris",
+      "repository": "FairwindsOps/polaris",
+      "commit": "c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0",
+      "path": "pkg/config/checks.go",
+      "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/pkg/config/checks.go",
+      "sha256": "0e6e1874f234b96399aa439cda025d540c7925c096bb7a2b8abd69060e5cea91",
+      "bytes": 2568,
+      "lines": 98
+    },
+    {
+      "project": "polaris",
+      "repository": "FairwindsOps/polaris",
+      "commit": "c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0",
+      "path": "pkg/validator/custom.go",
+      "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/pkg/validator/custom.go",
+      "sha256": "0abb381cf660e463a762ac99da23316edcd6f1c7ea2b7d8265f7f77c1bf0ccec",
+      "bytes": 372,
+      "lines": 19
+    },
+    {
+      "project": "polaris",
+      "repository": "FairwindsOps/polaris",
+      "commit": "c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0",
+      "path": "pkg/validator/schema.go",
+      "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/pkg/validator/schema.go",
+      "sha256": "17891cb52509478c96a0a65d044b2b9ab740a2e1234e75bd4a59be1d59584643",
+      "bytes": 16613,
+      "lines": 498
+    },
+    {
+      "project": "polaris",
+      "repository": "FairwindsOps/polaris",
+      "commit": "c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0",
+      "path": "pkg/validator/container_test.go",
+      "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/pkg/validator/container_test.go",
+      "sha256": "1fca10d4d7a7a766344e778c144f60c502eeb04fc5f0d458e46e0992ac825afd",
+      "bytes": 33902,
+      "lines": 1186
+    },
+    {
+      "project": "polaris",
+      "repository": "FairwindsOps/polaris",
+      "commit": "c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0",
+      "path": "pkg/config/checks/metadataAndInstanceMismatched.yaml",
+      "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/pkg/config/checks/metadataAndInstanceMismatched.yaml",
+      "sha256": "144a5489cbedf1ef9082da063954d10370df9e7d3c5694cc80c536954bbcc6bf",
+      "bytes": 555,
+      "lines": 18
+    },
+    {
+      "project": "polaris",
+      "repository": "FairwindsOps/polaris",
+      "commit": "c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0",
+      "path": "test/checks/metadataAndInstanceMismatched/success.yaml",
+      "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/test/checks/metadataAndInstanceMismatched/success.yaml",
+      "sha256": "98ba2d7d89c3b7f5786ee3ea1a7eb691b8b97fde194a1cc48d06588c8f8cbc65",
+      "bytes": 150,
+      "lines": 10
+    },
+    {
+      "project": "polaris",
+      "repository": "FairwindsOps/polaris",
+      "commit": "c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0",
+      "path": "test/checks/metadataAndInstanceMismatched/failure.yaml",
+      "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/test/checks/metadataAndInstanceMismatched/failure.yaml",
+      "sha256": "971e0c179a1310ee847930b63c2ac65d68d74670a8fb8886df78fdea9781267f",
+      "bytes": 154,
+      "lines": 10
+    },
+    {
+      "project": "kubernetes-api",
+      "repository": "kubernetes/api",
+      "commit": "b65ac350d910ec0067b586c1a7cce7f79fa9bdf5",
+      "path": "core/v1/types.go",
+      "url": "https://github.com/kubernetes/api/blob/b65ac350d910ec0067b586c1a7cce7f79fa9bdf5/core/v1/types.go",
+      "sha256": "3ce00ec375ddbab52daf76d30421b1065fa9bcf34fe5e0ef94dc14b8475d1506",
+      "bytes": 445653,
+      "lines": 8454
+    }
+  ],
+  "unavailableRequestedSources": []
+}

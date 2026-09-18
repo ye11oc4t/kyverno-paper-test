@@ -1,0 +1,711 @@
+{
+  "reviewDateKst": "2026-09-19",
+  "method": "exploratory purposive manual source review; single reviewer",
+  "sampleUnitCount": 13,
+  "sampleProjects": [
+    "gatekeeper",
+    "kubewarden",
+    "kyverno",
+    "polaris"
+  ],
+  "sourceLockSha256": "18ba4398c6684bc9b1727430495854a5c59e717b56de18dfce5aed2e6a634213",
+  "runtimeTestsPerformed": false,
+  "confirmedCommonProductDefect": false,
+  "meaningOfFalse": "이번 근거로 입증하지 못했다는 뜻이며 결함이 없다는 증명이 아니다.",
+  "documentationReferences": [
+    {
+      "id": "kyverno-cp-mode",
+      "url": "https://kyverno.io/docs/policy-types/cluster-policy/validate/",
+      "purpose": "Audit/Enforce의 의미",
+      "checkedDateKst": "2026-09-19",
+      "revision": "online documentation; not immutable"
+    },
+    {
+      "id": "kyverno-vpol",
+      "url": "https://kyverno.io/docs/policy-types/validating-policy/",
+      "purpose": "정책 API·평가 모드와 생성 기능의 구분",
+      "checkedDateKst": "2026-09-19",
+      "revision": "online documentation; not immutable"
+    },
+    {
+      "id": "gatekeeper-mode",
+      "url": "https://open-policy-agent.github.io/gatekeeper/website/docs/violations/",
+      "purpose": "enforcementAction 기본 deny 및 dryrun/warn",
+      "checkedDateKst": "2026-09-19",
+      "revision": "online documentation; not immutable"
+    },
+    {
+      "id": "kubewarden-mode",
+      "url": "https://docs.kubewarden.io/reference/monitor-mode",
+      "purpose": "protect 기본값과 monitor 의미",
+      "checkedDateKst": "2026-09-19",
+      "revision": "online documentation; not immutable"
+    },
+    {
+      "id": "kubernetes-vap",
+      "url": "https://kubernetes.io/docs/reference/access-authn-authz/validating-admission-policy/",
+      "purpose": "정책·binding과 action의 구분",
+      "checkedDateKst": "2026-09-19",
+      "revision": "online documentation; not immutable"
+    },
+    {
+      "id": "kubernetes-pss-map",
+      "url": "https://kubernetes.io/docs/reference/access-authn-authz/psp-to-pod-security-standards/",
+      "purpose": "PSS는 readOnlyRootFilesystem에 대해 no opinion",
+      "checkedDateKst": "2026-09-19",
+      "revision": "online documentation; not immutable"
+    }
+  ],
+  "rows": [
+    {
+      "id": "KY-IMG-CP",
+      "project": "kyverno",
+      "family": "image-origin",
+      "name": "restrict-image-registries",
+      "artifactType": "catalog ClusterPolicy YAML",
+      "documentedContract": "운영자가 지정한 레지스트리에서 오는 컨테이너 이미지를 검증한다. 허용 목록 맞춤 설정을 요구한다.",
+      "sourceScope": "Pod spec의 일반·init·ephemeral 컨테이너 이미지 필드를 모두 명시한다.",
+      "scopeAssessment": "SOURCE_SUPPORTED",
+      "enforcementMode": "공개 YAML: Audit, background=true. Chainsaw 정의는 Enforce로 변경한다.",
+      "deploymentConditions": "지원 API/버전, 실제 webhook 선택 범위, 예외 및 autogen 결과를 배포별로 확인해야 한다.",
+      "testDefinitionEvidence": "CLI 객체 테스트와 Chainsaw 테스트 정의가 있다. Chainsaw에는 Ephemeral Container 추가가 실패해야 한다는 단계도 있다. 종료 실패만 관측하는 정의이므로 거부 원인까지 증명하지는 않는다.",
+      "actualAdmissionGuarantee": "UNKNOWN",
+      "testsExecutedInThisSurvey": false,
+      "remediationOrOpenQuestion": "테스트 존재를 인정하되 실제 실행 로그, 정책 평가 기록, 저장 결과를 연결하기 전에는 요청 보장을 확정하지 않는다.",
+      "evidence": [
+        {
+          "project": "kyverno",
+          "path": "best-practices/restrict-image-registries/restrict-image-registries.yaml",
+          "start": 12,
+          "end": 37,
+          "purpose": "계약·모드·필드",
+          "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/best-practices/restrict-image-registries/restrict-image-registries.yaml#L12-L37"
+        },
+        {
+          "project": "kyverno",
+          "path": "best-practices/restrict-image-registries/.kyverno-test/kyverno-test.yaml",
+          "start": 1,
+          "end": 26,
+          "purpose": "객체 테스트 정의",
+          "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/best-practices/restrict-image-registries/.kyverno-test/kyverno-test.yaml#L1-L26"
+        },
+        {
+          "project": "kyverno",
+          "path": "best-practices/restrict-image-registries/.chainsaw-test/chainsaw-test.yaml",
+          "start": 13,
+          "end": 53,
+          "purpose": "집행 변경 및 요청 경로 테스트 정의",
+          "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/best-practices/restrict-image-registries/.chainsaw-test/chainsaw-test.yaml#L13-L53"
+        }
+      ]
+    },
+    {
+      "id": "KY-IMG-VPOL",
+      "project": "kyverno",
+      "family": "image-origin",
+      "name": "allowed-image-repos",
+      "artifactType": "catalog ValidatingPolicy v1alpha1 YAML",
+      "documentedContract": "모든 컨테이너 유형의 이미지 repository가 지정 목록에 속한다고 설명한다. 레지스트리 허용 목록과 동일한 의미는 아니다.",
+      "sourceScope": "allContainers가 일반·init·ephemeral을 합친다. matchConstraints와 평가식은 별도 요소다.",
+      "scopeAssessment": "SOURCE_SUPPORTED",
+      "enforcementMode": "공개 YAML: Warn와 Audit, background=false. Chainsaw 정의는 Deny로 변경한다.",
+      "deploymentConditions": "이 표본의 API는 v1alpha1이다. 기존 자체 정책의 v1 실행 결과를 호환성 또는 실제 요청 적용 증거로 사용하지 않는다.",
+      "testDefinitionEvidence": "CLI 객체 테스트와 Chainsaw Pod/컨트롤러 apply 정의를 확인했다. 선택한 Chainsaw 정의만으로 별도 subresource 시험은 확인되지 않는다.",
+      "actualAdmissionGuarantee": "UNKNOWN",
+      "testsExecutedInThisSurvey": false,
+      "remediationOrOpenQuestion": "allContainers 검사와 실제 요청 선택·집행을 각각 명시하고 지원 버전의 배포 산출물로 확인할 필요가 있다.",
+      "evidence": [
+        {
+          "project": "kyverno",
+          "path": "other-vpol/allowed-image-repos/allowed-image-repos.yaml",
+          "start": 1,
+          "end": 39,
+          "purpose": "계약·API·평가·매칭",
+          "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/other-vpol/allowed-image-repos/allowed-image-repos.yaml#L1-L39"
+        },
+        {
+          "project": "kyverno",
+          "path": "other-vpol/allowed-image-repos/.kyverno-test/kyverno-test.yaml",
+          "start": 1,
+          "end": 54,
+          "purpose": "객체 테스트 정의",
+          "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/other-vpol/allowed-image-repos/.kyverno-test/kyverno-test.yaml#L1-L54"
+        },
+        {
+          "project": "kyverno",
+          "path": "other-vpol/allowed-image-repos/.chainsaw-test/chainsaw-test.yaml",
+          "start": 15,
+          "end": 41,
+          "purpose": "Deny 변경 및 apply 테스트",
+          "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/other-vpol/allowed-image-repos/.chainsaw-test/chainsaw-test.yaml#L15-L41"
+        }
+      ]
+    },
+    {
+      "id": "KY-RO",
+      "project": "kyverno",
+      "family": "read-only-rootfs",
+      "name": "require-ro-rootfs",
+      "artifactType": "catalog ClusterPolicy YAML",
+      "documentedContract": "컨테이너가 읽기 전용 루트 파일시스템을 선언하도록 검증한다고 설명한다.",
+      "sourceScope": "이 공개 pattern의 명시적 검사 대상은 일반 컨테이너 목록이다.",
+      "scopeAssessment": "SCOPE_CLARIFICATION_NEEDED",
+      "enforcementMode": "공개 YAML: Audit, background=true. Chainsaw 정의는 Enforce로 변경한다.",
+      "deploymentConditions": "일반적인 containers라는 설명을 모든 유형·모든 요청 시점의 보장으로 확장할 근거가 부족하다.",
+      "testDefinitionEvidence": "CLI 객체 테스트와 Chainsaw apply 정의를 확인했다. 이번에는 실행하지 않았다.",
+      "actualAdmissionGuarantee": "UNKNOWN",
+      "testsExecutedInThisSurvey": false,
+      "remediationOrOpenQuestion": "설명에 보장하는 컨테이너 유형을 적고, 범위를 확대하려면 검사 대상과 호환성·회귀 근거를 함께 보완한다.",
+      "evidence": [
+        {
+          "project": "kyverno",
+          "path": "best-practices/require-ro-rootfs/require-ro-rootfs.yaml",
+          "start": 11,
+          "end": 33,
+          "purpose": "문서 표현과 명시 필드",
+          "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/best-practices/require-ro-rootfs/require-ro-rootfs.yaml#L11-L33"
+        },
+        {
+          "project": "kyverno",
+          "path": "best-practices/require-ro-rootfs/.kyverno-test/kyverno-test.yaml",
+          "start": 1,
+          "end": 24,
+          "purpose": "객체 테스트 정의",
+          "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/best-practices/require-ro-rootfs/.kyverno-test/kyverno-test.yaml#L1-L24"
+        },
+        {
+          "project": "kyverno",
+          "path": "best-practices/require-ro-rootfs/.chainsaw-test/chainsaw-test.yaml",
+          "start": 9,
+          "end": 48,
+          "purpose": "집행 변경 및 apply 정의",
+          "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/best-practices/require-ro-rootfs/.chainsaw-test/chainsaw-test.yaml#L9-L48"
+        }
+      ]
+    },
+    {
+      "id": "KY-LABEL",
+      "project": "kyverno",
+      "family": "metadata-label",
+      "name": "require-labels",
+      "artifactType": "catalog ClusterPolicy YAML",
+      "documentedContract": "Pod의 app.kubernetes.io/name 레이블에 값이 있도록 검증한다.",
+      "sourceScope": "metadata.labels를 검사한다. 컨테이너 유형별 검사의 평가 단위가 아니다.",
+      "scopeAssessment": "NOT_APPLICABLE",
+      "enforcementMode": "공개 YAML: Audit, background=true. Chainsaw 정의는 Enforce로 변경한다.",
+      "deploymentConditions": "Pod 매칭 및 생성된 컨트롤러 규칙의 범위를 구분해야 한다.",
+      "testDefinitionEvidence": "CLI 객체 테스트와 Chainsaw Pod/컨트롤러 apply 정의가 있다.",
+      "actualAdmissionGuarantee": "UNKNOWN",
+      "testsExecutedInThisSurvey": false,
+      "remediationOrOpenQuestion": "Ephemeral Container 필드가 없다는 이유로 누락 또는 실패로 채점하지 않는다.",
+      "evidence": [
+        {
+          "project": "kyverno",
+          "path": "best-practices/require-labels/require-labels.yaml",
+          "start": 11,
+          "end": 31,
+          "purpose": "객체 레이블 계약",
+          "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/best-practices/require-labels/require-labels.yaml#L11-L31"
+        },
+        {
+          "project": "kyverno",
+          "path": "best-practices/require-labels/.kyverno-test/kyverno-test.yaml",
+          "start": 1,
+          "end": 23,
+          "purpose": "객체 테스트 정의",
+          "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/best-practices/require-labels/.kyverno-test/kyverno-test.yaml#L1-L23"
+        },
+        {
+          "project": "kyverno",
+          "path": "best-practices/require-labels/.chainsaw-test/chainsaw-test.yaml",
+          "start": 9,
+          "end": 43,
+          "purpose": "apply 정의",
+          "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/best-practices/require-labels/.chainsaw-test/chainsaw-test.yaml#L9-L43"
+        }
+      ]
+    },
+    {
+      "id": "GK-IMG",
+      "project": "gatekeeper",
+      "family": "image-origin",
+      "name": "K8sAllowedReposv2",
+      "artifactType": "ConstraintTemplate plus sample Constraint",
+      "documentedContract": "허용 이미지의 정확 일치 또는 끝 wildcard에 따른 prefix 일치를 정의한다.",
+      "sourceScope": "Rego가 일반·init·ephemeral 이미지 목록을 각각 검사한다.",
+      "scopeAssessment": "SOURCE_SUPPORTED",
+      "enforcementMode": "표본 Constraint의 enforcementAction은 생략되어 있다. 제품 문서의 기본값은 deny다.",
+      "deploymentConditions": "Template만으로 배포가 완성되지 않는다. 표본 Constraint는 default namespace의 Pod를 선택한다. webhook 및 예외는 별도 확인 대상이다.",
+      "testDefinitionEvidence": "gator Suite에 세 컨테이너 유형의 위반을 기대하는 객체 테스트가 있다. 객체 판정 정의는 live subresource 요청 증거와 다르다.",
+      "actualAdmissionGuarantee": "UNKNOWN",
+      "testsExecutedInThisSurvey": false,
+      "remediationOrOpenQuestion": "표본의 namespace 한정과 실제 설치된 Constraint 범위를 문서화한다.",
+      "evidence": [
+        {
+          "project": "gatekeeper",
+          "path": "library/general/allowedreposv2/template.yaml",
+          "start": 8,
+          "end": 62,
+          "purpose": "계약·세 유형 평가식",
+          "url": "https://github.com/open-policy-agent/gatekeeper-library/blob/22a40962f83268769bcec5dfe55e44b5a85c392a/library/general/allowedreposv2/template.yaml#L8-L62"
+        },
+        {
+          "project": "gatekeeper",
+          "path": "library/general/allowedreposv2/samples/repo-must-be-openpolicyagent/constraint.yaml",
+          "start": 1,
+          "end": 18,
+          "purpose": "매칭·매개변수",
+          "url": "https://github.com/open-policy-agent/gatekeeper-library/blob/22a40962f83268769bcec5dfe55e44b5a85c392a/library/general/allowedreposv2/samples/repo-must-be-openpolicyagent/constraint.yaml#L1-L18"
+        },
+        {
+          "project": "gatekeeper",
+          "path": "library/general/allowedreposv2/suite.yaml",
+          "start": 1,
+          "end": 57,
+          "purpose": "gator 객체 테스트",
+          "url": "https://github.com/open-policy-agent/gatekeeper-library/blob/22a40962f83268769bcec5dfe55e44b5a85c392a/library/general/allowedreposv2/suite.yaml#L1-L57"
+        }
+      ]
+    },
+    {
+      "id": "GK-RO",
+      "project": "gatekeeper",
+      "family": "read-only-rootfs",
+      "name": "K8sPSPReadOnlyRootFilesystem",
+      "artifactType": "ConstraintTemplate plus sample Constraint",
+      "documentedContract": "Pod 컨테이너의 읽기 전용 루트 파일시스템을 요구하는 PSP 대응 정책이다.",
+      "sourceScope": "CEL과 Rego에서 세 컨테이너 유형을 참조한다. 연산에 따른 평가 조건과 이미지 예외도 존재한다.",
+      "scopeAssessment": "CONDITIONAL",
+      "enforcementMode": "표본 Constraint는 enforcementAction을 생략한다. 제품 문서 기본값은 deny다.",
+      "deploymentConditions": "요청 연산 조건, 이미지 예외, 선택된 평가 엔진과 webhook 연결을 포함해야 계약을 해석할 수 있다.",
+      "testDefinitionEvidence": "Suite는 ephemeral 객체 판정, 연산 조건, 예외에 관한 사례를 포함한다. 실제 Admission 요청 실행 기록은 수집하지 않았다.",
+      "actualAdmissionGuarantee": "UNKNOWN",
+      "testsExecutedInThisSurvey": false,
+      "remediationOrOpenQuestion": "필드 열거 여부만으로 전체 생명주기 보장을 판정하지 말고 연산 조건을 정책 설명 및 회귀 범위에 포함한다.",
+      "evidence": [
+        {
+          "project": "gatekeeper",
+          "path": "library/pod-security-policy/read-only-root-filesystem/template.yaml",
+          "start": 8,
+          "end": 34,
+          "purpose": "계약·문서화된 예외",
+          "url": "https://github.com/open-policy-agent/gatekeeper-library/blob/22a40962f83268769bcec5dfe55e44b5a85c392a/library/pod-security-policy/read-only-root-filesystem/template.yaml#L8-L34"
+        },
+        {
+          "project": "gatekeeper",
+          "path": "library/pod-security-policy/read-only-root-filesystem/template.yaml",
+          "start": 38,
+          "end": 120,
+          "purpose": "평가 엔진·필드·연산 조건",
+          "url": "https://github.com/open-policy-agent/gatekeeper-library/blob/22a40962f83268769bcec5dfe55e44b5a85c392a/library/pod-security-policy/read-only-root-filesystem/template.yaml#L38-L120"
+        },
+        {
+          "project": "gatekeeper",
+          "path": "library/pod-security-policy/read-only-root-filesystem/samples/psp-readonlyrootfilesystem/constraint.yaml",
+          "start": 1,
+          "end": 12,
+          "purpose": "표본 Constraint",
+          "url": "https://github.com/open-policy-agent/gatekeeper-library/blob/22a40962f83268769bcec5dfe55e44b5a85c392a/library/pod-security-policy/read-only-root-filesystem/samples/psp-readonlyrootfilesystem/constraint.yaml#L1-L12"
+        },
+        {
+          "project": "gatekeeper",
+          "path": "library/pod-security-policy/read-only-root-filesystem/suite.yaml",
+          "start": 1,
+          "end": 51,
+          "purpose": "객체·연산·예외 테스트 정의",
+          "url": "https://github.com/open-policy-agent/gatekeeper-library/blob/22a40962f83268769bcec5dfe55e44b5a85c392a/library/pod-security-policy/read-only-root-filesystem/suite.yaml#L1-L51"
+        }
+      ]
+    },
+    {
+      "id": "GK-LABEL",
+      "project": "gatekeeper",
+      "family": "metadata-label",
+      "name": "K8sRequiredLabels",
+      "artifactType": "ConstraintTemplate plus sample Constraint",
+      "documentedContract": "지정 레이블과 선택적인 값 정규식 조건을 요구한다.",
+      "sourceScope": "CEL 및 Rego가 객체 metadata.labels를 검사한다. 표본 Constraint는 Namespace를 선택한다.",
+      "scopeAssessment": "NOT_APPLICABLE",
+      "enforcementMode": "표본 Constraint는 enforcementAction을 생략한다. 제품 문서 기본값은 deny다.",
+      "deploymentConditions": "일반 template의 재사용 가능성과 이 표본의 실제 대상 Namespace를 구분한다.",
+      "testDefinitionEvidence": "gator Suite에 레이블 존재·값 검사 객체 사례가 있다.",
+      "actualAdmissionGuarantee": "UNKNOWN",
+      "testsExecutedInThisSurvey": false,
+      "remediationOrOpenQuestion": "Pod 정책과 똑같은 대상의 실험으로 집계하지 않으며 컨테이너 유형 누락으로 채점하지 않는다.",
+      "evidence": [
+        {
+          "project": "gatekeeper",
+          "path": "library/general/requiredlabels/template.yaml",
+          "start": 8,
+          "end": 77,
+          "purpose": "계약 및 metadata 평가",
+          "url": "https://github.com/open-policy-agent/gatekeeper-library/blob/22a40962f83268769bcec5dfe55e44b5a85c392a/library/general/requiredlabels/template.yaml#L8-L77"
+        },
+        {
+          "project": "gatekeeper",
+          "path": "library/general/requiredlabels/samples/all-must-have-owner/constraint.yaml",
+          "start": 1,
+          "end": 14,
+          "purpose": "Namespace 표본",
+          "url": "https://github.com/open-policy-agent/gatekeeper-library/blob/22a40962f83268769bcec5dfe55e44b5a85c392a/library/general/requiredlabels/samples/all-must-have-owner/constraint.yaml#L1-L14"
+        },
+        {
+          "project": "gatekeeper",
+          "path": "library/general/requiredlabels/suite.yaml",
+          "start": 1,
+          "end": 33,
+          "purpose": "객체 테스트 정의",
+          "url": "https://github.com/open-policy-agent/gatekeeper-library/blob/22a40962f83268769bcec5dfe55e44b5a85c392a/library/general/requiredlabels/suite.yaml#L1-L33"
+        }
+      ]
+    },
+    {
+      "id": "KW-IMG",
+      "project": "kubewarden",
+      "family": "image-origin",
+      "name": "trusted-repos-policy",
+      "artifactType": "Wasm policy module source and metadata",
+      "documentedContract": "registry·tag·image 조건을 설정으로 조합해 이미지 출처를 제한한다.",
+      "sourceScope": "PodSpec 추출 후 discover_images가 일반·init·ephemeral 이미지 목록을 합친다.",
+      "scopeAssessment": "SOURCE_SUPPORTED",
+      "enforcementMode": "module metadata는 배포된 정책의 mode를 확정하지 않는다. 제품 문서 기본값 protect, monitor는 관측 모드다.",
+      "deploymentConditions": "module·settings·AdmissionPolicy 계열 리소스·PolicyServer 및 최종 요청 규칙이 함께 필요하다. 소스 버전 표기는 2.1.5이며 배포 OCI digest는 검증하지 않았다.",
+      "testDefinitionEvidence": "Rust의 이미지 수집 단위 테스트에 ephemeral 사례가 있다. e2e.bats는 kwctl 로컬 평가 정의이며 live Admission 실행 결과가 아니다.",
+      "actualAdmissionGuarantee": "UNKNOWN",
+      "testsExecutedInThisSurvey": false,
+      "remediationOrOpenQuestion": "추출 가능한 필드와 최종 생성된 요청 규칙을 분리해 설명한다. 필터의 의미도 다른 프로젝트의 허용 목록과 통일되어 있지 않다.",
+      "evidence": [
+        {
+          "project": "kubewarden",
+          "path": "policies/trusted-repos-policy/README.md",
+          "start": 4,
+          "end": 26,
+          "purpose": "문서 계약",
+          "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/trusted-repos-policy/README.md#L4-L26"
+        },
+        {
+          "project": "kubewarden",
+          "path": "policies/trusted-repos-policy/metadata.yml",
+          "start": 1,
+          "end": 36,
+          "purpose": "기본 규칙 및 소스 버전",
+          "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/trusted-repos-policy/metadata.yml#L1-L36"
+        },
+        {
+          "project": "kubewarden",
+          "path": "policies/trusted-repos-policy/src/lib.rs",
+          "start": 42,
+          "end": 92,
+          "purpose": "리소스 추출 경로",
+          "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/trusted-repos-policy/src/lib.rs#L42-L92"
+        },
+        {
+          "project": "kubewarden",
+          "path": "policies/trusted-repos-policy/src/validation.rs",
+          "start": 54,
+          "end": 88,
+          "purpose": "세 유형 이미지 수집",
+          "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/trusted-repos-policy/src/validation.rs#L54-L88"
+        },
+        {
+          "project": "kubewarden",
+          "path": "policies/trusted-repos-policy/src/validation.rs",
+          "start": 313,
+          "end": 345,
+          "purpose": "ephemeral 단위 테스트",
+          "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/trusted-repos-policy/src/validation.rs#L313-L345"
+        },
+        {
+          "project": "kubewarden",
+          "path": "policies/trusted-repos-policy/e2e.bats",
+          "start": 1,
+          "end": 42,
+          "purpose": "kwctl 테스트 정의",
+          "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/trusted-repos-policy/e2e.bats#L1-L42"
+        }
+      ]
+    },
+    {
+      "id": "KW-RO",
+      "project": "kubewarden",
+      "family": "read-only-rootfs",
+      "name": "readonly-root-filesystem-psp-policy",
+      "artifactType": "Wasm policy module source and metadata",
+      "documentedContract": "일반·init 컨테이너 검사를 명시한다. README의 ephemeral에는 securityContext가 없다는 제외 사유는 참조 API 정의와 일치하지 않는다.",
+      "sourceScope": "do_validate는 일반·init 컨테이너를 검사한다. 문서상 범위 제한과 그 제한을 설명하는 API 사실의 정확성을 별도로 평가한다.",
+      "scopeAssessment": "SCOPE_CLARIFICATION_NEEDED",
+      "enforcementMode": "배포 mode는 미수집. 제품 문서 기본 protect, monitor는 비차단 관측 모드다.",
+      "deploymentConditions": "소스 metadata 버전은 1.0.14이다. 실제 OCI 바이너리와 배포 연결은 검증하지 않았다.",
+      "testDefinitionEvidence": "Rust 단위 테스트 정의가 있다. 수집한 e2e.bats는 dummy test여서 실제 평가 또는 Admission 근거로 셀 수 없다.",
+      "actualAdmissionGuarantee": "UNKNOWN",
+      "testsExecutedInThisSurvey": false,
+      "remediationOrOpenQuestion": "API에 관한 설명을 수정하고 의도한 컨테이너 범위를 명시한다. 범위를 바꾸면 별도 호환성·회귀 근거가 필요하다. 현재 확정 사항은 문서의 API 전제 오류다.",
+      "evidence": [
+        {
+          "project": "kubewarden",
+          "path": "policies/readonly-root-filesystem-psp-policy/README.md",
+          "start": 4,
+          "end": 25,
+          "purpose": "명시적 범위 및 API 설명",
+          "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/readonly-root-filesystem-psp-policy/README.md#L4-L25"
+        },
+        {
+          "project": "kubewarden",
+          "path": "policies/readonly-root-filesystem-psp-policy/src/lib.rs",
+          "start": 25,
+          "end": 76,
+          "purpose": "실제 입력과 검사",
+          "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/readonly-root-filesystem-psp-policy/src/lib.rs#L25-L76"
+        },
+        {
+          "project": "kubewarden",
+          "path": "policies/readonly-root-filesystem-psp-policy/src/lib.rs",
+          "start": 78,
+          "end": 105,
+          "purpose": "단위 테스트 정의",
+          "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/readonly-root-filesystem-psp-policy/src/lib.rs#L78-L105"
+        },
+        {
+          "project": "kubewarden",
+          "path": "policies/readonly-root-filesystem-psp-policy/metadata.yml",
+          "start": 1,
+          "end": 30,
+          "purpose": "규칙·버전",
+          "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/readonly-root-filesystem-psp-policy/metadata.yml#L1-L30"
+        },
+        {
+          "project": "kubewarden",
+          "path": "policies/readonly-root-filesystem-psp-policy/e2e.bats",
+          "start": 1,
+          "end": 5,
+          "purpose": "dummy test",
+          "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/readonly-root-filesystem-psp-policy/e2e.bats#L1-L5"
+        },
+        {
+          "project": "kubernetes-api",
+          "path": "core/v1/types.go",
+          "start": 5191,
+          "end": 5194,
+          "purpose": "v0.35.8 API의 ephemeral SecurityContext",
+          "url": "https://github.com/kubernetes/api/blob/b65ac350d910ec0067b586c1a7cce7f79fa9bdf5/core/v1/types.go#L5191-L5194"
+        }
+      ]
+    },
+    {
+      "id": "KW-LABEL",
+      "project": "kubewarden",
+      "family": "metadata-label",
+      "name": "labels-policy",
+      "artifactType": "Wasm policy module source and metadata",
+      "documentedContract": "일반 Kubernetes 객체의 레이블 키 집합을 설정한 논리 조건으로 검증한다. 기본 metadata는 workload 대상이라고 명시한다.",
+      "sourceScope": "입력 객체의 metadata.labels 키를 추출한다. 컨테이너 유형별 필드 검사가 아니다.",
+      "scopeAssessment": "NOT_APPLICABLE",
+      "enforcementMode": "배포 mode는 미수집. 제품 문서 기본 protect, monitor는 관측 모드다.",
+      "deploymentConditions": "README의 generic object 설명과 workload 기본 매칭을 구분해야 한다. 레이블 이름 설정은 필요하다. 소스 metadata 버전 0.1.10.",
+      "testDefinitionEvidence": "Rust 단위 테스트와 kwctl 기반 e2e.bats 정의가 있다. 파일명 e2e를 클러스터 실행으로 해석하지 않는다.",
+      "actualAdmissionGuarantee": "UNKNOWN",
+      "testsExecutedInThisSurvey": false,
+      "remediationOrOpenQuestion": "값 정규식/이름 일치 정책과 동일한 계약이라고 취급하지 않는다.",
+      "evidence": [
+        {
+          "project": "kubewarden",
+          "path": "policies/labels-policy/README.md",
+          "start": 6,
+          "end": 48,
+          "purpose": "대상과 설정 조건",
+          "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/labels-policy/README.md#L6-L48"
+        },
+        {
+          "project": "kubewarden",
+          "path": "policies/labels-policy/src/lib.rs",
+          "start": 23,
+          "end": 54,
+          "purpose": "레이블 키 평가",
+          "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/labels-policy/src/lib.rs#L23-L54"
+        },
+        {
+          "project": "kubewarden",
+          "path": "policies/labels-policy/metadata.yml",
+          "start": 1,
+          "end": 61,
+          "purpose": "기본 규칙·버전",
+          "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/labels-policy/metadata.yml#L1-L61"
+        },
+        {
+          "project": "kubewarden",
+          "path": "policies/labels-policy/e2e.bats",
+          "start": 1,
+          "end": 27,
+          "purpose": "kwctl 테스트 정의",
+          "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/labels-policy/e2e.bats#L1-L27"
+        }
+      ]
+    },
+    {
+      "id": "PL-IMG",
+      "project": "polaris",
+      "family": "image-origin",
+      "name": "imageRegistry custom-check example",
+      "artifactType": "official documentation custom-check example",
+      "documentedContract": "문서 예제는 특정 registry 패턴을 금지한다. 내장 허용 목록 정책이 아니다.",
+      "sourceScope": "target=Container. 해당 반복 코드는 일반·init 컨테이너를 대상으로 하며 문서의 세부 옵션도 두 유형을 설명한다.",
+      "scopeAssessment": "CONDITIONAL",
+      "enforcementMode": "예제 severity=warning. 문서상 danger가 webhook 거부 기준이며 warning은 차단 보장이 아니다.",
+      "deploymentConditions": "customChecks 정의뿐 아니라 checks 활성화·severity·컨트롤러 포함/제외·예외 및 webhook 설정이 필요하다.",
+      "testDefinitionEvidence": "이 특정 예제의 전용 회귀 테스트는 선택한 자료에서 확인하지 못했다. UNKNOWN이며 저장소 전체 부재를 뜻하지 않는다.",
+      "actualAdmissionGuarantee": "UNKNOWN",
+      "testsExecutedInThisSurvey": false,
+      "remediationOrOpenQuestion": "문서의 all Container specs라는 표현을 구체적인 입력 범위와 함께 읽어야 한다. 앞선 자체 PodSpec 정책 실험으로 이 예제의 보장을 대신하지 않는다.",
+      "evidence": [
+        {
+          "project": "polaris",
+          "path": "docs/customization/custom-checks.md",
+          "start": 14,
+          "end": 55,
+          "purpose": "예제·모드·target 옵션",
+          "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/docs/customization/custom-checks.md#L14-L55"
+        },
+        {
+          "project": "polaris",
+          "path": "pkg/validator/schema.go",
+          "start": 251,
+          "end": 274,
+          "purpose": "Container 반복 범위",
+          "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/pkg/validator/schema.go#L251-L274"
+        },
+        {
+          "project": "polaris",
+          "path": "docs/admission-controller.md",
+          "start": 10,
+          "end": 17,
+          "purpose": "거부 기준",
+          "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/docs/admission-controller.md#L10-L17"
+        },
+        {
+          "project": "polaris",
+          "path": "docs/admission-controller.md",
+          "start": 41,
+          "end": 47,
+          "purpose": "warning 의미",
+          "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/docs/admission-controller.md#L41-L47"
+        }
+      ]
+    },
+    {
+      "id": "PL-RO",
+      "project": "polaris",
+      "family": "read-only-rootfs",
+      "name": "notReadOnlyRootFilesystem",
+      "artifactType": "built-in check",
+      "documentedContract": "컨테이너 파일시스템의 읽기 전용 여부를 확인한다.",
+      "sourceScope": "target=Container, schemaTarget=PodSpec. 각 일반·init 컨테이너를 선택한 뒤 검사할 PodSpec을 재구성한다. YAML의 containers만 보고 init 부재로 판단하면 틀린다.",
+      "scopeAssessment": "CONDITIONAL",
+      "enforcementMode": "기본 severity=warning. 이 기본값 자체는 webhook 차단 약속이 아니다.",
+      "deploymentConditions": "활성 설정, severity, exemption, webhook과 mutation 사용 여부를 구분해야 한다. 이번 검토는 검사 범위이며 mutation 보장은 조사하지 않았다.",
+      "testDefinitionEvidence": "Container 평가 helper의 Go 단위 테스트 구조는 확인했다. 이 check의 전용 전체 suite나 live subresource 실행 결과를 검토한 것은 아니다.",
+      "actualAdmissionGuarantee": "UNKNOWN",
+      "testsExecutedInThisSurvey": false,
+      "remediationOrOpenQuestion": "schemaTarget과 target을 모두 문서화하고 컨테이너 유형별 범위를 명시한다.",
+      "evidence": [
+        {
+          "project": "polaris",
+          "path": "pkg/config/checks/notReadOnlyRootFilesystem.yaml",
+          "start": 1,
+          "end": 47,
+          "purpose": "check 정의",
+          "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/pkg/config/checks/notReadOnlyRootFilesystem.yaml#L1-L47"
+        },
+        {
+          "project": "polaris",
+          "path": "pkg/config/default.yaml",
+          "start": 23,
+          "end": 39,
+          "purpose": "기본 warning",
+          "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/pkg/config/default.yaml#L23-L39"
+        },
+        {
+          "project": "polaris",
+          "path": "pkg/validator/schema.go",
+          "start": 251,
+          "end": 274,
+          "purpose": "반복 대상",
+          "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/pkg/validator/schema.go#L251-L274"
+        },
+        {
+          "project": "polaris",
+          "path": "pkg/validator/schema.go",
+          "start": 341,
+          "end": 364,
+          "purpose": "schemaTarget 변환",
+          "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/pkg/validator/schema.go#L341-L364"
+        },
+        {
+          "project": "polaris",
+          "path": "pkg/validator/container_test.go",
+          "start": 64,
+          "end": 88,
+          "purpose": "단위 테스트 helper",
+          "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/pkg/validator/container_test.go#L64-L88"
+        },
+        {
+          "project": "polaris",
+          "path": "docs/admission-controller.md",
+          "start": 10,
+          "end": 17,
+          "purpose": "차단 기준",
+          "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/docs/admission-controller.md#L10-L17"
+        }
+      ]
+    },
+    {
+      "id": "PL-LABEL",
+      "project": "polaris",
+      "family": "metadata-label",
+      "name": "label/name templating example",
+      "artifactType": "official documentation templating example",
+      "documentedContract": "문서 예제는 app.kubernetes.io/name과 객체 이름의 일치를 보여 준다.",
+      "sourceScope": "target=Controller, metadata.labels 평가. 컨테이너 유형별 검사와 무관하다.",
+      "scopeAssessment": "NOT_APPLICABLE",
+      "enforcementMode": "예제 블록 자체에는 checks 활성화 및 severity가 없어 배포 집행을 확정할 수 없다.",
+      "deploymentConditions": "같은 이름의 내장 정책으로 임의 대응시키지 않는다. 별도 내장 metadataAndInstanceMismatched는 instance 키를 사용하고 기본 warning이다.",
+      "testDefinitionEvidence": "문서 예제의 전용 테스트는 선택 자료에서 확인하지 못했다. 다른 instance 내장 check의 fixture를 이 예제의 시험 증거로 합치지 않았다.",
+      "actualAdmissionGuarantee": "UNKNOWN",
+      "testsExecutedInThisSurvey": false,
+      "remediationOrOpenQuestion": "예제의 설명·검사 키와 실제 내장 check를 구별하고 대상 Controller의 의미를 함께 명시한다.",
+      "evidence": [
+        {
+          "project": "polaris",
+          "path": "docs/customization/custom-checks.md",
+          "start": 115,
+          "end": 141,
+          "purpose": "선정한 문서 예제",
+          "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/docs/customization/custom-checks.md#L115-L141"
+        },
+        {
+          "project": "polaris",
+          "path": "docs/customization/custom-checks.md",
+          "start": 37,
+          "end": 55,
+          "purpose": "활성화 및 대상 설명",
+          "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/docs/customization/custom-checks.md#L37-L55"
+        },
+        {
+          "project": "polaris",
+          "path": "pkg/config/checks/metadataAndInstanceMismatched.yaml",
+          "start": 1,
+          "end": 18,
+          "purpose": "다른 내장 check와 구분",
+          "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/pkg/config/checks/metadataAndInstanceMismatched.yaml#L1-L18"
+        },
+        {
+          "project": "polaris",
+          "path": "pkg/config/default.yaml",
+          "start": 1,
+          "end": 9,
+          "purpose": "다른 내장 check의 모드",
+          "url": "https://github.com/FairwindsOps/polaris/blob/c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0/pkg/config/default.yaml#L1-L9"
+        }
+      ]
+    }
+  ]
+}
