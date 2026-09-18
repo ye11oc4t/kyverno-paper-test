@@ -1,0 +1,13 @@
+policy,resource,expected
+baseline-disallow-privileged,privileged-normal,pass
+baseline-disallow-privileged,privileged-violation,fail
+baseline-disallow-privileged,privileged-missing,pass
+baseline-disallow-privileged,privileged-mixed,fail
+baseline-require-container-nonroot,nonroot-normal,pass
+baseline-require-container-nonroot,nonroot-violation,fail
+baseline-require-container-nonroot,nonroot-missing,fail
+baseline-require-container-nonroot,nonroot-mixed,fail
+baseline-approved-registry,registry-normal,pass
+baseline-approved-registry,registry-violation,fail
+baseline-approved-registry,registry-missing,fail
+baseline-approved-registry,registry-mixed,fail

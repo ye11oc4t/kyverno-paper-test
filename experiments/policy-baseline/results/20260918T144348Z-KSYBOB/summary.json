@@ -1,0 +1,89 @@
+{
+  "experiment": "policy-baseline",
+  "status": "PASS",
+  "startedUtc": "2026-09-18T14:43:48.0506204+00:00",
+  "finishedUtc": "2026-09-18T14:43:49.2847870+00:00",
+  "machine": "KSYBOB",
+  "os": "Microsoft Windows NT 10.0.26200.0",
+  "powershell": "7.6.5",
+  "kyvernoVersion": "Version: 1.19.1\r\nTime: 2026-09-10T05:20:21Z\r\nGit commit ID: 40ec788d48bb28d83dbf85538e962a59db9d45c6",
+  "kyvernoBinarySha256": "f5cecc90426950908551784bfe00e448ae73a8af6f225005bea1c2843fd57bdd",
+  "repeats": 3,
+  "casesPerRepeat": 12,
+  "identicalAssertionResultsAcrossRepeats": true,
+  "timingMeaning": "CLI process wall time including startup and file IO; not admission latency or a performance benchmark.",
+  "command": "kyverno test experiments/policy-baseline --require-tests --remove-color --detailed-results --output-format json",
+  "inputs": [
+    {
+      "path": "expectations.csv",
+      "sha256": "60c53495cb6a7adf907ea47090f273d8ae98f0c7d110dd0120986333220f8387"
+    },
+    {
+      "path": "run.ps1",
+      "sha256": "c42c499a832eef2d354c221e7be2bb579aff3e7ecdc0b37178528cc166cfed0a"
+    },
+    {
+      "path": "install-cli.ps1",
+      "sha256": "0b6fd75ccf74ec0e531becda591cad028674bea45f460e0b41c117508ea97acf"
+    },
+    {
+      "path": "nonroot/policy.yaml",
+      "sha256": "6f9dc70e57bd36fe2f6f58e8d499fd5096721c64a754066b2b589a569a0d9f6a"
+    },
+    {
+      "path": "nonroot/resources.yaml",
+      "sha256": "94b5331fa849490da1bc352e6f1adedc51a6fe79b3a9e92bd3fb5420f70da2e3"
+    },
+    {
+      "path": "nonroot/kyverno-test.yaml",
+      "sha256": "ab86f53836d54fa8a88335746d5ce4e2284533b8304891587d9ea8d0cc5d2051"
+    },
+    {
+      "path": "privileged/policy.yaml",
+      "sha256": "d09c6f2d215ad9784ae9df5085480e735919e48003e1436a9722906bb9f143f3"
+    },
+    {
+      "path": "privileged/resources.yaml",
+      "sha256": "06b0bcc2f2948f781492cbf3f4ca4885fad4a431513a7ff09ca0a0070e64eed9"
+    },
+    {
+      "path": "privileged/kyverno-test.yaml",
+      "sha256": "15a8f0ab2925efe9514ce4a77abb5baf3bdc52cbe43f1cd1980581a65974ffca"
+    },
+    {
+      "path": "registry/policy.yaml",
+      "sha256": "d61cd39ad005fd3f087143e60448209365ce9488bf668f2e727c0a4872363ae7"
+    },
+    {
+      "path": "registry/resources.yaml",
+      "sha256": "221cd78c6e8e8753397541c5897591ffcd307c009d784ffa3d8e83720222ac66"
+    },
+    {
+      "path": "registry/kyverno-test.yaml",
+      "sha256": "ffb66bb2c419dcffb7a31645bfe076d5a787c18bc4f530b4b79706422a76a4a4"
+    }
+  ],
+  "runs": [
+    {
+      "iteration": 1,
+      "exitCode": 0,
+      "assertions": 12,
+      "matchedExpectations": true,
+      "wallTimeMs": 340.56
+    },
+    {
+      "iteration": 2,
+      "exitCode": 0,
+      "assertions": 12,
+      "matchedExpectations": true,
+      "wallTimeMs": 333.93
+    },
+    {
+      "iteration": 3,
+      "exitCode": 0,
+      "assertions": 12,
+      "matchedExpectations": true,
+      "wallTimeMs": 334.1
+    }
+  ]
+}

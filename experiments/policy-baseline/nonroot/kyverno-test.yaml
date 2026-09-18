@@ -1,0 +1,29 @@
+apiVersion: cli.kyverno.io/v1alpha1
+kind: Test
+metadata:
+  name: baseline-nonroot
+policies:
+  - policy.yaml
+resources:
+  - resources.yaml
+results:
+  - isValidatingPolicy: true
+    policy: baseline-require-container-nonroot
+    kind: Pod
+    resources: [nonroot-normal]
+    result: pass
+  - isValidatingPolicy: true
+    policy: baseline-require-container-nonroot
+    kind: Pod
+    resources: [nonroot-violation]
+    result: fail
+  - isValidatingPolicy: true
+    policy: baseline-require-container-nonroot
+    kind: Pod
+    resources: [nonroot-missing]
+    result: fail
+  - isValidatingPolicy: true
+    policy: baseline-require-container-nonroot
+    kind: Pod
+    resources: [nonroot-mixed]
+    result: fail

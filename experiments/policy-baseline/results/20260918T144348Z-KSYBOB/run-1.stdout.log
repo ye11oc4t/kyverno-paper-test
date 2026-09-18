@@ -1,0 +1,144 @@
+Loading test  ( C:\Users\ksybo\Documents\Codex\projects\kyverno-paper-test\experiments\policy-baseline\nonroot\kyverno-test.yaml ) ...
+  Loading values/variables ...
+  Loading policies ...
+  Loading resources ...
+  Loading exceptions ...
+  Applying 1 policy to 4 resources with 0 exceptions ...
+  Checking results ...
+
+[
+  {
+    "ID": 1,
+    "Message": "success",
+    "POLICY": "baseline-require-container-nonroot",
+    "REASON": "Ok",
+    "RESOURCE": "v1/Pod/default/nonroot-normal",
+    "RESULT": "Pass",
+    "RULE": ""
+  },
+  {
+    "ID": 2,
+    "Message": "Every regular container must explicitly set runAsNonRoot to true in this baseline.",
+    "POLICY": "baseline-require-container-nonroot",
+    "REASON": "Ok",
+    "RESOURCE": "v1/Pod/default/nonroot-violation",
+    "RESULT": "Pass",
+    "RULE": ""
+  },
+  {
+    "ID": 3,
+    "Message": "Every regular container must explicitly set runAsNonRoot to true in this baseline.",
+    "POLICY": "baseline-require-container-nonroot",
+    "REASON": "Ok",
+    "RESOURCE": "v1/Pod/default/nonroot-missing",
+    "RESULT": "Pass",
+    "RULE": ""
+  },
+  {
+    "ID": 4,
+    "Message": "Every regular container must explicitly set runAsNonRoot to true in this baseline.",
+    "POLICY": "baseline-require-container-nonroot",
+    "REASON": "Ok",
+    "RESOURCE": "v1/Pod/default/nonroot-mixed",
+    "RESULT": "Pass",
+    "RULE": ""
+  }
+]
+
+Loading test  ( C:\Users\ksybo\Documents\Codex\projects\kyverno-paper-test\experiments\policy-baseline\privileged\kyverno-test.yaml ) ...
+  Loading values/variables ...
+  Loading policies ...
+  Loading resources ...
+  Loading exceptions ...
+  Applying 1 policy to 4 resources with 0 exceptions ...
+  Checking results ...
+
+[
+  {
+    "ID": 1,
+    "Message": "success",
+    "POLICY": "baseline-disallow-privileged",
+    "REASON": "Ok",
+    "RESOURCE": "v1/Pod/default/privileged-normal",
+    "RESULT": "Pass",
+    "RULE": ""
+  },
+  {
+    "ID": 2,
+    "Message": "Regular containers must not enable privileged mode.",
+    "POLICY": "baseline-disallow-privileged",
+    "REASON": "Ok",
+    "RESOURCE": "v1/Pod/default/privileged-violation",
+    "RESULT": "Pass",
+    "RULE": ""
+  },
+  {
+    "ID": 3,
+    "Message": "success",
+    "POLICY": "baseline-disallow-privileged",
+    "REASON": "Ok",
+    "RESOURCE": "v1/Pod/default/privileged-missing",
+    "RESULT": "Pass",
+    "RULE": ""
+  },
+  {
+    "ID": 4,
+    "Message": "Regular containers must not enable privileged mode.",
+    "POLICY": "baseline-disallow-privileged",
+    "REASON": "Ok",
+    "RESOURCE": "v1/Pod/default/privileged-mixed",
+    "RESULT": "Pass",
+    "RULE": ""
+  }
+]
+
+Loading test  ( C:\Users\ksybo\Documents\Codex\projects\kyverno-paper-test\experiments\policy-baseline\registry\kyverno-test.yaml ) ...
+  Loading values/variables ...
+  Loading policies ...
+  Loading resources ...
+  Loading exceptions ...
+  Applying 1 policy to 4 resources with 0 exceptions ...
+  Checking results ...
+
+[
+  {
+    "ID": 1,
+    "Message": "success",
+    "POLICY": "baseline-approved-registry",
+    "REASON": "Ok",
+    "RESOURCE": "v1/Pod/default/registry-normal",
+    "RESULT": "Pass",
+    "RULE": ""
+  },
+  {
+    "ID": 2,
+    "Message": "Regular container images must use registry.example.com/ in this baseline.",
+    "POLICY": "baseline-approved-registry",
+    "REASON": "Ok",
+    "RESOURCE": "v1/Pod/default/registry-violation",
+    "RESULT": "Pass",
+    "RULE": ""
+  },
+  {
+    "ID": 3,
+    "Message": "Regular container images must use registry.example.com/ in this baseline.",
+    "POLICY": "baseline-approved-registry",
+    "REASON": "Ok",
+    "RESOURCE": "v1/Pod/default/registry-missing",
+    "RESULT": "Pass",
+    "RULE": ""
+  },
+  {
+    "ID": 4,
+    "Message": "Regular container images must use registry.example.com/ in this baseline.",
+    "POLICY": "baseline-approved-registry",
+    "REASON": "Ok",
+    "RESOURCE": "v1/Pod/default/registry-mixed",
+    "RESULT": "Pass",
+    "RULE": ""
+  }
+]
+
+
+Test Summary: 12 tests passed and 0 tests failed
+

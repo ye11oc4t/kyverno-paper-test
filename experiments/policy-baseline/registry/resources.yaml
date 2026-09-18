@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: registry-normal
+  namespace: default
+spec:
+  containers:
+    - name: app
+      image: registry.example.com/demo:1
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: registry-violation
+  namespace: default
+spec:
+  containers:
+    - name: app
+      image: unapproved.example.com/demo:1
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: registry-missing
+  namespace: default
+spec:
+  containers:
+    - name: app
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: registry-mixed
+  namespace: default
+spec:
+  containers:
+    - name: app
+      image: registry.example.com/demo:1
+    - name: sidecar
+      image: unapproved.example.com/sidecar:1
