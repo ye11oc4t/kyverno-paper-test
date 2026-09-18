@@ -1,0 +1,60 @@
+[
+  {
+    "label": "Kyverno ClusterPolicy example",
+    "repository": "kyverno/policies",
+    "commit": "2716f4a26a3c27590a1d6d960dee4ce043e4fa4a",
+    "path": "best-practices/restrict-image-registries/restrict-image-registries.yaml",
+    "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/best-practices/restrict-image-registries/restrict-image-registries.yaml",
+    "sha256": "09f0bae36973d59c6f234bdddd0e66bf4dc83ea2cf3c72a69f925dee7c20e036",
+    "accessedUtc": "2026-09-18T15:36:38.956993+00:00",
+    "scope": "source inspection only; not a live test of this published policy",
+    "kind": "ClusterPolicy",
+    "apiVersion": "kyverno.io/v1",
+    "containsEphemeralContainerFieldReference": true,
+    "validationFailureAction": "Audit",
+    "validationActions": null
+  },
+  {
+    "label": "Kyverno ValidatingPolicy example",
+    "repository": "kyverno/policies",
+    "commit": "2716f4a26a3c27590a1d6d960dee4ce043e4fa4a",
+    "path": "other-vpol/allowed-image-repos/allowed-image-repos.yaml",
+    "url": "https://github.com/kyverno/policies/blob/2716f4a26a3c27590a1d6d960dee4ce043e4fa4a/other-vpol/allowed-image-repos/allowed-image-repos.yaml",
+    "sha256": "b8ac9d48ead88ed285c1c6f6972fee5c68361ccb6eb888ccea9722aaaddbc5d9",
+    "accessedUtc": "2026-09-18T15:36:39.207827+00:00",
+    "scope": "source inspection only; not a live test of this published policy",
+    "kind": "ValidatingPolicy",
+    "apiVersion": "policies.kyverno.io/v1alpha1",
+    "containsEphemeralContainerFieldReference": true,
+    "validationFailureAction": null,
+    "validationActions": [
+      "Warn",
+      "Audit"
+    ]
+  },
+  {
+    "label": "Gatekeeper allowedrepos template",
+    "repository": "open-policy-agent/gatekeeper-library",
+    "commit": "22a40962f83268769bcec5dfe55e44b5a85c392a",
+    "path": "library/general/allowedrepos/template.yaml",
+    "url": "https://github.com/open-policy-agent/gatekeeper-library/blob/22a40962f83268769bcec5dfe55e44b5a85c392a/library/general/allowedrepos/template.yaml",
+    "sha256": "d1f3ef966057634a364261dcc8a7306a4d18bb3fbf466d17ffb3f889c3a3f8b2",
+    "accessedUtc": "2026-09-18T15:36:39.473502+00:00",
+    "scope": "source inspection only; not a live test of this published policy",
+    "kind": "ConstraintTemplate",
+    "apiVersion": "templates.gatekeeper.sh/v1",
+    "containsEphemeralContainerFieldReference": true,
+    "validationFailureAction": null,
+    "validationActions": null
+  },
+  {
+    "label": "Kubewarden CEL implementation README",
+    "repository": "kubewarden/policies",
+    "commit": "062ce69867746d012276e1120017f1c0c7694e22",
+    "path": "policies/cel-policy/README.md",
+    "url": "https://github.com/kubewarden/policies/blob/062ce69867746d012276e1120017f1c0c7694e22/policies/cel-policy/README.md",
+    "sha256": "9a361f2a3dc495773a271c6ddd514a8f500252383d29b236acc6c2c5d9ac2d23",
+    "accessedUtc": "2026-09-18T15:36:39.812395+00:00",
+    "scope": "source inspection only; not a live test of this published policy"
+  }
+]

@@ -1,0 +1,88 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "apiVersion": "policies.kyverno.io/v1",
+      "kind": "ValidatingPolicy",
+      "metadata": {
+        "annotations": {
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"policies.kyverno.io/v1\",\"kind\":\"ValidatingPolicy\",\"metadata\":{\"annotations\":{},\"name\":\"study-conformance\"},\"spec\":{\"failurePolicy\":\"Fail\",\"matchConstraints\":{\"namespaceSelector\":{\"matchLabels\":{\"study.example/pilot\":\"true\"}},\"resourceRules\":[{\"apiGroups\":[\"\"],\"apiVersions\":[\"v1\"],\"operations\":[\"CREATE\",\"UPDATE\"],\"resources\":[\"pods\",\"pods/ephemeralcontainers\"]}]},\"validationActions\":[\"Deny\"],\"validations\":[{\"expression\":\"object.spec.containers.all(c, c.name.startsWith('study-')) \\u0026\\u0026 (!has(object.spec.initContainers) || object.spec.initContainers.all(c, c.name.startsWith('study-'))) \\u0026\\u0026 (!has(object.spec.ephemeralContainers) || object.spec.ephemeralContainers.all(c, c.name.startsWith('study-')))\",\"message\":\"study-name: name must start with study-\"},{\"expression\":\"object.spec.containers.all(c, c.image == 'study.local/approved/pause:3.10') \\u0026\\u0026 (!has(object.spec.initContainers) || object.spec.initContainers.all(c, c.image == 'study.local/approved/pause:3.10')) \\u0026\\u0026 (!has(object.spec.ephemeralContainers) || object.spec.ephemeralContainers.all(c, c.image == 'study.local/approved/pause:3.10'))\",\"message\":\"study-image: image must be the approved study alias\"}]}}\n"
+        },
+        "creationTimestamp": "2026-09-18T15:37:13Z",
+        "generation": 1,
+        "name": "study-conformance",
+        "resourceVersion": "880",
+        "uid": "cb2a85ef-735d-45fa-9a53-f7082cee899b"
+      },
+      "spec": {
+        "failurePolicy": "Fail",
+        "matchConstraints": {
+          "namespaceSelector": {
+            "matchLabels": {
+              "study.example/pilot": "true"
+            }
+          },
+          "resourceRules": [
+            {
+              "apiGroups": [
+                ""
+              ],
+              "apiVersions": [
+                "v1"
+              ],
+              "operations": [
+                "CREATE",
+                "UPDATE"
+              ],
+              "resources": [
+                "pods",
+                "pods/ephemeralcontainers"
+              ]
+            }
+          ]
+        },
+        "validationActions": [
+          "Deny"
+        ],
+        "validations": [
+          {
+            "expression": "object.spec.containers.all(c, c.name.startsWith('study-')) && (!has(object.spec.initContainers) || object.spec.initContainers.all(c, c.name.startsWith('study-'))) && (!has(object.spec.ephemeralContainers) || object.spec.ephemeralContainers.all(c, c.name.startsWith('study-')))",
+            "message": "study-name: name must start with study-"
+          },
+          {
+            "expression": "object.spec.containers.all(c, c.image == 'study.local/approved/pause:3.10') && (!has(object.spec.initContainers) || object.spec.initContainers.all(c, c.image == 'study.local/approved/pause:3.10')) && (!has(object.spec.ephemeralContainers) || object.spec.ephemeralContainers.all(c, c.image == 'study.local/approved/pause:3.10'))",
+            "message": "study-image: image must be the approved study alias"
+          }
+        ]
+      },
+      "status": {
+        "autogen": {},
+        "conditionStatus": {
+          "conditions": [
+            {
+              "lastTransitionTime": "2026-09-18T15:37:13Z",
+              "message": "Webhook configured.",
+              "reason": "Succeeded",
+              "status": "True",
+              "type": "WebhookConfigured"
+            },
+            {
+              "lastTransitionTime": "2026-09-18T15:37:13Z",
+              "message": "Policy is not ready for reporting, missing permissions: get /v1, Resource=pods/ephemeralcontainers: ; list /v1, Resource=pods/ephemeralcontainers: ; watch /v1, Resource=pods/ephemeralcontainers: .",
+              "reason": "Failed",
+              "status": "False",
+              "type": "RBACPermissionsGranted"
+            }
+          ],
+          "message": "",
+          "ready": false
+        },
+        "generated": false
+      }
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  }
+}

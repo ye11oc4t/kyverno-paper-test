@@ -1,0 +1,95 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "apiVersion": "constraints.gatekeeper.sh/v1beta1",
+      "kind": "StudyConformance",
+      "metadata": {
+        "annotations": {
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"constraints.gatekeeper.sh/v1beta1\",\"kind\":\"StudyConformance\",\"metadata\":{\"annotations\":{},\"name\":\"study-conformance\"},\"spec\":{\"enforcementAction\":\"deny\",\"match\":{\"kinds\":[{\"apiGroups\":[\"\"],\"kinds\":[\"Pod\"]}],\"namespaces\":[\"study-consistency\"]}}}\n"
+        },
+        "creationTimestamp": "2026-09-18T15:38:59Z",
+        "generation": 1,
+        "name": "study-conformance",
+        "resourceVersion": "739",
+        "uid": "9f27692c-47eb-419e-ad22-533bb6e23a39"
+      },
+      "spec": {
+        "enforcementAction": "deny",
+        "match": {
+          "kinds": [
+            {
+              "apiGroups": [
+                ""
+              ],
+              "kinds": [
+                "Pod"
+              ]
+            }
+          ],
+          "namespaces": [
+            "study-consistency"
+          ]
+        }
+      },
+      "status": {
+        "byPod": [
+          {
+            "constraintUID": "9f27692c-47eb-419e-ad22-533bb6e23a39",
+            "enforced": true,
+            "enforcementPointsStatus": [
+              {
+                "enforcementPoint": "vap.k8s.io",
+                "message": "K8sNativeValidation engine is missing",
+                "observedGeneration": 1,
+                "state": "error"
+              }
+            ],
+            "id": "gatekeeper-audit-58657548c7-ftk9k",
+            "observedGeneration": 1,
+            "operations": [
+              "audit",
+              "generate",
+              "mutation-status",
+              "status"
+            ]
+          },
+          {
+            "constraintUID": "9f27692c-47eb-419e-ad22-533bb6e23a39",
+            "enforced": true,
+            "id": "gatekeeper-controller-manager-b4b98898b-7mbxd",
+            "observedGeneration": 1,
+            "operations": [
+              "mutation-webhook",
+              "webhook"
+            ]
+          },
+          {
+            "constraintUID": "9f27692c-47eb-419e-ad22-533bb6e23a39",
+            "enforced": true,
+            "id": "gatekeeper-controller-manager-b4b98898b-f74qb",
+            "observedGeneration": 1,
+            "operations": [
+              "mutation-webhook",
+              "webhook"
+            ]
+          },
+          {
+            "constraintUID": "9f27692c-47eb-419e-ad22-533bb6e23a39",
+            "enforced": true,
+            "id": "gatekeeper-controller-manager-b4b98898b-x7hzd",
+            "observedGeneration": 1,
+            "operations": [
+              "mutation-webhook",
+              "webhook"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  }
+}

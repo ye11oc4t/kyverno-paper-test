@@ -1,0 +1,1074 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:22Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "kyverno-admission-controller-85d7b5dd77-hlq5z",
+        "namespace": "kyverno",
+        "resourceVersion": "643",
+        "uid": "3797ec5b-850b-4ffb-adb5-e257fefa5013"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:22Z",
+      "message": "Successfully assigned kyverno/kyverno-admission-controller-85d7b5dd77-hlq5z to paper-consistency-20260918t153548z-kyverno-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:22Z",
+        "name": "kyverno-admission-controller-85d7b5dd77-hlq5z.18d6744e92e3e2ee",
+        "namespace": "kyverno",
+        "resourceVersion": "660",
+        "uid": "1f1bc3d5-db23-4513-b61c-689b2f6cc04d"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:23Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{kyverno-pre}",
+        "kind": "Pod",
+        "name": "kyverno-admission-controller-85d7b5dd77-hlq5z",
+        "namespace": "kyverno",
+        "resourceVersion": "650",
+        "uid": "3797ec5b-850b-4ffb-adb5-e257fefa5013"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:23Z",
+      "message": "Pulling image \"reg.kyverno.io/kyverno/kyvernopre:v1.19.1\"",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:23Z",
+        "name": "kyverno-admission-controller-85d7b5dd77-hlq5z.18d6744eb1417d8a",
+        "namespace": "kyverno",
+        "resourceVersion": "689",
+        "uid": "3db60d45-f8c8-496a-bcc1-39966ca42981"
+      },
+      "reason": "Pulling",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153548z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153548z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:32Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{kyverno-pre}",
+        "kind": "Pod",
+        "name": "kyverno-admission-controller-85d7b5dd77-hlq5z",
+        "namespace": "kyverno",
+        "resourceVersion": "650",
+        "uid": "3797ec5b-850b-4ffb-adb5-e257fefa5013"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:32Z",
+      "message": "Successfully pulled image \"reg.kyverno.io/kyverno/kyvernopre:v1.19.1\" in 8.907s (8.907s including waiting). Image size: 42557508 bytes.",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:32Z",
+        "name": "kyverno-admission-controller-85d7b5dd77-hlq5z.18d67450c434c3b9",
+        "namespace": "kyverno",
+        "resourceVersion": "706",
+        "uid": "59dafce5-8f61-4411-be43-bd2ed32bbca8"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153548z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153548z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:32Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{kyverno-pre}",
+        "kind": "Pod",
+        "name": "kyverno-admission-controller-85d7b5dd77-hlq5z",
+        "namespace": "kyverno",
+        "resourceVersion": "650",
+        "uid": "3797ec5b-850b-4ffb-adb5-e257fefa5013"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:32Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:32Z",
+        "name": "kyverno-admission-controller-85d7b5dd77-hlq5z.18d67450c755b068",
+        "namespace": "kyverno",
+        "resourceVersion": "707",
+        "uid": "349f4e4e-895a-40b7-93e5-33e4d706e32a"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153548z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153548z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:32Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{kyverno-pre}",
+        "kind": "Pod",
+        "name": "kyverno-admission-controller-85d7b5dd77-hlq5z",
+        "namespace": "kyverno",
+        "resourceVersion": "650",
+        "uid": "3797ec5b-850b-4ffb-adb5-e257fefa5013"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:32Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:32Z",
+        "name": "kyverno-admission-controller-85d7b5dd77-hlq5z.18d67450d6cad0a7",
+        "namespace": "kyverno",
+        "resourceVersion": "708",
+        "uid": "e8025cce-68eb-4f53-8e02-0fd5b28e5c5f"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153548z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153548z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:34Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{kyverno}",
+        "kind": "Pod",
+        "name": "kyverno-admission-controller-85d7b5dd77-hlq5z",
+        "namespace": "kyverno",
+        "resourceVersion": "650",
+        "uid": "3797ec5b-850b-4ffb-adb5-e257fefa5013"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:34Z",
+      "message": "Pulling image \"reg.kyverno.io/kyverno/kyverno:v1.19.1\"",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:34Z",
+        "name": "kyverno-admission-controller-85d7b5dd77-hlq5z.18d6745131aace89",
+        "namespace": "kyverno",
+        "resourceVersion": "719",
+        "uid": "08a998a5-3acd-41e5-9e47-8a95f00b1bf0"
+      },
+      "reason": "Pulling",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153548z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153548z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:37:05Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{kyverno}",
+        "kind": "Pod",
+        "name": "kyverno-admission-controller-85d7b5dd77-hlq5z",
+        "namespace": "kyverno",
+        "resourceVersion": "650",
+        "uid": "3797ec5b-850b-4ffb-adb5-e257fefa5013"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:37:05Z",
+      "message": "Successfully pulled image \"reg.kyverno.io/kyverno/kyverno:v1.19.1\" in 7.437s (31.289s including waiting). Image size: 47765542 bytes.",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:37:05Z",
+        "name": "kyverno-admission-controller-85d7b5dd77-hlq5z.18d674587aa5d95e",
+        "namespace": "kyverno",
+        "resourceVersion": "825",
+        "uid": "942be9fa-3d9b-4df3-b672-90632cf90f4e"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153548z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153548z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:37:05Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{kyverno}",
+        "kind": "Pod",
+        "name": "kyverno-admission-controller-85d7b5dd77-hlq5z",
+        "namespace": "kyverno",
+        "resourceVersion": "650",
+        "uid": "3797ec5b-850b-4ffb-adb5-e257fefa5013"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:37:05Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:37:05Z",
+        "name": "kyverno-admission-controller-85d7b5dd77-hlq5z.18d674587c58edd9",
+        "namespace": "kyverno",
+        "resourceVersion": "826",
+        "uid": "e1efe112-0116-4ec8-a217-00dfd202108e"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153548z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153548z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:37:05Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{kyverno}",
+        "kind": "Pod",
+        "name": "kyverno-admission-controller-85d7b5dd77-hlq5z",
+        "namespace": "kyverno",
+        "resourceVersion": "650",
+        "uid": "3797ec5b-850b-4ffb-adb5-e257fefa5013"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:37:05Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:37:05Z",
+        "name": "kyverno-admission-controller-85d7b5dd77-hlq5z.18d6745880359457",
+        "namespace": "kyverno",
+        "resourceVersion": "827",
+        "uid": "73b9f92c-9c65-4e23-b13b-dae2e3a094f4"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153548z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153548z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:22Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "ReplicaSet",
+        "name": "kyverno-admission-controller-85d7b5dd77",
+        "namespace": "kyverno",
+        "resourceVersion": "638",
+        "uid": "51f7db27-1a7e-49bb-addb-907c5e5e4f25"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:22Z",
+      "message": "Created pod: kyverno-admission-controller-85d7b5dd77-hlq5z",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:22Z",
+        "name": "kyverno-admission-controller-85d7b5dd77.18d6744e918d0eeb",
+        "namespace": "kyverno",
+        "resourceVersion": "649",
+        "uid": "7683c690-043a-4ce6-83b7-d080aa7268ca"
+      },
+      "reason": "SuccessfulCreate",
+      "reportingComponent": "replicaset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "replicaset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:22Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "name": "kyverno-admission-controller",
+        "namespace": "kyverno",
+        "resourceVersion": "636",
+        "uid": "3c3a1bb4-2fef-4b28-9da5-d497be8836fb"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:22Z",
+      "message": "Scaled up replica set kyverno-admission-controller-85d7b5dd77 from 0 to 1",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:22Z",
+        "name": "kyverno-admission-controller.18d6744e9008c7a2",
+        "namespace": "kyverno",
+        "resourceVersion": "639",
+        "uid": "53d2a8a6-4261-499e-8e1b-7cfc148ec573"
+      },
+      "reason": "ScalingReplicaSet",
+      "reportingComponent": "deployment-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "deployment-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:22Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "kyverno-background-controller-5d846755f8-5fcp7",
+        "namespace": "kyverno",
+        "resourceVersion": "647",
+        "uid": "2838435d-29ca-4e09-a16b-fdf3872bd9cd"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:22Z",
+      "message": "Successfully assigned kyverno/kyverno-background-controller-5d846755f8-5fcp7 to paper-consistency-20260918t153548z-kyverno-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:22Z",
+        "name": "kyverno-background-controller-5d846755f8-5fcp7.18d6744e93ee9fee",
+        "namespace": "kyverno",
+        "resourceVersion": "669",
+        "uid": "4ec487f4-0772-43dc-8253-1d90508359aa"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:23Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{controller}",
+        "kind": "Pod",
+        "name": "kyverno-background-controller-5d846755f8-5fcp7",
+        "namespace": "kyverno",
+        "resourceVersion": "653",
+        "uid": "2838435d-29ca-4e09-a16b-fdf3872bd9cd"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:23Z",
+      "message": "Pulling image \"reg.kyverno.io/kyverno/background-controller:v1.19.1\"",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:23Z",
+        "name": "kyverno-background-controller-5d846755f8-5fcp7.18d6744eb47add94",
+        "namespace": "kyverno",
+        "resourceVersion": "690",
+        "uid": "619e648c-175f-4f4a-a88c-be6e913ae482"
+      },
+      "reason": "Pulling",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153548z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153548z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:41Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{controller}",
+        "kind": "Pod",
+        "name": "kyverno-background-controller-5d846755f8-5fcp7",
+        "namespace": "kyverno",
+        "resourceVersion": "653",
+        "uid": "2838435d-29ca-4e09-a16b-fdf3872bd9cd"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:41Z",
+      "message": "Successfully pulled image \"reg.kyverno.io/kyverno/background-controller:v1.19.1\" in 9.444s (18.298s including waiting). Image size: 46805120 bytes.",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:41Z",
+        "name": "kyverno-background-controller-5d846755f8-5fcp7.18d67452f72aae34",
+        "namespace": "kyverno",
+        "resourceVersion": "732",
+        "uid": "02c531a9-bbe8-4c0f-9a82-7e6c654ca7d7"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153548z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153548z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:41Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{controller}",
+        "kind": "Pod",
+        "name": "kyverno-background-controller-5d846755f8-5fcp7",
+        "namespace": "kyverno",
+        "resourceVersion": "653",
+        "uid": "2838435d-29ca-4e09-a16b-fdf3872bd9cd"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:41Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:41Z",
+        "name": "kyverno-background-controller-5d846755f8-5fcp7.18d67452fb4295ae",
+        "namespace": "kyverno",
+        "resourceVersion": "733",
+        "uid": "87316feb-7940-4b79-b6cc-cbc53a144b0a"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153548z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153548z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:41Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{controller}",
+        "kind": "Pod",
+        "name": "kyverno-background-controller-5d846755f8-5fcp7",
+        "namespace": "kyverno",
+        "resourceVersion": "653",
+        "uid": "2838435d-29ca-4e09-a16b-fdf3872bd9cd"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:41Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:41Z",
+        "name": "kyverno-background-controller-5d846755f8-5fcp7.18d67452fed677fe",
+        "namespace": "kyverno",
+        "resourceVersion": "734",
+        "uid": "1a79d38f-f4d4-4912-960f-29de0ce8f79b"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153548z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153548z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:22Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "ReplicaSet",
+        "name": "kyverno-background-controller-5d846755f8",
+        "namespace": "kyverno",
+        "resourceVersion": "640",
+        "uid": "2dba5f24-6b7f-4046-b9d9-3cc53c0a7737"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:22Z",
+      "message": "Created pod: kyverno-background-controller-5d846755f8-5fcp7",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:22Z",
+        "name": "kyverno-background-controller-5d846755f8.18d6744e9280a8bc",
+        "namespace": "kyverno",
+        "resourceVersion": "659",
+        "uid": "ec95ee07-d907-432d-96c3-49e70e5f28bc"
+      },
+      "reason": "SuccessfulCreate",
+      "reportingComponent": "replicaset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "replicaset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:22Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "name": "kyverno-background-controller",
+        "namespace": "kyverno",
+        "resourceVersion": "637",
+        "uid": "ee5b063f-acb5-46f1-b079-53f8e9d1d206"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:22Z",
+      "message": "Scaled up replica set kyverno-background-controller-5d846755f8 from 0 to 1",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:22Z",
+        "name": "kyverno-background-controller.18d6744e90fcdb86",
+        "namespace": "kyverno",
+        "resourceVersion": "644",
+        "uid": "30eab3d1-3359-4ec1-abe6-3880f4cb4826"
+      },
+      "reason": "ScalingReplicaSet",
+      "reportingComponent": "deployment-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "deployment-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:22Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "kyverno-cleanup-controller-96f7f5d89-z2cwg",
+        "namespace": "kyverno",
+        "resourceVersion": "656",
+        "uid": "49ed8ac1-1f28-4e7b-a767-f8cf74908059"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:22Z",
+      "message": "Successfully assigned kyverno/kyverno-cleanup-controller-96f7f5d89-z2cwg to paper-consistency-20260918t153548z-kyverno-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:22Z",
+        "name": "kyverno-cleanup-controller-96f7f5d89-z2cwg.18d6744e95256917",
+        "namespace": "kyverno",
+        "resourceVersion": "677",
+        "uid": "22bd0434-df16-495a-82d1-46e559f2a17f"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:23Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{controller}",
+        "kind": "Pod",
+        "name": "kyverno-cleanup-controller-96f7f5d89-z2cwg",
+        "namespace": "kyverno",
+        "resourceVersion": "665",
+        "uid": "49ed8ac1-1f28-4e7b-a767-f8cf74908059"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:23Z",
+      "message": "Pulling image \"reg.kyverno.io/kyverno/cleanup-controller:v1.19.1\"",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:23Z",
+        "name": "kyverno-cleanup-controller-96f7f5d89-z2cwg.18d6744eb50407c9",
+        "namespace": "kyverno",
+        "resourceVersion": "691",
+        "uid": "134bd68f-2db4-4bb9-a363-c88c70170972"
+      },
+      "reason": "Pulling",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153548z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153548z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:51Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{controller}",
+        "kind": "Pod",
+        "name": "kyverno-cleanup-controller-96f7f5d89-z2cwg",
+        "namespace": "kyverno",
+        "resourceVersion": "665",
+        "uid": "49ed8ac1-1f28-4e7b-a767-f8cf74908059"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:51Z",
+      "message": "Successfully pulled image \"reg.kyverno.io/kyverno/cleanup-controller:v1.19.1\" in 9.609s (27.898s including waiting). Image size: 43387503 bytes.",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:51Z",
+        "name": "kyverno-cleanup-controller-96f7f5d89-z2cwg.18d6745533e8e36b",
+        "namespace": "kyverno",
+        "resourceVersion": "758",
+        "uid": "5668ee51-80a7-4005-a870-d6ce83fe4a93"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153548z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153548z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:51Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{controller}",
+        "kind": "Pod",
+        "name": "kyverno-cleanup-controller-96f7f5d89-z2cwg",
+        "namespace": "kyverno",
+        "resourceVersion": "665",
+        "uid": "49ed8ac1-1f28-4e7b-a767-f8cf74908059"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:51Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:51Z",
+        "name": "kyverno-cleanup-controller-96f7f5d89-z2cwg.18d674553638e8d4",
+        "namespace": "kyverno",
+        "resourceVersion": "759",
+        "uid": "4bb28f7a-0c2f-4128-8c2f-fa8cd3ac9682"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153548z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153548z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:51Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{controller}",
+        "kind": "Pod",
+        "name": "kyverno-cleanup-controller-96f7f5d89-z2cwg",
+        "namespace": "kyverno",
+        "resourceVersion": "665",
+        "uid": "49ed8ac1-1f28-4e7b-a767-f8cf74908059"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:51Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:51Z",
+        "name": "kyverno-cleanup-controller-96f7f5d89-z2cwg.18d674553a4ea17e",
+        "namespace": "kyverno",
+        "resourceVersion": "760",
+        "uid": "b73cd201-321a-4ea1-b944-1dd11ea76fcc"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153548z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153548z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:53Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{controller}",
+        "kind": "Pod",
+        "name": "kyverno-cleanup-controller-96f7f5d89-z2cwg",
+        "namespace": "kyverno",
+        "resourceVersion": "665",
+        "uid": "49ed8ac1-1f28-4e7b-a767-f8cf74908059"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:53Z",
+      "message": "Startup probe failed: Get \"https://10.244.0.8:9443/health/liveness\": remote error: tls: internal error",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:53Z",
+        "name": "kyverno-cleanup-controller-96f7f5d89-z2cwg.18d67455a40f9d84",
+        "namespace": "kyverno",
+        "resourceVersion": "774",
+        "uid": "894fc7e7-63b5-4085-ab63-c7db007ec841"
+      },
+      "reason": "Unhealthy",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153548z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153548z-kyverno-control-plane"
+      },
+      "type": "Warning"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:22Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "ReplicaSet",
+        "name": "kyverno-cleanup-controller-96f7f5d89",
+        "namespace": "kyverno",
+        "resourceVersion": "645",
+        "uid": "7b598a99-236e-4eee-bf4a-9a7a49d92995"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:22Z",
+      "message": "Created pod: kyverno-cleanup-controller-96f7f5d89-z2cwg",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:22Z",
+        "name": "kyverno-cleanup-controller-96f7f5d89.18d6744e93e15b98",
+        "namespace": "kyverno",
+        "resourceVersion": "668",
+        "uid": "ada49990-981a-4ff5-8f88-76289959f768"
+      },
+      "reason": "SuccessfulCreate",
+      "reportingComponent": "replicaset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "replicaset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:22Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "name": "kyverno-cleanup-controller",
+        "namespace": "kyverno",
+        "resourceVersion": "642",
+        "uid": "817f4a39-82fb-4e83-bca4-8b7519c2b7b5"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:22Z",
+      "message": "Scaled up replica set kyverno-cleanup-controller-96f7f5d89 from 0 to 1",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:22Z",
+        "name": "kyverno-cleanup-controller.18d6744e927f5942",
+        "namespace": "kyverno",
+        "resourceVersion": "654",
+        "uid": "d53e13b9-9760-4e3b-a972-955e719acb20"
+      },
+      "reason": "ScalingReplicaSet",
+      "reportingComponent": "deployment-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "deployment-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:22Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "kyverno-reports-controller-78df988946-f96hh",
+        "namespace": "kyverno",
+        "resourceVersion": "667",
+        "uid": "533b8099-f66d-406e-b653-5ddbd5ae41ba"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:22Z",
+      "message": "Successfully assigned kyverno/kyverno-reports-controller-78df988946-f96hh to paper-consistency-20260918t153548z-kyverno-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:22Z",
+        "name": "kyverno-reports-controller-78df988946-f96hh.18d6744e962413a3",
+        "namespace": "kyverno",
+        "resourceVersion": "680",
+        "uid": "148d7612-9b81-487e-8712-2f45223701f7"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:23Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{controller}",
+        "kind": "Pod",
+        "name": "kyverno-reports-controller-78df988946-f96hh",
+        "namespace": "kyverno",
+        "resourceVersion": "670",
+        "uid": "533b8099-f66d-406e-b653-5ddbd5ae41ba"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:23Z",
+      "message": "Pulling image \"reg.kyverno.io/kyverno/reports-controller:v1.19.1\"",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:23Z",
+        "name": "kyverno-reports-controller-78df988946-f96hh.18d6744eb5d6fbc3",
+        "namespace": "kyverno",
+        "resourceVersion": "692",
+        "uid": "6d7ad75c-ad7f-4ec9-a0e0-fc7939a435d8"
+      },
+      "reason": "Pulling",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153548z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153548z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:57Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{controller}",
+        "kind": "Pod",
+        "name": "kyverno-reports-controller-78df988946-f96hh",
+        "namespace": "kyverno",
+        "resourceVersion": "670",
+        "uid": "533b8099-f66d-406e-b653-5ddbd5ae41ba"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:57Z",
+      "message": "Successfully pulled image \"reg.kyverno.io/kyverno/reports-controller:v1.19.1\" in 6.634s (34.519s including waiting). Image size: 46417255 bytes.",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:57Z",
+        "name": "kyverno-reports-controller-78df988946-f96hh.18d67456bf5616dd",
+        "namespace": "kyverno",
+        "resourceVersion": "786",
+        "uid": "92b652ae-af76-4a83-8c4f-6f973bfbeeff"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153548z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153548z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:57Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{controller}",
+        "kind": "Pod",
+        "name": "kyverno-reports-controller-78df988946-f96hh",
+        "namespace": "kyverno",
+        "resourceVersion": "670",
+        "uid": "533b8099-f66d-406e-b653-5ddbd5ae41ba"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:57Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:57Z",
+        "name": "kyverno-reports-controller-78df988946-f96hh.18d67456c1813ab0",
+        "namespace": "kyverno",
+        "resourceVersion": "787",
+        "uid": "686204eb-ca9c-4d97-ba53-38b9a8c94555"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153548z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153548z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:57Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{controller}",
+        "kind": "Pod",
+        "name": "kyverno-reports-controller-78df988946-f96hh",
+        "namespace": "kyverno",
+        "resourceVersion": "670",
+        "uid": "533b8099-f66d-406e-b653-5ddbd5ae41ba"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:57Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:57Z",
+        "name": "kyverno-reports-controller-78df988946-f96hh.18d67456c53b9a77",
+        "namespace": "kyverno",
+        "resourceVersion": "788",
+        "uid": "3c978578-f3ba-4325-b0fb-2a585ac84344"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153548z-kyverno-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153548z-kyverno-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:22Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "ReplicaSet",
+        "name": "kyverno-reports-controller-78df988946",
+        "namespace": "kyverno",
+        "resourceVersion": "657",
+        "uid": "e6927730-5b9a-419c-98cb-6652f375701a"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:22Z",
+      "message": "Created pod: kyverno-reports-controller-78df988946-f96hh",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:22Z",
+        "name": "kyverno-reports-controller-78df988946.18d6744e9525f62f",
+        "namespace": "kyverno",
+        "resourceVersion": "676",
+        "uid": "dd8044ff-cec6-4e37-ac34-052ac4e4f74b"
+      },
+      "reason": "SuccessfulCreate",
+      "reportingComponent": "replicaset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "replicaset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:36:22Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "name": "kyverno-reports-controller",
+        "namespace": "kyverno",
+        "resourceVersion": "648",
+        "uid": "538c8103-12e5-49ab-ab80-154734cb30e0"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:36:22Z",
+      "message": "Scaled up replica set kyverno-reports-controller-78df988946 from 0 to 1",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:36:22Z",
+        "name": "kyverno-reports-controller.18d6744e93e713e1",
+        "namespace": "kyverno",
+        "resourceVersion": "662",
+        "uid": "f9fa50c0-5e3d-402c-92a9-6b5262a4b0a7"
+      },
+      "reason": "ScalingReplicaSet",
+      "reportingComponent": "deployment-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "deployment-controller"
+      },
+      "type": "Normal"
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  }
+}

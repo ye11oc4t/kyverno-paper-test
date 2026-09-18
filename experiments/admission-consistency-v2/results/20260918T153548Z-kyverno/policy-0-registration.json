@@ -1,0 +1,14 @@
+[
+  {
+    "time": "2026-09-18T15:37:11.623348+00:00",
+    "exitCode": 1,
+    "stdout": "",
+    "stderr": "Error from server (InternalError): error when creating \"STDIN\": Internal error occurred: failed calling webhook \"validate-policy.kyverno.svc\": failed to call webhook: Post \"https://kyverno-svc.kyverno.svc:443/policyvalidate?timeout=10s\": dial tcp 10.96.221.33:443: connect: connection refused\n"
+  },
+  {
+    "time": "2026-09-18T15:37:13.797253+00:00",
+    "exitCode": 0,
+    "stdout": "validatingpolicy.policies.kyverno.io/study-conformance created\n",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,146 @@
+[
+  {
+    "case": "regular-single-ok",
+    "expected": "ALLOW",
+    "exitCode": 0,
+    "matchedExitCode": true
+  },
+  {
+    "case": "regular-pair-ok",
+    "expected": "ALLOW",
+    "exitCode": 0,
+    "matchedExitCode": true
+  },
+  {
+    "case": "regular-edge-names-ok",
+    "expected": "ALLOW",
+    "exitCode": 0,
+    "matchedExitCode": true
+  },
+  {
+    "case": "regular-name-first",
+    "expected": "DENY",
+    "exitCode": 3,
+    "matchedExitCode": true
+  },
+  {
+    "case": "regular-name-last",
+    "expected": "DENY",
+    "exitCode": 3,
+    "matchedExitCode": true
+  },
+  {
+    "case": "regular-name-infix",
+    "expected": "DENY",
+    "exitCode": 3,
+    "matchedExitCode": true
+  },
+  {
+    "case": "regular-name-no-separator",
+    "expected": "DENY",
+    "exitCode": 3,
+    "matchedExitCode": true
+  },
+  {
+    "case": "regular-image-first",
+    "expected": "DENY",
+    "exitCode": 3,
+    "matchedExitCode": true
+  },
+  {
+    "case": "regular-image-last",
+    "expected": "DENY",
+    "exitCode": 3,
+    "matchedExitCode": true
+  },
+  {
+    "case": "regular-both-single",
+    "expected": "DENY",
+    "exitCode": 3,
+    "matchedExitCode": true
+  },
+  {
+    "case": "regular-split-pair",
+    "expected": "DENY",
+    "exitCode": 3,
+    "matchedExitCode": true
+  },
+  {
+    "case": "ephemeral-single-ok",
+    "expected": "ALLOW",
+    "exitCode": 0,
+    "matchedExitCode": true
+  },
+  {
+    "case": "ephemeral-pair-ok",
+    "expected": "ALLOW",
+    "exitCode": 0,
+    "matchedExitCode": true
+  },
+  {
+    "case": "ephemeral-edge-names-ok",
+    "expected": "ALLOW",
+    "exitCode": 0,
+    "matchedExitCode": true
+  },
+  {
+    "case": "ephemeral-name-first",
+    "expected": "DENY",
+    "exitCode": 3,
+    "matchedExitCode": true
+  },
+  {
+    "case": "ephemeral-name-last",
+    "expected": "DENY",
+    "exitCode": 3,
+    "matchedExitCode": true
+  },
+  {
+    "case": "ephemeral-name-infix",
+    "expected": "DENY",
+    "exitCode": 3,
+    "matchedExitCode": true
+  },
+  {
+    "case": "ephemeral-name-no-separator",
+    "expected": "DENY",
+    "exitCode": 3,
+    "matchedExitCode": true
+  },
+  {
+    "case": "ephemeral-image-first",
+    "expected": "DENY",
+    "exitCode": 3,
+    "matchedExitCode": true
+  },
+  {
+    "case": "ephemeral-image-last",
+    "expected": "DENY",
+    "exitCode": 3,
+    "matchedExitCode": true
+  },
+  {
+    "case": "ephemeral-both-single",
+    "expected": "DENY",
+    "exitCode": 3,
+    "matchedExitCode": true
+  },
+  {
+    "case": "ephemeral-split-pair",
+    "expected": "DENY",
+    "exitCode": 3,
+    "matchedExitCode": true
+  },
+  {
+    "case": "ephemeral-history-ok",
+    "expected": "ALLOW",
+    "exitCode": 0,
+    "matchedExitCode": true
+  },
+  {
+    "case": "ephemeral-history-reject",
+    "expected": "DENY",
+    "exitCode": 3,
+    "matchedExitCode": true
+  }
+]

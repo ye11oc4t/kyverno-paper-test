@@ -1,0 +1,126 @@
+{
+  "checks": {
+    "study-name": "danger",
+    "study-image": "danger"
+  },
+  "customChecks": {
+    "study-name": {
+      "successMessage": "Study conformance holds",
+      "failureMessage": "study-name: nonconforming",
+      "category": "Reliability",
+      "target": "PodSpec",
+      "schema": {
+        "type": "object",
+        "required": [
+          "containers"
+        ],
+        "properties": {
+          "containers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "name"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "pattern": "^study-"
+                }
+              }
+            }
+          },
+          "initContainers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "name"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "pattern": "^study-"
+                }
+              }
+            }
+          },
+          "ephemeralContainers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "name"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "pattern": "^study-"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "study-image": {
+      "successMessage": "Study conformance holds",
+      "failureMessage": "study-image: nonconforming",
+      "category": "Reliability",
+      "target": "PodSpec",
+      "schema": {
+        "type": "object",
+        "required": [
+          "containers"
+        ],
+        "properties": {
+          "containers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "image"
+              ],
+              "properties": {
+                "image": {
+                  "type": "string",
+                  "const": "study.local/approved/pause:3.10"
+                }
+              }
+            }
+          },
+          "initContainers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "image"
+              ],
+              "properties": {
+                "image": {
+                  "type": "string",
+                  "const": "study.local/approved/pause:3.10"
+                }
+              }
+            }
+          },
+          "ephemeralContainers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "image"
+              ],
+              "properties": {
+                "image": {
+                  "type": "string",
+                  "const": "study.local/approved/pause:3.10"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

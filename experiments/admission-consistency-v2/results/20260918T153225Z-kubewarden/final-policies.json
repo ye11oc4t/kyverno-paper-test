@@ -1,0 +1,97 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "apiVersion": "policies.kubewarden.io/v1",
+      "kind": "ClusterAdmissionPolicy",
+      "metadata": {
+        "annotations": {
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"policies.kubewarden.io/v1\",\"kind\":\"ClusterAdmissionPolicy\",\"metadata\":{\"annotations\":{},\"name\":\"study-conformance\"},\"spec\":{\"backgroundAudit\":false,\"failurePolicy\":\"Fail\",\"mode\":\"protect\",\"module\":\"registry://ghcr.io/kubewarden/policies/cel-policy@sha256:4ca1c0aef61b900a5360fc1ae5da2a1d0a7a667d486d4d1ae09069dc4253308a\",\"mutating\":false,\"namespaceSelector\":{\"matchLabels\":{\"study.example/pilot\":\"true\"}},\"policyServer\":\"default\",\"rules\":[{\"apiGroups\":[\"\"],\"apiVersions\":[\"v1\"],\"operations\":[\"CREATE\",\"UPDATE\"],\"resources\":[\"pods\",\"pods/ephemeralcontainers\"]}],\"settings\":{\"validations\":[{\"expression\":\"object.spec.containers.all(c, c.name.startsWith('study-')) \\u0026\\u0026 (!has(object.spec.initContainers) || object.spec.initContainers.all(c, c.name.startsWith('study-'))) \\u0026\\u0026 (!has(object.spec.ephemeralContainers) || object.spec.ephemeralContainers.all(c, c.name.startsWith('study-')))\",\"message\":\"study-name: name must start with study-\"},{\"expression\":\"object.spec.containers.all(c, c.image == 'study.local/approved/pause:3.10') \\u0026\\u0026 (!has(object.spec.initContainers) || object.spec.initContainers.all(c, c.image == 'study.local/approved/pause:3.10')) \\u0026\\u0026 (!has(object.spec.ephemeralContainers) || object.spec.ephemeralContainers.all(c, c.image == 'study.local/approved/pause:3.10'))\",\"message\":\"study-image: image must be the approved study alias\"}]}}}\n"
+        },
+        "creationTimestamp": "2026-09-18T15:33:15Z",
+        "finalizers": [
+          "kubewarden.io/finalizer"
+        ],
+        "generation": 1,
+        "name": "study-conformance",
+        "resourceVersion": "678",
+        "uid": "d09515d4-4356-4565-86b8-79d6459e398e"
+      },
+      "spec": {
+        "backgroundAudit": false,
+        "failurePolicy": "Fail",
+        "mode": "protect",
+        "module": "registry://ghcr.io/kubewarden/policies/cel-policy@sha256:4ca1c0aef61b900a5360fc1ae5da2a1d0a7a667d486d4d1ae09069dc4253308a",
+        "mutating": false,
+        "namespaceSelector": {
+          "matchLabels": {
+            "study.example/pilot": "true"
+          }
+        },
+        "policyServer": "default",
+        "rules": [
+          {
+            "apiGroups": [
+              ""
+            ],
+            "apiVersions": [
+              "v1"
+            ],
+            "operations": [
+              "CREATE",
+              "UPDATE"
+            ],
+            "resources": [
+              "pods",
+              "pods/ephemeralcontainers"
+            ]
+          }
+        ],
+        "settings": {
+          "validations": [
+            {
+              "expression": "object.spec.containers.all(c, c.name.startsWith('study-')) && (!has(object.spec.initContainers) || object.spec.initContainers.all(c, c.name.startsWith('study-'))) && (!has(object.spec.ephemeralContainers) || object.spec.ephemeralContainers.all(c, c.name.startsWith('study-')))",
+              "message": "study-name: name must start with study-"
+            },
+            {
+              "expression": "object.spec.containers.all(c, c.image == 'study.local/approved/pause:3.10') && (!has(object.spec.initContainers) || object.spec.initContainers.all(c, c.image == 'study.local/approved/pause:3.10')) && (!has(object.spec.ephemeralContainers) || object.spec.ephemeralContainers.all(c, c.image == 'study.local/approved/pause:3.10'))",
+              "message": "study-image: image must be the approved study alias"
+            }
+          ]
+        },
+        "timeoutSeconds": 10
+      },
+      "status": {
+        "conditions": [
+          {
+            "lastTransitionTime": "2026-09-18T15:33:36Z",
+            "message": "The policy webhook has been created",
+            "reason": "PolicyActive",
+            "status": "True",
+            "type": "PolicyActive"
+          },
+          {
+            "lastTransitionTime": "2026-09-18T15:33:36Z",
+            "message": "The latest replica set is uniquely reachable",
+            "reason": "LatestReplicaSetIsUniquelyReachable",
+            "status": "True",
+            "type": "PolicyUniquelyReachable"
+          },
+          {
+            "lastTransitionTime": "2026-09-18T15:33:16Z",
+            "message": "Configuration for this policy is up to date",
+            "reason": "ConfigurationVersionMatch",
+            "status": "True",
+            "type": "PolicyServerConfigurationUpToDate"
+          }
+        ],
+        "mode": "protect",
+        "policyStatus": "active"
+      }
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  }
+}

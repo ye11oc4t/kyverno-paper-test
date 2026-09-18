@@ -1,0 +1,257 @@
+{
+  "summary": {
+    "run": "20260918T153225Z-kubewarden",
+    "engine": "kubewarden",
+    "executions": 24,
+    "complete": true,
+    "frozenHashesAgree": true,
+    "matchedFixtures": 24,
+    "matchedAudit": 24,
+    "matchedOutcomes": 24,
+    "accepted": 7,
+    "ruleDenials": 17,
+    "status": "PASS"
+  },
+  "cases": [
+    {
+      "case": "ephemeral-split-pair",
+      "fixture": true,
+      "audit": true,
+      "outcome": true,
+      "auditIDs": [
+        "8b37e0ce-4f56-487d-bfee-57f51f5c3184"
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "case": "ephemeral-history-reject",
+      "fixture": true,
+      "audit": true,
+      "outcome": true,
+      "auditIDs": [
+        "a2f7e05f-56b4-4db2-84a5-5943771bea3d"
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "case": "regular-edge-names-ok",
+      "fixture": true,
+      "audit": true,
+      "outcome": true,
+      "auditIDs": [
+        "8ca33660-8ce1-4679-9c87-4a3db0792597"
+      ],
+      "policyEvaluationEvidence": "UNKNOWN"
+    },
+    {
+      "case": "ephemeral-image-first",
+      "fixture": true,
+      "audit": true,
+      "outcome": true,
+      "auditIDs": [
+        "fd783d47-e474-4640-9130-f225d8ec4c77"
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "case": "ephemeral-image-last",
+      "fixture": true,
+      "audit": true,
+      "outcome": true,
+      "auditIDs": [
+        "725dfc78-28f4-48ee-b785-968043e06ef0"
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "case": "regular-image-first",
+      "fixture": true,
+      "audit": true,
+      "outcome": true,
+      "auditIDs": [
+        "46657c52-723d-4fbe-8b1c-3c9d6d344dc1"
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "case": "ephemeral-history-ok",
+      "fixture": true,
+      "audit": true,
+      "outcome": true,
+      "auditIDs": [
+        "7528144a-c5bd-417f-8fa0-2064b159f9ed"
+      ],
+      "policyEvaluationEvidence": "UNKNOWN"
+    },
+    {
+      "case": "regular-both-single",
+      "fixture": true,
+      "audit": true,
+      "outcome": true,
+      "auditIDs": [
+        "21aec1a4-b517-4ce1-9cd5-987810a4c01f"
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "case": "regular-name-infix",
+      "fixture": true,
+      "audit": true,
+      "outcome": true,
+      "auditIDs": [
+        "030d50c1-ed0a-4f69-b8fc-fde3680f05b9"
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "case": "regular-single-ok",
+      "fixture": true,
+      "audit": true,
+      "outcome": true,
+      "auditIDs": [
+        "87bd4361-2eac-4908-b6cb-092b13909354"
+      ],
+      "policyEvaluationEvidence": "UNKNOWN"
+    },
+    {
+      "case": "ephemeral-name-infix",
+      "fixture": true,
+      "audit": true,
+      "outcome": true,
+      "auditIDs": [
+        "14357776-8a27-4560-8431-99c991e9c59b"
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "case": "ephemeral-edge-names-ok",
+      "fixture": true,
+      "audit": true,
+      "outcome": true,
+      "auditIDs": [
+        "d4c52324-7668-4fb1-8819-2fe51a449cfd"
+      ],
+      "policyEvaluationEvidence": "UNKNOWN"
+    },
+    {
+      "case": "regular-name-no-separator",
+      "fixture": true,
+      "audit": true,
+      "outcome": true,
+      "auditIDs": [
+        "56b7f5ec-b789-4709-8d38-2c3eec30a4d9"
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "case": "ephemeral-name-last",
+      "fixture": true,
+      "audit": true,
+      "outcome": true,
+      "auditIDs": [
+        "26b7e723-eabc-487a-a5d4-20a0ba703325"
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "case": "ephemeral-name-first",
+      "fixture": true,
+      "audit": true,
+      "outcome": true,
+      "auditIDs": [
+        "39c043a2-0d6a-4a3a-a191-17e57f7b6f8c"
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "case": "regular-pair-ok",
+      "fixture": true,
+      "audit": true,
+      "outcome": true,
+      "auditIDs": [
+        "ed72f6a1-0828-41e4-ba10-84b1e958bc58"
+      ],
+      "policyEvaluationEvidence": "UNKNOWN"
+    },
+    {
+      "case": "regular-image-last",
+      "fixture": true,
+      "audit": true,
+      "outcome": true,
+      "auditIDs": [
+        "36d87822-ef85-4771-835e-2c18b4f3bbd3"
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "case": "ephemeral-name-no-separator",
+      "fixture": true,
+      "audit": true,
+      "outcome": true,
+      "auditIDs": [
+        "9f4151a1-7ce7-4db0-8c49-d8f10be53e59"
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "case": "ephemeral-pair-ok",
+      "fixture": true,
+      "audit": true,
+      "outcome": true,
+      "auditIDs": [
+        "64df28f4-a317-49be-8a19-a01ac1acbef8"
+      ],
+      "policyEvaluationEvidence": "UNKNOWN"
+    },
+    {
+      "case": "regular-split-pair",
+      "fixture": true,
+      "audit": true,
+      "outcome": true,
+      "auditIDs": [
+        "88cf1e4b-127f-4a57-8bfe-ac365d4c734d"
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "case": "regular-name-last",
+      "fixture": true,
+      "audit": true,
+      "outcome": true,
+      "auditIDs": [
+        "410de4b8-4f13-41c9-a5b9-0bb4c3607fb8"
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "case": "ephemeral-single-ok",
+      "fixture": true,
+      "audit": true,
+      "outcome": true,
+      "auditIDs": [
+        "64ac07e4-f020-4eaa-8eba-fad2f3b88cbe"
+      ],
+      "policyEvaluationEvidence": "UNKNOWN"
+    },
+    {
+      "case": "regular-name-first",
+      "fixture": true,
+      "audit": true,
+      "outcome": true,
+      "auditIDs": [
+        "fafe596c-6265-4ca5-afff-f7cf3547e282"
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    },
+    {
+      "case": "ephemeral-both-single",
+      "fixture": true,
+      "audit": true,
+      "outcome": true,
+      "auditIDs": [
+        "9bccf777-a936-4f09-9136-29f856c0f870"
+      ],
+      "policyEvaluationEvidence": "EXPLICIT_RULE_DENIAL"
+    }
+  ]
+}

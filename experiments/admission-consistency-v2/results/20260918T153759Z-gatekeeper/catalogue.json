@@ -1,0 +1,1016 @@
+[
+  {
+    "case": "regular-single-ok",
+    "route": "regular",
+    "history": false,
+    "probes": [
+      {
+        "name": "study-a",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "expected": "ALLOW",
+    "expectedRules": []
+  },
+  {
+    "case": "regular-pair-ok",
+    "route": "regular",
+    "history": false,
+    "probes": [
+      {
+        "name": "study-a",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      },
+      {
+        "name": "study-b",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "expected": "ALLOW",
+    "expectedRules": []
+  },
+  {
+    "case": "regular-edge-names-ok",
+    "route": "regular",
+    "history": false,
+    "probes": [
+      {
+        "name": "study-0",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      },
+      {
+        "name": "study-a-b",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "expected": "ALLOW",
+    "expectedRules": []
+  },
+  {
+    "case": "regular-name-first",
+    "route": "regular",
+    "history": false,
+    "probes": [
+      {
+        "name": "sample-a",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      },
+      {
+        "name": "study-b",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "expected": "DENY",
+    "expectedRules": [
+      "name"
+    ]
+  },
+  {
+    "case": "regular-name-last",
+    "route": "regular",
+    "history": false,
+    "probes": [
+      {
+        "name": "study-a",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      },
+      {
+        "name": "sample-b",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "expected": "DENY",
+    "expectedRules": [
+      "name"
+    ]
+  },
+  {
+    "case": "regular-name-infix",
+    "route": "regular",
+    "history": false,
+    "probes": [
+      {
+        "name": "x-study-a",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "expected": "DENY",
+    "expectedRules": [
+      "name"
+    ]
+  },
+  {
+    "case": "regular-name-no-separator",
+    "route": "regular",
+    "history": false,
+    "probes": [
+      {
+        "name": "studya",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "expected": "DENY",
+    "expectedRules": [
+      "name"
+    ]
+  },
+  {
+    "case": "regular-image-first",
+    "route": "regular",
+    "history": false,
+    "probes": [
+      {
+        "name": "study-a",
+        "image": "study.local/alternate/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      },
+      {
+        "name": "study-b",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "expected": "DENY",
+    "expectedRules": [
+      "image"
+    ]
+  },
+  {
+    "case": "regular-image-last",
+    "route": "regular",
+    "history": false,
+    "probes": [
+      {
+        "name": "study-a",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      },
+      {
+        "name": "study-b",
+        "image": "study.local/alternate/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "expected": "DENY",
+    "expectedRules": [
+      "image"
+    ]
+  },
+  {
+    "case": "regular-both-single",
+    "route": "regular",
+    "history": false,
+    "probes": [
+      {
+        "name": "sample-a",
+        "image": "study.local/alternate/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "expected": "DENY",
+    "expectedRules": [
+      "name",
+      "image"
+    ]
+  },
+  {
+    "case": "regular-split-pair",
+    "route": "regular",
+    "history": false,
+    "probes": [
+      {
+        "name": "sample-a",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      },
+      {
+        "name": "study-b",
+        "image": "study.local/alternate/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "expected": "DENY",
+    "expectedRules": [
+      "name",
+      "image"
+    ]
+  },
+  {
+    "case": "ephemeral-single-ok",
+    "route": "ephemeral",
+    "history": false,
+    "probes": [
+      {
+        "name": "study-a",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "expected": "ALLOW",
+    "expectedRules": []
+  },
+  {
+    "case": "ephemeral-pair-ok",
+    "route": "ephemeral",
+    "history": false,
+    "probes": [
+      {
+        "name": "study-a",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      },
+      {
+        "name": "study-b",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "expected": "ALLOW",
+    "expectedRules": []
+  },
+  {
+    "case": "ephemeral-edge-names-ok",
+    "route": "ephemeral",
+    "history": false,
+    "probes": [
+      {
+        "name": "study-0",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      },
+      {
+        "name": "study-a-b",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "expected": "ALLOW",
+    "expectedRules": []
+  },
+  {
+    "case": "ephemeral-name-first",
+    "route": "ephemeral",
+    "history": false,
+    "probes": [
+      {
+        "name": "sample-a",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      },
+      {
+        "name": "study-b",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "expected": "DENY",
+    "expectedRules": [
+      "name"
+    ]
+  },
+  {
+    "case": "ephemeral-name-last",
+    "route": "ephemeral",
+    "history": false,
+    "probes": [
+      {
+        "name": "study-a",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      },
+      {
+        "name": "sample-b",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "expected": "DENY",
+    "expectedRules": [
+      "name"
+    ]
+  },
+  {
+    "case": "ephemeral-name-infix",
+    "route": "ephemeral",
+    "history": false,
+    "probes": [
+      {
+        "name": "x-study-a",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "expected": "DENY",
+    "expectedRules": [
+      "name"
+    ]
+  },
+  {
+    "case": "ephemeral-name-no-separator",
+    "route": "ephemeral",
+    "history": false,
+    "probes": [
+      {
+        "name": "studya",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "expected": "DENY",
+    "expectedRules": [
+      "name"
+    ]
+  },
+  {
+    "case": "ephemeral-image-first",
+    "route": "ephemeral",
+    "history": false,
+    "probes": [
+      {
+        "name": "study-a",
+        "image": "study.local/alternate/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      },
+      {
+        "name": "study-b",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "expected": "DENY",
+    "expectedRules": [
+      "image"
+    ]
+  },
+  {
+    "case": "ephemeral-image-last",
+    "route": "ephemeral",
+    "history": false,
+    "probes": [
+      {
+        "name": "study-a",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      },
+      {
+        "name": "study-b",
+        "image": "study.local/alternate/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "expected": "DENY",
+    "expectedRules": [
+      "image"
+    ]
+  },
+  {
+    "case": "ephemeral-both-single",
+    "route": "ephemeral",
+    "history": false,
+    "probes": [
+      {
+        "name": "sample-a",
+        "image": "study.local/alternate/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "expected": "DENY",
+    "expectedRules": [
+      "name",
+      "image"
+    ]
+  },
+  {
+    "case": "ephemeral-split-pair",
+    "route": "ephemeral",
+    "history": false,
+    "probes": [
+      {
+        "name": "sample-a",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      },
+      {
+        "name": "study-b",
+        "image": "study.local/alternate/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "expected": "DENY",
+    "expectedRules": [
+      "name",
+      "image"
+    ]
+  },
+  {
+    "case": "ephemeral-history-ok",
+    "route": "ephemeral",
+    "history": true,
+    "probes": [
+      {
+        "name": "study-next",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "expected": "ALLOW",
+    "expectedRules": []
+  },
+  {
+    "case": "ephemeral-history-reject",
+    "route": "ephemeral",
+    "history": true,
+    "probes": [
+      {
+        "name": "sample-next",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "expected": "DENY",
+    "expectedRules": [
+      "name"
+    ]
+  }
+]

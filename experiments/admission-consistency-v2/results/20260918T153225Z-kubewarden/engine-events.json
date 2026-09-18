@@ -1,0 +1,523 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:33:05Z",
+      "involvedObject": {
+        "apiVersion": "coordination.k8s.io/v1",
+        "kind": "Lease",
+        "name": "a4ddbf36.kubewarden.io",
+        "namespace": "kubewarden",
+        "resourceVersion": "569",
+        "uid": "48b104c6-9699-48ec-85f2-b30d392a575f"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:33:05Z",
+      "message": "study-kubewarden-admission-controller-64dbb4f5cf-crxr4_b6a71bde-4ce3-4340-94bf-8476e7e2cda7 became leader",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:33:05Z",
+        "name": "a4ddbf36.kubewarden.io.18d67420a0ecb5b4",
+        "namespace": "kubewarden",
+        "resourceVersion": "570",
+        "uid": "8724f63f-ac30-4c94-9b1f-e655efa041ef"
+      },
+      "reason": "LeaderElection",
+      "reportingComponent": "study-kubewarden-admission-controller-64dbb4f5cf-crxr4_b6a71bde-4ce3-4340-94bf-8476e7e2cda7",
+      "reportingInstance": "",
+      "source": {
+        "component": "study-kubewarden-admission-controller-64dbb4f5cf-crxr4_b6a71bde-4ce3-4340-94bf-8476e7e2cda7"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:33:16Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "policy-server-default-795f6db7fc-vr88m",
+        "namespace": "kubewarden",
+        "resourceVersion": "608",
+        "uid": "7d5d0c78-29fe-4e7a-89ec-18e6245e2f64"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:33:16Z",
+      "message": "Successfully assigned kubewarden/policy-server-default-795f6db7fc-vr88m to paper-consistency-20260918t153225z-kubewarden-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:33:16Z",
+        "name": "policy-server-default-795f6db7fc-vr88m.18d674231d84317d",
+        "namespace": "kubewarden",
+        "resourceVersion": "614",
+        "uid": "30f34b29-2156-4dc0-b1b2-a2dd62f7ced1"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:33:16Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{policy-server-default}",
+        "kind": "Pod",
+        "name": "policy-server-default-795f6db7fc-vr88m",
+        "namespace": "kubewarden",
+        "resourceVersion": "611",
+        "uid": "7d5d0c78-29fe-4e7a-89ec-18e6245e2f64"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:33:16Z",
+      "message": "Pulling image \"ghcr.io/kubewarden/adm-controller/policy-server:v1.37.2\"",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:33:16Z",
+        "name": "policy-server-default-795f6db7fc-vr88m.18d674233863c44a",
+        "namespace": "kubewarden",
+        "resourceVersion": "624",
+        "uid": "0fc78ab5-c366-45db-934e-2736b6ed495e"
+      },
+      "reason": "Pulling",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153225z-kubewarden-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153225z-kubewarden-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:33:23Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{policy-server-default}",
+        "kind": "Pod",
+        "name": "policy-server-default-795f6db7fc-vr88m",
+        "namespace": "kubewarden",
+        "resourceVersion": "611",
+        "uid": "7d5d0c78-29fe-4e7a-89ec-18e6245e2f64"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:33:23Z",
+      "message": "Successfully pulled image \"ghcr.io/kubewarden/adm-controller/policy-server:v1.37.2\" in 6.743s (6.743s including waiting). Image size: 25664179 bytes.",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:33:23Z",
+        "name": "policy-server-default-795f6db7fc-vr88m.18d67424ca5586c4",
+        "namespace": "kubewarden",
+        "resourceVersion": "635",
+        "uid": "c265247e-aaf8-4299-a504-d86baa4228fd"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153225z-kubewarden-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153225z-kubewarden-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:33:23Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{policy-server-default}",
+        "kind": "Pod",
+        "name": "policy-server-default-795f6db7fc-vr88m",
+        "namespace": "kubewarden",
+        "resourceVersion": "611",
+        "uid": "7d5d0c78-29fe-4e7a-89ec-18e6245e2f64"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:33:23Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:33:23Z",
+        "name": "policy-server-default-795f6db7fc-vr88m.18d67424ccd24385",
+        "namespace": "kubewarden",
+        "resourceVersion": "636",
+        "uid": "8579244c-3134-4a71-916a-d92c4d65158a"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153225z-kubewarden-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153225z-kubewarden-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:33:23Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{policy-server-default}",
+        "kind": "Pod",
+        "name": "policy-server-default-795f6db7fc-vr88m",
+        "namespace": "kubewarden",
+        "resourceVersion": "611",
+        "uid": "7d5d0c78-29fe-4e7a-89ec-18e6245e2f64"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:33:23Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:33:23Z",
+        "name": "policy-server-default-795f6db7fc-vr88m.18d67424d0c9c79b",
+        "namespace": "kubewarden",
+        "resourceVersion": "637",
+        "uid": "4f4c9fcc-e8c3-4c65-b743-3a6b780468ef"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153225z-kubewarden-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153225z-kubewarden-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 3,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:33:24Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{policy-server-default}",
+        "kind": "Pod",
+        "name": "policy-server-default-795f6db7fc-vr88m",
+        "namespace": "kubewarden",
+        "resourceVersion": "611",
+        "uid": "7d5d0c78-29fe-4e7a-89ec-18e6245e2f64"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:33:26Z",
+      "message": "Readiness probe failed: Get \"http://10.244.0.7:8081/readiness\": dial tcp 10.244.0.7:8081: connect: connection refused",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:33:24Z",
+        "name": "policy-server-default-795f6db7fc-vr88m.18d674250860dbb5",
+        "namespace": "kubewarden",
+        "resourceVersion": "651",
+        "uid": "608e2dc9-4804-44a6-b5d8-c44c7d485702"
+      },
+      "reason": "Unhealthy",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153225z-kubewarden-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153225z-kubewarden-control-plane"
+      },
+      "type": "Warning"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:33:16Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "ReplicaSet",
+        "name": "policy-server-default-795f6db7fc",
+        "namespace": "kubewarden",
+        "resourceVersion": "606",
+        "uid": "faee69ce-0b79-4434-8400-740288da647e"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:33:16Z",
+      "message": "Created pod: policy-server-default-795f6db7fc-vr88m",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:33:16Z",
+        "name": "policy-server-default-795f6db7fc.18d674231c394ad1",
+        "namespace": "kubewarden",
+        "resourceVersion": "610",
+        "uid": "724eb174-f6a0-465b-a5e5-6c185d788bd0"
+      },
+      "reason": "SuccessfulCreate",
+      "reportingComponent": "replicaset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "replicaset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:33:16Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "name": "policy-server-default",
+        "namespace": "kubewarden",
+        "resourceVersion": "604",
+        "uid": "04c83e2c-e047-4661-9f32-f08a65b5152a"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:33:16Z",
+      "message": "Scaled up replica set policy-server-default-795f6db7fc from 0 to 1",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:33:16Z",
+        "name": "policy-server-default.18d674231ba607c2",
+        "namespace": "kubewarden",
+        "resourceVersion": "607",
+        "uid": "22e464da-2403-4de3-a8b9-dbd6fead47e8"
+      },
+      "reason": "ScalingReplicaSet",
+      "reportingComponent": "deployment-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "deployment-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:32:56Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "study-kubewarden-admission-controller-64dbb4f5cf-crxr4",
+        "namespace": "kubewarden",
+        "resourceVersion": "540",
+        "uid": "ce053990-0de4-49a7-98bb-457ce4ec6d50"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:32:56Z",
+      "message": "Successfully assigned kubewarden/study-kubewarden-admission-controller-64dbb4f5cf-crxr4 to paper-consistency-20260918t153225z-kubewarden-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:32:56Z",
+        "name": "study-kubewarden-admission-controller-64dbb4f5cf-crxr4.18d6741e8f7e5422",
+        "namespace": "kubewarden",
+        "resourceVersion": "546",
+        "uid": "67c9fdca-a0df-4b29-b71c-ee8e19fa6a42"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:32:56Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{controller}",
+        "kind": "Pod",
+        "name": "study-kubewarden-admission-controller-64dbb4f5cf-crxr4",
+        "namespace": "kubewarden",
+        "resourceVersion": "543",
+        "uid": "ce053990-0de4-49a7-98bb-457ce4ec6d50"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:32:56Z",
+      "message": "Pulling image \"ghcr.io/kubewarden/adm-controller/controller:v1.37.2\"",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:32:56Z",
+        "name": "study-kubewarden-admission-controller-64dbb4f5cf-crxr4.18d6741eaa90fc68",
+        "namespace": "kubewarden",
+        "resourceVersion": "552",
+        "uid": "7a31aac6-d8dc-4d5a-8261-491e0e3392d4"
+      },
+      "reason": "Pulling",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153225z-kubewarden-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153225z-kubewarden-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:33:04Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{controller}",
+        "kind": "Pod",
+        "name": "study-kubewarden-admission-controller-64dbb4f5cf-crxr4",
+        "namespace": "kubewarden",
+        "resourceVersion": "543",
+        "uid": "ce053990-0de4-49a7-98bb-457ce4ec6d50"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:33:04Z",
+      "message": "Successfully pulled image \"ghcr.io/kubewarden/adm-controller/controller:v1.37.2\" in 7.184s (7.184s including waiting). Image size: 34588794 bytes.",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:33:04Z",
+        "name": "study-kubewarden-admission-controller-64dbb4f5cf-crxr4.18d6742056cf8949",
+        "namespace": "kubewarden",
+        "resourceVersion": "561",
+        "uid": "2c406309-efdd-4a4c-893b-e5e57922d04d"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153225z-kubewarden-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153225z-kubewarden-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:33:04Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{controller}",
+        "kind": "Pod",
+        "name": "study-kubewarden-admission-controller-64dbb4f5cf-crxr4",
+        "namespace": "kubewarden",
+        "resourceVersion": "543",
+        "uid": "ce053990-0de4-49a7-98bb-457ce4ec6d50"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:33:04Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:33:04Z",
+        "name": "study-kubewarden-admission-controller-64dbb4f5cf-crxr4.18d6742059a53321",
+        "namespace": "kubewarden",
+        "resourceVersion": "562",
+        "uid": "9f905aec-d23e-4f71-a8c5-bda4a38e8a3a"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153225z-kubewarden-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153225z-kubewarden-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:33:04Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{controller}",
+        "kind": "Pod",
+        "name": "study-kubewarden-admission-controller-64dbb4f5cf-crxr4",
+        "namespace": "kubewarden",
+        "resourceVersion": "543",
+        "uid": "ce053990-0de4-49a7-98bb-457ce4ec6d50"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:33:04Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:33:04Z",
+        "name": "study-kubewarden-admission-controller-64dbb4f5cf-crxr4.18d674205d52187a",
+        "namespace": "kubewarden",
+        "resourceVersion": "563",
+        "uid": "659f3720-f2f8-4d90-8c59-c5721e2f7d14"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153225z-kubewarden-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153225z-kubewarden-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:32:56Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "ReplicaSet",
+        "name": "study-kubewarden-admission-controller-64dbb4f5cf",
+        "namespace": "kubewarden",
+        "resourceVersion": "536",
+        "uid": "c3e4a9c8-6507-48fe-b75f-67182ff765f6"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:32:56Z",
+      "message": "Created pod: study-kubewarden-admission-controller-64dbb4f5cf-crxr4",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:32:56Z",
+        "name": "study-kubewarden-admission-controller-64dbb4f5cf.18d6741e8ed2a91c",
+        "namespace": "kubewarden",
+        "resourceVersion": "542",
+        "uid": "aebcadea-cd2d-4673-9351-b4a182c6f6e3"
+      },
+      "reason": "SuccessfulCreate",
+      "reportingComponent": "replicaset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "replicaset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:32:56Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "name": "study-kubewarden-admission-controller",
+        "namespace": "kubewarden",
+        "resourceVersion": "534",
+        "uid": "5f0e25ed-32aa-4e4c-9c94-1f6e355566e0"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:32:56Z",
+      "message": "Scaled up replica set study-kubewarden-admission-controller-64dbb4f5cf from 0 to 1",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:32:56Z",
+        "name": "study-kubewarden-admission-controller.18d6741e8da85f99",
+        "namespace": "kubewarden",
+        "resourceVersion": "538",
+        "uid": "2ab05300-d690-45fd-a63b-b2af52a5758f"
+      },
+      "reason": "ScalingReplicaSet",
+      "reportingComponent": "deployment-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "deployment-controller"
+      },
+      "type": "Normal"
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "run": "polaris-2026-09-18T153342-397071+0000",
+    "status": "EXCLUDED_NO_EVALUATED_OBJECTS",
+    "validForAnalysis": false,
+    "reason": "Polaris returned Results=[] for every input. Input filenames used .json while the documented offline workflow consumes YAML files. The 100 scores do not establish policy evaluation; this attempt is excluded and will be rerun with .yaml filenames."
+  },
+  {
+    "run": "polaris-2026-09-18T153418-695284+0000",
+    "tool": "Polaris 10.2.5",
+    "mode": "offline",
+    "cases": 24,
+    "evaluatedObjects": 24,
+    "evaluatedRules": 48,
+    "matchedCases": 24,
+    "frozenHashesAgree": true,
+    "admissionEvidence": "NOT_APPLICABLE",
+    "status": "PASS_OFFLINE"
+  }
+]

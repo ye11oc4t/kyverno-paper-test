@@ -1,0 +1,13 @@
+{
+  "apiVersion": "admissionregistration.k8s.io/v1",
+  "kind": "ValidatingAdmissionPolicyBinding",
+  "metadata": {
+    "name": "study-conformance"
+  },
+  "spec": {
+    "policyName": "study-conformance",
+    "validationActions": [
+      "Deny"
+    ]
+  }
+}

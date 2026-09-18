@@ -1,0 +1,1076 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:34Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "gatekeeper-audit-58657548c7-ftk9k",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "570",
+        "uid": "63746419-d319-4a5d-abe0-bad9848b08e3"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:34Z",
+      "message": "Successfully assigned gatekeeper-system/gatekeeper-audit-58657548c7-ftk9k to paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:34Z",
+        "name": "gatekeeper-audit-58657548c7-ftk9k.18d6746d30c2c003",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "582",
+        "uid": "31670654-229c-46c4-a78f-9a61a128153e"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 3,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:34Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{manager}",
+        "kind": "Pod",
+        "name": "gatekeeper-audit-58657548c7-ftk9k",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "575",
+        "uid": "63746419-d319-4a5d-abe0-bad9848b08e3"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:54Z",
+      "message": "Pulling image \"openpolicyagent/gatekeeper:v3.23.1\"",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:34Z",
+        "name": "gatekeeper-audit-58657548c7-ftk9k.18d6746d5077a741",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "694",
+        "uid": "afa5a8bc-9599-496f-9638-12c1d4707d0e"
+      },
+      "reason": "Pulling",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153759z-gatekeeper-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:39Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{manager}",
+        "kind": "Pod",
+        "name": "gatekeeper-audit-58657548c7-ftk9k",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "575",
+        "uid": "63746419-d319-4a5d-abe0-bad9848b08e3"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:39Z",
+      "message": "Successfully pulled image \"openpolicyagent/gatekeeper:v3.23.1\" in 4.929s (4.929s including waiting). Image size: 47764513 bytes.",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:39Z",
+        "name": "gatekeeper-audit-58657548c7-ftk9k.18d6746e7652256a",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "621",
+        "uid": "bb3be5e7-52ac-406e-9b18-9dd857b27deb"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153759z-gatekeeper-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 3,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:39Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{manager}",
+        "kind": "Pod",
+        "name": "gatekeeper-audit-58657548c7-ftk9k",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "575",
+        "uid": "63746419-d319-4a5d-abe0-bad9848b08e3"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:55Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:39Z",
+        "name": "gatekeeper-audit-58657548c7-ftk9k.18d6746e79a85a47",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "704",
+        "uid": "6ba94d6d-18e7-4c6a-8c81-e148c83458e5"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153759z-gatekeeper-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 3,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:39Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{manager}",
+        "kind": "Pod",
+        "name": "gatekeeper-audit-58657548c7-ftk9k",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "575",
+        "uid": "63746419-d319-4a5d-abe0-bad9848b08e3"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:55Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:39Z",
+        "name": "gatekeeper-audit-58657548c7-ftk9k.18d6746e7e768e06",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "705",
+        "uid": "5ae160f0-f9db-4096-b71e-a5e83c0f13ca"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153759z-gatekeeper-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:44Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{manager}",
+        "kind": "Pod",
+        "name": "gatekeeper-audit-58657548c7-ftk9k",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "575",
+        "uid": "63746419-d319-4a5d-abe0-bad9848b08e3"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:44Z",
+      "message": "Successfully pulled image \"openpolicyagent/gatekeeper:v3.23.1\" in 1.102s (3.38s including waiting). Image size: 47764513 bytes.",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:44Z",
+        "name": "gatekeeper-audit-58657548c7-ftk9k.18d6746f7b8bc3b3",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "661",
+        "uid": "f1cc9189-8732-4827-ba52-5847af68976d"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153759z-gatekeeper-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 2,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:44Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{manager}",
+        "kind": "Pod",
+        "name": "gatekeeper-audit-58657548c7-ftk9k",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "575",
+        "uid": "63746419-d319-4a5d-abe0-bad9848b08e3"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:45Z",
+      "message": "Back-off restarting failed container manager in pod gatekeeper-audit-58657548c7-ftk9k_gatekeeper-system(63746419-d319-4a5d-abe0-bad9848b08e3)",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:44Z",
+        "name": "gatekeeper-audit-58657548c7-ftk9k.18d6746fa14c58cf",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "669",
+        "uid": "91a05623-3044-4740-ac7d-15ea306e6df5"
+      },
+      "reason": "BackOff",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153759z-gatekeeper-control-plane"
+      },
+      "type": "Warning"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:55Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{manager}",
+        "kind": "Pod",
+        "name": "gatekeeper-audit-58657548c7-ftk9k",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "575",
+        "uid": "63746419-d319-4a5d-abe0-bad9848b08e3"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:55Z",
+      "message": "Successfully pulled image \"openpolicyagent/gatekeeper:v3.23.1\" in 1.13s (1.13s including waiting). Image size: 47764513 bytes.",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:55Z",
+        "name": "gatekeeper-audit-58657548c7-ftk9k.18d674722f2a1a78",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "703",
+        "uid": "fb5499c9-c5a1-4510-82e3-00d43b593dff"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153759z-gatekeeper-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:34Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "ReplicaSet",
+        "name": "gatekeeper-audit-58657548c7",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "565",
+        "uid": "ec5df78a-a905-4625-9100-6578eeee278a"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:34Z",
+      "message": "Created pod: gatekeeper-audit-58657548c7-ftk9k",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:34Z",
+        "name": "gatekeeper-audit-58657548c7.18d6746d30131b52",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "574",
+        "uid": "19bac277-c22d-4874-b5d9-b8ccdbc20a3d"
+      },
+      "reason": "SuccessfulCreate",
+      "reportingComponent": "replicaset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "replicaset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:34Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "name": "gatekeeper-audit",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "564",
+        "uid": "fafeb999-d7b9-4923-8eb4-a1b4687a1aee"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:34Z",
+      "message": "Scaled up replica set gatekeeper-audit-58657548c7 from 0 to 1",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:34Z",
+        "name": "gatekeeper-audit.18d6746d2ef265a4",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "567",
+        "uid": "0d6c2f09-6a71-4db8-88c3-d2864ed93603"
+      },
+      "reason": "ScalingReplicaSet",
+      "reportingComponent": "deployment-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "deployment-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:34Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "gatekeeper-controller-manager-b4b98898b-7mbxd",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "594",
+        "uid": "3c50e5c0-f694-487e-8f16-6734883204dc"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:34Z",
+      "message": "Successfully assigned gatekeeper-system/gatekeeper-controller-manager-b4b98898b-7mbxd to paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:34Z",
+        "name": "gatekeeper-controller-manager-b4b98898b-7mbxd.18d6746d3403321a",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "604",
+        "uid": "7c031cff-f242-4422-b05d-dddd29e84bd5"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:34Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{manager}",
+        "kind": "Pod",
+        "name": "gatekeeper-controller-manager-b4b98898b-7mbxd",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "598",
+        "uid": "3c50e5c0-f694-487e-8f16-6734883204dc"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:34Z",
+      "message": "Pulling image \"openpolicyagent/gatekeeper:v3.23.1\"",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:34Z",
+        "name": "gatekeeper-controller-manager-b4b98898b-7mbxd.18d6746d59203385",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "613",
+        "uid": "97505d07-4e10-4b9a-a5b1-ab7b38944c7f"
+      },
+      "reason": "Pulling",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153759z-gatekeeper-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:41Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{manager}",
+        "kind": "Pod",
+        "name": "gatekeeper-controller-manager-b4b98898b-7mbxd",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "598",
+        "uid": "3c50e5c0-f694-487e-8f16-6734883204dc"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:41Z",
+      "message": "Successfully pulled image \"openpolicyagent/gatekeeper:v3.23.1\" in 1.078s (6.964s including waiting). Image size: 47764513 bytes.",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:41Z",
+        "name": "gatekeeper-controller-manager-b4b98898b-7mbxd.18d6746ef8449a1c",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "638",
+        "uid": "46b7fcbe-045b-43b2-a960-52036855addf"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153759z-gatekeeper-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:41Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{manager}",
+        "kind": "Pod",
+        "name": "gatekeeper-controller-manager-b4b98898b-7mbxd",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "598",
+        "uid": "3c50e5c0-f694-487e-8f16-6734883204dc"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:41Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:41Z",
+        "name": "gatekeeper-controller-manager-b4b98898b-7mbxd.18d6746efa1bab70",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "639",
+        "uid": "4ed07616-2369-4449-b2dc-0890fb3dfb76"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153759z-gatekeeper-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:41Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{manager}",
+        "kind": "Pod",
+        "name": "gatekeeper-controller-manager-b4b98898b-7mbxd",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "598",
+        "uid": "3c50e5c0-f694-487e-8f16-6734883204dc"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:41Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:41Z",
+        "name": "gatekeeper-controller-manager-b4b98898b-7mbxd.18d6746efd327fe1",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "640",
+        "uid": "bf263e41-dc22-40c5-8a2d-9b1301e61ea4"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153759z-gatekeeper-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 2,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:42Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{manager}",
+        "kind": "Pod",
+        "name": "gatekeeper-controller-manager-b4b98898b-7mbxd",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "598",
+        "uid": "3c50e5c0-f694-487e-8f16-6734883204dc"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:43Z",
+      "message": "Readiness probe failed: HTTP probe failed with statuscode: 500",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:42Z",
+        "name": "gatekeeper-controller-manager-b4b98898b-7mbxd.18d6746f29b5085b",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "657",
+        "uid": "a0e22f07-59c9-4e14-8fde-e60fc5b17e83"
+      },
+      "reason": "Unhealthy",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153759z-gatekeeper-control-plane"
+      },
+      "type": "Warning"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:34Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "gatekeeper-controller-manager-b4b98898b-f74qb",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "595",
+        "uid": "cb3a81af-d9fe-4098-98ab-5323e982f7cc"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:34Z",
+      "message": "Successfully assigned gatekeeper-system/gatekeeper-controller-manager-b4b98898b-f74qb to paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:34Z",
+        "name": "gatekeeper-controller-manager-b4b98898b-f74qb.18d6746d34488aa5",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "607",
+        "uid": "85ec4aa6-14ed-42a0-955a-5a0077fac919"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:34Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{manager}",
+        "kind": "Pod",
+        "name": "gatekeeper-controller-manager-b4b98898b-f74qb",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "599",
+        "uid": "cb3a81af-d9fe-4098-98ab-5323e982f7cc"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:34Z",
+      "message": "Pulling image \"openpolicyagent/gatekeeper:v3.23.1\"",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:34Z",
+        "name": "gatekeeper-controller-manager-b4b98898b-f74qb.18d6746d59a5117a",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "614",
+        "uid": "be744ff1-c064-4c6a-bd78-00220b0ab336"
+      },
+      "reason": "Pulling",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153759z-gatekeeper-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:42Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{manager}",
+        "kind": "Pod",
+        "name": "gatekeeper-controller-manager-b4b98898b-f74qb",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "599",
+        "uid": "cb3a81af-d9fe-4098-98ab-5323e982f7cc"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:42Z",
+      "message": "Successfully pulled image \"openpolicyagent/gatekeeper:v3.23.1\" in 1.1s (8.056s including waiting). Image size: 47764513 bytes.",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:42Z",
+        "name": "gatekeeper-controller-manager-b4b98898b-f74qb.18d6746f39da482e",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "650",
+        "uid": "e2b34fc3-ae92-4795-a4b4-0faa4242f4b5"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153759z-gatekeeper-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:43Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{manager}",
+        "kind": "Pod",
+        "name": "gatekeeper-controller-manager-b4b98898b-f74qb",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "599",
+        "uid": "cb3a81af-d9fe-4098-98ab-5323e982f7cc"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:43Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:43Z",
+        "name": "gatekeeper-controller-manager-b4b98898b-f74qb.18d6746f3bb17bcb",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "651",
+        "uid": "b9a0be27-e337-4297-a6c1-a2710a298aed"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153759z-gatekeeper-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:43Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{manager}",
+        "kind": "Pod",
+        "name": "gatekeeper-controller-manager-b4b98898b-f74qb",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "599",
+        "uid": "cb3a81af-d9fe-4098-98ab-5323e982f7cc"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:43Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:43Z",
+        "name": "gatekeeper-controller-manager-b4b98898b-f74qb.18d6746f3f0ab106",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "652",
+        "uid": "a282a924-773f-497d-92de-1b8345988f30"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153759z-gatekeeper-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 2,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:43Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{manager}",
+        "kind": "Pod",
+        "name": "gatekeeper-controller-manager-b4b98898b-f74qb",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "599",
+        "uid": "cb3a81af-d9fe-4098-98ab-5323e982f7cc"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:44Z",
+      "message": "Readiness probe failed: HTTP probe failed with statuscode: 500",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:43Z",
+        "name": "gatekeeper-controller-manager-b4b98898b-f74qb.18d6746f6582856e",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "665",
+        "uid": "4d2ed61e-681f-438d-beaf-f72c6e43c930"
+      },
+      "reason": "Unhealthy",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153759z-gatekeeper-control-plane"
+      },
+      "type": "Warning"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:34Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "gatekeeper-controller-manager-b4b98898b-x7hzd",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "584",
+        "uid": "3f1c32cd-5f5f-495e-bebb-fdc2528ff6c3"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:34Z",
+      "message": "Successfully assigned gatekeeper-system/gatekeeper-controller-manager-b4b98898b-x7hzd to paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:34Z",
+        "name": "gatekeeper-controller-manager-b4b98898b-x7hzd.18d6746d327f08c1",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "596",
+        "uid": "a449f42f-8a64-4b1c-95f0-067b991124c6"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:34Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{manager}",
+        "kind": "Pod",
+        "name": "gatekeeper-controller-manager-b4b98898b-x7hzd",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "588",
+        "uid": "3f1c32cd-5f5f-495e-bebb-fdc2528ff6c3"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:34Z",
+      "message": "Pulling image \"openpolicyagent/gatekeeper:v3.23.1\"",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:34Z",
+        "name": "gatekeeper-controller-manager-b4b98898b-x7hzd.18d6746d5309c84f",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "612",
+        "uid": "b0e36c52-1ce4-4a39-b451-bddf89969387"
+      },
+      "reason": "Pulling",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153759z-gatekeeper-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:40Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{manager}",
+        "kind": "Pod",
+        "name": "gatekeeper-controller-manager-b4b98898b-x7hzd",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "588",
+        "uid": "3f1c32cd-5f5f-495e-bebb-fdc2528ff6c3"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:40Z",
+      "message": "Successfully pulled image \"openpolicyagent/gatekeeper:v3.23.1\" in 1.102s (5.988s including waiting). Image size: 47764513 bytes.",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:40Z",
+        "name": "gatekeeper-controller-manager-b4b98898b-x7hzd.18d6746eb8026dec",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "627",
+        "uid": "cafc8995-8f63-4697-8e12-6b3d6b61ab9b"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153759z-gatekeeper-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:40Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{manager}",
+        "kind": "Pod",
+        "name": "gatekeeper-controller-manager-b4b98898b-x7hzd",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "588",
+        "uid": "3f1c32cd-5f5f-495e-bebb-fdc2528ff6c3"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:40Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:40Z",
+        "name": "gatekeeper-controller-manager-b4b98898b-x7hzd.18d6746eb9fb852b",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "628",
+        "uid": "529db162-3ca7-419b-a0e6-1f6c2912dfe3"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153759z-gatekeeper-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:40Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{manager}",
+        "kind": "Pod",
+        "name": "gatekeeper-controller-manager-b4b98898b-x7hzd",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "588",
+        "uid": "3f1c32cd-5f5f-495e-bebb-fdc2528ff6c3"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:40Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:40Z",
+        "name": "gatekeeper-controller-manager-b4b98898b-x7hzd.18d6746ebdb9b970",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "630",
+        "uid": "a934f84c-dc34-443c-a055-65a94ca4658a"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153759z-gatekeeper-control-plane"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 3,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:41Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{manager}",
+        "kind": "Pod",
+        "name": "gatekeeper-controller-manager-b4b98898b-x7hzd",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "588",
+        "uid": "3f1c32cd-5f5f-495e-bebb-fdc2528ff6c3"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:43Z",
+      "message": "Readiness probe failed: HTTP probe failed with statuscode: 500",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:41Z",
+        "name": "gatekeeper-controller-manager-b4b98898b-x7hzd.18d6746eedd2b1cf",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "660",
+        "uid": "7754c072-83ca-4a00-9716-ed50fa72d752"
+      },
+      "reason": "Unhealthy",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "paper-consistency-20260918t153759z-gatekeeper-control-plane",
+      "source": {
+        "component": "kubelet",
+        "host": "paper-consistency-20260918t153759z-gatekeeper-control-plane"
+      },
+      "type": "Warning"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:34Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "ReplicaSet",
+        "name": "gatekeeper-controller-manager-b4b98898b",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "572",
+        "uid": "b9f9e259-0270-408a-8283-c748c2b4434c"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:34Z",
+      "message": "Created pod: gatekeeper-controller-manager-b4b98898b-x7hzd",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:34Z",
+        "name": "gatekeeper-controller-manager-b4b98898b.18d6746d31c79595",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "586",
+        "uid": "c37148ec-b03f-4da7-a23d-fdaa799dd415"
+      },
+      "reason": "SuccessfulCreate",
+      "reportingComponent": "replicaset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "replicaset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:34Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "ReplicaSet",
+        "name": "gatekeeper-controller-manager-b4b98898b",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "572",
+        "uid": "b9f9e259-0270-408a-8283-c748c2b4434c"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:34Z",
+      "message": "Created pod: gatekeeper-controller-manager-b4b98898b-f74qb",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:34Z",
+        "name": "gatekeeper-controller-manager-b4b98898b.18d6746d33817d68",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "600",
+        "uid": "421f5985-6105-4a27-ab01-d05506c570f1"
+      },
+      "reason": "SuccessfulCreate",
+      "reportingComponent": "replicaset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "replicaset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:34Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "ReplicaSet",
+        "name": "gatekeeper-controller-manager-b4b98898b",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "572",
+        "uid": "b9f9e259-0270-408a-8283-c748c2b4434c"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:34Z",
+      "message": "Created pod: gatekeeper-controller-manager-b4b98898b-7mbxd",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:34Z",
+        "name": "gatekeeper-controller-manager-b4b98898b.18d6746d3389bbe7",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "605",
+        "uid": "ce847972-aff9-47d0-92ca-da3a5f9410ab"
+      },
+      "reason": "SuccessfulCreate",
+      "reportingComponent": "replicaset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "replicaset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 2,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:34Z",
+      "involvedObject": {
+        "apiVersion": "policy/v1",
+        "kind": "PodDisruptionBudget",
+        "name": "gatekeeper-controller-manager",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "571",
+        "uid": "92375406-d55c-4ddb-a967-9740224b8fe7"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:34Z",
+      "message": "No matching pods found",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:34Z",
+        "name": "gatekeeper-controller-manager.18d6746d30120fa7",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "589",
+        "uid": "14862a08-3057-4b68-9093-5ed71b9295a5"
+      },
+      "reason": "NoPods",
+      "reportingComponent": "controllermanager",
+      "reportingInstance": "",
+      "source": {
+        "component": "controllermanager"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-09-18T15:38:34Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "name": "gatekeeper-controller-manager",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "566",
+        "uid": "d2cf97ed-dba3-4cc5-934c-22d844fdc1e8"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-09-18T15:38:34Z",
+      "message": "Scaled up replica set gatekeeper-controller-manager-b4b98898b from 0 to 3",
+      "metadata": {
+        "creationTimestamp": "2026-09-18T15:38:34Z",
+        "name": "gatekeeper-controller-manager.18d6746d3065f540",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "577",
+        "uid": "6f75cf47-a1b5-4667-b268-f43e1a47a316"
+      },
+      "reason": "ScalingReplicaSet",
+      "reportingComponent": "deployment-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "deployment-controller"
+      },
+      "type": "Normal"
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  }
+}

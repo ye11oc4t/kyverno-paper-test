@@ -2,6 +2,8 @@
 
 실행일: 2026-09-19 KST · 호스트: KSYBOB · 사전 설계: [연구 프로토콜](../../research/ephemeral-policy-consistency/PROTOCOL.ko.md)
 
+후속 검토: [확장 실험 v2](../admission-consistency-v2/REPORT.ko.md)는 이 결과의 입력 중복과 추론 범위를 재검토하고 Kubewarden 및 Polaris를 추가했다. 아래 원래 측정 결과와 원본은 보존한다.
+
 세 엔진의 주 분석 72회 실행에서 기대값과 실제 Admission·객체·실행 관측이 모두 일치했다. 이번 조건에서는 일반·Ephemeral 컨테이너 간 정책 판정 불일치가 관측되지 않았다. 따라서 이 결과는 “Kubernetes 정책 도구들이 공통으로 놓치는 결함”이라는 주장을 뒷받침하지 않는다. 엔진당 8개 계획 사례를 세 번 반복한 결과이며, 72개의 독립된 사례나 모든 보안 정책에 대한 안전성 입증은 아니다.
 
 ## 평가 질문과 방법

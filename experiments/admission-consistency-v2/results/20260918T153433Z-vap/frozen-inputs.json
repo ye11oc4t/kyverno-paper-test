@@ -1,0 +1,60 @@
+{
+  "frozenAt": "2026-09-18T15:35:06.413697+00:00",
+  "engine": "vap",
+  "files": {
+    "runner-used.py": "843ae59130655b86a4f3fc051221bc9ffafb0e78d09c97307ed688708b886e7b",
+    "base-runner-used.py": "5af701df88a8e6082870377bd316b2a5b38832952ffac1700a93d94f58883b1f",
+    "catalogue.json": "b61e3f2f49727b60dae2b1377de5279bec90d1087639d309b668cb6598bdb06e",
+    "execution-order.json": "c4afe2111f590df4ccf86928e604119239c337d15c6af94d67efc4462d88df4f",
+    "policy-0.json": "b98421bc5f5799e2733e3f53638b3ee251ff922909c03de189fb2b0dbe2f6f9e",
+    "policy-1.json": "8ed3150e8f955311c905156457365ad1a50126368809bad51bf38a2743e04c30"
+  },
+  "cases": 24,
+  "repeats": 1,
+  "shuffleSeed": 20260919,
+  "images": [
+    {
+      "id": "sha256:ee6521f290b2168b6e0935a181d4cff9be1ac3f505666ef0e3c98fae8199917a",
+      "tags": [
+        "registry.k8s.io/pause:3.10",
+        "study.local/alternate/pause:3.10",
+        "study.local/approved/pause:3.10"
+      ]
+    },
+    {
+      "id": "sha256:ee6521f290b2168b6e0935a181d4cff9be1ac3f505666ef0e3c98fae8199917a",
+      "tags": [
+        "registry.k8s.io/pause:3.10",
+        "study.local/alternate/pause:3.10",
+        "study.local/approved/pause:3.10"
+      ]
+    }
+  ],
+  "downloads": [
+    {
+      "url": "https://get.helm.sh/helm-v4.3.0-linux-amd64.tar.gz",
+      "file": "helm-v4.3.0-linux-amd64.tar.gz",
+      "sha256": "86584a54def73570558f66f5111cc53dfed56689637ae32c1201205d494f54fb",
+      "expectedSha256": "86584a54def73570558f66f5111cc53dfed56689637ae32c1201205d494f54fb"
+    },
+    {
+      "url": "https://github.com/FairwindsOps/polaris/releases/download/v10.2.5/polaris_10.2.5_linux_amd64.tar.gz",
+      "file": "polaris_10.2.5_linux_amd64.tar.gz",
+      "sha256": "21c979f649e9600ad41d907d188c6e01b2c7ae4dc0cdbf4df392120c950e1fca",
+      "expectedSha256": "21c979f649e9600ad41d907d188c6e01b2c7ae4dc0cdbf4df392120c950e1fca"
+    },
+    {
+      "url": "https://github.com/kubewarden/helm-charts/releases/download/admission-controller-6.0.2/admission-controller-6.0.2.tgz",
+      "file": "admission-controller-6.0.2.tgz",
+      "sha256": "d74a3112f43a73d46a69d934eb04c3fe0568bfc6b994c00dad719c480013a982",
+      "expectedSha256": "d74a3112f43a73d46a69d934eb04c3fe0568bfc6b994c00dad719c480013a982"
+    },
+    {
+      "url": "https://github.com/kubewarden/policies/releases/download/cel-policy/v1.6.4/policy.wasm",
+      "file": "cel-policy-1.6.4.wasm",
+      "sha256": "fb66785aef219286e953ca59cf038f52f3774801c1e19a7b1aca31d261f37c74",
+      "expectedSha256": "fb66785aef219286e953ca59cf038f52f3774801c1e19a7b1aca31d261f37c74"
+    }
+  ],
+  "kubewardenModule": null
+}

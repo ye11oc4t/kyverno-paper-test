@@ -1,0 +1,33 @@
+{
+  "apiVersion": "v1",
+  "kind": "Pod",
+  "metadata": {
+    "name": "v2-ephemeral-history-ok",
+    "namespace": "study-consistency",
+    "resourceVersion": "983"
+  },
+  "spec": {
+    "ephemeralContainers": [
+      {
+        "name": "study-history",
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "runAsGroup": 1000,
+          "allowPrivilegeEscalation": false,
+          "readOnlyRootFilesystem": true,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ]
+  }
+}

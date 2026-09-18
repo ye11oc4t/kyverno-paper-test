@@ -1,0 +1,50 @@
+{
+  "apiVersion": "policies.kubewarden.io/v1",
+  "kind": "ClusterAdmissionPolicy",
+  "metadata": {
+    "name": "study-conformance"
+  },
+  "spec": {
+    "module": "registry://ghcr.io/kubewarden/policies/cel-policy@sha256:4ca1c0aef61b900a5360fc1ae5da2a1d0a7a667d486d4d1ae09069dc4253308a",
+    "policyServer": "default",
+    "mutating": false,
+    "mode": "protect",
+    "failurePolicy": "Fail",
+    "backgroundAudit": false,
+    "namespaceSelector": {
+      "matchLabels": {
+        "study.example/pilot": "true"
+      }
+    },
+    "rules": [
+      {
+        "apiGroups": [
+          ""
+        ],
+        "apiVersions": [
+          "v1"
+        ],
+        "operations": [
+          "CREATE",
+          "UPDATE"
+        ],
+        "resources": [
+          "pods",
+          "pods/ephemeralcontainers"
+        ]
+      }
+    ],
+    "settings": {
+      "validations": [
+        {
+          "expression": "object.spec.containers.all(c, c.name.startsWith('study-')) && (!has(object.spec.initContainers) || object.spec.initContainers.all(c, c.name.startsWith('study-'))) && (!has(object.spec.ephemeralContainers) || object.spec.ephemeralContainers.all(c, c.name.startsWith('study-')))",
+          "message": "study-name: name must start with study-"
+        },
+        {
+          "expression": "object.spec.containers.all(c, c.image == 'study.local/approved/pause:3.10') && (!has(object.spec.initContainers) || object.spec.initContainers.all(c, c.image == 'study.local/approved/pause:3.10')) && (!has(object.spec.ephemeralContainers) || object.spec.ephemeralContainers.all(c, c.image == 'study.local/approved/pause:3.10'))",
+          "message": "study-image: image must be the approved study alias"
+        }
+      ]
+    }
+  }
+}

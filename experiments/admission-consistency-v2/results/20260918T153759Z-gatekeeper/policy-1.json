@@ -1,0 +1,25 @@
+{
+  "apiVersion": "constraints.gatekeeper.sh/v1beta1",
+  "kind": "StudyConformance",
+  "metadata": {
+    "name": "study-conformance"
+  },
+  "spec": {
+    "enforcementAction": "deny",
+    "match": {
+      "kinds": [
+        {
+          "apiGroups": [
+            ""
+          ],
+          "kinds": [
+            "Pod"
+          ]
+        }
+      ],
+      "namespaces": [
+        "study-consistency"
+      ]
+    }
+  }
+}

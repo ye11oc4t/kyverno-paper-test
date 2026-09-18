@@ -1,0 +1,245 @@
+{
+  "apiVersion": "v1",
+  "kind": "Pod",
+  "metadata": {
+    "creationTimestamp": "2026-09-18T15:33:58Z",
+    "generation": 2,
+    "name": "v2-ephemeral-edge-names-ok",
+    "namespace": "study-consistency",
+    "resourceVersion": "824",
+    "uid": "26f9e816-9be0-44bf-bb85-253ce7b5ba73"
+  },
+  "spec": {
+    "automountServiceAccountToken": false,
+    "containers": [
+      {
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "name": "study-base",
+        "resources": {},
+        "securityContext": {
+          "allowPrivilegeEscalation": false,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "readOnlyRootFilesystem": true,
+          "runAsGroup": 1000,
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        },
+        "terminationMessagePath": "/dev/termination-log",
+        "terminationMessagePolicy": "File"
+      }
+    ],
+    "dnsPolicy": "ClusterFirst",
+    "enableServiceLinks": true,
+    "ephemeralContainers": [
+      {
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "name": "study-0",
+        "resources": {},
+        "securityContext": {
+          "allowPrivilegeEscalation": false,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "readOnlyRootFilesystem": true,
+          "runAsGroup": 1000,
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        },
+        "terminationMessagePath": "/dev/termination-log",
+        "terminationMessagePolicy": "File"
+      },
+      {
+        "image": "study.local/approved/pause:3.10",
+        "imagePullPolicy": "Never",
+        "name": "study-a-b",
+        "resources": {},
+        "securityContext": {
+          "allowPrivilegeEscalation": false,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "readOnlyRootFilesystem": true,
+          "runAsGroup": 1000,
+          "runAsNonRoot": true,
+          "runAsUser": 1000,
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        },
+        "terminationMessagePath": "/dev/termination-log",
+        "terminationMessagePolicy": "File"
+      }
+    ],
+    "nodeName": "paper-consistency-20260918t153225z-kubewarden-control-plane",
+    "preemptionPolicy": "PreemptLowerPriority",
+    "priority": 0,
+    "restartPolicy": "Never",
+    "schedulerName": "default-scheduler",
+    "securityContext": {},
+    "serviceAccount": "default",
+    "serviceAccountName": "default",
+    "terminationGracePeriodSeconds": 0,
+    "tolerations": [
+      {
+        "effect": "NoExecute",
+        "key": "node.kubernetes.io/not-ready",
+        "operator": "Exists",
+        "tolerationSeconds": 300
+      },
+      {
+        "effect": "NoExecute",
+        "key": "node.kubernetes.io/unreachable",
+        "operator": "Exists",
+        "tolerationSeconds": 300
+      }
+    ]
+  },
+  "status": {
+    "conditions": [
+      {
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-09-18T15:33:59Z",
+        "observedGeneration": 2,
+        "status": "True",
+        "type": "PodReadyToStartContainers"
+      },
+      {
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-09-18T15:33:58Z",
+        "observedGeneration": 2,
+        "status": "True",
+        "type": "Initialized"
+      },
+      {
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-09-18T15:33:59Z",
+        "observedGeneration": 2,
+        "status": "True",
+        "type": "Ready"
+      },
+      {
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-09-18T15:33:59Z",
+        "observedGeneration": 2,
+        "status": "True",
+        "type": "ContainersReady"
+      },
+      {
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-09-18T15:33:58Z",
+        "observedGeneration": 2,
+        "status": "True",
+        "type": "PodScheduled"
+      }
+    ],
+    "containerStatuses": [
+      {
+        "containerID": "containerd://152eee4f0ed4878575bec92a3a7b66d1782e9cebd03f04b5ab0f37cf12db1a74",
+        "image": "registry.k8s.io/pause:3.10",
+        "imageID": "docker.io/library/import-2026-09-18@sha256:029cbf12c47dd1f8d7adf60ecaeebf0145cf2f32470e875583d9ac7797bb3e88",
+        "lastState": {},
+        "name": "study-base",
+        "ready": true,
+        "resources": {},
+        "restartCount": 0,
+        "started": true,
+        "state": {
+          "running": {
+            "startedAt": "2026-09-18T15:33:58Z"
+          }
+        },
+        "user": {
+          "linux": {
+            "gid": 1000,
+            "supplementalGroups": [
+              1000
+            ],
+            "uid": 1000
+          }
+        }
+      }
+    ],
+    "ephemeralContainerStatuses": [
+      {
+        "containerID": "containerd://ebc9118605fc1cb548c9a2456661e21c50b5419377519fd95a94b492307e2ce5",
+        "image": "registry.k8s.io/pause:3.10",
+        "imageID": "docker.io/library/import-2026-09-18@sha256:029cbf12c47dd1f8d7adf60ecaeebf0145cf2f32470e875583d9ac7797bb3e88",
+        "lastState": {},
+        "name": "study-0",
+        "ready": false,
+        "resources": {},
+        "restartCount": 0,
+        "state": {
+          "running": {
+            "startedAt": "2026-09-18T15:34:00Z"
+          }
+        },
+        "user": {
+          "linux": {
+            "gid": 1000,
+            "supplementalGroups": [
+              1000
+            ],
+            "uid": 1000
+          }
+        }
+      },
+      {
+        "containerID": "containerd://0170e807fc7f931ce8e6787f943bfe2553e55291c0fafb1321e7bb1e41f559e6",
+        "image": "registry.k8s.io/pause:3.10",
+        "imageID": "docker.io/library/import-2026-09-18@sha256:029cbf12c47dd1f8d7adf60ecaeebf0145cf2f32470e875583d9ac7797bb3e88",
+        "lastState": {},
+        "name": "study-a-b",
+        "ready": false,
+        "resources": {},
+        "restartCount": 0,
+        "state": {
+          "running": {
+            "startedAt": "2026-09-18T15:34:00Z"
+          }
+        },
+        "user": {
+          "linux": {
+            "gid": 1000,
+            "supplementalGroups": [
+              1000
+            ],
+            "uid": 1000
+          }
+        }
+      }
+    ],
+    "hostIP": "172.18.0.2",
+    "hostIPs": [
+      {
+        "ip": "172.18.0.2"
+      }
+    ],
+    "observedGeneration": 2,
+    "phase": "Running",
+    "podIP": "10.244.0.16",
+    "podIPs": [
+      {
+        "ip": "10.244.0.16"
+      }
+    ],
+    "qosClass": "BestEffort",
+    "startTime": "2026-09-18T15:33:58Z"
+  }
+}

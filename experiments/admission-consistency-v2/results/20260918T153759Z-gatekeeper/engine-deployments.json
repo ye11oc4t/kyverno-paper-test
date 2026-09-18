@@ -1,0 +1,484 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "apiVersion": "apps/v1",
+      "kind": "Deployment",
+      "metadata": {
+        "annotations": {
+          "deployment.kubernetes.io/revision": "1"
+        },
+        "creationTimestamp": "2026-09-18T15:38:34Z",
+        "generation": 1,
+        "labels": {
+          "control-plane": "audit-controller",
+          "gatekeeper.sh/operation": "audit",
+          "gatekeeper.sh/system": "yes"
+        },
+        "name": "gatekeeper-audit",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "709",
+        "uid": "fafeb999-d7b9-4923-8eb4-a1b4687a1aee"
+      },
+      "spec": {
+        "progressDeadlineSeconds": 600,
+        "replicas": 1,
+        "revisionHistoryLimit": 10,
+        "selector": {
+          "matchLabels": {
+            "control-plane": "audit-controller",
+            "gatekeeper.sh/operation": "audit",
+            "gatekeeper.sh/system": "yes"
+          }
+        },
+        "strategy": {
+          "rollingUpdate": {
+            "maxSurge": "25%",
+            "maxUnavailable": "25%"
+          },
+          "type": "RollingUpdate"
+        },
+        "template": {
+          "metadata": {
+            "labels": {
+              "control-plane": "audit-controller",
+              "gatekeeper.sh/operation": "audit",
+              "gatekeeper.sh/system": "yes"
+            }
+          },
+          "spec": {
+            "automountServiceAccountToken": true,
+            "containers": [
+              {
+                "args": [
+                  "--operation=audit",
+                  "--operation=status",
+                  "--operation=mutation-status",
+                  "--operation=generate",
+                  "--logtostderr",
+                  "--disable-opa-builtin={http.send}",
+                  "--disable-cert-rotation"
+                ],
+                "command": [
+                  "/manager"
+                ],
+                "env": [
+                  {
+                    "name": "POD_NAMESPACE",
+                    "valueFrom": {
+                      "fieldRef": {
+                        "apiVersion": "v1",
+                        "fieldPath": "metadata.namespace"
+                      }
+                    }
+                  },
+                  {
+                    "name": "POD_NAME",
+                    "valueFrom": {
+                      "fieldRef": {
+                        "apiVersion": "v1",
+                        "fieldPath": "metadata.name"
+                      }
+                    }
+                  },
+                  {
+                    "name": "NAMESPACE",
+                    "valueFrom": {
+                      "fieldRef": {
+                        "apiVersion": "v1",
+                        "fieldPath": "metadata.namespace"
+                      }
+                    }
+                  },
+                  {
+                    "name": "CONTAINER_NAME",
+                    "value": "manager"
+                  },
+                  {
+                    "name": "OTEL_RESOURCE_ATTRIBUTES",
+                    "value": "k8s.pod.name=$(POD_NAME),k8s.namespace.name=$(NAMESPACE),k8s.container.name=$(CONTAINER_NAME)"
+                  }
+                ],
+                "image": "openpolicyagent/gatekeeper:v3.23.1",
+                "imagePullPolicy": "Always",
+                "livenessProbe": {
+                  "failureThreshold": 3,
+                  "httpGet": {
+                    "path": "/healthz",
+                    "port": 9090,
+                    "scheme": "HTTP"
+                  },
+                  "periodSeconds": 10,
+                  "successThreshold": 1,
+                  "timeoutSeconds": 1
+                },
+                "name": "manager",
+                "ports": [
+                  {
+                    "containerPort": 8888,
+                    "name": "metrics",
+                    "protocol": "TCP"
+                  },
+                  {
+                    "containerPort": 9090,
+                    "name": "healthz",
+                    "protocol": "TCP"
+                  }
+                ],
+                "readinessProbe": {
+                  "failureThreshold": 3,
+                  "httpGet": {
+                    "path": "/readyz",
+                    "port": 9090,
+                    "scheme": "HTTP"
+                  },
+                  "periodSeconds": 10,
+                  "successThreshold": 1,
+                  "timeoutSeconds": 1
+                },
+                "resources": {
+                  "limits": {
+                    "memory": "512Mi"
+                  },
+                  "requests": {
+                    "cpu": "100m",
+                    "memory": "512Mi"
+                  }
+                },
+                "securityContext": {
+                  "allowPrivilegeEscalation": false,
+                  "capabilities": {
+                    "drop": [
+                      "ALL"
+                    ]
+                  },
+                  "readOnlyRootFilesystem": true,
+                  "runAsGroup": 999,
+                  "runAsNonRoot": true,
+                  "runAsUser": 1000,
+                  "seccompProfile": {
+                    "type": "RuntimeDefault"
+                  }
+                },
+                "terminationMessagePath": "/dev/termination-log",
+                "terminationMessagePolicy": "File",
+                "volumeMounts": [
+                  {
+                    "mountPath": "/certs",
+                    "name": "cert",
+                    "readOnly": true
+                  },
+                  {
+                    "mountPath": "/tmp/audit",
+                    "name": "tmp-volume"
+                  }
+                ]
+              }
+            ],
+            "dnsPolicy": "ClusterFirst",
+            "nodeSelector": {
+              "kubernetes.io/os": "linux"
+            },
+            "priorityClassName": "system-cluster-critical",
+            "restartPolicy": "Always",
+            "schedulerName": "default-scheduler",
+            "securityContext": {},
+            "serviceAccount": "gatekeeper-admin",
+            "serviceAccountName": "gatekeeper-admin",
+            "terminationGracePeriodSeconds": 60,
+            "volumes": [
+              {
+                "name": "cert",
+                "secret": {
+                  "defaultMode": 420,
+                  "secretName": "gatekeeper-webhook-server-cert"
+                }
+              },
+              {
+                "emptyDir": {},
+                "name": "tmp-volume"
+              }
+            ]
+          }
+        }
+      },
+      "status": {
+        "availableReplicas": 1,
+        "conditions": [
+          {
+            "lastTransitionTime": "2026-09-18T15:38:56Z",
+            "lastUpdateTime": "2026-09-18T15:38:56Z",
+            "message": "Deployment has minimum availability.",
+            "reason": "MinimumReplicasAvailable",
+            "status": "True",
+            "type": "Available"
+          },
+          {
+            "lastTransitionTime": "2026-09-18T15:38:34Z",
+            "lastUpdateTime": "2026-09-18T15:38:56Z",
+            "message": "ReplicaSet \"gatekeeper-audit-58657548c7\" has successfully progressed.",
+            "reason": "NewReplicaSetAvailable",
+            "status": "True",
+            "type": "Progressing"
+          }
+        ],
+        "observedGeneration": 1,
+        "readyReplicas": 1,
+        "replicas": 1,
+        "terminatingReplicas": 0,
+        "updatedReplicas": 1
+      }
+    },
+    {
+      "apiVersion": "apps/v1",
+      "kind": "Deployment",
+      "metadata": {
+        "annotations": {
+          "deployment.kubernetes.io/revision": "1"
+        },
+        "creationTimestamp": "2026-09-18T15:38:34Z",
+        "generation": 1,
+        "labels": {
+          "control-plane": "controller-manager",
+          "gatekeeper.sh/operation": "webhook",
+          "gatekeeper.sh/system": "yes"
+        },
+        "name": "gatekeeper-controller-manager",
+        "namespace": "gatekeeper-system",
+        "resourceVersion": "700",
+        "uid": "d2cf97ed-dba3-4cc5-934c-22d844fdc1e8"
+      },
+      "spec": {
+        "progressDeadlineSeconds": 600,
+        "replicas": 3,
+        "revisionHistoryLimit": 10,
+        "selector": {
+          "matchLabels": {
+            "control-plane": "controller-manager",
+            "gatekeeper.sh/operation": "webhook",
+            "gatekeeper.sh/system": "yes"
+          }
+        },
+        "strategy": {
+          "rollingUpdate": {
+            "maxSurge": "25%",
+            "maxUnavailable": "25%"
+          },
+          "type": "RollingUpdate"
+        },
+        "template": {
+          "metadata": {
+            "labels": {
+              "control-plane": "controller-manager",
+              "gatekeeper.sh/operation": "webhook",
+              "gatekeeper.sh/system": "yes"
+            }
+          },
+          "spec": {
+            "affinity": {
+              "podAntiAffinity": {
+                "preferredDuringSchedulingIgnoredDuringExecution": [
+                  {
+                    "podAffinityTerm": {
+                      "labelSelector": {
+                        "matchExpressions": [
+                          {
+                            "key": "gatekeeper.sh/operation",
+                            "operator": "In",
+                            "values": [
+                              "webhook"
+                            ]
+                          }
+                        ]
+                      },
+                      "topologyKey": "kubernetes.io/hostname"
+                    },
+                    "weight": 100
+                  }
+                ]
+              }
+            },
+            "automountServiceAccountToken": true,
+            "containers": [
+              {
+                "args": [
+                  "--port=8443",
+                  "--logtostderr",
+                  "--exempt-namespace=gatekeeper-system",
+                  "--operation=webhook",
+                  "--operation=mutation-webhook",
+                  "--disable-opa-builtin={http.send}"
+                ],
+                "command": [
+                  "/manager"
+                ],
+                "env": [
+                  {
+                    "name": "POD_NAMESPACE",
+                    "valueFrom": {
+                      "fieldRef": {
+                        "apiVersion": "v1",
+                        "fieldPath": "metadata.namespace"
+                      }
+                    }
+                  },
+                  {
+                    "name": "POD_NAME",
+                    "valueFrom": {
+                      "fieldRef": {
+                        "apiVersion": "v1",
+                        "fieldPath": "metadata.name"
+                      }
+                    }
+                  },
+                  {
+                    "name": "NAMESPACE",
+                    "valueFrom": {
+                      "fieldRef": {
+                        "apiVersion": "v1",
+                        "fieldPath": "metadata.namespace"
+                      }
+                    }
+                  },
+                  {
+                    "name": "CONTAINER_NAME",
+                    "value": "manager"
+                  },
+                  {
+                    "name": "OTEL_RESOURCE_ATTRIBUTES",
+                    "value": "k8s.pod.name=$(POD_NAME),k8s.namespace.name=$(NAMESPACE),k8s.container.name=$(CONTAINER_NAME)"
+                  }
+                ],
+                "image": "openpolicyagent/gatekeeper:v3.23.1",
+                "imagePullPolicy": "Always",
+                "livenessProbe": {
+                  "failureThreshold": 3,
+                  "httpGet": {
+                    "path": "/healthz",
+                    "port": 9090,
+                    "scheme": "HTTP"
+                  },
+                  "periodSeconds": 10,
+                  "successThreshold": 1,
+                  "timeoutSeconds": 1
+                },
+                "name": "manager",
+                "ports": [
+                  {
+                    "containerPort": 8443,
+                    "name": "webhook-server",
+                    "protocol": "TCP"
+                  },
+                  {
+                    "containerPort": 8888,
+                    "name": "metrics",
+                    "protocol": "TCP"
+                  },
+                  {
+                    "containerPort": 9090,
+                    "name": "healthz",
+                    "protocol": "TCP"
+                  }
+                ],
+                "readinessProbe": {
+                  "failureThreshold": 3,
+                  "httpGet": {
+                    "path": "/readyz",
+                    "port": 9090,
+                    "scheme": "HTTP"
+                  },
+                  "periodSeconds": 10,
+                  "successThreshold": 1,
+                  "timeoutSeconds": 1
+                },
+                "resources": {
+                  "limits": {
+                    "memory": "512Mi"
+                  },
+                  "requests": {
+                    "cpu": "100m",
+                    "memory": "512Mi"
+                  }
+                },
+                "securityContext": {
+                  "allowPrivilegeEscalation": false,
+                  "capabilities": {
+                    "drop": [
+                      "ALL"
+                    ]
+                  },
+                  "readOnlyRootFilesystem": true,
+                  "runAsGroup": 999,
+                  "runAsNonRoot": true,
+                  "runAsUser": 1000,
+                  "seccompProfile": {
+                    "type": "RuntimeDefault"
+                  }
+                },
+                "terminationMessagePath": "/dev/termination-log",
+                "terminationMessagePolicy": "File",
+                "volumeMounts": [
+                  {
+                    "mountPath": "/certs",
+                    "name": "cert",
+                    "readOnly": true
+                  }
+                ]
+              }
+            ],
+            "dnsPolicy": "ClusterFirst",
+            "nodeSelector": {
+              "kubernetes.io/os": "linux"
+            },
+            "priorityClassName": "system-cluster-critical",
+            "restartPolicy": "Always",
+            "schedulerName": "default-scheduler",
+            "securityContext": {},
+            "serviceAccount": "gatekeeper-admin",
+            "serviceAccountName": "gatekeeper-admin",
+            "terminationGracePeriodSeconds": 60,
+            "volumes": [
+              {
+                "name": "cert",
+                "secret": {
+                  "defaultMode": 420,
+                  "secretName": "gatekeeper-webhook-server-cert"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "status": {
+        "availableReplicas": 3,
+        "conditions": [
+          {
+            "lastTransitionTime": "2026-09-18T15:38:54Z",
+            "lastUpdateTime": "2026-09-18T15:38:54Z",
+            "message": "Deployment has minimum availability.",
+            "reason": "MinimumReplicasAvailable",
+            "status": "True",
+            "type": "Available"
+          },
+          {
+            "lastTransitionTime": "2026-09-18T15:38:34Z",
+            "lastUpdateTime": "2026-09-18T15:38:54Z",
+            "message": "ReplicaSet \"gatekeeper-controller-manager-b4b98898b\" has successfully progressed.",
+            "reason": "NewReplicaSetAvailable",
+            "status": "True",
+            "type": "Progressing"
+          }
+        ],
+        "observedGeneration": 1,
+        "readyReplicas": 3,
+        "replicas": 3,
+        "terminatingReplicas": 0,
+        "updatedReplicas": 3
+      }
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  }
+}
