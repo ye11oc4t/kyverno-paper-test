@@ -1,0 +1,94 @@
+{
+  "reviewedAt": "2026-09-19",
+  "mode": "read-only source review; no cluster experiments executed",
+  "sources": [
+    {
+      "repository": "kyverno/kyverno",
+      "commit": "40ec788d48bb28d83dbf85538e962a59db9d45c6",
+      "tags": ["v1.19.1", "kyverno-policies-chart-3.9.1"],
+      "focus": [
+        "charts/kyverno-policies",
+        "pkg/cel/autogen/support.go",
+        "pkg/cel/policies/vpol/autogen/autogen.go",
+        "pkg/controllers/webhook/validating.go",
+        "pkg/controllers/webhook/validating_test.go",
+        "pkg/validation/policy/background.go"
+      ]
+    },
+    {
+      "repository": "kyverno/policies",
+      "commit": "2716f4a26a3c27590a1d6d960dee4ce043e4fa4a",
+      "focus": [
+        "best-practices-vpol/restrict-image-registries",
+        "best-practices-vpol/require-pod-requests-limits",
+        "other-vpol/block-ephemeral-containers"
+      ]
+    },
+    {
+      "repository": "open-policy-agent/gatekeeper",
+      "commit": "2d0b6ad97cf3a8b8436a00a1f4b07b3a56b92ca0",
+      "tags": ["v3.23.1"],
+      "focus": [
+        "config/webhook/manifests.yaml",
+        "pkg/target/target.go",
+        "pkg/audit/manager.go",
+        "website/docs/input.md"
+      ]
+    },
+    {
+      "repository": "open-policy-agent/gatekeeper-library",
+      "commit": "22a40962f83268769bcec5dfe55e44b5a85c392a",
+      "focus": [
+        "catalog.yaml",
+        "src/pod-security-policy"
+      ]
+    },
+    {
+      "repository": "kubewarden/kubewarden-controller",
+      "commit": "23657f51d11fbc75ecd94f69c32a89ee5901cfcf",
+      "tags": ["v1.37.2"],
+      "focus": [
+        "charts/admission-controller/templates/defaults/policies",
+        "internal/audit-scanner"
+      ]
+    },
+    {
+      "repository": "kubewarden/policies",
+      "commit": "fd4c5c98fa765d5ad3db1a89a7bc027ea0bc89ff",
+      "focus": [
+        "policies/pod-privileged-policy",
+        "policies/allow-privilege-escalation-psp-policy",
+        "policies/capabilities-psp-policy",
+        "policies/container-resources-policy"
+      ]
+    },
+    {
+      "repository": "FairwindsOps/polaris",
+      "commit": "c84bb2ea3674ee7ec044584db8c9cc9e8d17bdd0",
+      "focus": [
+        "pkg/validator/schema.go",
+        "pkg/webhook/webhook.go",
+        "pkg/config/default.yaml"
+      ]
+    },
+    {
+      "repository": "FairwindsOps/charts",
+      "commit": "db94aff3c6d0f0ce0ed6f80f56f3b0b5135f819c",
+      "focus": [
+        "stable/polaris"
+      ]
+    }
+  ],
+  "normativeReferences": [
+    "https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/",
+    "https://kubernetes.io/docs/concepts/workloads/pods/",
+    "https://kubernetes.io/docs/concepts/workloads/pods/ephemeral-containers/",
+    "https://kubernetes.io/docs/tasks/debug/debug-application/debug-running-pod/",
+    "https://kubernetes.io/docs/concepts/security/pod-security-standards/",
+    "https://kubernetes.io/docs/concepts/workloads/pods/user-namespaces/",
+    "https://v1-35.docs.kubernetes.io/docs/concepts/storage/volumes/#image",
+    "https://kubernetes.io/docs/concepts/workloads/pods/sidecar-containers/",
+    "https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#pod-level-resource-specification",
+    "https://kubernetes.io/docs/concepts/security/api-server-bypass-risks/"
+  ]
+}

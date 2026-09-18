@@ -2,7 +2,10 @@
 
 Shared Git project for running and validating Kyverno paper experiments across Codex hosts.
 
-Current research: admission-policy consistency between regular containers and Ephemeral Containers. The offline baseline below is a preliminary CLI check, not evidence for admission-path coverage.
+Current research: effective policy coverage across Kubernetes API routes, operations, object traversal, and public policy bundles. The strongest source-derived candidate is a persistent Ephemeral Container false negative across Kyverno, Gatekeeper, Kubewarden, and Polaris for different implementation reasons. Other high-value candidates include OCI image volumes omitted from image trust policies and native sidecars omitted from resource checks. No new experiment has been executed for these candidates yet.
+
+- [Policy gap candidates, ranking, and source evidence (Korean)](research/policy-gap-candidates/REPORT.ko.md)
+- [Candidate experiment designs only (Korean)](research/policy-gap-candidates/EXPERIMENT-DESIGNS.ko.md)
 
 - [Revised research protocol (Korean)](research/ephemeral-policy-consistency/PROTOCOL.ko.md)
 - [Admission consistency pilot: results and interpretation (Korean)](experiments/admission-consistency/REPORT.ko.md)
