@@ -1,0 +1,154 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "admissionregistration.k8s.io/v1",
+            "kind": "ValidatingWebhookConfiguration",
+            "metadata": {
+                "annotations": {
+                    "meta.helm.sh/release-name": "gatekeeper",
+                    "meta.helm.sh/release-namespace": "gatekeeper-system"
+                },
+                "creationTimestamp": "2026-09-19T05:37:18Z",
+                "generation": 2,
+                "labels": {
+                    "app": "gatekeeper",
+                    "app.kubernetes.io/managed-by": "Helm",
+                    "chart": "gatekeeper",
+                    "gatekeeper.sh/system": "yes",
+                    "heritage": "Helm",
+                    "release": "gatekeeper"
+                },
+                "name": "gatekeeper-validating-webhook-configuration",
+                "resourceVersion": "723",
+                "uid": "1f8dd925-3ac5-485c-947f-28681c3bab43"
+            },
+            "webhooks": [
+                {
+                    "admissionReviewVersions": [
+                        "v1",
+                        "v1beta1"
+                    ],
+                    "clientConfig": {
+                        "caBundle": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURNVENDQWhtZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREF0TVJNd0VRWURWUVFLRXdwbllYUmwKYTJWbGNHVnlNUll3RkFZRFZRUURFdzFuWVhSbGEyVmxjR1Z5TFdOaE1CNFhEVEkyTURreE9UQTBNemN5TmxvWApEVE0yTURreE5qQTFNemN5Tmxvd0xURVRNQkVHQTFVRUNoTUtaMkYwWld0bFpYQmxjakVXTUJRR0ExVUVBeE1OCloyRjBaV3RsWlhCbGNpMWpZVENDQVNJd0RRWUpLb1pJaHZjTkFRRUJCUUFEZ2dFUEFEQ0NBUW9DZ2dFQkFNNlcKYWNnRkVlYXBKS0FiZGsxTythSVRXdjM1S3hqVE9KSWhtbTcvWFBkQjNJVHB6WmZvN2Y4b3dHRCtYMTN3bzMxYQpPTElhbDFCVkg5dmo4bWw2Q2VRaEh5Ty9oQk0yM3VPMEhEVnNuTS9ENnlFQWN6UXh0akpxbHJQTDhROEdDSzM3Cm0zNVlyMDhVVEhOOGg1L2lETUY4R0NBVmVVdGI3VEdnSG1STjdGcy9CWHFRREh6aUtYcmtSOVhaNlhzaHFIVmIKNCswbzExMUE2UEVZQTdOYmpjcHR1NmMrbndQTTFLNmNBbytoY0p4VHhwZ0FySE1JTFJ1VThod29OLzVnWGhFTgpKSmJwUGE5TEE1dGhRM0VybDEzZkJBbE5nWG01djRMZDZHZFp3ajJUQkF1bkJYTmRCRW5hOU5UUVlnTVRLcU9vCjN3UkowRytSdlQ4K0drK2hDQU1DQXdFQUFhTmNNRm93RGdZRFZSMFBBUUgvQkFRREFnS2tNQThHQTFVZEV3RUIKL3dRRk1BTUJBZjh3SFFZRFZSME9CQllFRklDd2wyUUF6dTF3aUFYdHVhTURZMWNMRkt2bk1CZ0dBMVVkRVFRUgpNQStDRFdkaGRHVnJaV1Z3WlhJdFkyRXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBSDMzT1J5SmY0WkZ5QzdIClhka29rNUIvMXc2UGtBcVN1VUJFbDlDT3lWbmxqN3BoVUdIR24vTVJEQ3kyVUVNNDUwMHpNQXMwMktkNHFuWXoKMmo5QlBzZHdJNDgwSG9ZcHpCZTlmRGFSaFJYby9PWGlpaVA4cnpCQ0lkQjZiY3EvWXZkdzJoSWdVOXRFWVdwQgpPQUx6ZHJlTmpVRTVsdENJRlQzVC9mejFIUFZ1WCtyU0xlTUVBcjZ1RUtaSXk5WHVZMXNBenN3TjV2MU1JeDFSCmtZQ2lwSDkweGhCNzI1QllHKzlTTnNWbUJNQTBKMndybjlzbTVEbUI0VUQvcFBnQW1tYzNyaVJObk5VRTVtaHgKYmZmbmRVYS8wZWJDNW9MeXd1UytiSC9yc0w1Q3RBL21nb2RYRzFSM0ZWYXV2MkdrWmdIMThCVnNoQ3oyR0lsSApqMTF1aEJzPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                        "service": {
+                            "name": "gatekeeper-webhook-service",
+                            "namespace": "gatekeeper-system",
+                            "path": "/v1/admit",
+                            "port": 443
+                        }
+                    },
+                    "failurePolicy": "Ignore",
+                    "matchPolicy": "Exact",
+                    "name": "validation.gatekeeper.sh",
+                    "namespaceSelector": {
+                        "matchExpressions": [
+                            {
+                                "key": "admission.gatekeeper.sh/ignore",
+                                "operator": "DoesNotExist"
+                            },
+                            {
+                                "key": "kubernetes.io/metadata.name",
+                                "operator": "NotIn",
+                                "values": [
+                                    "gatekeeper-system"
+                                ]
+                            }
+                        ]
+                    },
+                    "objectSelector": {},
+                    "rules": [
+                        {
+                            "apiGroups": [
+                                "*"
+                            ],
+                            "apiVersions": [
+                                "*"
+                            ],
+                            "operations": [
+                                "CREATE",
+                                "UPDATE"
+                            ],
+                            "resources": [
+                                "*",
+                                "pods/ephemeralcontainers",
+                                "pods/exec",
+                                "pods/log",
+                                "pods/eviction",
+                                "pods/portforward",
+                                "pods/proxy",
+                                "pods/attach",
+                                "pods/binding",
+                                "pods/resize",
+                                "deployments/scale",
+                                "replicasets/scale",
+                                "statefulsets/scale",
+                                "replicationcontrollers/scale",
+                                "services/proxy",
+                                "nodes/proxy",
+                                "services/status"
+                            ],
+                            "scope": "*"
+                        }
+                    ],
+                    "sideEffects": "None",
+                    "timeoutSeconds": 3
+                },
+                {
+                    "admissionReviewVersions": [
+                        "v1",
+                        "v1beta1"
+                    ],
+                    "clientConfig": {
+                        "caBundle": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURNVENDQWhtZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREF0TVJNd0VRWURWUVFLRXdwbllYUmwKYTJWbGNHVnlNUll3RkFZRFZRUURFdzFuWVhSbGEyVmxjR1Z5TFdOaE1CNFhEVEkyTURreE9UQTBNemN5TmxvWApEVE0yTURreE5qQTFNemN5Tmxvd0xURVRNQkVHQTFVRUNoTUtaMkYwWld0bFpYQmxjakVXTUJRR0ExVUVBeE1OCloyRjBaV3RsWlhCbGNpMWpZVENDQVNJd0RRWUpLb1pJaHZjTkFRRUJCUUFEZ2dFUEFEQ0NBUW9DZ2dFQkFNNlcKYWNnRkVlYXBKS0FiZGsxTythSVRXdjM1S3hqVE9KSWhtbTcvWFBkQjNJVHB6WmZvN2Y4b3dHRCtYMTN3bzMxYQpPTElhbDFCVkg5dmo4bWw2Q2VRaEh5Ty9oQk0yM3VPMEhEVnNuTS9ENnlFQWN6UXh0akpxbHJQTDhROEdDSzM3Cm0zNVlyMDhVVEhOOGg1L2lETUY4R0NBVmVVdGI3VEdnSG1STjdGcy9CWHFRREh6aUtYcmtSOVhaNlhzaHFIVmIKNCswbzExMUE2UEVZQTdOYmpjcHR1NmMrbndQTTFLNmNBbytoY0p4VHhwZ0FySE1JTFJ1VThod29OLzVnWGhFTgpKSmJwUGE5TEE1dGhRM0VybDEzZkJBbE5nWG01djRMZDZHZFp3ajJUQkF1bkJYTmRCRW5hOU5UUVlnTVRLcU9vCjN3UkowRytSdlQ4K0drK2hDQU1DQXdFQUFhTmNNRm93RGdZRFZSMFBBUUgvQkFRREFnS2tNQThHQTFVZEV3RUIKL3dRRk1BTUJBZjh3SFFZRFZSME9CQllFRklDd2wyUUF6dTF3aUFYdHVhTURZMWNMRkt2bk1CZ0dBMVVkRVFRUgpNQStDRFdkaGRHVnJaV1Z3WlhJdFkyRXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBSDMzT1J5SmY0WkZ5QzdIClhka29rNUIvMXc2UGtBcVN1VUJFbDlDT3lWbmxqN3BoVUdIR24vTVJEQ3kyVUVNNDUwMHpNQXMwMktkNHFuWXoKMmo5QlBzZHdJNDgwSG9ZcHpCZTlmRGFSaFJYby9PWGlpaVA4cnpCQ0lkQjZiY3EvWXZkdzJoSWdVOXRFWVdwQgpPQUx6ZHJlTmpVRTVsdENJRlQzVC9mejFIUFZ1WCtyU0xlTUVBcjZ1RUtaSXk5WHVZMXNBenN3TjV2MU1JeDFSCmtZQ2lwSDkweGhCNzI1QllHKzlTTnNWbUJNQTBKMndybjlzbTVEbUI0VUQvcFBnQW1tYzNyaVJObk5VRTVtaHgKYmZmbmRVYS8wZWJDNW9MeXd1UytiSC9yc0w1Q3RBL21nb2RYRzFSM0ZWYXV2MkdrWmdIMThCVnNoQ3oyR0lsSApqMTF1aEJzPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                        "service": {
+                            "name": "gatekeeper-webhook-service",
+                            "namespace": "gatekeeper-system",
+                            "path": "/v1/admitlabel",
+                            "port": 443
+                        }
+                    },
+                    "failurePolicy": "Fail",
+                    "matchPolicy": "Exact",
+                    "name": "check-ignore-label.gatekeeper.sh",
+                    "namespaceSelector": {
+                        "matchExpressions": [
+                            {
+                                "key": "kubernetes.io/metadata.name",
+                                "operator": "NotIn",
+                                "values": [
+                                    "gatekeeper-system"
+                                ]
+                            }
+                        ]
+                    },
+                    "objectSelector": {},
+                    "rules": [
+                        {
+                            "apiGroups": [
+                                ""
+                            ],
+                            "apiVersions": [
+                                "*"
+                            ],
+                            "operations": [
+                                "CREATE",
+                                "UPDATE"
+                            ],
+                            "resources": [
+                                "namespaces"
+                            ],
+                            "scope": "*"
+                        }
+                    ],
+                    "sideEffects": "None",
+                    "timeoutSeconds": 3
+                }
+            ]
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

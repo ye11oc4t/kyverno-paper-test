@@ -1,0 +1,370 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T05:40:27Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "baseline",
+                "namespace": "policy-gap-live",
+                "resourceVersion": "743",
+                "uid": "0bfed50b-87dd-4c5b-9b9a-5b69a3303b68"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T05:40:27Z",
+            "message": "Successfully assigned policy-gap-live/baseline to pg-kubewarden-1-control-plane",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T05:40:27Z",
+                "name": "baseline.18d6a25e5629d546",
+                "namespace": "policy-gap-live",
+                "resourceVersion": "745",
+                "uid": "7a63f94f-d761-47cb-8cc1-d11428b1324f"
+            },
+            "reason": "Scheduled",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T05:40:28Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{base}",
+                "kind": "Pod",
+                "name": "baseline",
+                "namespace": "policy-gap-live",
+                "resourceVersion": "744",
+                "uid": "0bfed50b-87dd-4c5b-9b9a-5b69a3303b68"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T05:40:28Z",
+            "message": "Container image \"registry.k8s.io/pause:3.10\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T05:40:28Z",
+                "name": "baseline.18d6a25e615bf8a9",
+                "namespace": "policy-gap-live",
+                "resourceVersion": "747",
+                "uid": "0b46ed62-1e4a-459a-b2fa-6d7a0b2a46f5"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "pg-kubewarden-1-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "pg-kubewarden-1-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T05:40:28Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{base}",
+                "kind": "Pod",
+                "name": "baseline",
+                "namespace": "policy-gap-live",
+                "resourceVersion": "744",
+                "uid": "0bfed50b-87dd-4c5b-9b9a-5b69a3303b68"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T05:40:28Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T05:40:28Z",
+                "name": "baseline.18d6a25e6517b9f4",
+                "namespace": "policy-gap-live",
+                "resourceVersion": "748",
+                "uid": "aca4c422-3c0d-4e4e-aa0b-f9cb395f7d94"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "pg-kubewarden-1-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "pg-kubewarden-1-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T05:40:28Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{base}",
+                "kind": "Pod",
+                "name": "baseline",
+                "namespace": "policy-gap-live",
+                "resourceVersion": "744",
+                "uid": "0bfed50b-87dd-4c5b-9b9a-5b69a3303b68"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T05:40:28Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T05:40:28Z",
+                "name": "baseline.18d6a25e6b1a3b37",
+                "namespace": "policy-gap-live",
+                "resourceVersion": "749",
+                "uid": "f861e791-90e6-4817-b3f5-25f31dbe5cf3"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "pg-kubewarden-1-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "pg-kubewarden-1-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T05:40:31Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.ephemeralContainers{debug-safe}",
+                "kind": "Pod",
+                "name": "baseline",
+                "namespace": "policy-gap-live",
+                "resourceVersion": "744",
+                "uid": "0bfed50b-87dd-4c5b-9b9a-5b69a3303b68"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T05:40:31Z",
+            "message": "Pulling image \"busybox:1.36.1\"",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T05:40:31Z",
+                "name": "baseline.18d6a25f3afc1d6e",
+                "namespace": "policy-gap-live",
+                "resourceVersion": "760",
+                "uid": "e999b97d-c2cf-4a51-b888-ad1e7504c1a9"
+            },
+            "reason": "Pulling",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "pg-kubewarden-1-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "pg-kubewarden-1-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T05:40:35Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.ephemeralContainers{debug-safe}",
+                "kind": "Pod",
+                "name": "baseline",
+                "namespace": "policy-gap-live",
+                "resourceVersion": "744",
+                "uid": "0bfed50b-87dd-4c5b-9b9a-5b69a3303b68"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T05:40:35Z",
+            "message": "Successfully pulled image \"busybox:1.36.1\" in 3.893s (3.893s including waiting). Image size: 2217006 bytes.",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T05:40:35Z",
+                "name": "baseline.18d6a260230d8385",
+                "namespace": "policy-gap-live",
+                "resourceVersion": "769",
+                "uid": "7e8e2ed9-5613-4bdf-8e56-c687f74be738"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "pg-kubewarden-1-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "pg-kubewarden-1-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T05:40:35Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.ephemeralContainers{debug-safe}",
+                "kind": "Pod",
+                "name": "baseline",
+                "namespace": "policy-gap-live",
+                "resourceVersion": "744",
+                "uid": "0bfed50b-87dd-4c5b-9b9a-5b69a3303b68"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T05:40:35Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T05:40:35Z",
+                "name": "baseline.18d6a2602785be07",
+                "namespace": "policy-gap-live",
+                "resourceVersion": "770",
+                "uid": "4851b236-6155-4f1a-8041-84625ea65bb7"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "pg-kubewarden-1-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "pg-kubewarden-1-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T05:40:35Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.ephemeralContainers{debug-safe}",
+                "kind": "Pod",
+                "name": "baseline",
+                "namespace": "policy-gap-live",
+                "resourceVersion": "744",
+                "uid": "0bfed50b-87dd-4c5b-9b9a-5b69a3303b68"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T05:40:35Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T05:40:35Z",
+                "name": "baseline.18d6a2602efec54e",
+                "namespace": "policy-gap-live",
+                "resourceVersion": "772",
+                "uid": "a2e9af90-5069-4887-aa1c-fa236b50dc33"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "pg-kubewarden-1-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "pg-kubewarden-1-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T05:40:37Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.ephemeralContainers{debug-privileged}",
+                "kind": "Pod",
+                "name": "baseline",
+                "namespace": "policy-gap-live",
+                "resourceVersion": "744",
+                "uid": "0bfed50b-87dd-4c5b-9b9a-5b69a3303b68"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T05:40:37Z",
+            "message": "Container image \"busybox:1.36.1\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T05:40:37Z",
+                "name": "baseline.18d6a260a4378bb9",
+                "namespace": "policy-gap-live",
+                "resourceVersion": "778",
+                "uid": "4a49f8e6-7f53-424a-aa7d-aa973046e87c"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "pg-kubewarden-1-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "pg-kubewarden-1-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T05:40:38Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.ephemeralContainers{debug-privileged}",
+                "kind": "Pod",
+                "name": "baseline",
+                "namespace": "policy-gap-live",
+                "resourceVersion": "744",
+                "uid": "0bfed50b-87dd-4c5b-9b9a-5b69a3303b68"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T05:40:38Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T05:40:38Z",
+                "name": "baseline.18d6a260ac8a2063",
+                "namespace": "policy-gap-live",
+                "resourceVersion": "780",
+                "uid": "329531a6-cc71-43d4-aef8-035955afd7c2"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "pg-kubewarden-1-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "pg-kubewarden-1-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T05:40:38Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.ephemeralContainers{debug-privileged}",
+                "kind": "Pod",
+                "name": "baseline",
+                "namespace": "policy-gap-live",
+                "resourceVersion": "744",
+                "uid": "0bfed50b-87dd-4c5b-9b9a-5b69a3303b68"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T05:40:38Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T05:40:38Z",
+                "name": "baseline.18d6a260b27b0ed8",
+                "namespace": "policy-gap-live",
+                "resourceVersion": "781",
+                "uid": "fd706213-0f87-4120-ae5d-b267e07e1340"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "pg-kubewarden-1-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "pg-kubewarden-1-control-plane"
+            },
+            "type": "Normal"
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

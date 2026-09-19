@@ -1,0 +1,104 @@
+{
+  "experiment": "persisted privileged ephemeral container execution",
+  "date": "2026-09-19",
+  "independentProductInstalls": 3,
+  "result": "all three policies denied an ordinary privileged Pod but admitted and ran a privileged ephemeral container",
+  "products": [
+    {
+      "product": "kyverno",
+      "run": "run-1",
+      "httpStatus": {
+        "ordinaryPrivilegedCreate": 400,
+        "safeEphemeralUpdate": 200,
+        "privilegedEphemeralUpdate": 200
+      },
+      "runtime": {
+        "safeEphemeral": "Running",
+        "privilegedEphemeral": "Running",
+        "safeCapEff": "0000000000000000",
+        "privilegedCapEff": "000001ffffffffff",
+        "podUID": "ad714cff-771e-4ae8-8b3c-959bfeb9dd55",
+        "nodeName": "pg-kyverno-1-control-plane"
+      },
+      "ordinaryPrivilegedDenyMessage": "admission webhook \"vpol.validate.kyverno.svc-fail\" denied the request: Policy disallow-privileged-containers failed: Privileged mode is disallowed. The fields spec.containers[*].securityContext.privileged and spec.initContainers[*].securityContext.privileged must be unset or set to `false`.",
+      "runtimeEvidence": {
+        "debug-safe": {
+          "containerID": "containerd://bc5ba3a5936724d9f10ee262a291cecc8226837f8dcdf523ee10345421533a4e",
+          "imageID": "docker.io/library/busybox@sha256:73aaf090f3d85aa34ee199857f03fa3a95c8ede2ffd4cc2cdb5b94e566b11662",
+          "startedAt": "2026-09-19T05:36:06Z",
+          "uid": 65532
+        },
+        "debug-privileged": {
+          "containerID": "containerd://ac3f6a26b57ee6433a8a6fe8d39ed6273a686fdde3aca604f4050434c1371f82",
+          "imageID": "docker.io/library/busybox@sha256:73aaf090f3d85aa34ee199857f03fa3a95c8ede2ffd4cc2cdb5b94e566b11662",
+          "startedAt": "2026-09-19T05:36:08Z",
+          "uid": 0
+        }
+      }
+    },
+    {
+      "product": "gatekeeper",
+      "run": "run-1",
+      "httpStatus": {
+        "ordinaryPrivilegedCreate": 403,
+        "safeEphemeralUpdate": 200,
+        "privilegedEphemeralUpdate": 200
+      },
+      "runtime": {
+        "safeEphemeral": "Running",
+        "privilegedEphemeral": "Running",
+        "safeCapEff": "0000000000000000",
+        "privilegedCapEff": "000001ffffffffff",
+        "podUID": "b600e3e5-d20b-4991-a66a-e09d184ede0f",
+        "nodeName": "pg-gatekeeper-1-control-plane"
+      },
+      "ordinaryPrivilegedDenyMessage": "admission webhook \"validation.gatekeeper.sh\" denied the request: [psp-privileged-container] Privileged container is not allowed: main, securityContext.privileged: true",
+      "runtimeEvidence": {
+        "debug-safe": {
+          "containerID": "containerd://b66b0f6a7f2b0d52bb1c25fed1a12a5317dab5f6e57b8895e5a7a6b97f2566fe",
+          "imageID": "docker.io/library/busybox@sha256:73aaf090f3d85aa34ee199857f03fa3a95c8ede2ffd4cc2cdb5b94e566b11662",
+          "startedAt": "2026-09-19T05:38:15Z",
+          "uid": 65532
+        },
+        "debug-privileged": {
+          "containerID": "containerd://895cba8f85d5fc002eb6728e7c04a3a3f36a97eab9b52c980741e56bc2f41bd6",
+          "imageID": "docker.io/library/busybox@sha256:73aaf090f3d85aa34ee199857f03fa3a95c8ede2ffd4cc2cdb5b94e566b11662",
+          "startedAt": "2026-09-19T05:38:17Z",
+          "uid": 0
+        }
+      }
+    },
+    {
+      "product": "kubewarden",
+      "run": "run-1",
+      "httpStatus": {
+        "ordinaryPrivilegedCreate": 400,
+        "safeEphemeralUpdate": 200,
+        "privilegedEphemeralUpdate": 200
+      },
+      "runtime": {
+        "safeEphemeral": "Running",
+        "privilegedEphemeral": "Running",
+        "safeCapEff": "0000000000000000",
+        "privilegedCapEff": "000001ffffffffff",
+        "podUID": "0bfed50b-87dd-4c5b-9b9a-5b69a3303b68",
+        "nodeName": "pg-kubewarden-1-control-plane"
+      },
+      "ordinaryPrivilegedDenyMessage": "admission webhook \"kw.cap.no-privileged-pod.kubewarden.admission\" denied the request: Privileged container is not allowed",
+      "runtimeEvidence": {
+        "debug-safe": {
+          "containerID": "containerd://8c5a718622535e8db5e7dc9f2beedd9c92ae2be5a30fea7809a36dbd94484550",
+          "imageID": "docker.io/library/busybox@sha256:73aaf090f3d85aa34ee199857f03fa3a95c8ede2ffd4cc2cdb5b94e566b11662",
+          "startedAt": "2026-09-19T05:40:35Z",
+          "uid": 65532
+        },
+        "debug-privileged": {
+          "containerID": "containerd://0764717eca3e8af36fc425cf881ad6efacd6e3c50df2c5b792018addc80620f7",
+          "imageID": "docker.io/library/busybox@sha256:73aaf090f3d85aa34ee199857f03fa3a95c8ede2ffd4cc2cdb5b94e566b11662",
+          "startedAt": "2026-09-19T05:40:38Z",
+          "uid": 0
+        }
+      }
+    }
+  ]
+}

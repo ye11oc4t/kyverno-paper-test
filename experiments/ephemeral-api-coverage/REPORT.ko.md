@@ -6,6 +6,8 @@ Kyverno, Gatekeeper, Kubewarden의 선택한 공개 privileged 정책에서 같�
 
 이 결과는 제품마다 3개의 새 Kubernetes 클러스터를 만들고 각 설치에서 같은 API 요청을 5회 반복한 총 45개의 정식 실행에서 모두 같았다. 모든 실행에서 테스트 ServiceAccount는 필요한 두 권한을 가지고 있었고, 안전한 일반 Pod와 안전한 임시 컨테이너 요청은 허용됐으며, 일반 privileged Pod는 대상 정책의 이름이나 메시지로 거부됐다. dry-run 전후 기준 Pod의 `resourceVersion`은 같았고 `spec.ephemeralContainers`도 저장되지 않았다.
 
+후속 실제 실행 실험에서는 제품별 새 클러스터 한 개에서 `dryRun`을 제거했다. 세 도구 모두 일반 privileged Pod를 실제 거부하면서 privileged 임시 컨테이너 추가는 허용했고, 해당 컨테이너는 containerd ID를 받아 `Running` 상태에서 UID 0과 `CapEff 000001ffffffffff`로 실행됐다. 이 후속 결과와 한계는 [LIVE-REPORT.ko.md](LIVE-REPORT.ko.md)에 분리해 기록했다.
+
 세 도구의 공통점은 최종 보장 실패이고 원인은 서로 다르다. Kyverno와 Kubewarden은 하위 API 요청이 정책식 또는 정책 모듈까지 전달되지 않았고, Gatekeeper는 요청을 받은 뒤 UPDATE 전체를 허용하는 조건 때문에 통과시켰다. 각 원인 후보 하나만 고친 분리 실험에서 세 도구 모두 C3이 허용에서 거부로 바뀌었다.
 
 ## 실행 환경
@@ -93,7 +95,7 @@ Kubewarden 통합 차트는 recommended 정책을 개별적으로 활성화하�
 
 요청 순서를 반복마다 번갈아 배치한다는 설계와 달리 실제 실행기는 C0, C1, C2, C3 순서로 고정했다. 모든 요청이 dry-run이었고 실제 기준 Pod가 한 번도 바뀌지 않았으며 3개 독립 설치에서 같은 결과가 나왔기 때문에 현재 판정에 미친 영향은 작아 보인다. 그래도 순서 효과를 완전히 제거한 실험은 아니다.
 
-로컬 단일 노드 kind와 단일 replica를 사용했으므로 관리형 Kubernetes, HA 복제본 사이의 전파 지연, 장애 시 failurePolicy 동작은 평가하지 않았다. 또한 실제 privileged 임시 컨테이너 실행이나 노드 장악을 시도하지 않았다. 실제 공격에는 별도의 `pods/ephemeralcontainers` RBAC 권한이 필요하고, 내장 Pod Security Admission이나 다른 admission 도구가 별도로 차단할 수 있다.
+로컬 단일 노드 kind와 단일 replica를 사용했으므로 관리형 Kubernetes, HA 복제본 사이의 전파 지연, 장애 시 failurePolicy 동작은 평가하지 않았다. 후속 실험에서 실제 privileged 임시 컨테이너의 저장과 실행, UID 0 및 유효 capability 적용까지 확인했지만 노드 장악이나 컨테이너 탈출은 시도하지 않았다. 실제 공격에는 별도의 `pods/ephemeralcontainers` RBAC 권한이 필요하고, 내장 Pod Security Admission이나 다른 admission 도구가 별도로 차단할 수 있다.
 
 따라서 현재 증거가 지지하는 주장은 다음과 같다. “고정한 버전과 공개 privileged 정책 구성에서 Kyverno, Gatekeeper, Kubewarden은 일반 privileged Pod를 거부하면서 privileged 임시 컨테이너 추가를 허용하는 동일한 유효 적용 범위 미탐을 보였고, 제품별 단일 원인 수정으로 판정이 거부로 바뀌었다.” 이를 모든 Kubernetes 정책 도구나 모든 정책에 대한 주장으로 확대하지 않는다.
 
@@ -105,4 +107,6 @@ Kubewarden 통합 차트는 recommended 정책을 개별적으로 활성화하�
 - 각 정식 설치의 첫 실행 `evidence/`: 정책 객체, 웹훅, 상태, 로그, Helm 값
 - `run-api-cases.sh`: ServiceAccount로 네 가지 API 사례를 보내는 공통 실행기
 - `aggregate_results.py`: 정식 실행 유효성 검사와 집계 생성기
-
+- `LIVE-REPORT.ko.md`: 제품별 한 번의 실제 저장·실행 후속 검증
+- `results/2026-09-19-live-execution/aggregate.json`: 실제 실행 후속 결과 집계
+- `run-live-case.sh`, `aggregate_live_results.py`: 실제 실행기와 증거 검증기
