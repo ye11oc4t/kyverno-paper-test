@@ -10,6 +10,7 @@ Current research: effective policy coverage across Kubernetes API routes, operat
 - [Three-tool Ephemeral Container experiment results (Korean)](experiments/ephemeral-api-coverage/REPORT.ko.md)
 - [Three-tool persisted runtime follow-up results (Korean)](experiments/ephemeral-api-coverage/LIVE-REPORT.ko.md)
 - [Kubernetes controls, live fixes, and additional policy families (Korean)](experiments/ephemeral-api-coverage/FOLLOWUP-REPORT.ko.md)
+- [Ephemeral Container policy coverage paper draft (Korean)](paper/EPHEMERAL-POLICY-COVERAGE-DRAFT.ko.md)
 
 - [Revised research protocol (Korean)](research/ephemeral-policy-consistency/PROTOCOL.ko.md)
 - [Admission consistency pilot: results and interpretation (Korean)](experiments/admission-consistency/REPORT.ko.md)
