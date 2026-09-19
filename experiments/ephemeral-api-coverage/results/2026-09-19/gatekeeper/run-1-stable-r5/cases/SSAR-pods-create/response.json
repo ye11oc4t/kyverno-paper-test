@@ -1,0 +1,36 @@
+{
+  "kind": "SelfSubjectAccessReview",
+  "apiVersion": "authorization.k8s.io/v1",
+  "metadata": {
+    "managedFields": [
+      {
+        "manager": "curl",
+        "operation": "Update",
+        "apiVersion": "authorization.k8s.io/v1",
+        "time": "2026-09-19T04:22:03Z",
+        "fieldsType": "FieldsV1",
+        "fieldsV1": {
+          "f:spec": {
+            "f:resourceAttributes": {
+              ".": {},
+              "f:namespace": {},
+              "f:resource": {},
+              "f:verb": {}
+            }
+          }
+        }
+      }
+    ]
+  },
+  "spec": {
+    "resourceAttributes": {
+      "namespace": "policy-gap-test",
+      "verb": "create",
+      "resource": "pods"
+    }
+  },
+  "status": {
+    "allowed": true,
+    "reason": "RBAC: allowed by RoleBinding \"experiment-runner/policy-gap-test\" of Role \"experiment-runner\" to ServiceAccount \"experiment-runner/policy-gap-test\""
+  }
+}

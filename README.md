@@ -7,6 +7,7 @@ Current research: effective policy coverage across Kubernetes API routes, operat
 - [Policy gap candidates, ranking, and source evidence (Korean)](research/policy-gap-candidates/REPORT.ko.md)
 - [Candidate experiment designs only (Korean)](research/policy-gap-candidates/EXPERIMENT-DESIGNS.ko.md)
 - [Three-tool Ephemeral Container API-only experiment design (Korean)](research/policy-gap-candidates/EPHEMERAL-API-EXPERIMENT.ko.md)
+- [Three-tool Ephemeral Container experiment results (Korean)](experiments/ephemeral-api-coverage/REPORT.ko.md)
 
 - [Revised research protocol (Korean)](research/ephemeral-policy-consistency/PROTOCOL.ko.md)
 - [Admission consistency pilot: results and interpretation (Korean)](experiments/admission-consistency/REPORT.ko.md)

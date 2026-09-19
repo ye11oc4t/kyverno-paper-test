@@ -1,0 +1,76 @@
+{
+    "apiVersion": "admissionregistration.k8s.io/v1",
+    "kind": "ValidatingWebhookConfiguration",
+    "metadata": {
+        "annotations": {
+            "admissions.enforcer/disabled": "true"
+        },
+        "creationTimestamp": "2026-09-19T04:39:03Z",
+        "generation": 3,
+        "labels": {
+            "webhook.kyverno.io/managed-by": "kyverno"
+        },
+        "name": "kyverno-resource-validating-webhook-cfg",
+        "resourceVersion": "722",
+        "uid": "c1eead7c-e1b7-41ff-85dd-5948fdf572d7"
+    },
+    "webhooks": [
+        {
+            "admissionReviewVersions": [
+                "v1"
+            ],
+            "clientConfig": {
+                "caBundle": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM3VENDQWRXZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFZTVJZd0ZBWURWUVFEREEwcUxtdDUKZG1WeWJtOHVjM1pqTUI0WERUSTJNRGt4T1RBek16a3dNMW9YRFRJM01Ea3hPVEEwTXprd00xb3dHREVXTUJRRwpBMVVFQXd3TktpNXJlWFpsY201dkxuTjJZekNDQVNJd0RRWUpLb1pJaHZjTkFRRUJCUUFEZ2dFUEFEQ0NBUW9DCmdnRUJBS3dHTmhTY0VsOU5PaUxGaEhMeHR0eSsyV0dGT3FQUjdldGJCUXNXSERUSk1Za3k3V0NIdngwVkpQOTkKbTNiMUhwNHM4M0FNelYyMTBGa2dtbnpBQ0NGSVEyNUptL2dXdkI5c2dJSm5NK1YvN0taV3ZFQ3J2TkhWU0ZwVQppYTFPd3p5ZUZ4V2hoVTBWY2xhZzV0dXNEQmlLUmJaRENKRk1lS2JQQm5OSThjODEvVGpzVW5zYWcyOUFvTVIyCjB2SU04K0QyMDdTWWNIM01DcE5adlpYL0ZLSnBuOHBmTDVIdnUwSjFhQnFEQUIySnhRUTFaQXVBR1QrY3JWR0QKWE5VeUFLNnN1ay9rbUhWb3EvTmdiZVk0MGFjejNmZnhWeWU3aHBpQmpyYzZlRHAxazJYVkQ3VS83NjBIemt2KwpIcW9kVEJOYjJJMGwzYWVvcFVyeWxNWWJjejhDQXdFQUFhTkNNRUF3RGdZRFZSMFBBUUgvQkFRREFnS2tNQThHCkExVWRFd0VCL3dRRk1BTUJBZjh3SFFZRFZSME9CQllFRkJlNytMbWlZOTFNVlpwSUpvZkpnSzdnVy9uek1BMEcKQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUNPTmNlRE5ibWhselNhVERxbC82aDJ4NlVnZUJ3VUx1UnJkYlJSVm54ZgpZNVRZRDM1STgyaXRQQWJQMGdUSUFwbVI3VUd3SUtRZkhOM0dodU1xRU5SbG92SlBWMVMwM2NkUVlvdGdGMlQrClBxM1FZaEpuKzZDd203dFZZSGhSZEF2bUg3aFEyRkZSZ1ZoODJxd3VNaTVteUJJOEIrcDdEODJuOXhqdXRRUmgKQkdiRzVkVHAzSDA5RFhoa2NjcEhBY3NRa0o0SXkvY215UmtwWmVUekI0WEcxYVVGcWxONkNVdnI0ckhkN0dYMgpmRkw4dkRNNFYxc2FtSDBtbjhmbHVPOFFybDVrbk96QktJaXhyZGgyMEJXVTZaRG9tODB1RHhMV2dKNkJLTHBVCk5ESnN6cVNhYW5OU285dXZoMkpEVjdZUGdPOTIzbjRuYmtnN2xFa3VFcFl0Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+                "service": {
+                    "name": "kyverno-svc",
+                    "namespace": "kyverno",
+                    "path": "/vpol/disallow-privileged-containers",
+                    "port": 443
+                }
+            },
+            "failurePolicy": "Fail",
+            "matchPolicy": "Equivalent",
+            "name": "vpol.validate.kyverno.svc-fail",
+            "namespaceSelector": {
+                "matchExpressions": [
+                    {
+                        "key": "kubernetes.io/metadata.name",
+                        "operator": "NotIn",
+                        "values": [
+                            "kube-system"
+                        ]
+                    },
+                    {
+                        "key": "kubernetes.io/metadata.name",
+                        "operator": "NotIn",
+                        "values": [
+                            "kyverno"
+                        ]
+                    }
+                ]
+            },
+            "objectSelector": {},
+            "rules": [
+                {
+                    "apiGroups": [
+                        ""
+                    ],
+                    "apiVersions": [
+                        "v1"
+                    ],
+                    "operations": [
+                        "CREATE",
+                        "UPDATE"
+                    ],
+                    "resources": [
+                        "pods",
+                        "pods/ephemeralcontainers"
+                    ],
+                    "scope": "*"
+                }
+            ],
+            "sideEffects": "NoneOnDryRun",
+            "timeoutSeconds": 10
+        }
+    ]
+}

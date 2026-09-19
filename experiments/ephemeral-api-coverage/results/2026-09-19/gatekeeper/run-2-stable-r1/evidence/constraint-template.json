@@ -1,0 +1,136 @@
+{
+    "apiVersion": "templates.gatekeeper.sh/v1",
+    "kind": "ConstraintTemplate",
+    "metadata": {
+        "annotations": {
+            "description": "Controls the ability of any container to enable privileged mode. Corresponds to the `privileged` field in a PodSecurityPolicy. For more information, see https://kubernetes.io/docs/concepts/policy/pod-security-policy/#privileged",
+            "gatekeeper.sh/block-vapb-generation-until": "2026-09-19T04:24:10Z",
+            "gatekeeper.sh/vapb-generation-state": "unblocked",
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"templates.gatekeeper.sh/v1\",\"kind\":\"ConstraintTemplate\",\"metadata\":{\"annotations\":{\"description\":\"Controls the ability of any container to enable privileged mode. Corresponds to the `privileged` field in a PodSecurityPolicy. For more information, see https://kubernetes.io/docs/concepts/policy/pod-security-policy/#privileged\",\"metadata.gatekeeper.sh/bundle\":\"pod-security-baseline, pod-security-restricted\",\"metadata.gatekeeper.sh/title\":\"Privileged Container\",\"metadata.gatekeeper.sh/version\":\"1.1.3\"},\"name\":\"k8spspprivilegedcontainer\"},\"spec\":{\"crd\":{\"spec\":{\"names\":{\"kind\":\"K8sPSPPrivilegedContainer\"},\"validation\":{\"openAPIV3Schema\":{\"description\":\"Controls the ability of any container to enable privileged mode. Corresponds to the `privileged` field in a PodSecurityPolicy. For more information, see https://kubernetes.io/docs/concepts/policy/pod-security-policy/#privileged\",\"properties\":{\"exemptImages\":{\"description\":\"Any container that uses an image that matches an entry in this list will be excluded from enforcement. Prefix-matching can be signified with `*`. For example: `my-image-*`.\\nIt is recommended that users use the fully-qualified Docker image name (e.g. start with a domain name) in order to avoid unexpectedly exempting images from an untrusted repository.\",\"items\":{\"type\":\"string\"},\"type\":\"array\"}},\"type\":\"object\"}}}},\"targets\":[{\"code\":[{\"engine\":\"K8sNativeValidation\",\"source\":{\"validations\":[{\"expression\":\"variables.isUpdate || size(variables.badContainers) == 0\",\"messageExpression\":\"variables.badContainers.join(\\\", \\\")\"}],\"variables\":[{\"expression\":\"has(variables.anyObject.spec.containers) ? variables.anyObject.spec.containers : []\",\"name\":\"containers\"},{\"expression\":\"has(variables.anyObject.spec.initContainers) ? variables.anyObject.spec.initContainers : []\",\"name\":\"initContainers\"},{\"expression\":\"has(variables.anyObject.spec.ephemeralContainers) ? variables.anyObject.spec.ephemeralContainers : []\",\"name\":\"ephemeralContainers\"},{\"expression\":\"!has(variables.params.exemptImages) ? [] :\\n  variables.params.exemptImages.filter(image, image.endsWith(\\\"*\\\")).map(image, string(image).replace(\\\"*\\\", \\\"\\\"))\\n\",\"name\":\"exemptImagePrefixes\"},{\"expression\":\"!has(variables.params.exemptImages) ? [] : \\n  variables.params.exemptImages.filter(image, !image.endsWith(\\\"*\\\"))\\n\",\"name\":\"exemptImageExplicit\"},{\"expression\":\"(variables.containers + variables.initContainers + variables.ephemeralContainers).filter(container,\\n  container.image in variables.exemptImageExplicit ||\\n  variables.exemptImagePrefixes.exists(exemption, string(container.image).startsWith(exemption))\\n).map(container, container.image)\\n\",\"name\":\"exemptImages\"},{\"expression\":\"(variables.containers + variables.initContainers + variables.ephemeralContainers).filter(container,\\n  !(container.image in variables.exemptImages) \\u0026\\u0026\\n  (has(container.securityContext) \\u0026\\u0026 has(container.securityContext.privileged) \\u0026\\u0026 container.securityContext.privileged)\\n).map(container, \\\"Privileged container is not allowed: \\\" + container.name +\\\", securityContext.privileged: true\\\")\\n\",\"name\":\"badContainers\"},{\"expression\":\"has(request.operation) \\u0026\\u0026 request.operation == \\\"UPDATE\\\"\",\"name\":\"isUpdate\"}]}},{\"engine\":\"Rego\",\"source\":{\"libs\":[\"package lib.exclude_update\\n\\nis_update(review) {\\n    review.operation == \\\"UPDATE\\\"\\n}\\n\",\"package lib.exempt_container\\n\\nis_exempt(container) {\\n    exempt_images := object.get(object.get(input, \\\"parameters\\\", {}), \\\"exemptImages\\\", [])\\n    img := container.image\\n    exemption := exempt_images[_]\\n    _matches_exemption(img, exemption)\\n}\\n\\n_matches_exemption(img, exemption) {\\n    not endswith(exemption, \\\"*\\\")\\n    exemption == img\\n}\\n\\n_matches_exemption(img, exemption) {\\n    endswith(exemption, \\\"*\\\")\\n    prefix := trim_suffix(exemption, \\\"*\\\")\\n    startswith(img, prefix)\\n}\\n\"],\"rego\":\"package k8spspprivileged\\n\\nimport data.lib.exclude_update.is_update\\nimport data.lib.exempt_container.is_exempt\\n\\nviolation[{\\\"msg\\\": msg, \\\"details\\\": {}}] {\\n    # spec.containers.privileged field is immutable.\\n    not is_update(input.review)\\n\\n    c := input_containers[_]\\n    not is_exempt(c)\\n    c.securityContext.privileged\\n    msg := sprintf(\\\"Privileged container is not allowed: %v, securityContext: %v\\\", [c.name, c.securityContext])\\n}\\n\\ninput_containers[c] {\\n    c := input.review.object.spec.containers[_]\\n}\\n\\ninput_containers[c] {\\n    c := input.review.object.spec.initContainers[_]\\n}\\n\\ninput_containers[c] {\\n    c := input.review.object.spec.ephemeralContainers[_]\\n}\\n\"}}],\"target\":\"admission.k8s.gatekeeper.sh\"}]}}\n",
+            "metadata.gatekeeper.sh/bundle": "pod-security-baseline, pod-security-restricted",
+            "metadata.gatekeeper.sh/title": "Privileged Container",
+            "metadata.gatekeeper.sh/version": "1.1.3"
+        },
+        "creationTimestamp": "2026-09-19T04:23:40Z",
+        "generation": 1,
+        "name": "k8spspprivilegedcontainer",
+        "resourceVersion": "802",
+        "uid": "74728473-709b-4268-bbbb-d6356cfdb0a2"
+    },
+    "spec": {
+        "crd": {
+            "spec": {
+                "names": {
+                    "kind": "K8sPSPPrivilegedContainer"
+                },
+                "validation": {
+                    "legacySchema": false,
+                    "openAPIV3Schema": {
+                        "description": "Controls the ability of any container to enable privileged mode. Corresponds to the `privileged` field in a PodSecurityPolicy. For more information, see https://kubernetes.io/docs/concepts/policy/pod-security-policy/#privileged",
+                        "properties": {
+                            "exemptImages": {
+                                "description": "Any container that uses an image that matches an entry in this list will be excluded from enforcement. Prefix-matching can be signified with `*`. For example: `my-image-*`.\nIt is recommended that users use the fully-qualified Docker image name (e.g. start with a domain name) in order to avoid unexpectedly exempting images from an untrusted repository.",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    }
+                }
+            }
+        },
+        "targets": [
+            {
+                "code": [
+                    {
+                        "engine": "K8sNativeValidation",
+                        "source": {
+                            "validations": [
+                                {
+                                    "expression": "variables.isUpdate || size(variables.badContainers) == 0",
+                                    "messageExpression": "variables.badContainers.join(\", \")"
+                                }
+                            ],
+                            "variables": [
+                                {
+                                    "expression": "has(variables.anyObject.spec.containers) ? variables.anyObject.spec.containers : []",
+                                    "name": "containers"
+                                },
+                                {
+                                    "expression": "has(variables.anyObject.spec.initContainers) ? variables.anyObject.spec.initContainers : []",
+                                    "name": "initContainers"
+                                },
+                                {
+                                    "expression": "has(variables.anyObject.spec.ephemeralContainers) ? variables.anyObject.spec.ephemeralContainers : []",
+                                    "name": "ephemeralContainers"
+                                },
+                                {
+                                    "expression": "!has(variables.params.exemptImages) ? [] :\n  variables.params.exemptImages.filter(image, image.endsWith(\"*\")).map(image, string(image).replace(\"*\", \"\"))\n",
+                                    "name": "exemptImagePrefixes"
+                                },
+                                {
+                                    "expression": "!has(variables.params.exemptImages) ? [] : \n  variables.params.exemptImages.filter(image, !image.endsWith(\"*\"))\n",
+                                    "name": "exemptImageExplicit"
+                                },
+                                {
+                                    "expression": "(variables.containers + variables.initContainers + variables.ephemeralContainers).filter(container,\n  container.image in variables.exemptImageExplicit ||\n  variables.exemptImagePrefixes.exists(exemption, string(container.image).startsWith(exemption))\n).map(container, container.image)\n",
+                                    "name": "exemptImages"
+                                },
+                                {
+                                    "expression": "(variables.containers + variables.initContainers + variables.ephemeralContainers).filter(container,\n  !(container.image in variables.exemptImages) \u0026\u0026\n  (has(container.securityContext) \u0026\u0026 has(container.securityContext.privileged) \u0026\u0026 container.securityContext.privileged)\n).map(container, \"Privileged container is not allowed: \" + container.name +\", securityContext.privileged: true\")\n",
+                                    "name": "badContainers"
+                                },
+                                {
+                                    "expression": "has(request.operation) \u0026\u0026 request.operation == \"UPDATE\"",
+                                    "name": "isUpdate"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "engine": "Rego",
+                        "source": {
+                            "libs": [
+                                "package lib.exclude_update\n\nis_update(review) {\n    review.operation == \"UPDATE\"\n}\n",
+                                "package lib.exempt_container\n\nis_exempt(container) {\n    exempt_images := object.get(object.get(input, \"parameters\", {}), \"exemptImages\", [])\n    img := container.image\n    exemption := exempt_images[_]\n    _matches_exemption(img, exemption)\n}\n\n_matches_exemption(img, exemption) {\n    not endswith(exemption, \"*\")\n    exemption == img\n}\n\n_matches_exemption(img, exemption) {\n    endswith(exemption, \"*\")\n    prefix := trim_suffix(exemption, \"*\")\n    startswith(img, prefix)\n}\n"
+                            ],
+                            "rego": "package k8spspprivileged\n\nimport data.lib.exclude_update.is_update\nimport data.lib.exempt_container.is_exempt\n\nviolation[{\"msg\": msg, \"details\": {}}] {\n    # spec.containers.privileged field is immutable.\n    not is_update(input.review)\n\n    c := input_containers[_]\n    not is_exempt(c)\n    c.securityContext.privileged\n    msg := sprintf(\"Privileged container is not allowed: %v, securityContext: %v\", [c.name, c.securityContext])\n}\n\ninput_containers[c] {\n    c := input.review.object.spec.containers[_]\n}\n\ninput_containers[c] {\n    c := input.review.object.spec.initContainers[_]\n}\n\ninput_containers[c] {\n    c := input.review.object.spec.ephemeralContainers[_]\n}\n"
+                        }
+                    }
+                ],
+                "target": "admission.k8s.gatekeeper.sh"
+            }
+        ]
+    },
+    "status": {
+        "byPod": [
+            {
+                "id": "gatekeeper-audit-9ff6999d-ttwt4",
+                "observedGeneration": 1,
+                "operations": [
+                    "audit",
+                    "generate",
+                    "mutation-status",
+                    "status"
+                ],
+                "templateUID": "74728473-709b-4268-bbbb-d6356cfdb0a2",
+                "vapGenerationStatus": {
+                    "observedGeneration": 1,
+                    "state": "generated"
+                }
+            },
+            {
+                "id": "gatekeeper-controller-manager-5f968d45f7-m84zw",
+                "observedGeneration": 1,
+                "operations": [
+                    "mutation-webhook",
+                    "webhook"
+                ],
+                "templateUID": "74728473-709b-4268-bbbb-d6356cfdb0a2"
+            }
+        ],
+        "created": true
+    }
+}

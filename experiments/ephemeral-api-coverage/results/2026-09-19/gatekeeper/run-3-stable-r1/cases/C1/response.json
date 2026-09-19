@@ -1,0 +1,18 @@
+{
+  "kind": "Status",
+  "apiVersion": "v1",
+  "metadata": {},
+  "status": "Failure",
+  "message": "pods \"c1-privileged\" is forbidden: ValidatingAdmissionPolicy 'gatekeeper-k8spspprivilegedcontainer' with binding 'gatekeeper-k8spspprivilegedcontainer-psp-privileged-container' denied request: Privileged container is not allowed: main, securityContext.privileged: true",
+  "reason": "Invalid",
+  "details": {
+    "name": "c1-privileged",
+    "kind": "pods",
+    "causes": [
+      {
+        "message": "ValidatingAdmissionPolicy 'gatekeeper-k8spspprivilegedcontainer' with binding 'gatekeeper-k8spspprivilegedcontainer-psp-privileged-container' denied request: Privileged container is not allowed: main, securityContext.privileged: true"
+      }
+    ]
+  },
+  "code": 422
+}

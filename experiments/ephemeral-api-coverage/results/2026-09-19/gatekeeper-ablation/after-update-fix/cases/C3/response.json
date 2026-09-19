@@ -1,0 +1,18 @@
+{
+  "kind": "Status",
+  "apiVersion": "v1",
+  "metadata": {},
+  "status": "Failure",
+  "message": "pods \"baseline\" is forbidden: ValidatingAdmissionPolicy 'gatekeeper-k8spspprivilegedcontainer' with binding 'gatekeeper-k8spspprivilegedcontainer-psp-privileged-container' denied request: Privileged container is not allowed: debug-privileged, securityContext.privileged: true",
+  "reason": "Invalid",
+  "details": {
+    "name": "baseline",
+    "kind": "pods",
+    "causes": [
+      {
+        "message": "ValidatingAdmissionPolicy 'gatekeeper-k8spspprivilegedcontainer' with binding 'gatekeeper-k8spspprivilegedcontainer-psp-privileged-container' denied request: Privileged container is not allowed: debug-privileged, securityContext.privileged: true"
+      }
+    ]
+  },
+  "code": 422
+}

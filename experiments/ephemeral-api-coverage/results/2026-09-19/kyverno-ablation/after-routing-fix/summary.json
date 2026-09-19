@@ -1,0 +1,14 @@
+{
+  "product": "kyverno-ablation",
+  "run": "after-routing-fix",
+  "httpStatus": {
+    "C0": 201,
+    "C1": 400,
+    "C2": 200,
+    "C3": 400
+  },
+  "rbac": {
+    "podsCreate": true,
+    "ephemeralUpdate": true
+  }
+}

@@ -1,0 +1,213 @@
+{
+    "apiVersion": "policies.kyverno.io/v1",
+    "kind": "ValidatingPolicy",
+    "metadata": {
+        "annotations": {
+            "kyverno.io/kubernetes-version": "\u003e=1.25.0-0",
+            "kyverno.io/kyverno-version": "v1.19.1",
+            "meta.helm.sh/release-name": "kyverno-policies",
+            "meta.helm.sh/release-namespace": "kyverno",
+            "policies.kyverno.io/category": "Pod Security Standards (Baseline)",
+            "policies.kyverno.io/description": "Privileged mode disables most security mechanisms and must not be allowed. This policy ensures Pods do not call for privileged mode.",
+            "policies.kyverno.io/severity": "medium",
+            "policies.kyverno.io/subject": "Pod",
+            "policies.kyverno.io/title": "Disallow Privileged Containers"
+        },
+        "creationTimestamp": "2026-09-19T04:39:12Z",
+        "generation": 1,
+        "labels": {
+            "app.kubernetes.io/component": "kyverno",
+            "app.kubernetes.io/instance": "kyverno-policies",
+            "app.kubernetes.io/managed-by": "Helm",
+            "app.kubernetes.io/name": "kyverno-policies",
+            "app.kubernetes.io/part-of": "kyverno-policies",
+            "app.kubernetes.io/version": "3.9.1",
+            "helm.sh/chart": "kyverno-policies-3.9.1"
+        },
+        "name": "disallow-privileged-containers",
+        "resourceVersion": "690",
+        "uid": "0182cb65-03fc-42c2-8f57-216e9d0877e1"
+    },
+    "spec": {
+        "failurePolicy": "Fail",
+        "matchConstraints": {
+            "resourceRules": [
+                {
+                    "apiGroups": [
+                        ""
+                    ],
+                    "apiVersions": [
+                        "v1"
+                    ],
+                    "operations": [
+                        "CREATE",
+                        "UPDATE"
+                    ],
+                    "resources": [
+                        "pods"
+                    ]
+                }
+            ]
+        },
+        "validationActions": [
+            "Deny"
+        ],
+        "validations": [
+            {
+                "expression": "(!has(object.spec.containers) || object.spec.containers.all(c, !has(c.securityContext) || !has(c.securityContext.privileged) || c.securityContext.privileged == false)) \u0026\u0026 (!has(object.spec.initContainers) || object.spec.initContainers.all(c, !has(c.securityContext) || !has(c.securityContext.privileged) || c.securityContext.privileged == false)) \u0026\u0026 (!has(object.spec.ephemeralContainers) || object.spec.ephemeralContainers.all(c, !has(c.securityContext) || !has(c.securityContext.privileged) || c.securityContext.privileged == false))",
+                "message": "Privileged mode is disallowed. The fields spec.containers[*].securityContext.privileged and spec.initContainers[*].securityContext.privileged must be unset or set to `false`."
+            }
+        ]
+    },
+    "status": {
+        "autogen": {
+            "configs": {
+                "cronjobs": {
+                    "spec": {
+                        "failurePolicy": "Fail",
+                        "matchConstraints": {
+                            "resourceRules": [
+                                {
+                                    "apiGroups": [
+                                        "batch"
+                                    ],
+                                    "apiVersions": [
+                                        "v1"
+                                    ],
+                                    "operations": [
+                                        "CREATE",
+                                        "UPDATE"
+                                    ],
+                                    "resources": [
+                                        "cronjobs"
+                                    ]
+                                }
+                            ]
+                        },
+                        "validationActions": [
+                            "Deny"
+                        ],
+                        "validations": [
+                            {
+                                "expression": "(!has(object.spec.jobTemplate.spec.template.spec.containers) || object.spec.jobTemplate.spec.template.spec.containers.all(c, !has(c.securityContext) || !has(c.securityContext.privileged) || c.securityContext.privileged == false)) \u0026\u0026 (!has(object.spec.jobTemplate.spec.template.spec.initContainers) || object.spec.jobTemplate.spec.template.spec.initContainers.all(c, !has(c.securityContext) || !has(c.securityContext.privileged) || c.securityContext.privileged == false)) \u0026\u0026 (!has(object.spec.jobTemplate.spec.template.spec.ephemeralContainers) || object.spec.jobTemplate.spec.template.spec.ephemeralContainers.all(c, !has(c.securityContext) || !has(c.securityContext.privileged) || c.securityContext.privileged == false))",
+                                "message": "Privileged mode is disallowed. The fields spec.containers[*].securityContext.privileged and spec.initContainers[*].securityContext.privileged must be unset or set to `false`."
+                            }
+                        ]
+                    },
+                    "targets": [
+                        {
+                            "group": "batch",
+                            "kind": "CronJob",
+                            "resource": "cronjobs",
+                            "version": "v1"
+                        }
+                    ]
+                },
+                "defaults": {
+                    "spec": {
+                        "failurePolicy": "Fail",
+                        "matchConstraints": {
+                            "resourceRules": [
+                                {
+                                    "apiGroups": [
+                                        "apps"
+                                    ],
+                                    "apiVersions": [
+                                        "v1"
+                                    ],
+                                    "operations": [
+                                        "CREATE",
+                                        "UPDATE"
+                                    ],
+                                    "resources": [
+                                        "daemonsets",
+                                        "deployments",
+                                        "replicasets",
+                                        "statefulsets"
+                                    ]
+                                },
+                                {
+                                    "apiGroups": [
+                                        "batch"
+                                    ],
+                                    "apiVersions": [
+                                        "v1"
+                                    ],
+                                    "operations": [
+                                        "CREATE",
+                                        "UPDATE"
+                                    ],
+                                    "resources": [
+                                        "jobs"
+                                    ]
+                                }
+                            ]
+                        },
+                        "validationActions": [
+                            "Deny"
+                        ],
+                        "validations": [
+                            {
+                                "expression": "(!has(object.spec.template.spec.containers) || object.spec.template.spec.containers.all(c, !has(c.securityContext) || !has(c.securityContext.privileged) || c.securityContext.privileged == false)) \u0026\u0026 (!has(object.spec.template.spec.initContainers) || object.spec.template.spec.initContainers.all(c, !has(c.securityContext) || !has(c.securityContext.privileged) || c.securityContext.privileged == false)) \u0026\u0026 (!has(object.spec.template.spec.ephemeralContainers) || object.spec.template.spec.ephemeralContainers.all(c, !has(c.securityContext) || !has(c.securityContext.privileged) || c.securityContext.privileged == false))",
+                                "message": "Privileged mode is disallowed. The fields spec.containers[*].securityContext.privileged and spec.initContainers[*].securityContext.privileged must be unset or set to `false`."
+                            }
+                        ]
+                    },
+                    "targets": [
+                        {
+                            "group": "apps",
+                            "kind": "DaemonSet",
+                            "resource": "daemonsets",
+                            "version": "v1"
+                        },
+                        {
+                            "group": "apps",
+                            "kind": "Deployment",
+                            "resource": "deployments",
+                            "version": "v1"
+                        },
+                        {
+                            "group": "apps",
+                            "kind": "ReplicaSet",
+                            "resource": "replicasets",
+                            "version": "v1"
+                        },
+                        {
+                            "group": "apps",
+                            "kind": "StatefulSet",
+                            "resource": "statefulsets",
+                            "version": "v1"
+                        },
+                        {
+                            "group": "batch",
+                            "kind": "Job",
+                            "resource": "jobs",
+                            "version": "v1"
+                        }
+                    ]
+                }
+            }
+        },
+        "conditionStatus": {
+            "conditions": [
+                {
+                    "lastTransitionTime": "2026-09-19T04:39:12Z",
+                    "message": "Webhook configured.",
+                    "reason": "Succeeded",
+                    "status": "True",
+                    "type": "WebhookConfigured"
+                },
+                {
+                    "lastTransitionTime": "2026-09-19T04:39:12Z",
+                    "message": "Policy is ready for reporting.",
+                    "reason": "Succeeded",
+                    "status": "True",
+                    "type": "RBACPermissionsGranted"
+                }
+            ],
+            "message": "",
+            "ready": true
+        },
+        "generated": false
+    }
+}

@@ -1,0 +1,33 @@
+{
+  "executedAt": "2026-09-19",
+  "timezone": "Asia/Seoul",
+  "hostEnvironment": "ksybob WSL2 Ubuntu 24.04",
+  "kubernetes": "v1.35.8",
+  "kind": "v0.33.0",
+  "kubectl": "v1.35.8",
+  "helm": "v3.22.0",
+  "dockerEngine": "29.8.0",
+  "products": {
+    "kyverno": {
+      "chart": "3.9.1",
+      "app": "v1.19.1",
+      "policyChart": "3.9.1",
+      "policyType": "ValidatingPolicy"
+    },
+    "gatekeeper": {
+      "chart": "3.23.1",
+      "app": "v3.23.1",
+      "libraryCommit": "22a40962f83268769bcec5dfe55e44b5a85c392a"
+    },
+    "kubewarden": {
+      "chart": "6.0.2",
+      "app": "v1.37.2",
+      "policyModule": "ghcr.io/kubewarden/policies/pod-privileged:v1.0.13"
+    }
+  },
+  "safety": {
+    "violationRequests": "dryRun=All",
+    "persistedPrivilegedContainers": 0,
+    "executedPrivilegedTestContainers": 0
+  }
+}

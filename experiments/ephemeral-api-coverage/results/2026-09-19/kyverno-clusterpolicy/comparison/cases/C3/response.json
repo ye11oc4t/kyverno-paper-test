@@ -1,0 +1,8 @@
+{
+  "kind": "Status",
+  "apiVersion": "v1",
+  "metadata": {},
+  "status": "Failure",
+  "message": "admission webhook \"validate.kyverno.svc-fail\" denied the request: \n\nresource Pod/policy-gap-test/baseline was blocked due to the following policies \n\ndisallow-privileged-containers:\n  privileged-containers: 'validation error: Privileged mode is disallowed. The fields spec.containers[*].securityContext.privileged and spec.initContainers[*].securityContext.privileged must be unset or set to `false`. rule privileged-containers failed at path /spec/ephemeralContainers/0/securityContext/privileged/'\n",
+  "code": 400
+}

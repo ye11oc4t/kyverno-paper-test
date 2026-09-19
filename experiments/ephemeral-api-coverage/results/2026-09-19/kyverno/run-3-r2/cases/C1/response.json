@@ -1,0 +1,8 @@
+{
+  "kind": "Status",
+  "apiVersion": "v1",
+  "metadata": {},
+  "status": "Failure",
+  "message": "admission webhook \"vpol.validate.kyverno.svc-fail\" denied the request: Policy disallow-privileged-containers failed: Privileged mode is disallowed. The fields spec.containers[*].securityContext.privileged and spec.initContainers[*].securityContext.privileged must be unset or set to `false`.",
+  "code": 400
+}

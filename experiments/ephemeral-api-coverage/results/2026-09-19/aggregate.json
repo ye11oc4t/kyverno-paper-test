@@ -1,0 +1,743 @@
+{
+  "date": "2026-09-19",
+  "primaryPhase": "privileged ephemeral container admission",
+  "products": {
+    "kyverno": {
+      "installations": 3,
+      "repetitionsPerInstallation": 5,
+      "validRuns": 15,
+      "totalRuns": 15,
+      "allExpectedMissPattern": true,
+      "allValid": true,
+      "uniqueHttpStatusPatterns": [
+        "C0=201,C1=400,C2=200,C3=200"
+      ],
+      "runs": [
+        {
+          "run": "run-1",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-1-r2",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-1-r3",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-1-r4",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-1-r5",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-2",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-2-r2",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-2-r3",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-2-r4",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-2-r5",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-3",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-3-r2",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-3-r3",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-3-r4",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-3-r5",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        }
+      ]
+    },
+    "gatekeeper": {
+      "installations": 3,
+      "repetitionsPerInstallation": 5,
+      "validRuns": 15,
+      "totalRuns": 15,
+      "allExpectedMissPattern": true,
+      "allValid": true,
+      "uniqueHttpStatusPatterns": [
+        "C0=201,C1=422,C2=200,C3=200"
+      ],
+      "runs": [
+        {
+          "run": "run-1-stable-r1",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 422,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-1-stable-r2",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 422,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-1-stable-r3",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 422,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-1-stable-r4",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 422,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-1-stable-r5",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 422,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-2-stable-r1",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 422,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-2-stable-r2",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 422,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-2-stable-r3",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 422,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-2-stable-r4",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 422,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-2-stable-r5",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 422,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-3-stable-r1",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 422,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-3-stable-r2",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 422,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-3-stable-r3",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 422,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-3-stable-r4",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 422,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-3-stable-r5",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 422,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        }
+      ]
+    },
+    "kubewarden": {
+      "installations": 3,
+      "repetitionsPerInstallation": 5,
+      "validRuns": 15,
+      "totalRuns": 15,
+      "allExpectedMissPattern": true,
+      "allValid": true,
+      "uniqueHttpStatusPatterns": [
+        "C0=201,C1=400,C2=200,C3=200"
+      ],
+      "runs": [
+        {
+          "run": "run-1",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-1-r2",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-1-r3",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-1-r4",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-1-r5",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-2",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-2-r2",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-2-r3",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-2-r4",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-2-r5",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-3",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-3-r2",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-3-r3",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-3-r4",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        },
+        {
+          "run": "run-3-r5",
+          "httpStatus": {
+            "C0": 201,
+            "C1": 400,
+            "C2": 200,
+            "C3": 200
+          },
+          "rbacValid": true,
+          "targetPolicyDeniedC1": true,
+          "baselineUnchanged": true,
+          "expectedMissPattern": true,
+          "valid": true
+        }
+      ]
+    }
+  },
+  "ablations": {
+    "kyverno": {
+      "before": {
+        "C0": 201,
+        "C1": 400,
+        "C2": 200,
+        "C3": 200
+      },
+      "after": {
+        "C0": 201,
+        "C1": 400,
+        "C2": 200,
+        "C3": 400
+      },
+      "c3ChangedFromAllowToDeny": true
+    },
+    "gatekeeper": {
+      "before": {
+        "C0": 201,
+        "C1": 422,
+        "C2": 200,
+        "C3": 200
+      },
+      "after": {
+        "C0": 201,
+        "C1": 422,
+        "C2": 200,
+        "C3": 422
+      },
+      "c3ChangedFromAllowToDeny": true
+    },
+    "kubewarden": {
+      "before": {
+        "C0": 201,
+        "C1": 400,
+        "C2": 200,
+        "C3": 200
+      },
+      "after": {
+        "C0": 201,
+        "C1": 400,
+        "C2": 200,
+        "C3": 400
+      },
+      "c3ChangedFromAllowToDeny": true
+    }
+  },
+  "excluded": {
+    "gatekeeperWarmup": {
+      "runs": [
+        "run-1",
+        "run-1-r2",
+        "run-1-r3",
+        "run-1-r4",
+        "run-1-r5"
+      ],
+      "reason": "The native ValidatingAdmissionPolicyBinding became active after the first request, changing the C1 denial path and status from webhook 403 to native VAP 422. Stable measurements were repeated after binding readiness."
+    }
+  },
+  "kyvernoClusterPolicyComparison": {
+    "httpStatus": {
+      "C0": 201,
+      "C1": 400,
+      "C2": 200,
+      "C3": 400
+    },
+    "c3Denied": true
+  }
+}
