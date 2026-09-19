@@ -1,0 +1,204 @@
+{
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+        "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Pod\",\"metadata\":{\"annotations\":{},\"name\":\"ephemeral-violation-base\",\"namespace\":\"live-ku-3-esc-1\"},\"spec\":{\"automountServiceAccountToken\":false,\"containers\":[{\"image\":\"registry.k8s.io/pause:3.10\",\"imagePullPolicy\":\"IfNotPresent\",\"name\":\"base\",\"securityContext\":{\"allowPrivilegeEscalation\":false,\"capabilities\":{\"drop\":[\"ALL\"]},\"privileged\":false,\"runAsNonRoot\":true,\"runAsUser\":65532,\"seccompProfile\":{\"type\":\"RuntimeDefault\"}}}],\"serviceAccountName\":\"experiment-runner\"}}\n"
+        },
+        "creationTimestamp": "2026-09-19T13:54:50Z",
+        "generation": 2,
+        "name": "ephemeral-violation-base",
+        "namespace": "live-ku-3-esc-1",
+        "resourceVersion": "1391",
+        "uid": "97584b96-0672-4e13-a78e-91270df20396"
+    },
+    "spec": {
+        "automountServiceAccountToken": false,
+        "containers": [
+            {
+                "image": "registry.k8s.io/pause:3.10",
+                "imagePullPolicy": "IfNotPresent",
+                "name": "base",
+                "resources": {},
+                "securityContext": {
+                    "allowPrivilegeEscalation": false,
+                    "capabilities": {
+                        "drop": [
+                            "ALL"
+                        ]
+                    },
+                    "privileged": false,
+                    "runAsNonRoot": true,
+                    "runAsUser": 65532,
+                    "seccompProfile": {
+                        "type": "RuntimeDefault"
+                    }
+                },
+                "terminationMessagePath": "/dev/termination-log",
+                "terminationMessagePolicy": "File"
+            }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "enableServiceLinks": true,
+        "ephemeralContainers": [
+            {
+                "command": [
+                    "sh",
+                    "-c",
+                    "echo EPHEMERAL_VIOLATION_ESCALATION; id; grep -E \"^(CapEff|NoNewPrivs):\" /proc/self/status; sleep 120"
+                ],
+                "image": "busybox:1.36.1",
+                "imagePullPolicy": "IfNotPresent",
+                "name": "debug-violation",
+                "resources": {},
+                "securityContext": {
+                    "allowPrivilegeEscalation": true,
+                    "capabilities": {
+                        "drop": [
+                            "ALL"
+                        ]
+                    },
+                    "privileged": false,
+                    "runAsNonRoot": true,
+                    "runAsUser": 65532,
+                    "seccompProfile": {
+                        "type": "RuntimeDefault"
+                    }
+                },
+                "terminationMessagePath": "/dev/termination-log",
+                "terminationMessagePolicy": "File"
+            }
+        ],
+        "nodeName": "live-kubewarden-3-control-plane",
+        "preemptionPolicy": "PreemptLowerPriority",
+        "priority": 0,
+        "restartPolicy": "Always",
+        "schedulerName": "default-scheduler",
+        "securityContext": {},
+        "serviceAccount": "experiment-runner",
+        "serviceAccountName": "experiment-runner",
+        "terminationGracePeriodSeconds": 30,
+        "tolerations": [
+            {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/not-ready",
+                "operator": "Exists",
+                "tolerationSeconds": 300
+            },
+            {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/unreachable",
+                "operator": "Exists",
+                "tolerationSeconds": 300
+            }
+        ]
+    },
+    "status": {
+        "conditions": [
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-09-19T13:54:50Z",
+                "observedGeneration": 2,
+                "status": "True",
+                "type": "PodReadyToStartContainers"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-09-19T13:54:50Z",
+                "observedGeneration": 2,
+                "status": "True",
+                "type": "Initialized"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-09-19T13:54:50Z",
+                "observedGeneration": 2,
+                "status": "True",
+                "type": "Ready"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-09-19T13:54:50Z",
+                "observedGeneration": 2,
+                "status": "True",
+                "type": "ContainersReady"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-09-19T13:54:50Z",
+                "observedGeneration": 2,
+                "status": "True",
+                "type": "PodScheduled"
+            }
+        ],
+        "containerStatuses": [
+            {
+                "containerID": "containerd://0f4b096420165ec0b8b73f0a2b4d8f7f677d1a4414465889e380266c80e12ffe",
+                "image": "registry.k8s.io/pause:3.10",
+                "imageID": "sha256:873ed75102791e5b0b8a7fcd41606c92fcec98d56d05ead4ac5131650004c136",
+                "lastState": {},
+                "name": "base",
+                "ready": true,
+                "resources": {},
+                "restartCount": 0,
+                "started": true,
+                "state": {
+                    "running": {
+                        "startedAt": "2026-09-19T13:54:50Z"
+                    }
+                },
+                "user": {
+                    "linux": {
+                        "gid": 0,
+                        "supplementalGroups": [
+                            0
+                        ],
+                        "uid": 65532
+                    }
+                }
+            }
+        ],
+        "ephemeralContainerStatuses": [
+            {
+                "containerID": "containerd://4e3667c90ac1fbaf8746e90f58eb0205d4d71c148e23df187cea93bd47eb2411",
+                "image": "docker.io/library/busybox:1.36.1",
+                "imageID": "docker.io/library/busybox@sha256:73aaf090f3d85aa34ee199857f03fa3a95c8ede2ffd4cc2cdb5b94e566b11662",
+                "lastState": {},
+                "name": "debug-violation",
+                "ready": false,
+                "resources": {},
+                "restartCount": 0,
+                "state": {
+                    "running": {
+                        "startedAt": "2026-09-19T13:54:52Z"
+                    }
+                },
+                "user": {
+                    "linux": {
+                        "gid": 0,
+                        "supplementalGroups": [
+                            0
+                        ],
+                        "uid": 65532
+                    }
+                }
+            }
+        ],
+        "hostIP": "172.18.0.2",
+        "hostIPs": [
+            {
+                "ip": "172.18.0.2"
+            }
+        ],
+        "observedGeneration": 2,
+        "phase": "Running",
+        "podIP": "10.244.0.25",
+        "podIPs": [
+            {
+                "ip": "10.244.0.25"
+            }
+        ],
+        "qosClass": "BestEffort",
+        "startTime": "2026-09-19T13:54:50Z"
+    }
+}

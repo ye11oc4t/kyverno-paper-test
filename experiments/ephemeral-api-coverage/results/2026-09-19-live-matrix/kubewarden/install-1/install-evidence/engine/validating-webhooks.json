@@ -1,0 +1,234 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "admissionregistration.k8s.io/v1",
+            "kind": "ValidatingWebhookConfiguration",
+            "metadata": {
+                "annotations": {
+                    "meta.helm.sh/release-name": "admission-controller",
+                    "meta.helm.sh/release-namespace": "kubewarden"
+                },
+                "creationTimestamp": "2026-09-19T13:43:35Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/component": "controller",
+                    "app.kubernetes.io/instance": "admission-controller",
+                    "app.kubernetes.io/managed-by": "Helm",
+                    "app.kubernetes.io/name": "admission-controller",
+                    "app.kubernetes.io/part-of": "kubewarden",
+                    "app.kubernetes.io/version": "v1.37.2",
+                    "helm.sh/chart": "admission-controller-6.0.2"
+                },
+                "name": "kubewarden-controller-validating-webhook-configuration",
+                "resourceVersion": "518",
+                "uid": "dd43c124-d922-403d-b1e0-3b5a77de8024"
+            },
+            "webhooks": [
+                {
+                    "admissionReviewVersions": [
+                        "v1",
+                        "v1beta1"
+                    ],
+                    "clientConfig": {
+                        "caBundle": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJwVENDQVV1Z0F3SUJBZ0lRUGRUc2Q2NXk3elVkL2xpeVErWk5KREFLQmdncWhrak9QUVFEQWpBak1TRXcKSHdZRFZRUURFeGhyZFdKbGQyRnlaR1Z1TFdOdmJuUnliMnhzWlhJdFkyRXdIaGNOTWpZd09URTVNVE0wTXpNMApXaGNOTXpZd09URTJNVE0wTXpNMFdqQWpNU0V3SHdZRFZRUURFeGhyZFdKbGQyRnlaR1Z1TFdOdmJuUnliMnhzClpYSXRZMkV3V1RBVEJnY3Foa2pPUFFJQkJnZ3Foa2pPUFFNQkJ3TkNBQVJTRHpDWHNtQU5UYzgxcS9POEVxU0MKQVNtRkpJTzBPNnZxMTdPSlFsWFlWVUtXQ2FaRStNTk9qdTArMHFQaUtCQ2lmVUdVSFZqeEdwMkM1dzF6bkZISgpvMkV3WHpBT0JnTlZIUThCQWY4RUJBTUNBcVF3SFFZRFZSMGxCQll3RkFZSUt3WUJCUVVIQXdFR0NDc0dBUVVGCkJ3TUNNQThHQTFVZEV3RUIvd1FGTUFNQkFmOHdIUVlEVlIwT0JCWUVGT21UUW5EdG01ZGRBbnJtM21ONk1tcUYKMzllcU1Bb0dDQ3FHU000OUJBTUNBMGdBTUVVQ0lRRGFoYjBpK25QN2RmLzVrYW5EZkVBdDN4NVpSQmdiUW1aNApDZTRDN3pVWENRSWdDa1lOZTY3MjJDdFNoVkNSVmpXTkZLbThDZDA2YXB1WnNSM3lHME9yWHpBPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                        "service": {
+                            "name": "admission-controller-webhook-service",
+                            "namespace": "kubewarden",
+                            "path": "/validate-policies-kubewarden-io-v1-clusteradmissionpolicy",
+                            "port": 443
+                        }
+                    },
+                    "failurePolicy": "Fail",
+                    "matchPolicy": "Equivalent",
+                    "name": "vclusteradmissionpolicy.kb.io",
+                    "namespaceSelector": {},
+                    "objectSelector": {},
+                    "rules": [
+                        {
+                            "apiGroups": [
+                                "policies.kubewarden.io"
+                            ],
+                            "apiVersions": [
+                                "v1"
+                            ],
+                            "operations": [
+                                "CREATE",
+                                "UPDATE"
+                            ],
+                            "resources": [
+                                "clusteradmissionpolicies"
+                            ],
+                            "scope": "*"
+                        }
+                    ],
+                    "sideEffects": "None",
+                    "timeoutSeconds": 10
+                },
+                {
+                    "admissionReviewVersions": [
+                        "v1",
+                        "v1beta1"
+                    ],
+                    "clientConfig": {
+                        "caBundle": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJwVENDQVV1Z0F3SUJBZ0lRUGRUc2Q2NXk3elVkL2xpeVErWk5KREFLQmdncWhrak9QUVFEQWpBak1TRXcKSHdZRFZRUURFeGhyZFdKbGQyRnlaR1Z1TFdOdmJuUnliMnhzWlhJdFkyRXdIaGNOTWpZd09URTVNVE0wTXpNMApXaGNOTXpZd09URTJNVE0wTXpNMFdqQWpNU0V3SHdZRFZRUURFeGhyZFdKbGQyRnlaR1Z1TFdOdmJuUnliMnhzClpYSXRZMkV3V1RBVEJnY3Foa2pPUFFJQkJnZ3Foa2pPUFFNQkJ3TkNBQVJTRHpDWHNtQU5UYzgxcS9POEVxU0MKQVNtRkpJTzBPNnZxMTdPSlFsWFlWVUtXQ2FaRStNTk9qdTArMHFQaUtCQ2lmVUdVSFZqeEdwMkM1dzF6bkZISgpvMkV3WHpBT0JnTlZIUThCQWY4RUJBTUNBcVF3SFFZRFZSMGxCQll3RkFZSUt3WUJCUVVIQXdFR0NDc0dBUVVGCkJ3TUNNQThHQTFVZEV3RUIvd1FGTUFNQkFmOHdIUVlEVlIwT0JCWUVGT21UUW5EdG01ZGRBbnJtM21ONk1tcUYKMzllcU1Bb0dDQ3FHU000OUJBTUNBMGdBTUVVQ0lRRGFoYjBpK25QN2RmLzVrYW5EZkVBdDN4NVpSQmdiUW1aNApDZTRDN3pVWENRSWdDa1lOZTY3MjJDdFNoVkNSVmpXTkZLbThDZDA2YXB1WnNSM3lHME9yWHpBPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                        "service": {
+                            "name": "admission-controller-webhook-service",
+                            "namespace": "kubewarden",
+                            "path": "/validate-policies-kubewarden-io-v1-clusteradmissionpolicygroup",
+                            "port": 443
+                        }
+                    },
+                    "failurePolicy": "Fail",
+                    "matchPolicy": "Equivalent",
+                    "name": "vclusteradmissionpolicygroup.kb.io",
+                    "namespaceSelector": {},
+                    "objectSelector": {},
+                    "rules": [
+                        {
+                            "apiGroups": [
+                                "policies.kubewarden.io"
+                            ],
+                            "apiVersions": [
+                                "v1"
+                            ],
+                            "operations": [
+                                "CREATE",
+                                "UPDATE"
+                            ],
+                            "resources": [
+                                "clusteradmissionpolicygroups"
+                            ],
+                            "scope": "*"
+                        }
+                    ],
+                    "sideEffects": "None",
+                    "timeoutSeconds": 10
+                },
+                {
+                    "admissionReviewVersions": [
+                        "v1",
+                        "v1beta1"
+                    ],
+                    "clientConfig": {
+                        "caBundle": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJwVENDQVV1Z0F3SUJBZ0lRUGRUc2Q2NXk3elVkL2xpeVErWk5KREFLQmdncWhrak9QUVFEQWpBak1TRXcKSHdZRFZRUURFeGhyZFdKbGQyRnlaR1Z1TFdOdmJuUnliMnhzWlhJdFkyRXdIaGNOTWpZd09URTVNVE0wTXpNMApXaGNOTXpZd09URTJNVE0wTXpNMFdqQWpNU0V3SHdZRFZRUURFeGhyZFdKbGQyRnlaR1Z1TFdOdmJuUnliMnhzClpYSXRZMkV3V1RBVEJnY3Foa2pPUFFJQkJnZ3Foa2pPUFFNQkJ3TkNBQVJTRHpDWHNtQU5UYzgxcS9POEVxU0MKQVNtRkpJTzBPNnZxMTdPSlFsWFlWVUtXQ2FaRStNTk9qdTArMHFQaUtCQ2lmVUdVSFZqeEdwMkM1dzF6bkZISgpvMkV3WHpBT0JnTlZIUThCQWY4RUJBTUNBcVF3SFFZRFZSMGxCQll3RkFZSUt3WUJCUVVIQXdFR0NDc0dBUVVGCkJ3TUNNQThHQTFVZEV3RUIvd1FGTUFNQkFmOHdIUVlEVlIwT0JCWUVGT21UUW5EdG01ZGRBbnJtM21ONk1tcUYKMzllcU1Bb0dDQ3FHU000OUJBTUNBMGdBTUVVQ0lRRGFoYjBpK25QN2RmLzVrYW5EZkVBdDN4NVpSQmdiUW1aNApDZTRDN3pVWENRSWdDa1lOZTY3MjJDdFNoVkNSVmpXTkZLbThDZDA2YXB1WnNSM3lHME9yWHpBPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                        "service": {
+                            "name": "admission-controller-webhook-service",
+                            "namespace": "kubewarden",
+                            "path": "/validate-policies-kubewarden-io-v1-admissionpolicy",
+                            "port": 443
+                        }
+                    },
+                    "failurePolicy": "Fail",
+                    "matchPolicy": "Equivalent",
+                    "name": "vadmissionpolicy.kb.io",
+                    "namespaceSelector": {},
+                    "objectSelector": {},
+                    "rules": [
+                        {
+                            "apiGroups": [
+                                "policies.kubewarden.io"
+                            ],
+                            "apiVersions": [
+                                "v1"
+                            ],
+                            "operations": [
+                                "CREATE",
+                                "UPDATE"
+                            ],
+                            "resources": [
+                                "admissionpolicies"
+                            ],
+                            "scope": "*"
+                        }
+                    ],
+                    "sideEffects": "None",
+                    "timeoutSeconds": 10
+                },
+                {
+                    "admissionReviewVersions": [
+                        "v1",
+                        "v1beta1"
+                    ],
+                    "clientConfig": {
+                        "caBundle": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJwVENDQVV1Z0F3SUJBZ0lRUGRUc2Q2NXk3elVkL2xpeVErWk5KREFLQmdncWhrak9QUVFEQWpBak1TRXcKSHdZRFZRUURFeGhyZFdKbGQyRnlaR1Z1TFdOdmJuUnliMnhzWlhJdFkyRXdIaGNOTWpZd09URTVNVE0wTXpNMApXaGNOTXpZd09URTJNVE0wTXpNMFdqQWpNU0V3SHdZRFZRUURFeGhyZFdKbGQyRnlaR1Z1TFdOdmJuUnliMnhzClpYSXRZMkV3V1RBVEJnY3Foa2pPUFFJQkJnZ3Foa2pPUFFNQkJ3TkNBQVJTRHpDWHNtQU5UYzgxcS9POEVxU0MKQVNtRkpJTzBPNnZxMTdPSlFsWFlWVUtXQ2FaRStNTk9qdTArMHFQaUtCQ2lmVUdVSFZqeEdwMkM1dzF6bkZISgpvMkV3WHpBT0JnTlZIUThCQWY4RUJBTUNBcVF3SFFZRFZSMGxCQll3RkFZSUt3WUJCUVVIQXdFR0NDc0dBUVVGCkJ3TUNNQThHQTFVZEV3RUIvd1FGTUFNQkFmOHdIUVlEVlIwT0JCWUVGT21UUW5EdG01ZGRBbnJtM21ONk1tcUYKMzllcU1Bb0dDQ3FHU000OUJBTUNBMGdBTUVVQ0lRRGFoYjBpK25QN2RmLzVrYW5EZkVBdDN4NVpSQmdiUW1aNApDZTRDN3pVWENRSWdDa1lOZTY3MjJDdFNoVkNSVmpXTkZLbThDZDA2YXB1WnNSM3lHME9yWHpBPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                        "service": {
+                            "name": "admission-controller-webhook-service",
+                            "namespace": "kubewarden",
+                            "path": "/validate-policies-kubewarden-io-v1-admissionpolicygroup",
+                            "port": 443
+                        }
+                    },
+                    "failurePolicy": "Fail",
+                    "matchPolicy": "Equivalent",
+                    "name": "vadmissionpolicygroup.kb.io",
+                    "namespaceSelector": {},
+                    "objectSelector": {},
+                    "rules": [
+                        {
+                            "apiGroups": [
+                                "policies.kubewarden.io"
+                            ],
+                            "apiVersions": [
+                                "v1"
+                            ],
+                            "operations": [
+                                "CREATE",
+                                "UPDATE"
+                            ],
+                            "resources": [
+                                "admissionpolicygroups"
+                            ],
+                            "scope": "*"
+                        }
+                    ],
+                    "sideEffects": "None",
+                    "timeoutSeconds": 10
+                },
+                {
+                    "admissionReviewVersions": [
+                        "v1"
+                    ],
+                    "clientConfig": {
+                        "caBundle": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJwVENDQVV1Z0F3SUJBZ0lRUGRUc2Q2NXk3elVkL2xpeVErWk5KREFLQmdncWhrak9QUVFEQWpBak1TRXcKSHdZRFZRUURFeGhyZFdKbGQyRnlaR1Z1TFdOdmJuUnliMnhzWlhJdFkyRXdIaGNOTWpZd09URTVNVE0wTXpNMApXaGNOTXpZd09URTJNVE0wTXpNMFdqQWpNU0V3SHdZRFZRUURFeGhyZFdKbGQyRnlaR1Z1TFdOdmJuUnliMnhzClpYSXRZMkV3V1RBVEJnY3Foa2pPUFFJQkJnZ3Foa2pPUFFNQkJ3TkNBQVJTRHpDWHNtQU5UYzgxcS9POEVxU0MKQVNtRkpJTzBPNnZxMTdPSlFsWFlWVUtXQ2FaRStNTk9qdTArMHFQaUtCQ2lmVUdVSFZqeEdwMkM1dzF6bkZISgpvMkV3WHpBT0JnTlZIUThCQWY4RUJBTUNBcVF3SFFZRFZSMGxCQll3RkFZSUt3WUJCUVVIQXdFR0NDc0dBUVVGCkJ3TUNNQThHQTFVZEV3RUIvd1FGTUFNQkFmOHdIUVlEVlIwT0JCWUVGT21UUW5EdG01ZGRBbnJtM21ONk1tcUYKMzllcU1Bb0dDQ3FHU000OUJBTUNBMGdBTUVVQ0lRRGFoYjBpK25QN2RmLzVrYW5EZkVBdDN4NVpSQmdiUW1aNApDZTRDN3pVWENRSWdDa1lOZTY3MjJDdFNoVkNSVmpXTkZLbThDZDA2YXB1WnNSM3lHME9yWHpBPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                        "service": {
+                            "name": "admission-controller-webhook-service",
+                            "namespace": "kubewarden",
+                            "path": "/validate-policies-kubewarden-io-v1-policyserver",
+                            "port": 443
+                        }
+                    },
+                    "failurePolicy": "Fail",
+                    "matchPolicy": "Equivalent",
+                    "name": "vpolicyserver.kb.io",
+                    "namespaceSelector": {},
+                    "objectSelector": {},
+                    "rules": [
+                        {
+                            "apiGroups": [
+                                "policies.kubewarden.io"
+                            ],
+                            "apiVersions": [
+                                "v1"
+                            ],
+                            "operations": [
+                                "CREATE",
+                                "UPDATE"
+                            ],
+                            "resources": [
+                                "policyservers"
+                            ],
+                            "scope": "*"
+                        }
+                    ],
+                    "sideEffects": "None",
+                    "timeoutSeconds": 10
+                }
+            ]
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

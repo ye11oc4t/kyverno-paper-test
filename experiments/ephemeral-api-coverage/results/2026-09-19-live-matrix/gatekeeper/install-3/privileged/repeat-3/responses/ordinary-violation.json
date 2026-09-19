@@ -1,0 +1,18 @@
+{
+  "kind": "Status",
+  "apiVersion": "v1",
+  "metadata": {},
+  "status": "Failure",
+  "message": "pods \"ordinary-violation\" is forbidden: ValidatingAdmissionPolicy 'gatekeeper-k8spspprivilegedcontainer' with binding 'gatekeeper-k8spspprivilegedcontainer-psp-privileged-container' denied request: Privileged container is not allowed: main-violation, securityContext.privileged: true",
+  "reason": "Invalid",
+  "details": {
+    "name": "ordinary-violation",
+    "kind": "pods",
+    "causes": [
+      {
+        "message": "ValidatingAdmissionPolicy 'gatekeeper-k8spspprivilegedcontainer' with binding 'gatekeeper-k8spspprivilegedcontainer-psp-privileged-container' denied request: Privileged container is not allowed: main-violation, securityContext.privileged: true"
+      }
+    ]
+  },
+  "code": 422
+}

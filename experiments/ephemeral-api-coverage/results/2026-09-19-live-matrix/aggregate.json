@@ -1,0 +1,240 @@
+{
+  "experiment": "persisted and executed ephemeral-container policy coverage",
+  "date": "2026-09-19",
+  "products": [
+    "kyverno",
+    "gatekeeper",
+    "kubewarden"
+  ],
+  "policyFamilies": [
+    "privileged",
+    "escalation",
+    "capabilities"
+  ],
+  "independentInstallsPerProduct": 3,
+  "repeatsPerInstallAndFamily": 5,
+  "experimentUnits": 135,
+  "apiRequests": 540,
+  "groups": [
+    {
+      "product": "gatekeeper",
+      "family": "capabilities",
+      "trials": 15,
+      "independentInstalls": 3,
+      "ordinarySafeAdmitted": 15,
+      "ordinarySafePersisted": 15,
+      "ordinarySafeExecuted": 15,
+      "ordinaryViolationDenied": 15,
+      "ordinaryViolationPersisted": 0,
+      "ephemeralSafeAdmitted": 15,
+      "ephemeralSafePersisted": 15,
+      "ephemeralSafeExecuted": 15,
+      "ephemeralViolationAdmitted": 15,
+      "ephemeralViolationPersisted": 15,
+      "ephemeralViolationExecuted": 15,
+      "runtimeEffectObserved": 15,
+      "ordinaryViolationHttpStatuses": [
+        422
+      ],
+      "ephemeralViolationHttpStatuses": [
+        200
+      ]
+    },
+    {
+      "product": "gatekeeper",
+      "family": "escalation",
+      "trials": 15,
+      "independentInstalls": 3,
+      "ordinarySafeAdmitted": 15,
+      "ordinarySafePersisted": 15,
+      "ordinarySafeExecuted": 15,
+      "ordinaryViolationDenied": 15,
+      "ordinaryViolationPersisted": 0,
+      "ephemeralSafeAdmitted": 15,
+      "ephemeralSafePersisted": 15,
+      "ephemeralSafeExecuted": 15,
+      "ephemeralViolationAdmitted": 15,
+      "ephemeralViolationPersisted": 15,
+      "ephemeralViolationExecuted": 15,
+      "runtimeEffectObserved": 15,
+      "ordinaryViolationHttpStatuses": [
+        422
+      ],
+      "ephemeralViolationHttpStatuses": [
+        200
+      ]
+    },
+    {
+      "product": "gatekeeper",
+      "family": "privileged",
+      "trials": 15,
+      "independentInstalls": 3,
+      "ordinarySafeAdmitted": 15,
+      "ordinarySafePersisted": 15,
+      "ordinarySafeExecuted": 15,
+      "ordinaryViolationDenied": 15,
+      "ordinaryViolationPersisted": 0,
+      "ephemeralSafeAdmitted": 15,
+      "ephemeralSafePersisted": 15,
+      "ephemeralSafeExecuted": 15,
+      "ephemeralViolationAdmitted": 15,
+      "ephemeralViolationPersisted": 15,
+      "ephemeralViolationExecuted": 15,
+      "runtimeEffectObserved": 15,
+      "ordinaryViolationHttpStatuses": [
+        422
+      ],
+      "ephemeralViolationHttpStatuses": [
+        200
+      ]
+    },
+    {
+      "product": "kubewarden",
+      "family": "capabilities",
+      "trials": 15,
+      "independentInstalls": 3,
+      "ordinarySafeAdmitted": 15,
+      "ordinarySafePersisted": 15,
+      "ordinarySafeExecuted": 15,
+      "ordinaryViolationDenied": 15,
+      "ordinaryViolationPersisted": 0,
+      "ephemeralSafeAdmitted": 15,
+      "ephemeralSafePersisted": 15,
+      "ephemeralSafeExecuted": 15,
+      "ephemeralViolationAdmitted": 15,
+      "ephemeralViolationPersisted": 15,
+      "ephemeralViolationExecuted": 15,
+      "runtimeEffectObserved": 15,
+      "ordinaryViolationHttpStatuses": [
+        400
+      ],
+      "ephemeralViolationHttpStatuses": [
+        200
+      ]
+    },
+    {
+      "product": "kubewarden",
+      "family": "escalation",
+      "trials": 15,
+      "independentInstalls": 3,
+      "ordinarySafeAdmitted": 15,
+      "ordinarySafePersisted": 15,
+      "ordinarySafeExecuted": 15,
+      "ordinaryViolationDenied": 15,
+      "ordinaryViolationPersisted": 0,
+      "ephemeralSafeAdmitted": 15,
+      "ephemeralSafePersisted": 15,
+      "ephemeralSafeExecuted": 15,
+      "ephemeralViolationAdmitted": 15,
+      "ephemeralViolationPersisted": 15,
+      "ephemeralViolationExecuted": 15,
+      "runtimeEffectObserved": 15,
+      "ordinaryViolationHttpStatuses": [
+        400
+      ],
+      "ephemeralViolationHttpStatuses": [
+        200
+      ]
+    },
+    {
+      "product": "kubewarden",
+      "family": "privileged",
+      "trials": 15,
+      "independentInstalls": 3,
+      "ordinarySafeAdmitted": 15,
+      "ordinarySafePersisted": 15,
+      "ordinarySafeExecuted": 15,
+      "ordinaryViolationDenied": 15,
+      "ordinaryViolationPersisted": 0,
+      "ephemeralSafeAdmitted": 15,
+      "ephemeralSafePersisted": 15,
+      "ephemeralSafeExecuted": 15,
+      "ephemeralViolationAdmitted": 15,
+      "ephemeralViolationPersisted": 15,
+      "ephemeralViolationExecuted": 15,
+      "runtimeEffectObserved": 15,
+      "ordinaryViolationHttpStatuses": [
+        400
+      ],
+      "ephemeralViolationHttpStatuses": [
+        200
+      ]
+    },
+    {
+      "product": "kyverno",
+      "family": "capabilities",
+      "trials": 15,
+      "independentInstalls": 3,
+      "ordinarySafeAdmitted": 15,
+      "ordinarySafePersisted": 15,
+      "ordinarySafeExecuted": 15,
+      "ordinaryViolationDenied": 15,
+      "ordinaryViolationPersisted": 0,
+      "ephemeralSafeAdmitted": 15,
+      "ephemeralSafePersisted": 15,
+      "ephemeralSafeExecuted": 15,
+      "ephemeralViolationAdmitted": 15,
+      "ephemeralViolationPersisted": 15,
+      "ephemeralViolationExecuted": 15,
+      "runtimeEffectObserved": 15,
+      "ordinaryViolationHttpStatuses": [
+        400
+      ],
+      "ephemeralViolationHttpStatuses": [
+        200
+      ]
+    },
+    {
+      "product": "kyverno",
+      "family": "escalation",
+      "trials": 15,
+      "independentInstalls": 3,
+      "ordinarySafeAdmitted": 15,
+      "ordinarySafePersisted": 15,
+      "ordinarySafeExecuted": 15,
+      "ordinaryViolationDenied": 15,
+      "ordinaryViolationPersisted": 0,
+      "ephemeralSafeAdmitted": 15,
+      "ephemeralSafePersisted": 15,
+      "ephemeralSafeExecuted": 15,
+      "ephemeralViolationAdmitted": 15,
+      "ephemeralViolationPersisted": 15,
+      "ephemeralViolationExecuted": 15,
+      "runtimeEffectObserved": 15,
+      "ordinaryViolationHttpStatuses": [
+        400
+      ],
+      "ephemeralViolationHttpStatuses": [
+        200
+      ]
+    },
+    {
+      "product": "kyverno",
+      "family": "privileged",
+      "trials": 15,
+      "independentInstalls": 3,
+      "ordinarySafeAdmitted": 15,
+      "ordinarySafePersisted": 15,
+      "ordinarySafeExecuted": 15,
+      "ordinaryViolationDenied": 15,
+      "ordinaryViolationPersisted": 0,
+      "ephemeralSafeAdmitted": 15,
+      "ephemeralSafePersisted": 15,
+      "ephemeralSafeExecuted": 15,
+      "ephemeralViolationAdmitted": 15,
+      "ephemeralViolationPersisted": 15,
+      "ephemeralViolationExecuted": 15,
+      "runtimeEffectObserved": 15,
+      "ordinaryViolationHttpStatuses": [
+        400
+      ],
+      "ephemeralViolationHttpStatuses": [
+        200
+      ]
+    }
+  ],
+  "verification": {
+    "complete": true,
+    "errors": []
+  }
+}

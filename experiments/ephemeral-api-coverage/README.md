@@ -1,9 +1,11 @@
 # Ephemeral API policy coverage experiment
 
-The experiment was executed on 2026-09-19. Read [the Korean report](REPORT.ko.md) for the method, results, exclusions, and claim boundaries. A subsequent non-dry-run check persisted and ran one privileged ephemeral container under each product; see [the live execution report](LIVE-REPORT.ko.md). Kubernetes-native controls, live minimal fixes, and two additional policy families are covered in [the follow-up report](FOLLOWUP-REPORT.ko.md).
+The canonical study was executed on 2026-09-19 with persisted API objects and running containers. It covers Kyverno, Gatekeeper, and Kubewarden across privileged, privilege-escalation, and Linux-capability policy families.
 
-The canonical machine-readable result is [results/2026-09-19/aggregate.json](results/2026-09-19/aggregate.json). `run-api-cases.sh` sends the four API-only cases with a dedicated ServiceAccount. `aggregate_results.py` validates the 45 canonical runs and the three cause-isolation runs.
+`run-live-study.sh` creates three independent clusters per product, activates one policy family at a time, and runs five repetitions per installation and family. `run-live-matrix-case.sh` sends four real API requests per experiment unit: safe and violating ordinary Pods, followed by safe and violating ephemeral containers on separate baseline Pods. Every admitted case is checked by reading the stored Pod, waiting for the container runtime, and collecting the process security state.
 
-The 45 canonical admission repetitions use `dryRun=All`. The separate live follow-up is stored under [results/2026-09-19-live-execution](results/2026-09-19-live-execution) and is validated by `aggregate_live_results.py`. Its payload only prints UID and effective Linux capabilities and then sleeps; it does not access the host or attempt an escape.
+The canonical machine-readable result is [results/2026-09-19-live-matrix/aggregate.json](results/2026-09-19-live-matrix/aggregate.json). The 135 experiment units contain 540 API requests. Run `aggregate_live_matrix.py` to verify completeness, control behavior, persistence, execution, and runtime effects, then regenerate the CSV, Korean report, and SHA-256 evidence manifest.
 
-The follow-up evidence is stored under `results/2026-09-19-kubernetes-controls`, `results/2026-09-19-live-fixes`, and `results/2026-09-19-policy-families`. Run `aggregate_followup_results.py` to validate the controls, fixed-policy behavior, policy-specific denial messages, returned values, and cause-isolation runs.
+`run-native-controls-live.sh` executes the separate Kubernetes Pod Security Admission and RBAC controls. Its output is stored under [results/2026-09-19-live-native-controls](results/2026-09-19-live-native-controls).
+
+The current paper is [../../paper/EPHEMERAL-POLICY-COVERAGE-REVISION.ko.md](../../paper/EPHEMERAL-POLICY-COVERAGE-REVISION.ko.md).

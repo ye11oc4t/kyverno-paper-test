@@ -1,0 +1,41 @@
+{
+  "product": "kyverno",
+  "install": 3,
+  "family": "privileged",
+  "repeat": 4,
+  "namespace": "live-ky-3-pri-4",
+  "httpStatus": {
+    "ordinarySafe": 201,
+    "ordinaryViolation": 400,
+    "ephemeralSafe": 200,
+    "ephemeralViolation": 200
+  },
+  "persisted": {
+    "ordinarySafe": true,
+    "ordinaryViolation": false,
+    "ephemeralSafe": true,
+    "ephemeralViolation": true
+  },
+  "runtime": {
+    "ordinarySafe": {
+      "state": "Running",
+      "capEff": "0000000000000000",
+      "noNewPrivs": "1"
+    },
+    "ordinaryViolation": {
+      "state": "NotAdmitted",
+      "capEff": "",
+      "noNewPrivs": ""
+    },
+    "ephemeralSafe": {
+      "state": "Running",
+      "capEff": "0000000000000000",
+      "noNewPrivs": "1"
+    },
+    "ephemeralViolation": {
+      "state": "Running",
+      "capEff": "000001ffffffffff",
+      "noNewPrivs": "0"
+    }
+  }
+}

@@ -1,0 +1,335 @@
+{
+  "kind": "Pod",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "ephemeral-safe-base",
+    "namespace": "live-ga-2-pri-3",
+    "uid": "d2276229-2ca9-4442-9ff3-6777f5572138",
+    "resourceVersion": "961",
+    "generation": 2,
+    "creationTimestamp": "2026-09-19T13:35:40Z",
+    "annotations": {
+      "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Pod\",\"metadata\":{\"annotations\":{},\"name\":\"ephemeral-safe-base\",\"namespace\":\"live-ga-2-pri-3\"},\"spec\":{\"automountServiceAccountToken\":false,\"containers\":[{\"image\":\"registry.k8s.io/pause:3.10\",\"imagePullPolicy\":\"IfNotPresent\",\"name\":\"base\",\"securityContext\":{\"allowPrivilegeEscalation\":false,\"capabilities\":{\"drop\":[\"ALL\"]},\"privileged\":false,\"runAsNonRoot\":true,\"runAsUser\":65532,\"seccompProfile\":{\"type\":\"RuntimeDefault\"}}}],\"serviceAccountName\":\"experiment-runner\"}}\n"
+    },
+    "managedFields": [
+      {
+        "manager": "kubectl-client-side-apply",
+        "operation": "Update",
+        "apiVersion": "v1",
+        "time": "2026-09-19T13:35:40Z",
+        "fieldsType": "FieldsV1",
+        "fieldsV1": {
+          "f:metadata": {
+            "f:annotations": {
+              ".": {},
+              "f:kubectl.kubernetes.io/last-applied-configuration": {}
+            }
+          },
+          "f:spec": {
+            "f:automountServiceAccountToken": {},
+            "f:containers": {
+              "k:{\"name\":\"base\"}": {
+                ".": {},
+                "f:image": {},
+                "f:imagePullPolicy": {},
+                "f:name": {},
+                "f:resources": {},
+                "f:securityContext": {
+                  ".": {},
+                  "f:allowPrivilegeEscalation": {},
+                  "f:capabilities": {
+                    ".": {},
+                    "f:drop": {}
+                  },
+                  "f:privileged": {},
+                  "f:runAsNonRoot": {},
+                  "f:runAsUser": {},
+                  "f:seccompProfile": {
+                    ".": {},
+                    "f:type": {}
+                  }
+                },
+                "f:terminationMessagePath": {},
+                "f:terminationMessagePolicy": {}
+              }
+            },
+            "f:dnsPolicy": {},
+            "f:enableServiceLinks": {},
+            "f:restartPolicy": {},
+            "f:schedulerName": {},
+            "f:securityContext": {},
+            "f:serviceAccount": {},
+            "f:serviceAccountName": {},
+            "f:terminationGracePeriodSeconds": {}
+          }
+        }
+      },
+      {
+        "manager": "curl",
+        "operation": "Update",
+        "apiVersion": "v1",
+        "time": "2026-09-19T13:35:41Z",
+        "fieldsType": "FieldsV1",
+        "fieldsV1": {
+          "f:spec": {
+            "f:ephemeralContainers": {
+              ".": {},
+              "k:{\"name\":\"debug-safe\"}": {
+                ".": {},
+                "f:command": {},
+                "f:image": {},
+                "f:imagePullPolicy": {},
+                "f:name": {},
+                "f:resources": {},
+                "f:securityContext": {
+                  ".": {},
+                  "f:allowPrivilegeEscalation": {},
+                  "f:capabilities": {
+                    ".": {},
+                    "f:drop": {}
+                  },
+                  "f:privileged": {},
+                  "f:runAsNonRoot": {},
+                  "f:runAsUser": {},
+                  "f:seccompProfile": {
+                    ".": {},
+                    "f:type": {}
+                  }
+                },
+                "f:terminationMessagePath": {},
+                "f:terminationMessagePolicy": {}
+              }
+            }
+          }
+        },
+        "subresource": "ephemeralcontainers"
+      },
+      {
+        "manager": "kubelet",
+        "operation": "Update",
+        "apiVersion": "v1",
+        "time": "2026-09-19T13:35:41Z",
+        "fieldsType": "FieldsV1",
+        "fieldsV1": {
+          "f:status": {
+            "f:conditions": {
+              "k:{\"type\":\"ContainersReady\"}": {
+                ".": {},
+                "f:lastProbeTime": {},
+                "f:lastTransitionTime": {},
+                "f:observedGeneration": {},
+                "f:status": {},
+                "f:type": {}
+              },
+              "k:{\"type\":\"Initialized\"}": {
+                ".": {},
+                "f:lastProbeTime": {},
+                "f:lastTransitionTime": {},
+                "f:observedGeneration": {},
+                "f:status": {},
+                "f:type": {}
+              },
+              "k:{\"type\":\"PodReadyToStartContainers\"}": {
+                ".": {},
+                "f:lastProbeTime": {},
+                "f:lastTransitionTime": {},
+                "f:observedGeneration": {},
+                "f:status": {},
+                "f:type": {}
+              },
+              "k:{\"type\":\"PodScheduled\"}": {
+                "f:observedGeneration": {}
+              },
+              "k:{\"type\":\"Ready\"}": {
+                ".": {},
+                "f:lastProbeTime": {},
+                "f:lastTransitionTime": {},
+                "f:observedGeneration": {},
+                "f:status": {},
+                "f:type": {}
+              }
+            },
+            "f:containerStatuses": {},
+            "f:hostIP": {},
+            "f:hostIPs": {},
+            "f:observedGeneration": {},
+            "f:phase": {},
+            "f:podIP": {},
+            "f:podIPs": {
+              ".": {},
+              "k:{\"ip\":\"10.244.0.15\"}": {
+                ".": {},
+                "f:ip": {}
+              }
+            },
+            "f:startTime": {}
+          }
+        },
+        "subresource": "status"
+      }
+    ]
+  },
+  "spec": {
+    "containers": [
+      {
+        "name": "base",
+        "image": "registry.k8s.io/pause:3.10",
+        "resources": {},
+        "terminationMessagePath": "/dev/termination-log",
+        "terminationMessagePolicy": "File",
+        "imagePullPolicy": "IfNotPresent",
+        "securityContext": {
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "privileged": false,
+          "runAsUser": 65532,
+          "runAsNonRoot": true,
+          "allowPrivilegeEscalation": false,
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "ephemeralContainers": [
+      {
+        "name": "debug-safe",
+        "image": "busybox:1.36.1",
+        "command": [
+          "sh",
+          "-c",
+          "echo EPHEMERAL_SAFE; id; grep -E '^(CapEff|NoNewPrivs):' /proc/self/status; sleep 120"
+        ],
+        "resources": {},
+        "terminationMessagePath": "/dev/termination-log",
+        "terminationMessagePolicy": "File",
+        "imagePullPolicy": "IfNotPresent",
+        "securityContext": {
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "privileged": false,
+          "runAsUser": 65532,
+          "runAsNonRoot": true,
+          "allowPrivilegeEscalation": false,
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "restartPolicy": "Always",
+    "terminationGracePeriodSeconds": 30,
+    "dnsPolicy": "ClusterFirst",
+    "serviceAccountName": "experiment-runner",
+    "serviceAccount": "experiment-runner",
+    "automountServiceAccountToken": false,
+    "nodeName": "live-gatekeeper-2-control-plane",
+    "securityContext": {},
+    "schedulerName": "default-scheduler",
+    "tolerations": [
+      {
+        "key": "node.kubernetes.io/not-ready",
+        "operator": "Exists",
+        "effect": "NoExecute",
+        "tolerationSeconds": 300
+      },
+      {
+        "key": "node.kubernetes.io/unreachable",
+        "operator": "Exists",
+        "effect": "NoExecute",
+        "tolerationSeconds": 300
+      }
+    ],
+    "priority": 0,
+    "enableServiceLinks": true,
+    "preemptionPolicy": "PreemptLowerPriority"
+  },
+  "status": {
+    "observedGeneration": 1,
+    "phase": "Running",
+    "conditions": [
+      {
+        "type": "PodReadyToStartContainers",
+        "observedGeneration": 1,
+        "status": "True",
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-09-19T13:35:41Z"
+      },
+      {
+        "type": "Initialized",
+        "observedGeneration": 1,
+        "status": "True",
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-09-19T13:35:40Z"
+      },
+      {
+        "type": "Ready",
+        "observedGeneration": 1,
+        "status": "True",
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-09-19T13:35:41Z"
+      },
+      {
+        "type": "ContainersReady",
+        "observedGeneration": 1,
+        "status": "True",
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-09-19T13:35:41Z"
+      },
+      {
+        "type": "PodScheduled",
+        "observedGeneration": 1,
+        "status": "True",
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-09-19T13:35:40Z"
+      }
+    ],
+    "hostIP": "172.18.0.2",
+    "hostIPs": [
+      {
+        "ip": "172.18.0.2"
+      }
+    ],
+    "podIP": "10.244.0.15",
+    "podIPs": [
+      {
+        "ip": "10.244.0.15"
+      }
+    ],
+    "startTime": "2026-09-19T13:35:40Z",
+    "containerStatuses": [
+      {
+        "name": "base",
+        "state": {
+          "running": {
+            "startedAt": "2026-09-19T13:35:40Z"
+          }
+        },
+        "lastState": {},
+        "ready": true,
+        "restartCount": 0,
+        "image": "registry.k8s.io/pause:3.10",
+        "imageID": "sha256:873ed75102791e5b0b8a7fcd41606c92fcec98d56d05ead4ac5131650004c136",
+        "containerID": "containerd://ac6eba054726982a6b0937eb5d228ba417f731868f03294c051f57724461b910",
+        "started": true,
+        "resources": {},
+        "user": {
+          "linux": {
+            "uid": 65532,
+            "gid": 0,
+            "supplementalGroups": [
+              0
+            ]
+          }
+        }
+      }
+    ],
+    "qosClass": "BestEffort"
+  }
+}

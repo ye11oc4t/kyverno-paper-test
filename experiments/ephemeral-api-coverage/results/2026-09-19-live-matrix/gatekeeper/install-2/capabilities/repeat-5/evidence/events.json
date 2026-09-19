@@ -1,0 +1,597 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:38:09Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{base}",
+                "kind": "Pod",
+                "name": "ephemeral-violation-base",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2129",
+                "uid": "c12ff1b0-1e01-4269-b4a6-4dff2e79033f"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:38:09Z",
+            "message": "Container image \"registry.k8s.io/pause:3.10\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:38:09Z",
+                "name": "ephemeral-violation-base.18d6bc6f97a08bb6",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2134",
+                "uid": "df3a04d1-23a3-49e8-b48e-7063facfcf73"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-gatekeeper-2-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-gatekeeper-2-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:38:09Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{base}",
+                "kind": "Pod",
+                "name": "ephemeral-safe-base",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2126",
+                "uid": "2f3900bc-2c62-4b9c-ba3e-0ae759279d67"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:38:09Z",
+            "message": "Container image \"registry.k8s.io/pause:3.10\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:38:09Z",
+                "name": "ephemeral-safe-base.18d6bc6f975c9630",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2133",
+                "uid": "f5b22643-6256-4f59-aff5-c085b444c461"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-gatekeeper-2-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-gatekeeper-2-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:38:09Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{base}",
+                "kind": "Pod",
+                "name": "ephemeral-safe-base",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2126",
+                "uid": "2f3900bc-2c62-4b9c-ba3e-0ae759279d67"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:38:09Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:38:09Z",
+                "name": "ephemeral-safe-base.18d6bc6f99aa61bb",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2135",
+                "uid": "204574c2-d095-4481-9c9b-e5e8f7585dc6"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-gatekeeper-2-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-gatekeeper-2-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:38:09Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{base}",
+                "kind": "Pod",
+                "name": "ephemeral-safe-base",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2126",
+                "uid": "2f3900bc-2c62-4b9c-ba3e-0ae759279d67"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:38:09Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:38:09Z",
+                "name": "ephemeral-safe-base.18d6bc6f9df8bdcb",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2137",
+                "uid": "50e0f13e-9f4c-4a2a-bef6-a52547acca91"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-gatekeeper-2-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-gatekeeper-2-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:38:09Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "ephemeral-safe-base",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2125",
+                "uid": "2f3900bc-2c62-4b9c-ba3e-0ae759279d67"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:38:09Z",
+            "message": "Successfully assigned live-ga-2-cap-5/ephemeral-safe-base to live-gatekeeper-2-control-plane",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:38:09Z",
+                "name": "ephemeral-safe-base.18d6bc6f8e903219",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2128",
+                "uid": "08057ee8-ad7a-46e9-97cc-826ec315ed83"
+            },
+            "reason": "Scheduled",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:38:09Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{base}",
+                "kind": "Pod",
+                "name": "ephemeral-violation-base",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2129",
+                "uid": "c12ff1b0-1e01-4269-b4a6-4dff2e79033f"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:38:09Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:38:09Z",
+                "name": "ephemeral-violation-base.18d6bc6f9e57e84f",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2138",
+                "uid": "d2208024-e313-47a6-b6bf-bd92d0601ead"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-gatekeeper-2-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-gatekeeper-2-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:38:09Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{base}",
+                "kind": "Pod",
+                "name": "ephemeral-violation-base",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2129",
+                "uid": "c12ff1b0-1e01-4269-b4a6-4dff2e79033f"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:38:09Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:38:09Z",
+                "name": "ephemeral-violation-base.18d6bc6f9a3d7151",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2136",
+                "uid": "9aebdc16-f831-4d45-b045-f46ae1ce0ae4"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-gatekeeper-2-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-gatekeeper-2-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:38:09Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "ephemeral-violation-base",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2127",
+                "uid": "c12ff1b0-1e01-4269-b4a6-4dff2e79033f"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:38:09Z",
+            "message": "Successfully assigned live-ga-2-cap-5/ephemeral-violation-base to live-gatekeeper-2-control-plane",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:38:09Z",
+                "name": "ephemeral-violation-base.18d6bc6f8f1b810e",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2131",
+                "uid": "999d6535-05aa-4fa8-8d80-6b4585fd382f"
+            },
+            "reason": "Scheduled",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:38:10Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.ephemeralContainers{debug-safe}",
+                "kind": "Pod",
+                "name": "ephemeral-safe-base",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2126",
+                "uid": "2f3900bc-2c62-4b9c-ba3e-0ae759279d67"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:38:10Z",
+            "message": "Container image \"busybox:1.36.1\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:38:10Z",
+                "name": "ephemeral-safe-base.18d6bc6ff0b64386",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2154",
+                "uid": "677f599d-a851-423a-ad16-d5c74468323f"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-gatekeeper-2-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-gatekeeper-2-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:38:10Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.ephemeralContainers{debug-safe}",
+                "kind": "Pod",
+                "name": "ephemeral-safe-base",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2126",
+                "uid": "2f3900bc-2c62-4b9c-ba3e-0ae759279d67"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:38:10Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:38:10Z",
+                "name": "ephemeral-safe-base.18d6bc6ff393da14",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2158",
+                "uid": "b56aab7a-6fee-4929-8cae-c2cb26cf6b3b"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-gatekeeper-2-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-gatekeeper-2-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:38:10Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.ephemeralContainers{debug-violation}",
+                "kind": "Pod",
+                "name": "ephemeral-violation-base",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2129",
+                "uid": "c12ff1b0-1e01-4269-b4a6-4dff2e79033f"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:38:10Z",
+            "message": "Container image \"busybox:1.36.1\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:38:10Z",
+                "name": "ephemeral-violation-base.18d6bc6ff0b5e089",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2152",
+                "uid": "59bc5e4a-42c4-40d6-bf0b-8de5863fa675"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-gatekeeper-2-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-gatekeeper-2-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:38:10Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.ephemeralContainers{debug-violation}",
+                "kind": "Pod",
+                "name": "ephemeral-violation-base",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2129",
+                "uid": "c12ff1b0-1e01-4269-b4a6-4dff2e79033f"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:38:10Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:38:10Z",
+                "name": "ephemeral-violation-base.18d6bc6ff31373ed",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2157",
+                "uid": "c0c31d45-413f-428b-987a-13d2c3c73f9d"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-gatekeeper-2-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-gatekeeper-2-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:38:10Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.ephemeralContainers{debug-violation}",
+                "kind": "Pod",
+                "name": "ephemeral-violation-base",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2129",
+                "uid": "c12ff1b0-1e01-4269-b4a6-4dff2e79033f"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:38:10Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:38:10Z",
+                "name": "ephemeral-violation-base.18d6bc6ff6f12e55",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2159",
+                "uid": "24246ad9-4c2d-4498-a388-4eb6bed29212"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-gatekeeper-2-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-gatekeeper-2-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:38:10Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "ordinary-safe",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2142",
+                "uid": "6a75616c-c107-435d-b082-96824d82be9e"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:38:10Z",
+            "message": "Successfully assigned live-ga-2-cap-5/ordinary-safe to live-gatekeeper-2-control-plane",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:38:10Z",
+                "name": "ordinary-safe.18d6bc6fd1a6e422",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2144",
+                "uid": "009ef9e9-60ef-4cd9-bab2-995b59c025ab"
+            },
+            "reason": "Scheduled",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:38:10Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{main-safe}",
+                "kind": "Pod",
+                "name": "ordinary-safe",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2143",
+                "uid": "6a75616c-c107-435d-b082-96824d82be9e"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:38:10Z",
+            "message": "Container image \"busybox:1.36.1\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:38:10Z",
+                "name": "ordinary-safe.18d6bc6fd9664bf1",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2146",
+                "uid": "dab7dec0-8a9e-42fa-a463-c4d3d4208ba8"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-gatekeeper-2-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-gatekeeper-2-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:38:10Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{main-safe}",
+                "kind": "Pod",
+                "name": "ordinary-safe",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2143",
+                "uid": "6a75616c-c107-435d-b082-96824d82be9e"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:38:10Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:38:10Z",
+                "name": "ordinary-safe.18d6bc6fdb0597ae",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2147",
+                "uid": "a781d472-0bd6-4545-9b03-a475b256dfb4"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-gatekeeper-2-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-gatekeeper-2-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:38:10Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{main-safe}",
+                "kind": "Pod",
+                "name": "ordinary-safe",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2143",
+                "uid": "6a75616c-c107-435d-b082-96824d82be9e"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:38:10Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:38:10Z",
+                "name": "ordinary-safe.18d6bc6fdef22797",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2148",
+                "uid": "1c6f3035-1c1b-4016-bd78-06be5bc6e92c"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-gatekeeper-2-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-gatekeeper-2-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:38:10Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.ephemeralContainers{debug-safe}",
+                "kind": "Pod",
+                "name": "ephemeral-safe-base",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2126",
+                "uid": "2f3900bc-2c62-4b9c-ba3e-0ae759279d67"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:38:10Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:38:11Z",
+                "name": "ephemeral-safe-base.18d6bc6ff6f12e69",
+                "namespace": "live-ga-2-cap-5",
+                "resourceVersion": "2160",
+                "uid": "ca696227-44f1-47c6-8909-a31efe09043c"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-gatekeeper-2-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-gatekeeper-2-control-plane"
+            },
+            "type": "Normal"
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "kind": "Status",
+  "apiVersion": "v1",
+  "metadata": {},
+  "status": "Failure",
+  "message": "pods \"ordinary-violation\" is forbidden: ValidatingAdmissionPolicy 'gatekeeper-k8spspcapabilities' with binding 'gatekeeper-k8spspcapabilities-psp-capabilities-restricted' denied request: containers have disallowed capabilities: {container: main-violation, capabilities: [SYS_ADMIN]}",
+  "reason": "Invalid",
+  "details": {
+    "name": "ordinary-violation",
+    "kind": "pods",
+    "causes": [
+      {
+        "message": "ValidatingAdmissionPolicy 'gatekeeper-k8spspcapabilities' with binding 'gatekeeper-k8spspcapabilities-psp-capabilities-restricted' denied request: containers have disallowed capabilities: {container: main-violation, capabilities: [SYS_ADMIN]}"
+      }
+    ]
+  },
+  "code": 422
+}

@@ -1,0 +1,41 @@
+{
+  "apiVersion": "v1",
+  "kind": "Pod",
+  "metadata": {
+    "name": "ordinary-violation",
+    "namespace": "live-ga-3-cap-4"
+  },
+  "spec": {
+    "automountServiceAccountToken": false,
+    "restartPolicy": "Never",
+    "containers": [
+      {
+        "name": "main-violation",
+        "image": "busybox:1.36.1",
+        "imagePullPolicy": "IfNotPresent",
+        "command": [
+          "sh",
+          "-c",
+          "echo ORDINARY_VIOLATION_CAPABILITIES; id; grep -E \"^(CapEff|NoNewPrivs):\" /proc/self/status; sleep 120"
+        ],
+        "securityContext": {
+          "privileged": false,
+          "allowPrivilegeEscalation": false,
+          "runAsNonRoot": false,
+          "runAsUser": 0,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ],
+            "add": [
+              "SYS_ADMIN"
+            ]
+          },
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ]
+  }
+}

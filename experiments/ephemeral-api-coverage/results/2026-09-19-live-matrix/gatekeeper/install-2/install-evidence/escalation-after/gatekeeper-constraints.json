@@ -1,0 +1,76 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "constraints.gatekeeper.sh/v1beta1",
+            "kind": "K8sPSPAllowPrivilegeEscalationContainer",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"constraints.gatekeeper.sh/v1beta1\",\"kind\":\"K8sPSPAllowPrivilegeEscalationContainer\",\"metadata\":{\"annotations\":{},\"name\":\"psp-allow-privilege-escalation-container\"},\"spec\":{\"match\":{\"kinds\":[{\"apiGroups\":[\"\"],\"kinds\":[\"Pod\"]}]},\"parameters\":{\"exemptImages\":[\"safeimages.com/*\"]}}}\n"
+                },
+                "creationTimestamp": "2026-09-19T13:36:02Z",
+                "generation": 1,
+                "name": "psp-allow-privilege-escalation-container",
+                "resourceVersion": "1295",
+                "uid": "641899f6-0ab7-41d0-882a-f79c52be9035"
+            },
+            "spec": {
+                "enforcementAction": "deny",
+                "match": {
+                    "kinds": [
+                        {
+                            "apiGroups": [
+                                ""
+                            ],
+                            "kinds": [
+                                "Pod"
+                            ]
+                        }
+                    ]
+                },
+                "parameters": {
+                    "exemptImages": [
+                        "safeimages.com/*"
+                    ]
+                }
+            },
+            "status": {
+                "byPod": [
+                    {
+                        "constraintUID": "641899f6-0ab7-41d0-882a-f79c52be9035",
+                        "enforced": true,
+                        "enforcementPointsStatus": [
+                            {
+                                "enforcementPoint": "vap.k8s.io",
+                                "observedGeneration": 1,
+                                "state": "generated"
+                            }
+                        ],
+                        "id": "gatekeeper-audit-9ff6999d-gf9g9",
+                        "observedGeneration": 1,
+                        "operations": [
+                            "audit",
+                            "generate",
+                            "mutation-status",
+                            "status"
+                        ]
+                    },
+                    {
+                        "constraintUID": "641899f6-0ab7-41d0-882a-f79c52be9035",
+                        "enforced": true,
+                        "id": "gatekeeper-controller-manager-5f968d45f7-kx9ft",
+                        "observedGeneration": 1,
+                        "operations": [
+                            "mutation-webhook",
+                            "webhook"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

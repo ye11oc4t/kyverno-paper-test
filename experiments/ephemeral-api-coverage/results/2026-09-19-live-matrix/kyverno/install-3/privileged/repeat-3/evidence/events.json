@@ -1,0 +1,597 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:24:29Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{base}",
+                "kind": "Pod",
+                "name": "ephemeral-violation-base",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "872",
+                "uid": "c02e695e-da26-4db3-91ab-bcde303a5016"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:24:29Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:24:29Z",
+                "name": "ephemeral-violation-base.18d6bbb0c0b9ee41",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "878",
+                "uid": "7f75e493-589b-4c73-b4a7-79c5ae4375f4"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kyverno-3-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kyverno-3-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:24:29Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{base}",
+                "kind": "Pod",
+                "name": "ephemeral-safe-base",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "866",
+                "uid": "46fb084e-6bee-4e59-8068-4da56ff2cec8"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:24:29Z",
+            "message": "Container image \"registry.k8s.io/pause:3.10\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:24:29Z",
+                "name": "ephemeral-safe-base.18d6bbb0bd7b6135",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "875",
+                "uid": "7efc5a9c-4463-4424-b3c6-8bc18a6c40b7"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kyverno-3-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kyverno-3-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:24:29Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{base}",
+                "kind": "Pod",
+                "name": "ephemeral-safe-base",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "866",
+                "uid": "46fb084e-6bee-4e59-8068-4da56ff2cec8"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:24:29Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:24:29Z",
+                "name": "ephemeral-safe-base.18d6bbb0bfd57601",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "877",
+                "uid": "51ce0386-2d3a-4c77-9a45-d1ffed8c2f71"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kyverno-3-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kyverno-3-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:24:29Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{base}",
+                "kind": "Pod",
+                "name": "ephemeral-safe-base",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "866",
+                "uid": "46fb084e-6bee-4e59-8068-4da56ff2cec8"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:24:29Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:24:29Z",
+                "name": "ephemeral-safe-base.18d6bbb0c41ee6ad",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "879",
+                "uid": "e9e69cd3-acfc-4912-89c6-3df206a03efd"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kyverno-3-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kyverno-3-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:24:29Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "ephemeral-safe-base",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "865",
+                "uid": "46fb084e-6bee-4e59-8068-4da56ff2cec8"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:24:29Z",
+            "message": "Successfully assigned live-ky-3-pri-3/ephemeral-safe-base to live-kyverno-3-control-plane",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:24:29Z",
+                "name": "ephemeral-safe-base.18d6bbb0b5993d15",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "868",
+                "uid": "9a3901ce-a1dd-44ea-a439-f7b88e8668f8"
+            },
+            "reason": "Scheduled",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:24:29Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{base}",
+                "kind": "Pod",
+                "name": "ephemeral-violation-base",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "872",
+                "uid": "c02e695e-da26-4db3-91ab-bcde303a5016"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:24:29Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:24:29Z",
+                "name": "ephemeral-violation-base.18d6bbb0c4bde021",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "880",
+                "uid": "5269904a-9b33-40dc-8f94-bb9916302339"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kyverno-3-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kyverno-3-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:24:29Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "ephemeral-violation-base",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "869",
+                "uid": "c02e695e-da26-4db3-91ab-bcde303a5016"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:24:29Z",
+            "message": "Successfully assigned live-ky-3-pri-3/ephemeral-violation-base to live-kyverno-3-control-plane",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:24:29Z",
+                "name": "ephemeral-violation-base.18d6bbb0b6d7f26f",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "873",
+                "uid": "49d06e74-e48c-4936-b7c6-2c7d2d42ff93"
+            },
+            "reason": "Scheduled",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:24:29Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{base}",
+                "kind": "Pod",
+                "name": "ephemeral-violation-base",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "872",
+                "uid": "c02e695e-da26-4db3-91ab-bcde303a5016"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:24:29Z",
+            "message": "Container image \"registry.k8s.io/pause:3.10\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:24:29Z",
+                "name": "ephemeral-violation-base.18d6bbb0be083f4a",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "876",
+                "uid": "347d1409-745a-4e21-ae03-03b3761163ad"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kyverno-3-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kyverno-3-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:24:30Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "ordinary-safe",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "884",
+                "uid": "f1c382ec-02a8-45c9-94c1-9141969527df"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:24:30Z",
+            "message": "Successfully assigned live-ky-3-pri-3/ordinary-safe to live-kyverno-3-control-plane",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:24:30Z",
+                "name": "ordinary-safe.18d6bbb10762d7c9",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "886",
+                "uid": "c46fe62f-56b3-43e1-8210-7bab41450271"
+            },
+            "reason": "Scheduled",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:24:31Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.ephemeralContainers{debug-safe}",
+                "kind": "Pod",
+                "name": "ephemeral-safe-base",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "866",
+                "uid": "46fb084e-6bee-4e59-8068-4da56ff2cec8"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:24:31Z",
+            "message": "Container image \"busybox:1.36.1\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:24:31Z",
+                "name": "ephemeral-safe-base.18d6bbb124e5c7c9",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "895",
+                "uid": "971f0450-929f-4811-85cb-dbcc74cad6b1"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kyverno-3-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kyverno-3-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:24:31Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.ephemeralContainers{debug-safe}",
+                "kind": "Pod",
+                "name": "ephemeral-safe-base",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "866",
+                "uid": "46fb084e-6bee-4e59-8068-4da56ff2cec8"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:24:31Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:24:31Z",
+                "name": "ephemeral-safe-base.18d6bbb12bbdbdc5",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "902",
+                "uid": "f8d0c6a6-0e2e-4abf-b88c-ccae464f27c9"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kyverno-3-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kyverno-3-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:24:31Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.ephemeralContainers{debug-violation}",
+                "kind": "Pod",
+                "name": "ephemeral-violation-base",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "872",
+                "uid": "c02e695e-da26-4db3-91ab-bcde303a5016"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:24:31Z",
+            "message": "Container image \"busybox:1.36.1\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:24:31Z",
+                "name": "ephemeral-violation-base.18d6bbb124e5f05d",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "897",
+                "uid": "6e6931d2-6c54-4a5f-868a-d9b569fe9eaf"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kyverno-3-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kyverno-3-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:24:31Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.ephemeralContainers{debug-violation}",
+                "kind": "Pod",
+                "name": "ephemeral-violation-base",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "872",
+                "uid": "c02e695e-da26-4db3-91ab-bcde303a5016"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:24:31Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:24:31Z",
+                "name": "ephemeral-violation-base.18d6bbb1280880a2",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "901",
+                "uid": "0c28030b-aec3-428c-b121-6d2270c9b4e2"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kyverno-3-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kyverno-3-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:24:31Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.ephemeralContainers{debug-violation}",
+                "kind": "Pod",
+                "name": "ephemeral-violation-base",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "872",
+                "uid": "c02e695e-da26-4db3-91ab-bcde303a5016"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:24:31Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:24:31Z",
+                "name": "ephemeral-violation-base.18d6bbb12bbf87e6",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "903",
+                "uid": "482038e2-481c-4780-8b72-c8e13981b28b"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kyverno-3-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kyverno-3-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:24:31Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.ephemeralContainers{debug-safe}",
+                "kind": "Pod",
+                "name": "ephemeral-safe-base",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "866",
+                "uid": "46fb084e-6bee-4e59-8068-4da56ff2cec8"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:24:31Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:24:31Z",
+                "name": "ephemeral-safe-base.18d6bbb1277aa02c",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "900",
+                "uid": "7906aa59-a7ba-49b8-af63-ce935e441db1"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kyverno-3-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kyverno-3-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:24:31Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{main-safe}",
+                "kind": "Pod",
+                "name": "ordinary-safe",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "885",
+                "uid": "f1c382ec-02a8-45c9-94c1-9141969527df"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:24:31Z",
+            "message": "Container image \"busybox:1.36.1\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:24:31Z",
+                "name": "ordinary-safe.18d6bbb10df7c1dc",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "889",
+                "uid": "21ef40bd-bca4-48d3-836e-fd676b2dfad0"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kyverno-3-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kyverno-3-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:24:31Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{main-safe}",
+                "kind": "Pod",
+                "name": "ordinary-safe",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "885",
+                "uid": "f1c382ec-02a8-45c9-94c1-9141969527df"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:24:31Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:24:31Z",
+                "name": "ordinary-safe.18d6bbb10fe54eaf",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "890",
+                "uid": "f3271e04-af73-4f3b-a333-2a8795287a9e"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kyverno-3-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kyverno-3-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:24:31Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{main-safe}",
+                "kind": "Pod",
+                "name": "ordinary-safe",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "885",
+                "uid": "f1c382ec-02a8-45c9-94c1-9141969527df"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:24:31Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:24:31Z",
+                "name": "ordinary-safe.18d6bbb113fe86e4",
+                "namespace": "live-ky-3-pri-3",
+                "resourceVersion": "892",
+                "uid": "5dbfd625-7ae3-46ca-9969-c6405c203de4"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kyverno-3-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kyverno-3-control-plane"
+            },
+            "type": "Normal"
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

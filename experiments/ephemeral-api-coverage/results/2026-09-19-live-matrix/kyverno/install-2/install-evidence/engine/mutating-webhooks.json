@@ -1,0 +1,149 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "admissionregistration.k8s.io/v1",
+            "kind": "MutatingWebhookConfiguration",
+            "metadata": {
+                "annotations": {
+                    "admissions.enforcer/disabled": "true"
+                },
+                "creationTimestamp": "2026-09-19T13:21:03Z",
+                "generation": 1,
+                "labels": {
+                    "webhook.kyverno.io/managed-by": "kyverno"
+                },
+                "name": "kyverno-policy-mutating-webhook-cfg",
+                "resourceVersion": "683",
+                "uid": "e6a8243b-f192-4df4-8d0e-cc2e1330c917"
+            },
+            "webhooks": [
+                {
+                    "admissionReviewVersions": [
+                        "v1"
+                    ],
+                    "clientConfig": {
+                        "caBundle": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM3VENDQWRXZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFZTVJZd0ZBWURWUVFEREEwcUxtdDUKZG1WeWJtOHVjM1pqTUI0WERUSTJNRGt4T1RFeU1qRXdNMW9YRFRJM01Ea3hPVEV6TWpFd00xb3dHREVXTUJRRwpBMVVFQXd3TktpNXJlWFpsY201dkxuTjJZekNDQVNJd0RRWUpLb1pJaHZjTkFRRUJCUUFEZ2dFUEFEQ0NBUW9DCmdnRUJBTStoejJEMklhUzk4U0F1Ykc2eEFBOGVObURNUS8wdWoycDU1eHpVMFM5akRDOHdEdkZ1dTZlVVE1RFEKNGNwUkpUSDRjRGRrL0tmSzU0Q1ZHblNwdFhHajRkZlBQdkppVzBhZHRNNGk5WjRkZmluYTBiUlQwdXlmdkM4VgpLM2V0blZpSjQ0U2tKU2ZuSk9nUmtVZXBld2l5azlTMU5ZTXovNUJYbE5sSmRxc1IxZzBrVGJncEZBbVI1NE5BCnNmSmRpMWRNTm1veUN2OExKQ2pMTTRGRklzSmhMYnhPMzdkNVE3UDE2UnRUQUUwYlc3b0ZBdW1RT0N1dGh3aTAKdlkvdEpab28yWlVBamlad2drU0RZK2x4bGxBUjdlZ3lOaWR6ZjJyM1NuSDJrUVBKMlJ1RmFicmVnTGk2RXpQWApYMjBFNStmS0NGOCswSW9sS1Nwa3JFN2Z5YjBDQXdFQUFhTkNNRUF3RGdZRFZSMFBBUUgvQkFRREFnS2tNQThHCkExVWRFd0VCL3dRRk1BTUJBZjh3SFFZRFZSME9CQllFRkM0K25MTW9qc3JjSzZOejNyckdIZEtQMEUxa01BMEcKQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUFQZmY3c00xQUczMVdFMStnamU4R3RMeituSHgwZmRsZ215SzlEY1JiTApXdTRaVCt5TzhPQ3lOMzZBeVJEUENkWHoxK0paaU40MDJTZGpNajlyVGhLbHB0ZW9hL3RhNERGTExZRitIVkpuCkQxTXhlWG9WNVRZMG4wQ3EycnJINGtiL2hzbWRka1F4U2M5ek9WNFkvdmtpTXR5bkhrVDlZQXhNMWsyYzNPcW8KZ29VOUxsVHc4Mk9kV0FHaUtRRlpRbTIwaGE5SDVmakRaL2NnaEdjbHd1OUhtcXJpOGNrSHBLS1pUc1BvQWhmRgpLSmkrOHRuVW8xL2RqeVZDak1RckN0NzVyWUFXTWpFT3NCU3J3UU84dzVib1Uyc2t0Smx2aTVPdmZhRUV5RG1xCllRK0RVdGc2ZWVtRU5Lcm02RlpQblBiT080VTJ3NytKNDZadjB3Z2ljTENpCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+                        "service": {
+                            "name": "kyverno-svc",
+                            "namespace": "kyverno",
+                            "path": "/policymutate",
+                            "port": 443
+                        }
+                    },
+                    "failurePolicy": "Fail",
+                    "matchPolicy": "Equivalent",
+                    "name": "mutate-policy.kyverno.svc",
+                    "namespaceSelector": {},
+                    "objectSelector": {},
+                    "reinvocationPolicy": "IfNeeded",
+                    "rules": [
+                        {
+                            "apiGroups": [
+                                "kyverno.io"
+                            ],
+                            "apiVersions": [
+                                "v1",
+                                "v2beta1"
+                            ],
+                            "operations": [
+                                "CREATE",
+                                "UPDATE"
+                            ],
+                            "resources": [
+                                "clusterpolicies",
+                                "policies"
+                            ],
+                            "scope": "*"
+                        }
+                    ],
+                    "sideEffects": "NoneOnDryRun",
+                    "timeoutSeconds": 10
+                }
+            ]
+        },
+        {
+            "apiVersion": "admissionregistration.k8s.io/v1",
+            "kind": "MutatingWebhookConfiguration",
+            "metadata": {
+                "annotations": {
+                    "admissions.enforcer/disabled": "true"
+                },
+                "creationTimestamp": "2026-09-19T13:21:03Z",
+                "generation": 1,
+                "labels": {
+                    "webhook.kyverno.io/managed-by": "kyverno"
+                },
+                "name": "kyverno-resource-mutating-webhook-cfg",
+                "resourceVersion": "685",
+                "uid": "181e8fb9-d8db-429d-846e-36bbd843c44b"
+            }
+        },
+        {
+            "apiVersion": "admissionregistration.k8s.io/v1",
+            "kind": "MutatingWebhookConfiguration",
+            "metadata": {
+                "annotations": {
+                    "admissions.enforcer/disabled": "true"
+                },
+                "creationTimestamp": "2026-09-19T13:21:03Z",
+                "generation": 1,
+                "labels": {
+                    "webhook.kyverno.io/managed-by": "kyverno"
+                },
+                "name": "kyverno-verify-mutating-webhook-cfg",
+                "resourceVersion": "687",
+                "uid": "6fd99e00-0a93-4906-bd0e-6035c72a626a"
+            },
+            "webhooks": [
+                {
+                    "admissionReviewVersions": [
+                        "v1"
+                    ],
+                    "clientConfig": {
+                        "caBundle": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM3VENDQWRXZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFZTVJZd0ZBWURWUVFEREEwcUxtdDUKZG1WeWJtOHVjM1pqTUI0WERUSTJNRGt4T1RFeU1qRXdNMW9YRFRJM01Ea3hPVEV6TWpFd00xb3dHREVXTUJRRwpBMVVFQXd3TktpNXJlWFpsY201dkxuTjJZekNDQVNJd0RRWUpLb1pJaHZjTkFRRUJCUUFEZ2dFUEFEQ0NBUW9DCmdnRUJBTStoejJEMklhUzk4U0F1Ykc2eEFBOGVObURNUS8wdWoycDU1eHpVMFM5akRDOHdEdkZ1dTZlVVE1RFEKNGNwUkpUSDRjRGRrL0tmSzU0Q1ZHblNwdFhHajRkZlBQdkppVzBhZHRNNGk5WjRkZmluYTBiUlQwdXlmdkM4VgpLM2V0blZpSjQ0U2tKU2ZuSk9nUmtVZXBld2l5azlTMU5ZTXovNUJYbE5sSmRxc1IxZzBrVGJncEZBbVI1NE5BCnNmSmRpMWRNTm1veUN2OExKQ2pMTTRGRklzSmhMYnhPMzdkNVE3UDE2UnRUQUUwYlc3b0ZBdW1RT0N1dGh3aTAKdlkvdEpab28yWlVBamlad2drU0RZK2x4bGxBUjdlZ3lOaWR6ZjJyM1NuSDJrUVBKMlJ1RmFicmVnTGk2RXpQWApYMjBFNStmS0NGOCswSW9sS1Nwa3JFN2Z5YjBDQXdFQUFhTkNNRUF3RGdZRFZSMFBBUUgvQkFRREFnS2tNQThHCkExVWRFd0VCL3dRRk1BTUJBZjh3SFFZRFZSME9CQllFRkM0K25MTW9qc3JjSzZOejNyckdIZEtQMEUxa01BMEcKQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUFQZmY3c00xQUczMVdFMStnamU4R3RMeituSHgwZmRsZ215SzlEY1JiTApXdTRaVCt5TzhPQ3lOMzZBeVJEUENkWHoxK0paaU40MDJTZGpNajlyVGhLbHB0ZW9hL3RhNERGTExZRitIVkpuCkQxTXhlWG9WNVRZMG4wQ3EycnJINGtiL2hzbWRka1F4U2M5ek9WNFkvdmtpTXR5bkhrVDlZQXhNMWsyYzNPcW8KZ29VOUxsVHc4Mk9kV0FHaUtRRlpRbTIwaGE5SDVmakRaL2NnaEdjbHd1OUhtcXJpOGNrSHBLS1pUc1BvQWhmRgpLSmkrOHRuVW8xL2RqeVZDak1RckN0NzVyWUFXTWpFT3NCU3J3UU84dzVib1Uyc2t0Smx2aTVPdmZhRUV5RG1xCllRK0RVdGc2ZWVtRU5Lcm02RlpQblBiT080VTJ3NytKNDZadjB3Z2ljTENpCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+                        "service": {
+                            "name": "kyverno-svc",
+                            "namespace": "kyverno",
+                            "path": "/verifymutate",
+                            "port": 443
+                        }
+                    },
+                    "failurePolicy": "Ignore",
+                    "matchPolicy": "Equivalent",
+                    "name": "monitor-webhooks.kyverno.svc",
+                    "namespaceSelector": {},
+                    "objectSelector": {
+                        "matchLabels": {
+                            "app.kubernetes.io/name": "kyverno"
+                        }
+                    },
+                    "reinvocationPolicy": "IfNeeded",
+                    "rules": [
+                        {
+                            "apiGroups": [
+                                "coordination.k8s.io"
+                            ],
+                            "apiVersions": [
+                                "v1"
+                            ],
+                            "operations": [
+                                "UPDATE"
+                            ],
+                            "resources": [
+                                "leases"
+                            ],
+                            "scope": "*"
+                        }
+                    ],
+                    "sideEffects": "NoneOnDryRun",
+                    "timeoutSeconds": 10
+                }
+            ]
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

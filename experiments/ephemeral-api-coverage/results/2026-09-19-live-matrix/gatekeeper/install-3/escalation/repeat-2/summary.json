@@ -1,0 +1,41 @@
+{
+  "product": "gatekeeper",
+  "install": 3,
+  "family": "escalation",
+  "repeat": 2,
+  "namespace": "live-ga-3-esc-2",
+  "httpStatus": {
+    "ordinarySafe": 201,
+    "ordinaryViolation": 422,
+    "ephemeralSafe": 200,
+    "ephemeralViolation": 200
+  },
+  "persisted": {
+    "ordinarySafe": true,
+    "ordinaryViolation": false,
+    "ephemeralSafe": true,
+    "ephemeralViolation": true
+  },
+  "runtime": {
+    "ordinarySafe": {
+      "state": "Running",
+      "capEff": "0000000000000000",
+      "noNewPrivs": "1"
+    },
+    "ordinaryViolation": {
+      "state": "NotAdmitted",
+      "capEff": "",
+      "noNewPrivs": ""
+    },
+    "ephemeralSafe": {
+      "state": "Running",
+      "capEff": "0000000000000000",
+      "noNewPrivs": "1"
+    },
+    "ephemeralViolation": {
+      "state": "Running",
+      "capEff": "0000000000000000",
+      "noNewPrivs": "0"
+    }
+  }
+}

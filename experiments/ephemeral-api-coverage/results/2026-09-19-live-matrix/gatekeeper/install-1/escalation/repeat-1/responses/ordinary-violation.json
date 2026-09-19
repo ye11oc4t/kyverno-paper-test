@@ -1,0 +1,18 @@
+{
+  "kind": "Status",
+  "apiVersion": "v1",
+  "metadata": {},
+  "status": "Failure",
+  "message": "pods \"ordinary-violation\" is forbidden: ValidatingAdmissionPolicy 'gatekeeper-k8spspallowprivilegeescalationcontainer' with binding 'gatekeeper-k8spspallowprivilegeescalationcontainer-psp-allow-privilege-escalation-container' denied request: Privilege escalation container is not allowed: busybox:1.36.1",
+  "reason": "Invalid",
+  "details": {
+    "name": "ordinary-violation",
+    "kind": "pods",
+    "causes": [
+      {
+        "message": "ValidatingAdmissionPolicy 'gatekeeper-k8spspallowprivilegeescalationcontainer' with binding 'gatekeeper-k8spspallowprivilegeescalationcontainer-psp-allow-privilege-escalation-container' denied request: Privilege escalation container is not allowed: busybox:1.36.1"
+      }
+    ]
+  },
+  "code": 422
+}

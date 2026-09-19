@@ -1,0 +1,86 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "policies.kubewarden.io/v1",
+            "kind": "PolicyServer",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:44:03Z",
+                "finalizers": [
+                    "kubewarden.io/finalizer"
+                ],
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/component": "policy-server",
+                    "app.kubernetes.io/instance": "admission-controller",
+                    "app.kubernetes.io/managed-by": "kubewarden-controller",
+                    "app.kubernetes.io/name": "admission-controller",
+                    "app.kubernetes.io/part-of": "kubewarden",
+                    "app.kubernetes.io/version": "v1.37.2",
+                    "helm.sh/chart": "admission-controller-6.0.2",
+                    "kubewarden.io/managed-by": "kubewarden-controller-defaults"
+                },
+                "name": "default",
+                "resourceVersion": "615",
+                "uid": "b416c7f2-c51b-4562-afcb-11774457c1bc"
+            },
+            "spec": {
+                "env": [
+                    {
+                        "name": "KUBEWARDEN_LOG_LEVEL",
+                        "value": "info"
+                    }
+                ],
+                "image": "ghcr.io/kubewarden/adm-controller/policy-server:v1.37.2",
+                "namespacedPoliciesCapabilities": [
+                    "*"
+                ],
+                "replicas": 1,
+                "serviceAccountName": "policy-server"
+            },
+            "status": {
+                "conditions": [
+                    {
+                        "lastTransitionTime": "2026-09-19T13:44:03Z",
+                        "message": "",
+                        "reason": "ReconciliationSucceeded",
+                        "status": "True",
+                        "type": "CertSecretReconciled"
+                    },
+                    {
+                        "lastTransitionTime": "2026-09-19T13:44:03Z",
+                        "message": "",
+                        "reason": "ReconciliationSucceeded",
+                        "status": "True",
+                        "type": "ConfigMapReconciled"
+                    },
+                    {
+                        "lastTransitionTime": "2026-09-19T13:44:03Z",
+                        "message": "",
+                        "reason": "ReconciliationSucceeded",
+                        "status": "True",
+                        "type": "PodDisruptionBudgetReconciled"
+                    },
+                    {
+                        "lastTransitionTime": "2026-09-19T13:44:03Z",
+                        "message": "",
+                        "reason": "ReconciliationSucceeded",
+                        "status": "True",
+                        "type": "DeploymentReconciled"
+                    },
+                    {
+                        "lastTransitionTime": "2026-09-19T13:44:03Z",
+                        "message": "",
+                        "reason": "ReconciliationSucceeded",
+                        "status": "True",
+                        "type": "ServiceReconciled"
+                    }
+                ]
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

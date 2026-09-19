@@ -1,0 +1,41 @@
+{
+  "product": "kubewarden",
+  "install": 1,
+  "family": "escalation",
+  "repeat": 5,
+  "namespace": "live-ku-1-esc-5",
+  "httpStatus": {
+    "ordinarySafe": 201,
+    "ordinaryViolation": 400,
+    "ephemeralSafe": 200,
+    "ephemeralViolation": 200
+  },
+  "persisted": {
+    "ordinarySafe": true,
+    "ordinaryViolation": false,
+    "ephemeralSafe": true,
+    "ephemeralViolation": true
+  },
+  "runtime": {
+    "ordinarySafe": {
+      "state": "Running",
+      "capEff": "0000000000000000",
+      "noNewPrivs": "1"
+    },
+    "ordinaryViolation": {
+      "state": "NotAdmitted",
+      "capEff": "",
+      "noNewPrivs": ""
+    },
+    "ephemeralSafe": {
+      "state": "Running",
+      "capEff": "0000000000000000",
+      "noNewPrivs": "1"
+    },
+    "ephemeralViolation": {
+      "state": "Running",
+      "capEff": "0000000000000000",
+      "noNewPrivs": "0"
+    }
+  }
+}

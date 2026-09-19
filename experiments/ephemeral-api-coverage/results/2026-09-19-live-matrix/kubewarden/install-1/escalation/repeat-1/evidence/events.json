@@ -1,0 +1,597 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:45:48Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{base}",
+                "kind": "Pod",
+                "name": "ephemeral-violation-base",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1342",
+                "uid": "7d373864-144d-406d-879f-403ccd43c843"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:45:48Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:45:48Z",
+                "name": "ephemeral-violation-base.18d6bcda7fb70c5c",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1352",
+                "uid": "3a6ce48b-836a-470b-ba75-e4c12c7ebf99"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kubewarden-1-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kubewarden-1-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:45:48Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{base}",
+                "kind": "Pod",
+                "name": "ephemeral-safe-base",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1339",
+                "uid": "76955550-72d8-4b02-8ee9-57cfa146657f"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:45:48Z",
+            "message": "Container image \"registry.k8s.io/pause:3.10\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:45:48Z",
+                "name": "ephemeral-safe-base.18d6bcda77ee2c68",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1346",
+                "uid": "8b436c37-cea1-4f82-8124-4d105b0647b7"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kubewarden-1-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kubewarden-1-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:45:48Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{base}",
+                "kind": "Pod",
+                "name": "ephemeral-safe-base",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1339",
+                "uid": "76955550-72d8-4b02-8ee9-57cfa146657f"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:45:48Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:45:48Z",
+                "name": "ephemeral-safe-base.18d6bcda7c19e507",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1348",
+                "uid": "8ae3216e-ee34-4f2a-bb5b-498ced432322"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kubewarden-1-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kubewarden-1-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:45:48Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{base}",
+                "kind": "Pod",
+                "name": "ephemeral-safe-base",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1339",
+                "uid": "76955550-72d8-4b02-8ee9-57cfa146657f"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:45:48Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:45:48Z",
+                "name": "ephemeral-safe-base.18d6bcda7fb70c78",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1351",
+                "uid": "c0f0cfbe-ec7a-43a0-a2fb-c6909ebc559a"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kubewarden-1-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kubewarden-1-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:45:48Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "ephemeral-safe-base",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1338",
+                "uid": "76955550-72d8-4b02-8ee9-57cfa146657f"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:45:48Z",
+            "message": "Successfully assigned live-ku-1-esc-1/ephemeral-safe-base to live-kubewarden-1-control-plane",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:45:48Z",
+                "name": "ephemeral-safe-base.18d6bcda6dbdfbba",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1341",
+                "uid": "a0f807bf-56db-4c1b-92f0-21ae5cb6cebd"
+            },
+            "reason": "Scheduled",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:45:48Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "ephemeral-violation-base",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1340",
+                "uid": "7d373864-144d-406d-879f-403ccd43c843"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:45:48Z",
+            "message": "Successfully assigned live-ku-1-esc-1/ephemeral-violation-base to live-kubewarden-1-control-plane",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:45:48Z",
+                "name": "ephemeral-violation-base.18d6bcda6f1fa102",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1344",
+                "uid": "d31f03df-3faf-4ab6-92ec-0b0658a694e7"
+            },
+            "reason": "Scheduled",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:45:48Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{base}",
+                "kind": "Pod",
+                "name": "ephemeral-violation-base",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1342",
+                "uid": "7d373864-144d-406d-879f-403ccd43c843"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:45:48Z",
+            "message": "Container image \"registry.k8s.io/pause:3.10\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:45:48Z",
+                "name": "ephemeral-violation-base.18d6bcda78d9823a",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1347",
+                "uid": "f019cae7-4167-4861-887f-952da68df251"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kubewarden-1-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kubewarden-1-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:45:48Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{base}",
+                "kind": "Pod",
+                "name": "ephemeral-violation-base",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1342",
+                "uid": "7d373864-144d-406d-879f-403ccd43c843"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:45:48Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:45:48Z",
+                "name": "ephemeral-violation-base.18d6bcda7cfb3a18",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1349",
+                "uid": "f6a15f55-976c-4d21-970b-aa9fdeea610a"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kubewarden-1-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kubewarden-1-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:45:49Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{main-safe}",
+                "kind": "Pod",
+                "name": "ordinary-safe",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1358",
+                "uid": "0690cab7-7c92-41ce-8f39-8c0151b1ce80"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:45:49Z",
+            "message": "Container image \"busybox:1.36.1\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:45:49Z",
+                "name": "ordinary-safe.18d6bcdad5811fcf",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1361",
+                "uid": "96383997-107e-41a5-9168-491375e763ab"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kubewarden-1-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kubewarden-1-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:45:49Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "ordinary-safe",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1357",
+                "uid": "0690cab7-7c92-41ce-8f39-8c0151b1ce80"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:45:49Z",
+            "message": "Successfully assigned live-ku-1-esc-1/ordinary-safe to live-kubewarden-1-control-plane",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:45:49Z",
+                "name": "ordinary-safe.18d6bcdaccbd7478",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1359",
+                "uid": "cd7632f0-d61e-4283-9ada-cf073ac14760"
+            },
+            "reason": "Scheduled",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:45:50Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.ephemeralContainers{debug-safe}",
+                "kind": "Pod",
+                "name": "ephemeral-safe-base",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1339",
+                "uid": "76955550-72d8-4b02-8ee9-57cfa146657f"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:45:50Z",
+            "message": "Container image \"busybox:1.36.1\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:45:50Z",
+                "name": "ephemeral-safe-base.18d6bcdaeba5e9fa",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1368",
+                "uid": "798b5a8a-df67-4518-b732-747c9b9fba50"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kubewarden-1-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kubewarden-1-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:45:50Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.ephemeralContainers{debug-violation}",
+                "kind": "Pod",
+                "name": "ephemeral-violation-base",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1342",
+                "uid": "7d373864-144d-406d-879f-403ccd43c843"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:45:50Z",
+            "message": "Container image \"busybox:1.36.1\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:45:50Z",
+                "name": "ephemeral-violation-base.18d6bcdaeba2bf41",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1366",
+                "uid": "ee6b8b8a-133c-4596-96f5-d788475a1dea"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kubewarden-1-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kubewarden-1-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:45:50Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.ephemeralContainers{debug-violation}",
+                "kind": "Pod",
+                "name": "ephemeral-violation-base",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1342",
+                "uid": "7d373864-144d-406d-879f-403ccd43c843"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:45:50Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:45:50Z",
+                "name": "ephemeral-violation-base.18d6bcdaef4eeaf2",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1371",
+                "uid": "6400a4dd-1d0f-4dc4-85de-42591fd54031"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kubewarden-1-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kubewarden-1-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:45:50Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.ephemeralContainers{debug-violation}",
+                "kind": "Pod",
+                "name": "ephemeral-violation-base",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1342",
+                "uid": "7d373864-144d-406d-879f-403ccd43c843"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:45:50Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:45:50Z",
+                "name": "ephemeral-violation-base.18d6bcdaf3608a39",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1373",
+                "uid": "9959408a-b9fe-4b44-8171-f151048825fb"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kubewarden-1-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kubewarden-1-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:45:50Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.ephemeralContainers{debug-safe}",
+                "kind": "Pod",
+                "name": "ephemeral-safe-base",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1339",
+                "uid": "76955550-72d8-4b02-8ee9-57cfa146657f"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:45:50Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:45:50Z",
+                "name": "ephemeral-safe-base.18d6bcdaf3a68e35",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1374",
+                "uid": "50200634-4295-49d7-a82c-a349d4ac4bc2"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kubewarden-1-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kubewarden-1-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:45:50Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.ephemeralContainers{debug-safe}",
+                "kind": "Pod",
+                "name": "ephemeral-safe-base",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1339",
+                "uid": "76955550-72d8-4b02-8ee9-57cfa146657f"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:45:50Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:45:50Z",
+                "name": "ephemeral-safe-base.18d6bcdaf00828e5",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1372",
+                "uid": "e55a7e35-c48e-4663-af5c-8753c0d96bee"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kubewarden-1-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kubewarden-1-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:45:50Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{main-safe}",
+                "kind": "Pod",
+                "name": "ordinary-safe",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1358",
+                "uid": "0690cab7-7c92-41ce-8f39-8c0151b1ce80"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:45:50Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:45:50Z",
+                "name": "ordinary-safe.18d6bcdad85e4fca",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1363",
+                "uid": "c7b374b7-7a5a-4c99-b620-617059f8825c"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kubewarden-1-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kubewarden-1-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-19T13:45:50Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{main-safe}",
+                "kind": "Pod",
+                "name": "ordinary-safe",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1358",
+                "uid": "0690cab7-7c92-41ce-8f39-8c0151b1ce80"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-19T13:45:50Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-09-19T13:45:50Z",
+                "name": "ordinary-safe.18d6bcdadca74f6f",
+                "namespace": "live-ku-1-esc-1",
+                "resourceVersion": "1365",
+                "uid": "22926287-a565-4746-aaef-9c7090509ccf"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "live-kubewarden-1-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "live-kubewarden-1-control-plane"
+            },
+            "type": "Normal"
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}
