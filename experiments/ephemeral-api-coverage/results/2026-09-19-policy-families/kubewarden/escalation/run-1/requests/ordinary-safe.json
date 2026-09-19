@@ -1,0 +1,1 @@
+{"apiVersion":"v1","kind":"Pod","metadata":{"name":"ordinary-safe","namespace":"policy-family-test"},"spec":{"automountServiceAccountToken":false,"restartPolicy":"Never","containers":[{"name":"safe","image":"registry.k8s.io/pause:3.10","securityContext":{"allowPrivilegeEscalation":false,"capabilities":{"drop":["ALL"]}}}]}}

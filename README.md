@@ -2,13 +2,14 @@
 
 Shared Git project for running and validating Kyverno paper experiments across Codex hosts.
 
-Current research: effective policy coverage across Kubernetes API routes, operations, object traversal, and public policy bundles. The strongest source-derived candidate is a persistent Ephemeral Container false negative across Kyverno, Gatekeeper, Kubewarden, and Polaris for different implementation reasons. Other high-value candidates include OCI image volumes omitted from image trust policies and native sidecars omitted from resource checks. No new experiment has been executed for these candidates yet.
+Current research: effective policy coverage across Kubernetes API routes, operations, object traversal, and public policy bundles. Experiments reproduced Ephemeral Container false negatives across Kyverno, Gatekeeper, and Kubewarden, verified actual runtime execution, tested Kubernetes-native controls, and isolated fixes across privileged, privilege-escalation, and capability policies. Other high-value candidates include OCI image volumes omitted from image trust policies and native sidecars omitted from resource checks.
 
 - [Policy gap candidates, ranking, and source evidence (Korean)](research/policy-gap-candidates/REPORT.ko.md)
 - [Candidate experiment designs only (Korean)](research/policy-gap-candidates/EXPERIMENT-DESIGNS.ko.md)
 - [Three-tool Ephemeral Container API-only experiment design (Korean)](research/policy-gap-candidates/EPHEMERAL-API-EXPERIMENT.ko.md)
 - [Three-tool Ephemeral Container experiment results (Korean)](experiments/ephemeral-api-coverage/REPORT.ko.md)
 - [Three-tool persisted runtime follow-up results (Korean)](experiments/ephemeral-api-coverage/LIVE-REPORT.ko.md)
+- [Kubernetes controls, live fixes, and additional policy families (Korean)](experiments/ephemeral-api-coverage/FOLLOWUP-REPORT.ko.md)
 
 - [Revised research protocol (Korean)](research/ephemeral-policy-consistency/PROTOCOL.ko.md)
 - [Admission consistency pilot: results and interpretation (Korean)](experiments/admission-consistency/REPORT.ko.md)

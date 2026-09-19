@@ -1,0 +1,13 @@
+{
+  "kind": "Status",
+  "apiVersion": "v1",
+  "metadata": {},
+  "status": "Failure",
+  "message": "pods \"baseline\" is forbidden: User \"system:serviceaccount:rbac-control:rbac-runner\" cannot patch resource \"pods/ephemeralcontainers\" in API group \"\" in the namespace \"rbac-control\"",
+  "reason": "Forbidden",
+  "details": {
+    "name": "baseline",
+    "kind": "pods"
+  },
+  "code": 403
+}

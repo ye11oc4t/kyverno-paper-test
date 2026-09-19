@@ -1,0 +1,184 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "policies.kyverno.io/v1",
+            "kind": "ValidatingPolicy",
+            "metadata": {
+                "annotations": {
+                    "kyverno.io/kubernetes-version": "\u003e=1.25.0-0",
+                    "kyverno.io/kyverno-version": "v1.19.1",
+                    "meta.helm.sh/release-name": "kyverno-policies",
+                    "meta.helm.sh/release-namespace": "kyverno",
+                    "policies.kyverno.io/category": "Pod Security Standards (Restricted)",
+                    "policies.kyverno.io/description": "Adding capabilities other than `NET_BIND_SERVICE` is disallowed. In addition, all containers must explicitly drop `ALL` capabilities.",
+                    "policies.kyverno.io/minversion": "1.6.0",
+                    "policies.kyverno.io/severity": "medium",
+                    "policies.kyverno.io/subject": "Pod",
+                    "policies.kyverno.io/title": "Disallow Capabilities (Strict)"
+                },
+                "creationTimestamp": "2026-09-19T06:21:42Z",
+                "generation": 2,
+                "labels": {
+                    "app.kubernetes.io/component": "kyverno",
+                    "app.kubernetes.io/instance": "kyverno-policies",
+                    "app.kubernetes.io/managed-by": "Helm",
+                    "app.kubernetes.io/name": "kyverno-policies",
+                    "app.kubernetes.io/part-of": "kyverno-policies",
+                    "app.kubernetes.io/version": "3.9.1",
+                    "helm.sh/chart": "kyverno-policies-3.9.1"
+                },
+                "name": "disallow-capabilities-strict",
+                "resourceVersion": "721",
+                "uid": "e31338a3-a9b4-4330-bd85-91f7638fde31"
+            },
+            "spec": {
+                "failurePolicy": "Fail",
+                "matchConstraints": {
+                    "resourceRules": [
+                        {
+                            "apiGroups": [
+                                ""
+                            ],
+                            "apiVersions": [
+                                "v1"
+                            ],
+                            "operations": [
+                                "CREATE",
+                                "UPDATE"
+                            ],
+                            "resources": [
+                                "pods",
+                                "pods/ephemeralcontainers"
+                            ]
+                        }
+                    ]
+                },
+                "validationActions": [
+                    "Deny"
+                ],
+                "validations": [
+                    {
+                        "expression": "(!has(object.spec.containers) || object.spec.containers.all(c, \n  !has(c.securityContext) || \n  !has(c.securityContext.capabilities) || \n  ((!has(c.securityContext.capabilities.drop) || 'ALL' in c.securityContext.capabilities.drop) \u0026\u0026\n   (!has(c.securityContext.capabilities.add) || c.securityContext.capabilities.add.all(cap, cap == 'NET_BIND_SERVICE'))))) \u0026\u0026\n(!has(object.spec.initContainers) || object.spec.initContainers.all(c, \n  !has(c.securityContext) || \n  !has(c.securityContext.capabilities) || \n  ((!has(c.securityContext.capabilities.drop) || 'ALL' in c.securityContext.capabilities.drop) \u0026\u0026\n   (!has(c.securityContext.capabilities.add) || c.securityContext.capabilities.add.all(cap, cap == 'NET_BIND_SERVICE'))))) \u0026\u0026\n(!has(object.spec.ephemeralContainers) || object.spec.ephemeralContainers.all(c, \n  !has(c.securityContext) || \n  !has(c.securityContext.capabilities) || \n  ((!has(c.securityContext.capabilities.drop) || 'ALL' in c.securityContext.capabilities.drop) \u0026\u0026\n   (!has(c.securityContext.capabilities.add) || c.securityContext.capabilities.add.all(cap, cap == 'NET_BIND_SERVICE')))))",
+                        "message": "Containers must drop `ALL` capabilities and may only add `NET_BIND_SERVICE`."
+                    }
+                ]
+            },
+            "status": {
+                "autogen": {},
+                "conditionStatus": {
+                    "conditions": [
+                        {
+                            "lastTransitionTime": "2026-09-19T06:21:42Z",
+                            "message": "Policy is ready for reporting.",
+                            "reason": "Succeeded",
+                            "status": "True",
+                            "type": "RBACPermissionsGranted"
+                        },
+                        {
+                            "lastTransitionTime": "2026-09-19T06:21:42Z",
+                            "message": "Webhook configured.",
+                            "reason": "Succeeded",
+                            "status": "True",
+                            "type": "WebhookConfigured"
+                        }
+                    ],
+                    "message": "",
+                    "ready": true
+                },
+                "generated": false
+            }
+        },
+        {
+            "apiVersion": "policies.kyverno.io/v1",
+            "kind": "ValidatingPolicy",
+            "metadata": {
+                "annotations": {
+                    "kyverno.io/kubernetes-version": "\u003e=1.25.0-0",
+                    "kyverno.io/kyverno-version": "v1.19.1",
+                    "meta.helm.sh/release-name": "kyverno-policies",
+                    "meta.helm.sh/release-namespace": "kyverno",
+                    "policies.kyverno.io/category": "Pod Security Standards (Restricted)",
+                    "policies.kyverno.io/description": "Privilege escalation, such as via set-user-ID or set-group-ID file mode, should not be allowed. This policy ensures the `allowPrivilegeEscalation` field is set to `false`.",
+                    "policies.kyverno.io/severity": "medium",
+                    "policies.kyverno.io/subject": "Pod",
+                    "policies.kyverno.io/title": "Disallow Privilege Escalation"
+                },
+                "creationTimestamp": "2026-09-19T06:21:42Z",
+                "generation": 2,
+                "labels": {
+                    "app.kubernetes.io/component": "kyverno",
+                    "app.kubernetes.io/instance": "kyverno-policies",
+                    "app.kubernetes.io/managed-by": "Helm",
+                    "app.kubernetes.io/name": "kyverno-policies",
+                    "app.kubernetes.io/part-of": "kyverno-policies",
+                    "app.kubernetes.io/version": "3.9.1",
+                    "helm.sh/chart": "kyverno-policies-3.9.1"
+                },
+                "name": "disallow-privilege-escalation",
+                "resourceVersion": "716",
+                "uid": "eb902f50-0d9f-48f4-8f6f-5e2d588e8b2a"
+            },
+            "spec": {
+                "failurePolicy": "Fail",
+                "matchConstraints": {
+                    "resourceRules": [
+                        {
+                            "apiGroups": [
+                                ""
+                            ],
+                            "apiVersions": [
+                                "v1"
+                            ],
+                            "operations": [
+                                "CREATE",
+                                "UPDATE"
+                            ],
+                            "resources": [
+                                "pods",
+                                "pods/ephemeralcontainers"
+                            ]
+                        }
+                    ]
+                },
+                "validationActions": [
+                    "Deny"
+                ],
+                "validations": [
+                    {
+                        "expression": "(!has(object.spec.containers) || object.spec.containers.all(c, \n  has(c.securityContext) \u0026\u0026 \n  has(c.securityContext.allowPrivilegeEscalation) \u0026\u0026 \n  c.securityContext.allowPrivilegeEscalation == false)) \u0026\u0026\n(!has(object.spec.initContainers) || object.spec.initContainers.all(c, \n  has(c.securityContext) \u0026\u0026 \n  has(c.securityContext.allowPrivilegeEscalation) \u0026\u0026 \n  c.securityContext.allowPrivilegeEscalation == false)) \u0026\u0026\n(!has(object.spec.ephemeralContainers) || object.spec.ephemeralContainers.all(c, \n  has(c.securityContext) \u0026\u0026 \n  has(c.securityContext.allowPrivilegeEscalation) \u0026\u0026 \n  c.securityContext.allowPrivilegeEscalation == false))",
+                        "message": "Privilege escalation is disallowed. The fields spec.containers[*].securityContext.allowPrivilegeEscalation, spec.initContainers[*].securityContext.allowPrivilegeEscalation, and spec.ephemeralContainers[*].securityContext.allowPrivilegeEscalation must be set to `false`."
+                    }
+                ]
+            },
+            "status": {
+                "autogen": {},
+                "conditionStatus": {
+                    "conditions": [
+                        {
+                            "lastTransitionTime": "2026-09-19T06:21:42Z",
+                            "message": "Webhook configured.",
+                            "reason": "Succeeded",
+                            "status": "True",
+                            "type": "WebhookConfigured"
+                        },
+                        {
+                            "lastTransitionTime": "2026-09-19T06:21:42Z",
+                            "message": "Policy is ready for reporting.",
+                            "reason": "Succeeded",
+                            "status": "True",
+                            "type": "RBACPermissionsGranted"
+                        }
+                    ],
+                    "message": "",
+                    "ready": true
+                },
+                "generated": false
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

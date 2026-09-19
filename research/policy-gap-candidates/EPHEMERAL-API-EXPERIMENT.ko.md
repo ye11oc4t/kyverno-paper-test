@@ -2,9 +2,9 @@
 
 ## 상태
 
-이 문서는 실행 전 설계다. 아직 클러스터를 만들거나 요청을 보내지 않았으며 결과도 없다. 본 실험은 Kyverno, Gatekeeper, Kubewarden 세 도구를 핵심 비교 대상으로 삼는다. Polaris는 세 도구의 결과를 확인한 뒤 추가 재현 대상으로만 사용한다.
+이 문서는 실행 전에 작성한 설계 보존본이다. 실행 결과는 `experiments/ephemeral-api-coverage/REPORT.ko.md`, 실제 실행 결과는 `LIVE-REPORT.ko.md`, Kubernetes 대조군·최소 수정·추가 정책군 결과는 `FOLLOWUP-REPORT.ko.md`에 기록했다. 본 실험은 Kyverno, Gatekeeper, Kubewarden 세 도구를 핵심 비교 대상으로 삼는다. Polaris는 세 도구의 결과를 확인한 뒤 추가 재현 대상으로만 사용한다.
 
-소스만 보면 세 도구에서 같은 최종 현상, 즉 일반 privileged Pod는 거부하면서 privileged 임시 컨테이너 추가는 허용하는 결과가 예상된다. 그러나 이것은 아직 관찰값이 아니다. 세 도구 모두에서 재현된다는 주장은 아래 실험의 C1과 C3 결과가 나온 뒤에만 한다.
+아래 가설과 기대값은 실행 전에 소스에서 도출한 내용이다. 실제 관찰값과 반증 조건의 판정은 위 결과 보고서에서 분리한다.
 
 ## 연구 질문
 

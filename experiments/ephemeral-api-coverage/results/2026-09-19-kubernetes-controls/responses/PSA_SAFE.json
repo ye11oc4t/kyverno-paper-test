@@ -1,0 +1,327 @@
+{
+  "kind": "Pod",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "baseline",
+    "namespace": "psa-control",
+    "uid": "7fdb4a26-bcbf-446d-8ed0-337e66fa36cf",
+    "resourceVersion": "499",
+    "generation": 2,
+    "creationTimestamp": "2026-09-19T05:57:07Z",
+    "annotations": {
+      "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Pod\",\"metadata\":{\"annotations\":{},\"name\":\"baseline\",\"namespace\":\"psa-control\"},\"spec\":{\"automountServiceAccountToken\":false,\"containers\":[{\"image\":\"registry.k8s.io/pause:3.10\",\"imagePullPolicy\":\"IfNotPresent\",\"name\":\"base\",\"securityContext\":{\"allowPrivilegeEscalation\":false,\"capabilities\":{\"drop\":[\"ALL\"]},\"privileged\":false,\"runAsNonRoot\":true,\"runAsUser\":65532,\"seccompProfile\":{\"type\":\"RuntimeDefault\"}}}]}}\n"
+    },
+    "managedFields": [
+      {
+        "manager": "kubectl-client-side-apply",
+        "operation": "Update",
+        "apiVersion": "v1",
+        "time": "2026-09-19T05:57:07Z",
+        "fieldsType": "FieldsV1",
+        "fieldsV1": {
+          "f:metadata": {
+            "f:annotations": {
+              ".": {},
+              "f:kubectl.kubernetes.io/last-applied-configuration": {}
+            }
+          },
+          "f:spec": {
+            "f:automountServiceAccountToken": {},
+            "f:containers": {
+              "k:{\"name\":\"base\"}": {
+                ".": {},
+                "f:image": {},
+                "f:imagePullPolicy": {},
+                "f:name": {},
+                "f:resources": {},
+                "f:securityContext": {
+                  ".": {},
+                  "f:allowPrivilegeEscalation": {},
+                  "f:capabilities": {
+                    ".": {},
+                    "f:drop": {}
+                  },
+                  "f:privileged": {},
+                  "f:runAsNonRoot": {},
+                  "f:runAsUser": {},
+                  "f:seccompProfile": {
+                    ".": {},
+                    "f:type": {}
+                  }
+                },
+                "f:terminationMessagePath": {},
+                "f:terminationMessagePolicy": {}
+              }
+            },
+            "f:dnsPolicy": {},
+            "f:enableServiceLinks": {},
+            "f:restartPolicy": {},
+            "f:schedulerName": {},
+            "f:securityContext": {},
+            "f:terminationGracePeriodSeconds": {}
+          }
+        }
+      },
+      {
+        "manager": "kubelet",
+        "operation": "Update",
+        "apiVersion": "v1",
+        "time": "2026-09-19T05:57:09Z",
+        "fieldsType": "FieldsV1",
+        "fieldsV1": {
+          "f:status": {
+            "f:conditions": {
+              "k:{\"type\":\"ContainersReady\"}": {
+                ".": {},
+                "f:lastProbeTime": {},
+                "f:lastTransitionTime": {},
+                "f:observedGeneration": {},
+                "f:status": {},
+                "f:type": {}
+              },
+              "k:{\"type\":\"Initialized\"}": {
+                ".": {},
+                "f:lastProbeTime": {},
+                "f:lastTransitionTime": {},
+                "f:observedGeneration": {},
+                "f:status": {},
+                "f:type": {}
+              },
+              "k:{\"type\":\"PodReadyToStartContainers\"}": {
+                ".": {},
+                "f:lastProbeTime": {},
+                "f:lastTransitionTime": {},
+                "f:observedGeneration": {},
+                "f:status": {},
+                "f:type": {}
+              },
+              "k:{\"type\":\"PodScheduled\"}": {
+                "f:observedGeneration": {}
+              },
+              "k:{\"type\":\"Ready\"}": {
+                ".": {},
+                "f:lastProbeTime": {},
+                "f:lastTransitionTime": {},
+                "f:observedGeneration": {},
+                "f:status": {},
+                "f:type": {}
+              }
+            },
+            "f:containerStatuses": {},
+            "f:hostIP": {},
+            "f:hostIPs": {},
+            "f:observedGeneration": {},
+            "f:phase": {},
+            "f:podIP": {},
+            "f:podIPs": {
+              ".": {},
+              "k:{\"ip\":\"10.244.0.5\"}": {
+                ".": {},
+                "f:ip": {}
+              }
+            },
+            "f:startTime": {}
+          }
+        },
+        "subresource": "status"
+      },
+      {
+        "manager": "curl",
+        "operation": "Update",
+        "apiVersion": "v1",
+        "time": "2026-09-19T05:57:12Z",
+        "fieldsType": "FieldsV1",
+        "fieldsV1": {
+          "f:spec": {
+            "f:ephemeralContainers": {
+              ".": {},
+              "k:{\"name\":\"debug-safe\"}": {
+                ".": {},
+                "f:image": {},
+                "f:imagePullPolicy": {},
+                "f:name": {},
+                "f:resources": {},
+                "f:securityContext": {
+                  ".": {},
+                  "f:allowPrivilegeEscalation": {},
+                  "f:capabilities": {
+                    ".": {},
+                    "f:drop": {}
+                  },
+                  "f:privileged": {},
+                  "f:runAsNonRoot": {},
+                  "f:runAsUser": {},
+                  "f:seccompProfile": {
+                    ".": {},
+                    "f:type": {}
+                  }
+                },
+                "f:terminationMessagePath": {},
+                "f:terminationMessagePolicy": {}
+              }
+            }
+          }
+        },
+        "subresource": "ephemeralcontainers"
+      }
+    ]
+  },
+  "spec": {
+    "containers": [
+      {
+        "name": "base",
+        "image": "registry.k8s.io/pause:3.10",
+        "resources": {},
+        "terminationMessagePath": "/dev/termination-log",
+        "terminationMessagePolicy": "File",
+        "imagePullPolicy": "IfNotPresent",
+        "securityContext": {
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "privileged": false,
+          "runAsUser": 65532,
+          "runAsNonRoot": true,
+          "allowPrivilegeEscalation": false,
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "ephemeralContainers": [
+      {
+        "name": "debug-safe",
+        "image": "registry.k8s.io/pause:3.10",
+        "resources": {},
+        "terminationMessagePath": "/dev/termination-log",
+        "terminationMessagePolicy": "File",
+        "imagePullPolicy": "IfNotPresent",
+        "securityContext": {
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "privileged": false,
+          "runAsUser": 65532,
+          "runAsNonRoot": true,
+          "allowPrivilegeEscalation": false,
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        }
+      }
+    ],
+    "restartPolicy": "Always",
+    "terminationGracePeriodSeconds": 30,
+    "dnsPolicy": "ClusterFirst",
+    "serviceAccountName": "default",
+    "serviceAccount": "default",
+    "automountServiceAccountToken": false,
+    "nodeName": "pg-k8s-controls-control-plane",
+    "securityContext": {},
+    "schedulerName": "default-scheduler",
+    "tolerations": [
+      {
+        "key": "node.kubernetes.io/not-ready",
+        "operator": "Exists",
+        "effect": "NoExecute",
+        "tolerationSeconds": 300
+      },
+      {
+        "key": "node.kubernetes.io/unreachable",
+        "operator": "Exists",
+        "effect": "NoExecute",
+        "tolerationSeconds": 300
+      }
+    ],
+    "priority": 0,
+    "enableServiceLinks": true,
+    "preemptionPolicy": "PreemptLowerPriority"
+  },
+  "status": {
+    "observedGeneration": 1,
+    "phase": "Running",
+    "conditions": [
+      {
+        "type": "PodReadyToStartContainers",
+        "observedGeneration": 1,
+        "status": "True",
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-09-19T05:57:09Z"
+      },
+      {
+        "type": "Initialized",
+        "observedGeneration": 1,
+        "status": "True",
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-09-19T05:57:07Z"
+      },
+      {
+        "type": "Ready",
+        "observedGeneration": 1,
+        "status": "True",
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-09-19T05:57:09Z"
+      },
+      {
+        "type": "ContainersReady",
+        "observedGeneration": 1,
+        "status": "True",
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-09-19T05:57:09Z"
+      },
+      {
+        "type": "PodScheduled",
+        "observedGeneration": 1,
+        "status": "True",
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-09-19T05:57:07Z"
+      }
+    ],
+    "hostIP": "172.18.0.2",
+    "hostIPs": [
+      {
+        "ip": "172.18.0.2"
+      }
+    ],
+    "podIP": "10.244.0.5",
+    "podIPs": [
+      {
+        "ip": "10.244.0.5"
+      }
+    ],
+    "startTime": "2026-09-19T05:57:07Z",
+    "containerStatuses": [
+      {
+        "name": "base",
+        "state": {
+          "running": {
+            "startedAt": "2026-09-19T05:57:08Z"
+          }
+        },
+        "lastState": {},
+        "ready": true,
+        "restartCount": 0,
+        "image": "registry.k8s.io/pause:3.10",
+        "imageID": "sha256:873ed75102791e5b0b8a7fcd41606c92fcec98d56d05ead4ac5131650004c136",
+        "containerID": "containerd://aa15579518ce6c4eeaf29fc4ac08839214ee75be7677ead9a9c80c7d6c0ee458",
+        "started": true,
+        "resources": {},
+        "user": {
+          "linux": {
+            "uid": 65532,
+            "gid": 0,
+            "supplementalGroups": [
+              0
+            ]
+          }
+        }
+      }
+    ],
+    "qosClass": "BestEffort"
+  }
+}

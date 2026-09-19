@@ -8,6 +8,8 @@ Kyverno, Gatekeeper, Kubewarden의 선택한 공개 privileged 정책에서 같�
 
 후속 실제 실행 실험에서는 제품별 새 클러스터 한 개에서 `dryRun`을 제거했다. 세 도구 모두 일반 privileged Pod를 실제 거부하면서 privileged 임시 컨테이너 추가는 허용했고, 해당 컨테이너는 containerd ID를 받아 `Running` 상태에서 UID 0과 `CapEff 000001ffffffffff`로 실행됐다. 이 후속 결과와 한계는 [LIVE-REPORT.ko.md](LIVE-REPORT.ko.md)에 분리해 기록했다.
 
+추가 후속 실험에서는 Kubernetes 내장 PSA와 RBAC가 각각 하위 API 요청을 정상 차단함을 확인했고, 제품별 최소 수정 뒤에는 안전한 임시 컨테이너를 실행하면서 privileged 임시 컨테이너만 거부했다. 또한 privilege escalation과 capability 공개 정책에서도 세 제품 모두 같은 미탐이 재현됐다. 자세한 결과와 제품별 원인 분리는 [FOLLOWUP-REPORT.ko.md](FOLLOWUP-REPORT.ko.md)에 기록했다.
+
 세 도구의 공통점은 최종 보장 실패이고 원인은 서로 다르다. Kyverno와 Kubewarden은 하위 API 요청이 정책식 또는 정책 모듈까지 전달되지 않았고, Gatekeeper는 요청을 받은 뒤 UPDATE 전체를 허용하는 조건 때문에 통과시켰다. 각 원인 후보 하나만 고친 분리 실험에서 세 도구 모두 C3이 허용에서 거부로 바뀌었다.
 
 ## 실행 환경
@@ -91,7 +93,7 @@ Kubewarden 통합 차트는 recommended 정책을 개별적으로 활성화하�
 
 ## 주장 범위와 한계
 
-이번 실행은 상세 설계의 1차 판정인 privileged P 단계만 수행했다. privilege escalation E 단계와 capability C 단계는 아직 실행하지 않았다. 따라서 여러 정책군 전체에 같은 현상이 반복된다고 실험 결과로 주장할 수는 없다.
+정식 45회 반복은 상세 설계의 1차 판정인 privileged P 단계에 한정된다. privilege escalation E 단계와 capability C 단계도 후속 실행했지만 각 제품·정책군 조합당 한 번의 독립 설치만 사용했다. 따라서 여러 정책군에서 같은 현상이 관찰됐다고 말할 수는 있으나, E와 C 결과에 P 단계와 같은 반복 재현율을 부여하지 않는다.
 
 요청 순서를 반복마다 번갈아 배치한다는 설계와 달리 실제 실행기는 C0, C1, C2, C3 순서로 고정했다. 모든 요청이 dry-run이었고 실제 기준 Pod가 한 번도 바뀌지 않았으며 3개 독립 설치에서 같은 결과가 나왔기 때문에 현재 판정에 미친 영향은 작아 보인다. 그래도 순서 효과를 완전히 제거한 실험은 아니다.
 
@@ -110,3 +112,7 @@ Kubewarden 통합 차트는 recommended 정책을 개별적으로 활성화하�
 - `LIVE-REPORT.ko.md`: 제품별 한 번의 실제 저장·실행 후속 검증
 - `results/2026-09-19-live-execution/aggregate.json`: 실제 실행 후속 결과 집계
 - `run-live-case.sh`, `aggregate_live_results.py`: 실제 실행기와 증거 검증기
+- `FOLLOWUP-REPORT.ko.md`: Kubernetes 대조군, 최소 수정, 추가 정책군 결과
+- `results/2026-09-19-followup-aggregate.json`: 후속 실험 검증 집계
+- `run-kubernetes-controls.sh`, `run-live-fixed-case.sh`, `run-policy-family-cases.sh`: 후속 실행기
+- `aggregate_followup_results.py`: 후속 결과 검증기

@@ -1,0 +1,99 @@
+{
+  "kind": "Pod",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "ordinary-safe",
+    "namespace": "policy-family-test",
+    "uid": "613c8d69-8cf6-4b70-9d4e-6939a1451f2d",
+    "generation": 1,
+    "creationTimestamp": "2026-09-19T06:25:08Z",
+    "managedFields": [
+      {
+        "manager": "curl",
+        "operation": "Update",
+        "apiVersion": "v1",
+        "time": "2026-09-19T06:25:08Z",
+        "fieldsType": "FieldsV1",
+        "fieldsV1": {
+          "f:spec": {
+            "f:automountServiceAccountToken": {},
+            "f:containers": {
+              "k:{\"name\":\"safe\"}": {
+                ".": {},
+                "f:image": {},
+                "f:imagePullPolicy": {},
+                "f:name": {},
+                "f:resources": {},
+                "f:securityContext": {
+                  ".": {},
+                  "f:allowPrivilegeEscalation": {},
+                  "f:capabilities": {
+                    ".": {},
+                    "f:drop": {}
+                  }
+                },
+                "f:terminationMessagePath": {},
+                "f:terminationMessagePolicy": {}
+              }
+            },
+            "f:dnsPolicy": {},
+            "f:enableServiceLinks": {},
+            "f:restartPolicy": {},
+            "f:schedulerName": {},
+            "f:securityContext": {},
+            "f:terminationGracePeriodSeconds": {}
+          }
+        }
+      }
+    ]
+  },
+  "spec": {
+    "containers": [
+      {
+        "name": "safe",
+        "image": "registry.k8s.io/pause:3.10",
+        "resources": {},
+        "terminationMessagePath": "/dev/termination-log",
+        "terminationMessagePolicy": "File",
+        "imagePullPolicy": "IfNotPresent",
+        "securityContext": {
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "allowPrivilegeEscalation": false
+        }
+      }
+    ],
+    "restartPolicy": "Never",
+    "terminationGracePeriodSeconds": 30,
+    "dnsPolicy": "ClusterFirst",
+    "serviceAccountName": "default",
+    "serviceAccount": "default",
+    "automountServiceAccountToken": false,
+    "securityContext": {},
+    "schedulerName": "default-scheduler",
+    "tolerations": [
+      {
+        "key": "node.kubernetes.io/not-ready",
+        "operator": "Exists",
+        "effect": "NoExecute",
+        "tolerationSeconds": 300
+      },
+      {
+        "key": "node.kubernetes.io/unreachable",
+        "operator": "Exists",
+        "effect": "NoExecute",
+        "tolerationSeconds": 300
+      }
+    ],
+    "priority": 0,
+    "enableServiceLinks": true,
+    "preemptionPolicy": "PreemptLowerPriority"
+  },
+  "status": {
+    "phase": "Pending",
+    "qosClass": "BestEffort"
+  }
+}

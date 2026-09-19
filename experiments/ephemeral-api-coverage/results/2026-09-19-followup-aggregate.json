@@ -1,0 +1,256 @@
+{
+  "experiment": "Kubernetes-native controls, minimal live fixes, and policy-family generalization",
+  "date": "2026-09-19",
+  "kubernetesControls": {
+    "psa": {
+      "safeEphemeralHttp": 200,
+      "privilegedEphemeralHttp": 403,
+      "rbacCanUpdate": true,
+      "privilegedStored": false
+    },
+    "rbac": {
+      "privilegedEphemeralHttp": 403,
+      "rbacCanUpdate": false,
+      "privilegedStored": false
+    },
+    "psaDenyMessage": "pods \"baseline\" is forbidden: violates PodSecurity \"baseline:latest\": privileged (container \"debug-privileged\" must not set securityContext.privileged=true)",
+    "rbacDenyMessage": "pods \"baseline\" is forbidden: User \"system:serviceaccount:rbac-control:rbac-runner\" cannot patch resource \"pods/ephemeralcontainers\" in API group \"\" in the namespace \"rbac-control\""
+  },
+  "minimalFixes": [
+    {
+      "product": "kyverno",
+      "httpStatus": {
+        "ordinaryPrivilegedCreate": 400,
+        "safeEphemeralUpdate": 200,
+        "privilegedEphemeralUpdate": 400
+      },
+      "pod": {
+        "safeStored": true,
+        "safeState": "Running",
+        "privilegedStored": false
+      },
+      "privilegedEphemeralDenyMessage": "admission webhook \"vpol.validate.kyverno.svc-fail\" denied the request: Policy disallow-privileged-containers failed: Privileged mode is disallowed. The fields spec.containers[*].securityContext.privileged and spec.initContainers[*].securityContext.privileged must be unset or set to `false`."
+    },
+    {
+      "product": "gatekeeper",
+      "httpStatus": {
+        "ordinaryPrivilegedCreate": 403,
+        "safeEphemeralUpdate": 200,
+        "privilegedEphemeralUpdate": 403
+      },
+      "pod": {
+        "safeStored": true,
+        "safeState": "Running",
+        "privilegedStored": false
+      },
+      "privilegedEphemeralDenyMessage": "admission webhook \"validation.gatekeeper.sh\" denied the request: [psp-privileged-container] Privileged container is not allowed: debug-privileged, securityContext.privileged: true"
+    },
+    {
+      "product": "kubewarden",
+      "httpStatus": {
+        "ordinaryPrivilegedCreate": 400,
+        "safeEphemeralUpdate": 200,
+        "privilegedEphemeralUpdate": 400
+      },
+      "pod": {
+        "safeStored": true,
+        "safeState": "Running",
+        "privilegedStored": false
+      },
+      "privilegedEphemeralDenyMessage": "admission webhook \"kw.cap.no-privileged-pod.kubewarden.admission\" denied the request: Privileged ephemeral container is not allowed"
+    }
+  ],
+  "policyFamilies": [
+    {
+      "product": "kyverno",
+      "family": "escalation",
+      "httpStatus": {
+        "ordinarySafe": 201,
+        "ordinaryViolation": 400,
+        "ephemeralSafe": 200,
+        "ephemeralViolation": 200
+      },
+      "returnedViolationValue": {
+        "ordinary": null,
+        "ephemeral": true
+      },
+      "ordinaryDenyMessage": "admission webhook \"vpol.validate.kyverno.svc-fail\" denied the request: Policy disallow-privilege-escalation failed: Privilege escalation is disallowed. The fields spec.containers[*].securityContext.allowPrivilegeEscalation, spec.initContainers[*].securityContext.allowPrivilegeEscalation, and spec.ephemeralContainers[*].securityContext.allowPrivilegeEscalation must be set to `false`."
+    },
+    {
+      "product": "kyverno",
+      "family": "capabilities",
+      "httpStatus": {
+        "ordinarySafe": 201,
+        "ordinaryViolation": 400,
+        "ephemeralSafe": 200,
+        "ephemeralViolation": 200
+      },
+      "returnedViolationValue": {
+        "ordinary": null,
+        "ephemeral": [
+          "SYS_ADMIN"
+        ]
+      },
+      "ordinaryDenyMessage": "admission webhook \"vpol.validate.kyverno.svc-fail\" denied the request: Policy disallow-capabilities-strict failed: Containers must drop `ALL` capabilities and may only add `NET_BIND_SERVICE`."
+    },
+    {
+      "product": "gatekeeper",
+      "family": "escalation",
+      "httpStatus": {
+        "ordinarySafe": 201,
+        "ordinaryViolation": 403,
+        "ephemeralSafe": 200,
+        "ephemeralViolation": 200
+      },
+      "returnedViolationValue": {
+        "ordinary": null,
+        "ephemeral": true
+      },
+      "ordinaryDenyMessage": "admission webhook \"validation.gatekeeper.sh\" denied the request: [psp-allow-privilege-escalation-container] Privilege escalation container is not allowed: registry.k8s.io/pause:3.10"
+    },
+    {
+      "product": "gatekeeper",
+      "family": "capabilities",
+      "httpStatus": {
+        "ordinarySafe": 201,
+        "ordinaryViolation": 403,
+        "ephemeralSafe": 200,
+        "ephemeralViolation": 200
+      },
+      "returnedViolationValue": {
+        "ordinary": null,
+        "ephemeral": [
+          "SYS_ADMIN"
+        ]
+      },
+      "ordinaryDenyMessage": "admission webhook \"validation.gatekeeper.sh\" denied the request: [psp-capabilities-restricted] containers have disallowed capabilities: {container: violation, capabilities: [SYS_ADMIN]}"
+    },
+    {
+      "product": "kubewarden",
+      "family": "escalation",
+      "httpStatus": {
+        "ordinarySafe": 201,
+        "ordinaryViolation": 400,
+        "ephemeralSafe": 200,
+        "ephemeralViolation": 200
+      },
+      "returnedViolationValue": {
+        "ordinary": null,
+        "ephemeral": true
+      },
+      "ordinaryDenyMessage": "admission webhook \"kw.cap.no-privilege-escalation.kubewarden.admission\" denied the request: one of the containers has privilege escalation enabled"
+    },
+    {
+      "product": "kubewarden",
+      "family": "capabilities",
+      "httpStatus": {
+        "ordinarySafe": 201,
+        "ordinaryViolation": 400,
+        "ephemeralSafe": 200,
+        "ephemeralViolation": 200
+      },
+      "returnedViolationValue": {
+        "ordinary": null,
+        "ephemeral": [
+          "SYS_ADMIN"
+        ]
+      },
+      "ordinaryDenyMessage": "admission webhook \"kw.cap.drop-capabilities.kubewarden.admission\" denied the request: PSP capabilities policies doesn't allow these capabilities to be added: {\"SYS_ADMIN\"}"
+    }
+  ],
+  "policyFamilyCauseIsolation": [
+    {
+      "product": "kyverno",
+      "family": "escalation",
+      "httpStatus": {
+        "ordinarySafe": 201,
+        "ordinaryViolation": 400,
+        "ephemeralSafe": 200,
+        "ephemeralViolation": 400
+      },
+      "returnedViolationValue": {
+        "ordinary": null,
+        "ephemeral": null
+      },
+      "ephemeralDenyMessage": "admission webhook \"vpol.validate.kyverno.svc-fail\" denied the request: Policy disallow-privilege-escalation failed: Privilege escalation is disallowed. The fields spec.containers[*].securityContext.allowPrivilegeEscalation, spec.initContainers[*].securityContext.allowPrivilegeEscalation, and spec.ephemeralContainers[*].securityContext.allowPrivilegeEscalation must be set to `false`."
+    },
+    {
+      "product": "kyverno",
+      "family": "capabilities",
+      "httpStatus": {
+        "ordinarySafe": 201,
+        "ordinaryViolation": 400,
+        "ephemeralSafe": 200,
+        "ephemeralViolation": 400
+      },
+      "returnedViolationValue": {
+        "ordinary": null,
+        "ephemeral": null
+      },
+      "ephemeralDenyMessage": "admission webhook \"vpol.validate.kyverno.svc-fail\" denied the request: Policy disallow-capabilities-strict failed: Containers must drop `ALL` capabilities and may only add `NET_BIND_SERVICE`."
+    },
+    {
+      "product": "gatekeeper",
+      "family": "escalation",
+      "httpStatus": {
+        "ordinarySafe": 201,
+        "ordinaryViolation": 403,
+        "ephemeralSafe": 200,
+        "ephemeralViolation": 403
+      },
+      "returnedViolationValue": {
+        "ordinary": null,
+        "ephemeral": null
+      },
+      "ephemeralDenyMessage": "admission webhook \"validation.gatekeeper.sh\" denied the request: [psp-allow-privilege-escalation-container] Privilege escalation container is not allowed: registry.k8s.io/pause:3.10"
+    },
+    {
+      "product": "gatekeeper",
+      "family": "capabilities",
+      "httpStatus": {
+        "ordinarySafe": 201,
+        "ordinaryViolation": 403,
+        "ephemeralSafe": 200,
+        "ephemeralViolation": 403
+      },
+      "returnedViolationValue": {
+        "ordinary": null,
+        "ephemeral": null
+      },
+      "ephemeralDenyMessage": "admission webhook \"validation.gatekeeper.sh\" denied the request: [psp-capabilities-restricted] containers have disallowed capabilities: {container: violation, capabilities: [SYS_ADMIN]}"
+    },
+    {
+      "product": "kubewarden",
+      "family": "escalation",
+      "httpStatus": {
+        "ordinarySafe": 201,
+        "ordinaryViolation": 400,
+        "ephemeralSafe": 200,
+        "ephemeralViolation": 200
+      },
+      "returnedViolationValue": {
+        "ordinary": null,
+        "ephemeral": true
+      },
+      "ephemeralDenyMessage": null
+    },
+    {
+      "product": "kubewarden",
+      "family": "capabilities",
+      "httpStatus": {
+        "ordinarySafe": 201,
+        "ordinaryViolation": 400,
+        "ephemeralSafe": 200,
+        "ephemeralViolation": 200
+      },
+      "returnedViolationValue": {
+        "ordinary": null,
+        "ephemeral": [
+          "SYS_ADMIN"
+        ]
+      },
+      "ephemeralDenyMessage": null
+    }
+  ],
+  "result": "Kubernetes PSA and RBAC blocked the subresource as designed; each product's minimal fix preserved a safe ephemeral container and blocked a privileged one; all three public policy sets denied ordinary privilege-escalation and SYS_ADMIN violations but admitted the same values through pods/ephemeralcontainers. Routing or UPDATE-guard fixes were sufficient for Kyverno and Gatekeeper, while Kubewarden still admitted both violations after route-only fixes."
+}

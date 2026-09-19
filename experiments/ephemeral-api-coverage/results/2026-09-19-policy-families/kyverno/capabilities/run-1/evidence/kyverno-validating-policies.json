@@ -1,0 +1,436 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "policies.kyverno.io/v1",
+            "kind": "ValidatingPolicy",
+            "metadata": {
+                "annotations": {
+                    "kyverno.io/kubernetes-version": "\u003e=1.25.0-0",
+                    "kyverno.io/kyverno-version": "v1.19.1",
+                    "meta.helm.sh/release-name": "kyverno-policies",
+                    "meta.helm.sh/release-namespace": "kyverno",
+                    "policies.kyverno.io/category": "Pod Security Standards (Restricted)",
+                    "policies.kyverno.io/description": "Adding capabilities other than `NET_BIND_SERVICE` is disallowed. In addition, all containers must explicitly drop `ALL` capabilities.",
+                    "policies.kyverno.io/minversion": "1.6.0",
+                    "policies.kyverno.io/severity": "medium",
+                    "policies.kyverno.io/subject": "Pod",
+                    "policies.kyverno.io/title": "Disallow Capabilities (Strict)"
+                },
+                "creationTimestamp": "2026-09-19T06:12:21Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/component": "kyverno",
+                    "app.kubernetes.io/instance": "kyverno-policies",
+                    "app.kubernetes.io/managed-by": "Helm",
+                    "app.kubernetes.io/name": "kyverno-policies",
+                    "app.kubernetes.io/part-of": "kyverno-policies",
+                    "app.kubernetes.io/version": "3.9.1",
+                    "helm.sh/chart": "kyverno-policies-3.9.1"
+                },
+                "name": "disallow-capabilities-strict",
+                "resourceVersion": "690",
+                "uid": "3d25928b-a7ac-4833-9839-6edd542ba5f2"
+            },
+            "spec": {
+                "failurePolicy": "Fail",
+                "matchConstraints": {
+                    "resourceRules": [
+                        {
+                            "apiGroups": [
+                                ""
+                            ],
+                            "apiVersions": [
+                                "v1"
+                            ],
+                            "operations": [
+                                "CREATE",
+                                "UPDATE"
+                            ],
+                            "resources": [
+                                "pods"
+                            ]
+                        }
+                    ]
+                },
+                "validationActions": [
+                    "Deny"
+                ],
+                "validations": [
+                    {
+                        "expression": "(!has(object.spec.containers) || object.spec.containers.all(c, \n  !has(c.securityContext) || \n  !has(c.securityContext.capabilities) || \n  ((!has(c.securityContext.capabilities.drop) || 'ALL' in c.securityContext.capabilities.drop) \u0026\u0026\n   (!has(c.securityContext.capabilities.add) || c.securityContext.capabilities.add.all(cap, cap == 'NET_BIND_SERVICE'))))) \u0026\u0026\n(!has(object.spec.initContainers) || object.spec.initContainers.all(c, \n  !has(c.securityContext) || \n  !has(c.securityContext.capabilities) || \n  ((!has(c.securityContext.capabilities.drop) || 'ALL' in c.securityContext.capabilities.drop) \u0026\u0026\n   (!has(c.securityContext.capabilities.add) || c.securityContext.capabilities.add.all(cap, cap == 'NET_BIND_SERVICE'))))) \u0026\u0026\n(!has(object.spec.ephemeralContainers) || object.spec.ephemeralContainers.all(c, \n  !has(c.securityContext) || \n  !has(c.securityContext.capabilities) || \n  ((!has(c.securityContext.capabilities.drop) || 'ALL' in c.securityContext.capabilities.drop) \u0026\u0026\n   (!has(c.securityContext.capabilities.add) || c.securityContext.capabilities.add.all(cap, cap == 'NET_BIND_SERVICE')))))",
+                        "message": "Containers must drop `ALL` capabilities and may only add `NET_BIND_SERVICE`."
+                    }
+                ]
+            },
+            "status": {
+                "autogen": {
+                    "configs": {
+                        "cronjobs": {
+                            "spec": {
+                                "failurePolicy": "Fail",
+                                "matchConstraints": {
+                                    "resourceRules": [
+                                        {
+                                            "apiGroups": [
+                                                "batch"
+                                            ],
+                                            "apiVersions": [
+                                                "v1"
+                                            ],
+                                            "operations": [
+                                                "CREATE",
+                                                "UPDATE"
+                                            ],
+                                            "resources": [
+                                                "cronjobs"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                "validationActions": [
+                                    "Deny"
+                                ],
+                                "validations": [
+                                    {
+                                        "expression": "(!has(object.spec.jobTemplate.spec.template.spec.containers) || object.spec.jobTemplate.spec.template.spec.containers.all(c, \n  !has(c.securityContext) || \n  !has(c.securityContext.capabilities) || \n  ((!has(c.securityContext.capabilities.drop) || 'ALL' in c.securityContext.capabilities.drop) \u0026\u0026\n   (!has(c.securityContext.capabilities.add) || c.securityContext.capabilities.add.all(cap, cap == 'NET_BIND_SERVICE'))))) \u0026\u0026\n(!has(object.spec.jobTemplate.spec.template.spec.initContainers) || object.spec.jobTemplate.spec.template.spec.initContainers.all(c, \n  !has(c.securityContext) || \n  !has(c.securityContext.capabilities) || \n  ((!has(c.securityContext.capabilities.drop) || 'ALL' in c.securityContext.capabilities.drop) \u0026\u0026\n   (!has(c.securityContext.capabilities.add) || c.securityContext.capabilities.add.all(cap, cap == 'NET_BIND_SERVICE'))))) \u0026\u0026\n(!has(object.spec.jobTemplate.spec.template.spec.ephemeralContainers) || object.spec.jobTemplate.spec.template.spec.ephemeralContainers.all(c, \n  !has(c.securityContext) || \n  !has(c.securityContext.capabilities) || \n  ((!has(c.securityContext.capabilities.drop) || 'ALL' in c.securityContext.capabilities.drop) \u0026\u0026\n   (!has(c.securityContext.capabilities.add) || c.securityContext.capabilities.add.all(cap, cap == 'NET_BIND_SERVICE')))))",
+                                        "message": "Containers must drop `ALL` capabilities and may only add `NET_BIND_SERVICE`."
+                                    }
+                                ]
+                            },
+                            "targets": [
+                                {
+                                    "group": "batch",
+                                    "kind": "CronJob",
+                                    "resource": "cronjobs",
+                                    "version": "v1"
+                                }
+                            ]
+                        },
+                        "defaults": {
+                            "spec": {
+                                "failurePolicy": "Fail",
+                                "matchConstraints": {
+                                    "resourceRules": [
+                                        {
+                                            "apiGroups": [
+                                                "apps"
+                                            ],
+                                            "apiVersions": [
+                                                "v1"
+                                            ],
+                                            "operations": [
+                                                "CREATE",
+                                                "UPDATE"
+                                            ],
+                                            "resources": [
+                                                "daemonsets",
+                                                "deployments",
+                                                "replicasets",
+                                                "statefulsets"
+                                            ]
+                                        },
+                                        {
+                                            "apiGroups": [
+                                                "batch"
+                                            ],
+                                            "apiVersions": [
+                                                "v1"
+                                            ],
+                                            "operations": [
+                                                "CREATE",
+                                                "UPDATE"
+                                            ],
+                                            "resources": [
+                                                "jobs"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                "validationActions": [
+                                    "Deny"
+                                ],
+                                "validations": [
+                                    {
+                                        "expression": "(!has(object.spec.template.spec.containers) || object.spec.template.spec.containers.all(c, \n  !has(c.securityContext) || \n  !has(c.securityContext.capabilities) || \n  ((!has(c.securityContext.capabilities.drop) || 'ALL' in c.securityContext.capabilities.drop) \u0026\u0026\n   (!has(c.securityContext.capabilities.add) || c.securityContext.capabilities.add.all(cap, cap == 'NET_BIND_SERVICE'))))) \u0026\u0026\n(!has(object.spec.template.spec.initContainers) || object.spec.template.spec.initContainers.all(c, \n  !has(c.securityContext) || \n  !has(c.securityContext.capabilities) || \n  ((!has(c.securityContext.capabilities.drop) || 'ALL' in c.securityContext.capabilities.drop) \u0026\u0026\n   (!has(c.securityContext.capabilities.add) || c.securityContext.capabilities.add.all(cap, cap == 'NET_BIND_SERVICE'))))) \u0026\u0026\n(!has(object.spec.template.spec.ephemeralContainers) || object.spec.template.spec.ephemeralContainers.all(c, \n  !has(c.securityContext) || \n  !has(c.securityContext.capabilities) || \n  ((!has(c.securityContext.capabilities.drop) || 'ALL' in c.securityContext.capabilities.drop) \u0026\u0026\n   (!has(c.securityContext.capabilities.add) || c.securityContext.capabilities.add.all(cap, cap == 'NET_BIND_SERVICE')))))",
+                                        "message": "Containers must drop `ALL` capabilities and may only add `NET_BIND_SERVICE`."
+                                    }
+                                ]
+                            },
+                            "targets": [
+                                {
+                                    "group": "apps",
+                                    "kind": "DaemonSet",
+                                    "resource": "daemonsets",
+                                    "version": "v1"
+                                },
+                                {
+                                    "group": "apps",
+                                    "kind": "Deployment",
+                                    "resource": "deployments",
+                                    "version": "v1"
+                                },
+                                {
+                                    "group": "apps",
+                                    "kind": "ReplicaSet",
+                                    "resource": "replicasets",
+                                    "version": "v1"
+                                },
+                                {
+                                    "group": "apps",
+                                    "kind": "StatefulSet",
+                                    "resource": "statefulsets",
+                                    "version": "v1"
+                                },
+                                {
+                                    "group": "batch",
+                                    "kind": "Job",
+                                    "resource": "jobs",
+                                    "version": "v1"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "conditionStatus": {
+                    "conditions": [
+                        {
+                            "lastTransitionTime": "2026-09-19T06:12:21Z",
+                            "message": "Webhook configured.",
+                            "reason": "Succeeded",
+                            "status": "True",
+                            "type": "WebhookConfigured"
+                        },
+                        {
+                            "lastTransitionTime": "2026-09-19T06:12:21Z",
+                            "message": "Policy is ready for reporting.",
+                            "reason": "Succeeded",
+                            "status": "True",
+                            "type": "RBACPermissionsGranted"
+                        }
+                    ],
+                    "message": "",
+                    "ready": true
+                },
+                "generated": false
+            }
+        },
+        {
+            "apiVersion": "policies.kyverno.io/v1",
+            "kind": "ValidatingPolicy",
+            "metadata": {
+                "annotations": {
+                    "kyverno.io/kubernetes-version": "\u003e=1.25.0-0",
+                    "kyverno.io/kyverno-version": "v1.19.1",
+                    "meta.helm.sh/release-name": "kyverno-policies",
+                    "meta.helm.sh/release-namespace": "kyverno",
+                    "policies.kyverno.io/category": "Pod Security Standards (Restricted)",
+                    "policies.kyverno.io/description": "Privilege escalation, such as via set-user-ID or set-group-ID file mode, should not be allowed. This policy ensures the `allowPrivilegeEscalation` field is set to `false`.",
+                    "policies.kyverno.io/severity": "medium",
+                    "policies.kyverno.io/subject": "Pod",
+                    "policies.kyverno.io/title": "Disallow Privilege Escalation"
+                },
+                "creationTimestamp": "2026-09-19T06:12:21Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/component": "kyverno",
+                    "app.kubernetes.io/instance": "kyverno-policies",
+                    "app.kubernetes.io/managed-by": "Helm",
+                    "app.kubernetes.io/name": "kyverno-policies",
+                    "app.kubernetes.io/part-of": "kyverno-policies",
+                    "app.kubernetes.io/version": "3.9.1",
+                    "helm.sh/chart": "kyverno-policies-3.9.1"
+                },
+                "name": "disallow-privilege-escalation",
+                "resourceVersion": "691",
+                "uid": "dcd0f243-b64b-4bc2-ac24-669d6eeb18f2"
+            },
+            "spec": {
+                "failurePolicy": "Fail",
+                "matchConstraints": {
+                    "resourceRules": [
+                        {
+                            "apiGroups": [
+                                ""
+                            ],
+                            "apiVersions": [
+                                "v1"
+                            ],
+                            "operations": [
+                                "CREATE",
+                                "UPDATE"
+                            ],
+                            "resources": [
+                                "pods"
+                            ]
+                        }
+                    ]
+                },
+                "validationActions": [
+                    "Deny"
+                ],
+                "validations": [
+                    {
+                        "expression": "(!has(object.spec.containers) || object.spec.containers.all(c, \n  has(c.securityContext) \u0026\u0026 \n  has(c.securityContext.allowPrivilegeEscalation) \u0026\u0026 \n  c.securityContext.allowPrivilegeEscalation == false)) \u0026\u0026\n(!has(object.spec.initContainers) || object.spec.initContainers.all(c, \n  has(c.securityContext) \u0026\u0026 \n  has(c.securityContext.allowPrivilegeEscalation) \u0026\u0026 \n  c.securityContext.allowPrivilegeEscalation == false)) \u0026\u0026\n(!has(object.spec.ephemeralContainers) || object.spec.ephemeralContainers.all(c, \n  has(c.securityContext) \u0026\u0026 \n  has(c.securityContext.allowPrivilegeEscalation) \u0026\u0026 \n  c.securityContext.allowPrivilegeEscalation == false))",
+                        "message": "Privilege escalation is disallowed. The fields spec.containers[*].securityContext.allowPrivilegeEscalation, spec.initContainers[*].securityContext.allowPrivilegeEscalation, and spec.ephemeralContainers[*].securityContext.allowPrivilegeEscalation must be set to `false`."
+                    }
+                ]
+            },
+            "status": {
+                "autogen": {
+                    "configs": {
+                        "cronjobs": {
+                            "spec": {
+                                "failurePolicy": "Fail",
+                                "matchConstraints": {
+                                    "resourceRules": [
+                                        {
+                                            "apiGroups": [
+                                                "batch"
+                                            ],
+                                            "apiVersions": [
+                                                "v1"
+                                            ],
+                                            "operations": [
+                                                "CREATE",
+                                                "UPDATE"
+                                            ],
+                                            "resources": [
+                                                "cronjobs"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                "validationActions": [
+                                    "Deny"
+                                ],
+                                "validations": [
+                                    {
+                                        "expression": "(!has(object.spec.jobTemplate.spec.template.spec.containers) || object.spec.jobTemplate.spec.template.spec.containers.all(c, \n  has(c.securityContext) \u0026\u0026 \n  has(c.securityContext.allowPrivilegeEscalation) \u0026\u0026 \n  c.securityContext.allowPrivilegeEscalation == false)) \u0026\u0026\n(!has(object.spec.jobTemplate.spec.template.spec.initContainers) || object.spec.jobTemplate.spec.template.spec.initContainers.all(c, \n  has(c.securityContext) \u0026\u0026 \n  has(c.securityContext.allowPrivilegeEscalation) \u0026\u0026 \n  c.securityContext.allowPrivilegeEscalation == false)) \u0026\u0026\n(!has(object.spec.jobTemplate.spec.template.spec.ephemeralContainers) || object.spec.jobTemplate.spec.template.spec.ephemeralContainers.all(c, \n  has(c.securityContext) \u0026\u0026 \n  has(c.securityContext.allowPrivilegeEscalation) \u0026\u0026 \n  c.securityContext.allowPrivilegeEscalation == false))",
+                                        "message": "Privilege escalation is disallowed. The fields spec.containers[*].securityContext.allowPrivilegeEscalation, spec.initContainers[*].securityContext.allowPrivilegeEscalation, and spec.ephemeralContainers[*].securityContext.allowPrivilegeEscalation must be set to `false`."
+                                    }
+                                ]
+                            },
+                            "targets": [
+                                {
+                                    "group": "batch",
+                                    "kind": "CronJob",
+                                    "resource": "cronjobs",
+                                    "version": "v1"
+                                }
+                            ]
+                        },
+                        "defaults": {
+                            "spec": {
+                                "failurePolicy": "Fail",
+                                "matchConstraints": {
+                                    "resourceRules": [
+                                        {
+                                            "apiGroups": [
+                                                "apps"
+                                            ],
+                                            "apiVersions": [
+                                                "v1"
+                                            ],
+                                            "operations": [
+                                                "CREATE",
+                                                "UPDATE"
+                                            ],
+                                            "resources": [
+                                                "daemonsets",
+                                                "deployments",
+                                                "replicasets",
+                                                "statefulsets"
+                                            ]
+                                        },
+                                        {
+                                            "apiGroups": [
+                                                "batch"
+                                            ],
+                                            "apiVersions": [
+                                                "v1"
+                                            ],
+                                            "operations": [
+                                                "CREATE",
+                                                "UPDATE"
+                                            ],
+                                            "resources": [
+                                                "jobs"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                "validationActions": [
+                                    "Deny"
+                                ],
+                                "validations": [
+                                    {
+                                        "expression": "(!has(object.spec.template.spec.containers) || object.spec.template.spec.containers.all(c, \n  has(c.securityContext) \u0026\u0026 \n  has(c.securityContext.allowPrivilegeEscalation) \u0026\u0026 \n  c.securityContext.allowPrivilegeEscalation == false)) \u0026\u0026\n(!has(object.spec.template.spec.initContainers) || object.spec.template.spec.initContainers.all(c, \n  has(c.securityContext) \u0026\u0026 \n  has(c.securityContext.allowPrivilegeEscalation) \u0026\u0026 \n  c.securityContext.allowPrivilegeEscalation == false)) \u0026\u0026\n(!has(object.spec.template.spec.ephemeralContainers) || object.spec.template.spec.ephemeralContainers.all(c, \n  has(c.securityContext) \u0026\u0026 \n  has(c.securityContext.allowPrivilegeEscalation) \u0026\u0026 \n  c.securityContext.allowPrivilegeEscalation == false))",
+                                        "message": "Privilege escalation is disallowed. The fields spec.containers[*].securityContext.allowPrivilegeEscalation, spec.initContainers[*].securityContext.allowPrivilegeEscalation, and spec.ephemeralContainers[*].securityContext.allowPrivilegeEscalation must be set to `false`."
+                                    }
+                                ]
+                            },
+                            "targets": [
+                                {
+                                    "group": "apps",
+                                    "kind": "DaemonSet",
+                                    "resource": "daemonsets",
+                                    "version": "v1"
+                                },
+                                {
+                                    "group": "apps",
+                                    "kind": "Deployment",
+                                    "resource": "deployments",
+                                    "version": "v1"
+                                },
+                                {
+                                    "group": "apps",
+                                    "kind": "ReplicaSet",
+                                    "resource": "replicasets",
+                                    "version": "v1"
+                                },
+                                {
+                                    "group": "apps",
+                                    "kind": "StatefulSet",
+                                    "resource": "statefulsets",
+                                    "version": "v1"
+                                },
+                                {
+                                    "group": "batch",
+                                    "kind": "Job",
+                                    "resource": "jobs",
+                                    "version": "v1"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "conditionStatus": {
+                    "conditions": [
+                        {
+                            "lastTransitionTime": "2026-09-19T06:12:21Z",
+                            "message": "Webhook configured.",
+                            "reason": "Succeeded",
+                            "status": "True",
+                            "type": "WebhookConfigured"
+                        },
+                        {
+                            "lastTransitionTime": "2026-09-19T06:12:21Z",
+                            "message": "Policy is ready for reporting.",
+                            "reason": "Succeeded",
+                            "status": "True",
+                            "type": "RBACPermissionsGranted"
+                        }
+                    ],
+                    "message": "",
+                    "ready": true
+                },
+                "generated": false
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

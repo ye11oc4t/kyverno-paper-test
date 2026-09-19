@@ -1,0 +1,310 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "policies.kubewarden.io/v1",
+            "kind": "ClusterAdmissionPolicy",
+            "metadata": {
+                "annotations": {
+                    "io.kubewarden.policy.category": "PSP",
+                    "io.kubewarden.policy.severity": "medium",
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"policies.kubewarden.io/v1\",\"kind\":\"ClusterAdmissionPolicy\",\"metadata\":{\"annotations\":{\"io.kubewarden.policy.category\":\"PSP\",\"io.kubewarden.policy.severity\":\"medium\"},\"labels\":{\"app.kubernetes.io/component\":\"policy\",\"app.kubernetes.io/instance\":\"admission-controller\",\"app.kubernetes.io/managed-by\":\"kubewarden-controller\",\"app.kubernetes.io/name\":\"admission-controller\",\"app.kubernetes.io/part-of\":\"kubewarden\",\"app.kubernetes.io/version\":\"v1.37.2\",\"helm.sh/chart\":\"admission-controller-6.0.2\"},\"name\":\"drop-capabilities\"},\"spec\":{\"backgroundAudit\":true,\"failurePolicy\":\"Fail\",\"mode\":\"protect\",\"module\":\"ghcr.io/kubewarden/policies/capabilities-psp:v1.0.13\",\"mutating\":true,\"namespaceSelector\":{\"matchExpressions\":[{\"key\":\"kubernetes.io/metadata.name\",\"operator\":\"NotIn\",\"values\":[\"calico-apiserver\",\"calico-system\",\"capi-system\",\"cattle-capi-system\",\"cattle-alerting\",\"cattle-csp-adapter-system\",\"cattle-elemental-system\",\"cattle-epinio-system\",\"cattle-externalip-system\",\"cattle-fleet-local-system\",\"cattle-fleet-system\",\"cattle-gatekeeper-system\",\"cattle-global-data\",\"cattle-global-nt\",\"cattle-impersonation-system\",\"cattle-istio\",\"cattle-istio-system\",\"cattle-logging\",\"cattle-logging-system\",\"cattle-monitoring-system\",\"cattle-neuvector-system\",\"cattle-prometheus\",\"cattle-provisioning-capi-system\",\"cattle-resources-system\",\"cattle-sriov-system\",\"cattle-system\",\"cattle-turtles-system\",\"cattle-ui-plugin-system\",\"cattle-windows-gmsa-system\",\"cert-manager\",\"cis-operator-system\",\"fleet-default\",\"ingress-nginx\",\"istio-system\",\"kube-node-lease\",\"kube-public\",\"kube-system\",\"longhorn-system\",\"rancher-alerting-drivers\",\"security-scan\",\"tigera-operator\"]}]},\"rules\":[{\"apiGroups\":[\"\"],\"apiVersions\":[\"v1\"],\"operations\":[\"CREATE\",\"UPDATE\"],\"resources\":[\"pods\"]}],\"settings\":{\"allowed_capabilities\":[],\"default_add_capabilities\":[],\"required_drop_capabilities\":[\"ALL\"]}}}\n"
+                },
+                "creationTimestamp": "2026-09-19T06:32:05Z",
+                "finalizers": [
+                    "kubewarden.io/finalizer"
+                ],
+                "generation": 2,
+                "labels": {
+                    "app.kubernetes.io/component": "policy",
+                    "app.kubernetes.io/instance": "admission-controller",
+                    "app.kubernetes.io/managed-by": "kubewarden-controller",
+                    "app.kubernetes.io/name": "admission-controller",
+                    "app.kubernetes.io/part-of": "kubewarden",
+                    "app.kubernetes.io/version": "v1.37.2",
+                    "helm.sh/chart": "admission-controller-6.0.2"
+                },
+                "name": "drop-capabilities",
+                "resourceVersion": "732",
+                "uid": "c6cc5600-79d4-4665-93c4-1f7ba1846224"
+            },
+            "spec": {
+                "backgroundAudit": true,
+                "failurePolicy": "Fail",
+                "mode": "protect",
+                "module": "ghcr.io/kubewarden/policies/capabilities-psp:v1.0.13",
+                "mutating": true,
+                "namespaceSelector": {
+                    "matchExpressions": [
+                        {
+                            "key": "kubernetes.io/metadata.name",
+                            "operator": "NotIn",
+                            "values": [
+                                "calico-apiserver",
+                                "calico-system",
+                                "capi-system",
+                                "cattle-capi-system",
+                                "cattle-alerting",
+                                "cattle-csp-adapter-system",
+                                "cattle-elemental-system",
+                                "cattle-epinio-system",
+                                "cattle-externalip-system",
+                                "cattle-fleet-local-system",
+                                "cattle-fleet-system",
+                                "cattle-gatekeeper-system",
+                                "cattle-global-data",
+                                "cattle-global-nt",
+                                "cattle-impersonation-system",
+                                "cattle-istio",
+                                "cattle-istio-system",
+                                "cattle-logging",
+                                "cattle-logging-system",
+                                "cattle-monitoring-system",
+                                "cattle-neuvector-system",
+                                "cattle-prometheus",
+                                "cattle-provisioning-capi-system",
+                                "cattle-resources-system",
+                                "cattle-sriov-system",
+                                "cattle-system",
+                                "cattle-turtles-system",
+                                "cattle-ui-plugin-system",
+                                "cattle-windows-gmsa-system",
+                                "cert-manager",
+                                "cis-operator-system",
+                                "fleet-default",
+                                "ingress-nginx",
+                                "istio-system",
+                                "kube-node-lease",
+                                "kube-public",
+                                "kube-system",
+                                "longhorn-system",
+                                "rancher-alerting-drivers",
+                                "security-scan",
+                                "tigera-operator"
+                            ]
+                        }
+                    ]
+                },
+                "policyServer": "default",
+                "rules": [
+                    {
+                        "apiGroups": [
+                            ""
+                        ],
+                        "apiVersions": [
+                            "v1"
+                        ],
+                        "operations": [
+                            "CREATE",
+                            "UPDATE"
+                        ],
+                        "resources": [
+                            "pods"
+                        ]
+                    },
+                    {
+                        "apiGroups": [
+                            ""
+                        ],
+                        "apiVersions": [
+                            "v1"
+                        ],
+                        "operations": [
+                            "UPDATE"
+                        ],
+                        "resources": [
+                            "pods/ephemeralcontainers"
+                        ]
+                    }
+                ],
+                "settings": {
+                    "allowed_capabilities": [],
+                    "default_add_capabilities": [],
+                    "required_drop_capabilities": [
+                        "ALL"
+                    ]
+                },
+                "timeoutSeconds": 10
+            },
+            "status": {
+                "conditions": [
+                    {
+                        "lastTransitionTime": "2026-09-19T06:32:33Z",
+                        "message": "The policy webhook has been created",
+                        "reason": "PolicyActive",
+                        "status": "True",
+                        "type": "PolicyActive"
+                    },
+                    {
+                        "lastTransitionTime": "2026-09-19T06:32:31Z",
+                        "message": "The latest replica set is uniquely reachable",
+                        "reason": "LatestReplicaSetIsUniquelyReachable",
+                        "status": "True",
+                        "type": "PolicyUniquelyReachable"
+                    },
+                    {
+                        "lastTransitionTime": "2026-09-19T06:32:13Z",
+                        "message": "Configuration for this policy is up to date",
+                        "reason": "ConfigurationVersionMatch",
+                        "status": "True",
+                        "type": "PolicyServerConfigurationUpToDate"
+                    }
+                ],
+                "mode": "protect",
+                "policyStatus": "active"
+            }
+        },
+        {
+            "apiVersion": "policies.kubewarden.io/v1",
+            "kind": "ClusterAdmissionPolicy",
+            "metadata": {
+                "annotations": {
+                    "io.kubewarden.policy.category": "PSP",
+                    "io.kubewarden.policy.severity": "medium",
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"policies.kubewarden.io/v1\",\"kind\":\"ClusterAdmissionPolicy\",\"metadata\":{\"annotations\":{\"io.kubewarden.policy.category\":\"PSP\",\"io.kubewarden.policy.severity\":\"medium\"},\"labels\":{\"app.kubernetes.io/component\":\"policy\",\"app.kubernetes.io/instance\":\"admission-controller\",\"app.kubernetes.io/managed-by\":\"kubewarden-controller\",\"app.kubernetes.io/name\":\"admission-controller\",\"app.kubernetes.io/part-of\":\"kubewarden\",\"app.kubernetes.io/version\":\"v1.37.2\",\"helm.sh/chart\":\"admission-controller-6.0.2\"},\"name\":\"no-privilege-escalation\"},\"spec\":{\"backgroundAudit\":true,\"failurePolicy\":\"Fail\",\"mode\":\"protect\",\"module\":\"ghcr.io/kubewarden/policies/allow-privilege-escalation-psp:v1.0.13\",\"mutating\":true,\"namespaceSelector\":{\"matchExpressions\":[{\"key\":\"kubernetes.io/metadata.name\",\"operator\":\"NotIn\",\"values\":[\"calico-apiserver\",\"calico-system\",\"capi-system\",\"cattle-capi-system\",\"cattle-alerting\",\"cattle-csp-adapter-system\",\"cattle-elemental-system\",\"cattle-epinio-system\",\"cattle-externalip-system\",\"cattle-fleet-local-system\",\"cattle-fleet-system\",\"cattle-gatekeeper-system\",\"cattle-global-data\",\"cattle-global-nt\",\"cattle-impersonation-system\",\"cattle-istio\",\"cattle-istio-system\",\"cattle-logging\",\"cattle-logging-system\",\"cattle-monitoring-system\",\"cattle-neuvector-system\",\"cattle-prometheus\",\"cattle-provisioning-capi-system\",\"cattle-resources-system\",\"cattle-sriov-system\",\"cattle-system\",\"cattle-turtles-system\",\"cattle-ui-plugin-system\",\"cattle-windows-gmsa-system\",\"cert-manager\",\"cis-operator-system\",\"fleet-default\",\"ingress-nginx\",\"istio-system\",\"kube-node-lease\",\"kube-public\",\"kube-system\",\"longhorn-system\",\"rancher-alerting-drivers\",\"security-scan\",\"tigera-operator\"]}]},\"rules\":[{\"apiGroups\":[\"\"],\"apiVersions\":[\"v1\"],\"operations\":[\"CREATE\"],\"resources\":[\"pods\"]}],\"settings\":{\"allowPrivilegeEscalation\":false}}}\n"
+                },
+                "creationTimestamp": "2026-09-19T06:32:05Z",
+                "finalizers": [
+                    "kubewarden.io/finalizer"
+                ],
+                "generation": 2,
+                "labels": {
+                    "app.kubernetes.io/component": "policy",
+                    "app.kubernetes.io/instance": "admission-controller",
+                    "app.kubernetes.io/managed-by": "kubewarden-controller",
+                    "app.kubernetes.io/name": "admission-controller",
+                    "app.kubernetes.io/part-of": "kubewarden",
+                    "app.kubernetes.io/version": "v1.37.2",
+                    "helm.sh/chart": "admission-controller-6.0.2"
+                },
+                "name": "no-privilege-escalation",
+                "resourceVersion": "728",
+                "uid": "9e83a183-6e76-4058-b0eb-382b82fc6c88"
+            },
+            "spec": {
+                "backgroundAudit": true,
+                "failurePolicy": "Fail",
+                "mode": "protect",
+                "module": "ghcr.io/kubewarden/policies/allow-privilege-escalation-psp:v1.0.13",
+                "mutating": true,
+                "namespaceSelector": {
+                    "matchExpressions": [
+                        {
+                            "key": "kubernetes.io/metadata.name",
+                            "operator": "NotIn",
+                            "values": [
+                                "calico-apiserver",
+                                "calico-system",
+                                "capi-system",
+                                "cattle-capi-system",
+                                "cattle-alerting",
+                                "cattle-csp-adapter-system",
+                                "cattle-elemental-system",
+                                "cattle-epinio-system",
+                                "cattle-externalip-system",
+                                "cattle-fleet-local-system",
+                                "cattle-fleet-system",
+                                "cattle-gatekeeper-system",
+                                "cattle-global-data",
+                                "cattle-global-nt",
+                                "cattle-impersonation-system",
+                                "cattle-istio",
+                                "cattle-istio-system",
+                                "cattle-logging",
+                                "cattle-logging-system",
+                                "cattle-monitoring-system",
+                                "cattle-neuvector-system",
+                                "cattle-prometheus",
+                                "cattle-provisioning-capi-system",
+                                "cattle-resources-system",
+                                "cattle-sriov-system",
+                                "cattle-system",
+                                "cattle-turtles-system",
+                                "cattle-ui-plugin-system",
+                                "cattle-windows-gmsa-system",
+                                "cert-manager",
+                                "cis-operator-system",
+                                "fleet-default",
+                                "ingress-nginx",
+                                "istio-system",
+                                "kube-node-lease",
+                                "kube-public",
+                                "kube-system",
+                                "longhorn-system",
+                                "rancher-alerting-drivers",
+                                "security-scan",
+                                "tigera-operator"
+                            ]
+                        }
+                    ]
+                },
+                "policyServer": "default",
+                "rules": [
+                    {
+                        "apiGroups": [
+                            ""
+                        ],
+                        "apiVersions": [
+                            "v1"
+                        ],
+                        "operations": [
+                            "CREATE"
+                        ],
+                        "resources": [
+                            "pods"
+                        ]
+                    },
+                    {
+                        "apiGroups": [
+                            ""
+                        ],
+                        "apiVersions": [
+                            "v1"
+                        ],
+                        "operations": [
+                            "UPDATE"
+                        ],
+                        "resources": [
+                            "pods/ephemeralcontainers"
+                        ]
+                    }
+                ],
+                "settings": {
+                    "allowPrivilegeEscalation": false
+                },
+                "timeoutSeconds": 10
+            },
+            "status": {
+                "conditions": [
+                    {
+                        "lastTransitionTime": "2026-09-19T06:32:33Z",
+                        "message": "The policy webhook has been created",
+                        "reason": "PolicyActive",
+                        "status": "True",
+                        "type": "PolicyActive"
+                    },
+                    {
+                        "lastTransitionTime": "2026-09-19T06:32:31Z",
+                        "message": "The latest replica set is uniquely reachable",
+                        "reason": "LatestReplicaSetIsUniquelyReachable",
+                        "status": "True",
+                        "type": "PolicyUniquelyReachable"
+                    },
+                    {
+                        "lastTransitionTime": "2026-09-19T06:32:13Z",
+                        "message": "Configuration for this policy is up to date",
+                        "reason": "ConfigurationVersionMatch",
+                        "status": "True",
+                        "type": "PolicyServerConfigurationUpToDate"
+                    }
+                ],
+                "mode": "protect",
+                "policyStatus": "active"
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}
