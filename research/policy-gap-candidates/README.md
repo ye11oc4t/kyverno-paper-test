@@ -4,6 +4,7 @@
 
 - [후보 조사와 우선순위](REPORT.ko.md)
 - [실험 설계](EXPERIMENT-DESIGNS.ko.md)
+- [Kyverno·Gatekeeper·Kubewarden 임시 컨테이너 API-only 상세 설계](EPHEMERAL-API-EXPERIMENT.ko.md)
 - [검토한 소스 버전](source-lock.json)
 
 현재 어떤 실험도 실행하지 않았다. 문서에서 `소스 확인`은 코드 경로가 예상 결과를 뒷받침한다는 뜻이며, 실제 클러스터 재현을 뜻하지 않는다.
